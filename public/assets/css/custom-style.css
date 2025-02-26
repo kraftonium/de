@@ -1,0 +1,727 @@
+/*--------------- index page start -----------*/
+
+a {
+    text-decoration: none !important;
+}
+
+/* POPUP STYLE */
+.popup-image,
+.modal-dialog {
+    display: grid;
+    justify-content: center;
+}
+
+.popup-image img {
+
+    height: 500px;
+    border-radius: 8px 0 0 8px;
+}
+
+.popup-modal-body {
+    display: flex;
+}
+
+.popup-content {
+    text-align: center;
+    padding: 15px;
+
+}
+
+.form-center {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content h2 {
+    border-bottom: 2px dotted black;
+    padding-bottom: 8px;
+}
+
+.popup-form input {
+    background-color: #fff;
+    border: 1px solid #001232;
+    margin-bottom: 13px;
+    border-radius: 10px;
+}
+
+.modal-btns button {
+    padding: 0px 10px 33px;
+    font-size: 1.3rem;
+}
+
+
+@media (min-width:767px) and (max-width:991px) {
+    .popup-modal-body {
+        flex-direction: column;
+    }
+
+    .modal-content {
+        max-width: 500px !important;
+    }
+
+    .popup-image img {
+
+        height: 534px;
+        border-radius: 8px 8px 0 0;
+    }
+
+
+}
+
+
+@media (min-width:510px) and (max-width:766px) {
+    .popup-modal-body {
+        flex-direction: column;
+    }
+
+    .modal-content {
+        max-width: 500px !important;
+        margin-left: -1rem;
+    }
+
+    .popup-image img {
+
+        height: 534px;
+        border-radius: 8px 8px 0 0;
+    }
+}
+
+@media (max-width:509px) {
+
+    .popup-image img {
+
+        height: 293px;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .popup-modal-body {
+        flex-direction: column;
+    }
+
+    .modal-content {
+        max-width: 275px !important;
+    }
+
+    .popup-content {
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+
+    .popup-content h2 {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+
+    .modal-btns button {
+        padding: 0px 10px 1px;
+        font-size: 1rem;
+    }
+}
+
+
+/* POPUP STYLE */
+
+
+
+/*--------------- Nav start -----------*/
+
+
+
+.logo-small-device img {
+    height: 100px;
+    width: 250px;
+    /* margin-left: -6rem; */
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width:1024px) {
+    .logo-small-device img {
+        margin-left: 0rem !important;
+    }
+}
+
+@media (max-width:480px) {
+    .logo-small-device img {
+        height: 80px;
+        width: 180px;
+    }
+
+}
+
+/*--------------- Nav end -----------*/
+
+
+/*--------------- Hero start -----------*/
+
+
+.slider-img img {
+    height: 30rem;
+    width: auto;
+    margin-bottom: 30px;
+}
+
+.slider-text-img img {
+    height: 80px;
+    width: auto;
+}
+
+
+/*--------------- Hero end -----------*/
+
+
+/*--------------- Choose EV start -----------*/
+
+
+.seeall-btn h5 {
+    float: right;
+    padding: 0.5rem;
+    font-weight: bold;
+    background-color: #FFB52F;
+    color: #001232;
+}
+
+
+.seeall-btn h5:hover {
+    cursor: pointer;
+
+}
+
+.auto-img-custom img {
+    width: 100%;
+    height: 29.5rem;
+    padding: 4rem 2rem !important;
+}
+
+@media (max-width: 1200px) {
+    .seeall-btn h5 {
+        float: left;
+    }
+}
+
+/*--------------- Choose EV end -----------*/
+
+
+/*--------------- latest-product start -----------*/
+
+.latest-product-img-custom img {
+    width: 80% !important;
+    /* height: 26rem !important; */
+}
+
+
+
+/*--------------- latest-product end -----------*/
+
+
+/*--------------- newletter start -----------*/
+
+.newsletter-img img {
+    height: 13rem;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .newsletter-img img {
+        height: 16rem;
+        width: auto;
+    }
+}
+
+/*--------------- newletter end -----------*/
+
+/* ----- assecories start ------ */
+
+.product-img-accessories img {
+    padding: 1rem 1rem 7rem !important;
+    height: 30rem;
+}
+
+.product-action-accessories {
+    /* bottom: 27px !important; */
+    bottom: 10px !important;
+    font-size: 1.5rem;
+}
+
+.banner-wrapper-custom img {
+    height: 20rem;
+    padding: 1rem;
+}
+
+/* ----- assecories end ------ */
+
+
+/* ----- features ev  start ------ */
+
+.containerr {
+    max-width: 1200px;
+    margin: -2rem auto 10rem;
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.key-features {
+    color: #000;
+    /* margin-bottom: 10px; */
+    font-size: 2rem;
+}
+
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.feature-item {
+    background-color: #fff;
+    width: 30%;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.feature-item:hover {
+    background-color: #757575;
+    color: #fff;
+}
+
+.feature-item:hover h3 {
+    color: #fff;
+}
+
+.feature-item:hover p {
+    color: #070642;
+}
+
+.feature-item img {
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    color: #000;
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .feature-item {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .feature-item {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Floating buttons */
+.floating-buttons {
+    position: fixed;
+    bottom: 140px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+}
+
+.floating-buttons a,
+button {
+    background-color: #FB8704;
+    /* background-color: #9FF400; */
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 5px 0;
+    border-radius: 25px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.floating-buttons a:hover {
+    background-color: #0247AC;
+}
+
+/* ----- features ev  end ------ */
+
+/* --------- footer start ---------- */
+
+.footer-social-media ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-left: -3rem;
+}
+
+.footer-social-media ul li {
+    font-size: 1.3rem;
+    padding: 5px;
+    width: fit-content;
+}
+
+
+/* --------- footer end ---------- */
+
+/*--------------- index page end -----------*/
+
+
+
+/*--------------- about page start -----------*/
+
+.about-team-members {
+    margin: 1rem 0rem 7rem;
+}
+
+.team-image img {
+    height: 22rem;
+}
+
+/*--------------- about page end -----------*/
+
+
+
+
+
+/*--------------- Contact page start -----------*/
+
+
+.contact-map .map iframe {
+    width: 100%;
+}
+
+.contact-form-custom input,
+.contact-form-custom textarea {
+    border: 1px solid #7d7d7d;
+    border-radius: 10px;
+}
+
+
+
+/*--------------- Contact page end -----------*/
+
+
+
+
+
+/*--------------- Scooters page start -----------*/
+
+
+.product-img a img {
+    /* padding: 4rem 0; */
+    padding: 5rem 1rem !important;
+    height: 30rem!important;
+    object-fit: contain;
+}
+
+.book-ride,
+.book-ride-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 15px black;
+    margin: 1rem 2rem;
+    padding: 5px;
+}
+
+.book-ride:hover,
+.book-ride-grid:hover {
+    background-color: #121212;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+
+.book-ride:hover a,
+.book-ride-grid:hover a {
+    color: #fff;
+}
+
+.book-ride a,
+.book-ride-grid a {
+    font-size: 1.2rem;
+    color: black;
+    font-weight: bold;
+}
+
+
+.custom-product-data {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    margin-top: 2rem;
+}
+
+@media (min-width:768px) and (max-width:1100px) {
+    .product-price span {
+        font-size: 1rem !important;
+    }
+}
+
+@media (max-width:600px) {
+    .custom-product-data {
+        grid-template-columns: auto;
+    }
+}
+
+
+@media (max-width:400px) {
+    .product-price span {
+        font-size: 1rem !important;
+    }
+}
+
+
+/*--------------- Scooters page end -----------*/
+
+
+/*--------------- Product details page start -----------*/
+
+#select-range,
+#select-battery {
+    width: 90% !important;
+}
+
+.product-details-custom {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.hidden {
+    display: none;
+}
+
+/*--------------- Product details page end -----------*/
+
+
+/*--------------- dealershipo page start -----------*/
+
+.contact-title-custom {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+@media (max-width:390px) {
+    .dealership-img img {
+        width: 270px;
+    }
+}
+
+/*--------------- dealershipo page end -----------*/
+
+
+/*--------------- gps page start -----------*/
+
+.about-gps {
+    padding: 0rem 3rem;
+}
+
+.about-gps p {
+    font-size: 1.1rem;
+}
+
+.gps-hero {
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: center;*/
+    align-items: center;
+    margin-top: 2rem;
+    padding: 0 0rem;
+    gap: 1rem;
+
+}
+
+.about-gps-content {
+    width: 55rem;
+}
+
+.about-gps-img img {
+    width: 24rem;
+    height: 20rem;
+}
+
+
+
+.gps-mission {
+    margin-bottom: 2rem;
+}
+
+.gps-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.highlights-content {
+    width: 52rem;
+}
+
+
+.gps-contact-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    padding: 1rem;
+}
+
+
+@media (max-width:767px) {
+
+    .about-gps {
+        padding: 0rem 1rem;
+    }
+
+    .about-gps p {
+        font-size: 1rem;
+    }
+
+    .about-gps-img img,
+    .highlight-img img {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/*--------------- gps page end -----------*/
+
+
+
+
+/*--------------- carrers page start -----------*/
+
+.carrers-contact-form {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+/*--------------- carrers page end -----------*/
+
+
+
+
+/*--------------- bookride page start -----------*/
+
+.book-ride-form {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+/*--------------- bookride page end -----------*/
+
+
+
+
+/* ---------------------   Privacy start   --------------------------- */
+
+.body-privacy {
+    background-color: #f5f5f5;
+    margin: 5rem 0 0;
+    padding: 0;
+
+}
+
+.container-privacy {
+    width: 90%;
+    padding: 20px;
+    display: block;
+    margin: auto;
+}
+
+.container-privacy .title {
+    text-align: center;
+    font-size: 2em;
+    color: black;
+    margin-top: 20px;
+    text-transform: uppercase;
+    /* font-family: 'Impact', sans-serif;  */
+}
+
+.container-privacy .effective-date {
+    text-align: center;
+    color: #666;
+    margin-top: 10px;
+}
+
+.container-privacy .divider {
+    border: 0;
+    border-top: 1px solid #000;
+    margin: 20px 0;
+}
+
+.container-privacy .section {
+    margin-bottom: 20px;
+}
+
+.container-privacy .section-title {
+    font-size: 1.2em;
+    /* color: #333; */
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.container-privacy .section h2 {
+    color: black;
+    font-size: 1.3rem;
+}
+
+.container-privacy .inner-title {
+    color: black !important;
+}
+
+.container-privacy .section p {
+    color: #4d4c4c;
+    line-height: 1.6;
+    font-size: 1em;
+}
+
+
+@media screen and (max-width:400px) {
+    .container-privacy {
+        width: 100%;
+    }
+}
+
+
+/* ---------------------   Privacy end   --------------------------- */
+
+
+.loader-with-roof-img {
+    padding: 1rem 0rem;
+    height: 30rem;
+}
