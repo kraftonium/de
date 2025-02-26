@@ -104,4 +104,12 @@ Route::get('/dashboard', function () {
     return view('backend.dashboard');
 });
 
+Route::get('/register', function () {
+    return view('backend.auth.register');
+});
+
+Route::get('/login', function () {
+    return view('backend.auth.login');
+});
+
 // Admin Panel Routes Ends Here

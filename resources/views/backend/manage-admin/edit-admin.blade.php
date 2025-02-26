@@ -22,7 +22,8 @@
     <meta name="twitter:description"
         content="The responsive professional Divine Infoverse template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
     <meta name="twitter:image" content="backend-assets/img/preview-banner.jpg">
-    <title>ERP - Divyashakti Enterprise</title>
+
+    <title>Edit Admin | Divyashakti Enterprise</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/backend-assets/img/logo/favicon.png">
 
@@ -80,8 +81,9 @@
                 <li class="nav-item dropdown has-arrow">
                     <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown" role="button"
                         aria-expanded="false">
-                        <span class="user-img"><img class="rounded-circle" src="/backend-assets/img/profiles/avatar-01.jpg"
-                                width="45" alt="Ryan Taylor"></span>
+                        <span class="user-img"><img class="rounded-circle"
+                                src="/backend-assets/img/profiles/avatar-01.jpg" width="45"
+                                alt="Ryan Taylor"></span>
                     </a>
                     <div class="dropdown-menu">
                         <div class="user-header">
@@ -142,21 +144,21 @@
                                 <input class="form-control" type="date" id="dob" placeholder="Date">
                             </div>
 
-                            
+
                             <div class="mb-3 col-12">
                                 <label for="address">Address</label>
-                               <textarea name="address" id="address" class="form-control" placeholder="Address"></textarea>
+                                <textarea name="address" id="address" class="form-control" placeholder="Address"></textarea>
                             </div>
-                           
 
-                           
+
+
                         </div>
 
                         <div class="mb-0 d-flex gap-3 mt-4">
                             <!-- <button class="btn auth-btn w-50 mt-5" style="display: block; margin: auto;"
                                 type="submit">Register</button> -->
-                            <button class="btn submit-btn w-50 "  type="submit">Submit</button>
-                            <button class="btn cancel-btn w-50" ><a href="manage-admin.html">Cancel</a></button>
+                            <button class="btn submit-btn w-50 " type="submit">Submit</button>
+                            <button class="btn cancel-btn w-50"><a href="manage-admin.html">Cancel</a></button>
                         </div>
                     </form>
                 </div>
@@ -169,7 +171,8 @@
 
 
     <div class="footer">
-        © 2024 DIVYASHAKTI ENTERPRISE, Inc. All rights reserved. Powered By <a href="https://www.divineinfoverse.com" target="_blank"> DIVINE INFOVERSE</a>
+        © 2024 DIVYASHAKTI ENTERPRISE, Inc. All rights reserved. Powered By <a href="https://www.divineinfoverse.com"
+            target="_blank"> DIVINE INFOVERSE</a>
     </div>
 
     <script src="/backend-assets/js/jquery-3.7.1.min.js" type="1e8e4c23584c3657211db4d2-text/javascript"></script>

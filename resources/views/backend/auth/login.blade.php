@@ -22,19 +22,20 @@
     <meta name="twitter:description"
         content="The responsive professional Divine Infoverse template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
     <meta name="twitter:image" content="backend-assets/img/preview-banner.jpg">
-    <title>ERP - Divyashakti Enterprise</title>
+
+    <title>Login | Divyashakti Enterprise</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/backend-assets/img/logo/favicon.png">
 
     <link rel="stylesheet" href="/backend-assets/css/bootstrap.min.css">
-    
-    
+
+
     <link rel="stylesheet" href="/backend-assets/plugins/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="/backend-assets/plugins/fontawesome/css/all.min.css">
-    
+
     <link rel="stylesheet" href="/backend-assets/css/feathericon.min.css">
     <link rel="stylesheet" href="/backend-assets/plugins/morris/morris.css">
-    
+
     <link rel="stylesheet" href="/backend-assets/css/custom.css">
 </head>
 
@@ -47,11 +48,14 @@
                     <div class="login-left">
                         <!-- <img class="img-fluid" src="/backend-assets/img/logo/logo-divyashakti.png" alt="Logo"> -->
                         <!-- <img class="img-fluid" src="/backend-assets/img/logo/favicon.png" alt="Logo"> -->
-                        
+
                         <div class="d-flex justify-content-center align-items-center">
-                            <img class="img-fluid" src="/backend-assets/img/logo/favicon.png" alt="Logo" style="height: 90px;">
+                            <img class="img-fluid" src="/backend-assets/img/logo/favicon.png" alt="Logo"
+                                style="height: 90px;">
                             <div>
-                                <h3 class="mb-0" style="font-weight: bold; color: #fff; margin-top: 10px;">DIVYASHAKTI <br> ENTERPRISE</h3>
+                                <h3 class="mb-0" style="font-weight: bold; color: #fff; margin-top: 10px;">DIVYASHAKTI
+                                    <br> ENTERPRISE
+                                </h3>
                             </div>
                         </div>
                     </div>
@@ -65,17 +69,21 @@
                                     <input class="form-control" type="text" placeholder="Email">
                                 </div>
                                 <div class="mb-3" style="position: relative;">
-                                    <input id="passwordInput" class="form-control" type="password" placeholder="Password" style="padding-right: 40px;">
-                                    <span id="togglePassword" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer;">
-                                        <i class="fa-solid fa-eye"></i> <!-- Replace with your preferred icon library -->
+                                    <input id="passwordInput" class="form-control" type="password"
+                                        placeholder="Password" style="padding-right: 40px;">
+                                    <span id="togglePassword"
+                                        style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer;">
+                                        <i class="fa-solid fa-eye"></i>
+                                        <!-- Replace with your preferred icon library -->
                                     </span>
                                 </div>
                                 <div class="mb-3">
-                                    <button class="btn auth-btn w-100" type="submit" >Login</button>
+                                    <button class="btn auth-btn w-100" type="submit">Login</button>
                                 </div>
                             </form>
 
-                            <div class="text-center forgotpass"><a href="/auth/forgot-password.html">Forgot Password?</a>
+                            <div class="text-center forgotpass"><a href="/auth/forgot-password.html">Forgot
+                                    Password?</a>
                             </div>
                             <div class="login-or">
                                 <span class="or-line"></span>

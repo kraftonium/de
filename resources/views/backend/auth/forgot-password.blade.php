@@ -22,19 +22,20 @@
     <meta name="twitter:description"
         content="The responsive professional Divine Infoverse template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
     <meta name="twitter:image" content="backend-assets/img/preview-banner.jpg">
-    <title>ERP - Divyashakti Enterprise</title>
+
+    <title>Forgot Password | Divyashakti Enterprise</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/backend-assets/img/logo/favicon.png">
 
     <link rel="stylesheet" href="/backend-assets/css/bootstrap.min.css">
-    
-    
+
+
     <link rel="stylesheet" href="/backend-assets/plugins/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="/backend-assets/plugins/fontawesome/css/all.min.css">
-    
+
     <link rel="stylesheet" href="/backend-assets/css/feathericon.min.css">
     <link rel="stylesheet" href="/backend-assets/plugins/morris/morris.css">
-    
+
     <link rel="stylesheet" href="/backend-assets/css/custom.css">
 </head>
 
@@ -61,7 +62,8 @@
                                 </div>
                             </form>
 
-                            <div class="text-center dont-have">Remember your password? <a href="/auth/login.html">Login</a>
+                            <div class="text-center dont-have">Remember your password? <a
+                                    href="/auth/login.html">Login</a>
                             </div>
                         </div>
                     </div>

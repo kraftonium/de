@@ -22,7 +22,8 @@
     <meta name="twitter:description"
         content="The responsive professional Divine Infoverse template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
     <meta name="twitter:image" content="backend-assets/img/preview-banner.jpg">
-    <title>ERP - Divyashakti Enterprise</title>
+
+    <title>Register | Divyashakti Enterprise</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/backend-assets/img/logo/favicon.png">
 
@@ -71,17 +72,17 @@
                                 <script>
                                     const dateInput = document.getElementById("dateInput");
                                     const label = document.querySelector(".custom-placeholder");
-                                  
-                                    dateInput.addEventListener("focus", function () {
-                                      label.style.display = "none";
+
+                                    dateInput.addEventListener("focus", function() {
+                                        label.style.display = "none";
                                     });
-                                  
-                                    dateInput.addEventListener("blur", function () {
-                                      if (!this.value) {
-                                        label.style.display = "block";
-                                      }
+
+                                    dateInput.addEventListener("blur", function() {
+                                        if (!this.value) {
+                                            label.style.display = "block";
+                                        }
                                     });
-                                  </script>
+                                </script>
 
 
                                 <div class="mb-3">
@@ -92,7 +93,7 @@
                                     <p id="fileName" class="file-name">No file selected</p>
                                 </div>
                                 <script>
-                                    document.getElementById("fileInput").addEventListener("change", function () {
+                                    document.getElementById("fileInput").addEventListener("change", function() {
                                         const fileName = this.files.length > 0 ? this.files[0].name : "No file selected";
                                         document.getElementById("fileName").textContent = fileName;
                                     });

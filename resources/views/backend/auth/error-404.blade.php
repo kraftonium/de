@@ -22,7 +22,8 @@
     <meta name="twitter:description"
         content="The responsive professional Divine Infoverse template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
     <meta name="twitter:image" content="backend-assets/img/preview-banner.jpg">
-    <title>ERP - Divyashakti Enterprise</title>
+
+    <title>Error 404 | Divyashakti Enterprise</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/backend-assets/img/logo/favicon.png">
 
@@ -44,10 +45,10 @@
         <div class="error-box">
             <h1 style="color: #FD8901;">404</h1>
             <h3 class=" mb-3"><i class="fa fa-warning"></i> Oops! Page not found!</h3>
-          <a href="/index.html">  <button class="btn auth-btn w-50" type="submit" >Back To Home</button></a>
+            <a href="/index.html"> <button class="btn auth-btn w-50" type="submit">Back To Home</button></a>
         </div>
     </div>
-    
+
 
 
     <script src="/backend-assets/js/jquery-3.7.1.min.js" type="5962768c9f5ae3e70c7b35be-text/javascript"></script>

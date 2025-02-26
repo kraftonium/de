@@ -22,19 +22,20 @@
     <meta name="twitter:description"
         content="The responsive professional Divine Infoverse template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
     <meta name="twitter:image" content="backend-assets/img/preview-banner.jpg">
-    <title>ERP - Divyashakti Enterprise</title>
+
+    <title>Change Password | Divyashakti Enterprise</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/backend-assets/img/logo/favicon.png">
 
     <link rel="stylesheet" href="/backend-assets/css/bootstrap.min.css">
-    
-    
+
+
     <link rel="stylesheet" href="/backend-assets/plugins/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="/backend-assets/plugins/fontawesome/css/all.min.css">
-    
+
     <link rel="stylesheet" href="/backend-assets/css/feathericon.min.css">
     <link rel="stylesheet" href="/backend-assets/plugins/morris/morris.css">
-    
+
     <link rel="stylesheet" href="/backend-assets/css/custom.css">
 </head>
 
@@ -57,27 +58,32 @@
                                     <input class="form-control" type="text" placeholder="Enter Otp">
                                 </div>
                                 <div class="mb-3" style="position: relative;">
-                                    <input id="passwordInput" class="form-control" type="password" placeholder="Password" style="padding-right: 40px;">
-                                    <span id="togglePassword" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer;">
-                                        <i class="fa-solid fa-eye"></i> <!-- Replace with your preferred icon library -->
+                                    <input id="passwordInput" class="form-control" type="password"
+                                        placeholder="Password" style="padding-right: 40px;">
+                                    <span id="togglePassword"
+                                        style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer;">
+                                        <i class="fa-solid fa-eye"></i>
+                                        <!-- Replace with your preferred icon library -->
                                     </span>
                                 </div>
                                 <div class="mb-3" style="position: relative;">
-                                    <input id="repasswordInput" class="form-control" type="password" placeholder="Re-Password" style="padding-right: 40px;">
-                                    <span id="togglerePassword" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer;">
-                                        <i class="fa-solid fa-eye"></i> 
+                                    <input id="repasswordInput" class="form-control" type="password"
+                                        placeholder="Re-Password" style="padding-right: 40px;">
+                                    <span id="togglerePassword"
+                                        style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer;">
+                                        <i class="fa-solid fa-eye"></i>
                                     </span>
                                 </div>
                                 <div class="mb-0">
                                     <button class="btn auth-btn w-100" type="submit">Submit</button>
                                 </div>
                             </form>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 
@@ -89,41 +95,41 @@
     <script src="/backend-assets/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
         data-cf-settings="5962768c9f5ae3e70c7b35be-|49" defer=""></script>
 
-        <script>
-              const passwordInput = document.getElementById("passwordInput");
-    const togglePassword = document.getElementById("togglePassword");
+    <script>
+        const passwordInput = document.getElementById("passwordInput");
+        const togglePassword = document.getElementById("togglePassword");
 
-    togglePassword.addEventListener("click", () => {
-        // Toggle the input type between 'password' and 'text'
-        const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
-        passwordInput.setAttribute("type", type);
+        togglePassword.addEventListener("click", () => {
+            // Toggle the input type between 'password' and 'text'
+            const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+            passwordInput.setAttribute("type", type);
 
-        // Toggle the icon (replace with your icons if needed)
-        if (type === "password") {
-            togglePassword.innerHTML = '<i class="fa-solid fa-eye"></i>';
-        } else {
-            togglePassword.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
-        }
-    });
+            // Toggle the icon (replace with your icons if needed)
+            if (type === "password") {
+                togglePassword.innerHTML = '<i class="fa-solid fa-eye"></i>';
+            } else {
+                togglePassword.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
+            }
+        });
 
 
 
-            const repasswordInput = document.getElementById("repasswordInput");
-    const togglerePassword = document.getElementById("togglerePassword");
+        const repasswordInput = document.getElementById("repasswordInput");
+        const togglerePassword = document.getElementById("togglerePassword");
 
-    togglerePassword.addEventListener("click", () => {
-        // Toggle the input type between 'password' and 'text'
-        const type = repasswordInput.getAttribute("type") === "password" ? "text" : "password";
-        repasswordInput.setAttribute("type", type);
+        togglerePassword.addEventListener("click", () => {
+            // Toggle the input type between 'password' and 'text'
+            const type = repasswordInput.getAttribute("type") === "password" ? "text" : "password";
+            repasswordInput.setAttribute("type", type);
 
-        // Toggle the icon (replace with your icons if needed)
-        if (type === "password") {
-            togglerePassword.innerHTML = '<i class="fa-solid fa-eye"></i>';
-        } else {
-            togglerePassword.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
-        }
-    });
-        </script>
+            // Toggle the icon (replace with your icons if needed)
+            if (type === "password") {
+                togglerePassword.innerHTML = '<i class="fa-solid fa-eye"></i>';
+            } else {
+                togglerePassword.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
+            }
+        });
+    </script>
 </body>
 
 </html>
