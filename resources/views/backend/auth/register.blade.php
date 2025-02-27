@@ -4,24 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="The responsive professional Divine Infoverse template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
-    <meta name="keywords"
-        content="practo clone, Divine Infoverse, doctor appointment, Practo clone html template, doctor booking template">
-    <meta name="author" content="Practo Clone HTML Template - Doctor Booking Template">
-    <meta property="og:url" content="https://Divine Infoverse.dreamstechnologies.com/html/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Doctors Appointment HTML Website Templates | Divine Infoverse">
-    <meta property="og:description"
-        content="The responsive professional Divine Infoverse template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
-    <meta property="og:image" content="backend-assets/img/preview-banner.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="https://Divine Infoverse.dreamstechnologies.com/html/">
-    <meta property="twitter:url" content="https://Divine Infoverse.dreamstechnologies.com/html/">
-    <meta name="twitter:title" content="Doctors Appointment HTML Website Templates | Divine Infoverse">
-    <meta name="twitter:description"
-        content="The responsive professional Divine Infoverse template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
-    <meta name="twitter:image" content="backend-assets/img/preview-banner.jpg">
 
     <title>Register | Divyashakti Enterprise</title>
 
@@ -53,21 +35,61 @@
                             <h1>Register</h1>
                             <p class="account-subtitle">Access to our dashboard</p>
 
-                            <form action="login.html" style="padding-bottom: 10px !important;">
+                            <form action="{{ url('/register-submit') }}" style="padding-bottom: 10px !important;"
+                                method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="mb-3">
+                                    <select class="form-control" name="usertype_id" id="usertype_id">
+                                        <option value="">Select User Type</option>
+                                        @foreach ($usertypes as $usertype)
+                                            <option value="{{ $usertype->id }}"
+                                                @if (old('usertype_id') == $usertype->id) selected @endif>
+                                                {{ $usertype->usertype }}</option>
+                                        @endforeach
+                                    </select>
+                                    <span class="text-danger">
+                                        @error('usertype_id')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
+                                </div>
 
                                 <div class="mb-3">
-                                    <input class="form-control" type="text" placeholder="Name">
+                                    <input class="form-control" type="text" placeholder="Name" name="name"
+                                        id="name" value="{{ old('name') }}">
+                                    <span class="text-danger">
+                                        @error('name')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
                                 </div>
                                 <div class="mb-3">
-                                    <input class="form-control" type="email" placeholder="Email">
+                                    <input class="form-control" type="email" placeholder="Email" name="email"
+                                        id="email" value="{{ old('email') }}">
+                                    <span class="text-danger">
+                                        @error('email')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
                                 </div>
                                 <div class="mb-3">
-                                    <input class="form-control" type="text" placeholder="Phone">
+                                    <input class="form-control" type="text" placeholder="Phone" name="phoneno"
+                                        id="phoneno" maxlength="10" value="{{ old('phoneno') }}">
+                                    <span class="text-danger">
+                                        @error('phoneno')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
                                 </div>
                                 <div class="mb-3 custom-date-container">
                                     <input id="dateInput" class="form-control custom-date" type="date"
-                                        placeholder=" " />
+                                        placeholder=" " name="dob" id="dob" />
                                     <label for="dateInput" class=" custom-placeholder">Date Of Birth</label>
+                                    <span class="text-danger">
+                                        @error('dob')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
                                 </div>
                                 <script>
                                     const dateInput = document.getElementById("dateInput");
@@ -89,8 +111,14 @@
                                     <label for="fileInput" class="custom-file-upload form-control">
                                         Click to Upload Image
                                     </label>
-                                    <input id="fileInput" class="file-input" type="file" accept="image/*">
+                                    <input id="fileInput" class="file-input" type="file" accept="image/*"
+                                        name="image" id="image">
                                     <p id="fileName" class="file-name">No file selected</p>
+                                    <span class="text-danger">
+                                        @error('image')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
                                 </div>
                                 <script>
                                     document.getElementById("fileInput").addEventListener("change", function() {
@@ -103,42 +131,66 @@
                                     <label for="male" style="color: #000;">Gender :</label>
 
                                     <div class="d-flex justify-content-between mb-1">
+
                                         <div>
-                                            <input type="radio" id="male" name="option" value="Male">
+                                            <input type="radio" id="female" name="gender" value="0"
+                                                @if (old('gender') == '0') checked @endif>
+                                            <label for="female">Female</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="male" name="gender" value="1"
+                                                @if (old('gender') == '1') checked @endif>
                                             <label for="male">Male</label>
                                         </div>
 
                                         <div>
-                                            <input type="radio" id="female" name="option" value="Female">
-                                            <label for="female">Female</label>
-                                        </div>
-
-                                        <div>
-                                            <input type="radio" id="other" name="option" value="Other">
+                                            <input type="radio" id="other" name="Gender" value="2"
+                                                @if (old('gender') == '2') checked @endif>
                                             <label for="other">Other</label>
                                         </div>
+                                        <span class="text-danger">
+                                            @error('gender')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
                                     </div>
 
                                 </div>
                                 <div class="mb-3">
-                                    <textarea name="address" id="address" class="form-control" placeholder="Address"
-                                        style="height: 4rem !important;"></textarea>
+                                    <textarea name="address" id="address" class="form-control" placeholder="Address" style="height: 4rem !important;"
+                                        name="address">{{ old('address') }}</textarea>
+                                    <span class="text-danger">
+                                        @error('address')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
                                 </div>
                                 <div class="mb-3" style="position: relative;">
                                     <input id="passwordInput" class="form-control" type="password"
-                                        placeholder="Password" style="padding-right: 40px;">
+                                        placeholder="Password" style="padding-right: 40px;" name="password">
                                     <span id="togglePassword"
                                         style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer;">
                                         <i class="fa-solid fa-eye"></i>
                                         <!-- Replace with your preferred icon library -->
                                     </span>
+                                    <span class="text-danger">
+                                        @error('password')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
                                 </div>
                                 <div class="mb-3" style="position: relative;">
                                     <input id="repasswordInput" class="form-control" type="password"
-                                        placeholder="Re-Password" style="padding-right: 40px;">
+                                        placeholder="Re-Password" style="padding-right: 40px;"
+                                        name="password_confirmation">
                                     <span id="togglerePassword"
                                         style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer;">
                                         <i class="fa-solid fa-eye"></i>
+                                    </span>
+                                    <span class="text-danger">
+                                        @error('password_confirmation')
+                                            {{ $message }}
+                                        @enderror
                                     </span>
                                 </div>
                                 <div class="mb-0">
@@ -153,7 +205,8 @@
 
 
 
-                            <div class="text-center dont-have">Already have an account? <a href="login.html">Login</a>
+                            <div class="text-center dont-have">Already have an account? <a
+                                    href="{{ url('/login') }}">Login</a>
                             </div>
                         </div>
                     </div>

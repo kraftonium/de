@@ -8,6 +8,7 @@ use App\Http\Controllers\DGpsController;
 use App\Http\Controllers\DLuckyDrawController;
 use App\Http\Controllers\DNewsletterController;
 use App\Http\Controllers\DSolarController;
+use App\Http\Controllers\DUsersController;
 use Illuminate\Support\Facades\Route;
 use Termwind\Components\Dl;
 
@@ -104,12 +105,35 @@ Route::get('/dashboard', function () {
     return view('backend.dashboard');
 });
 
-Route::get('/register', function () {
-    return view('backend.auth.register');
-});
-
+Route::get('/register', [DUsersController::class, 'register']);
+Route::post('/register-submit', [DUsersController::class, 'create']);
 Route::get('/login', function () {
     return view('backend.auth.login');
 });
+Route::post('/login-submit', [DUsersController::class, 'login']);
+
+
+//manage admin routes starts here
+Route::middleware('usersauth')->group(function () {
+
+    Route::get('/logout', [DUsersController::class, 'logout']);
+    Route::get('/admin-profile', [DUsersController::class, 'profile']);
+    Route::get('/edit-admin/{id}', [DUsersController::class, 'edit']);
+    Route::post('/update-admin/{id}', [DUsersController::class, 'update']);
+    Route::post('/update-admin-profile/{id}', [DUsersController::class, 'updateprofile']);
+    Route::get('/delete-admin/{id}', [DUsersController::class, 'delete']);
+    Route::get('/manage-admin', [DUsersController::class, 'manage']);
+    Route::post('/change-password/{id}', [DUsersController::class, 'changepassword']);
+    Route::get('/admin-forgot-password', function () {
+        return view('backend.auth.forgot-password');
+    });
+    Route::post('/admin-forgot-password-submit', [DUsersController::class, 'adminforgotpasswordotp']);
+    Route::get('/admin-reset-password', function () {
+        return view('backend.auth.re-password');
+    });
+    Route::post('/admin-reset-password-submit', [DUsersController::class, 'adminresetpassword']);
+});
+
+//manage admin routes starts here
 
 // Admin Panel Routes Ends Here

@@ -4,24 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="The responsive professional Divine Infoverse template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
-    <meta name="keywords"
-        content="practo clone, Divine Infoverse, doctor appointment, Practo clone html template, doctor booking template">
-    <meta name="author" content="Practo Clone HTML Template - Doctor Booking Template">
-    <meta property="og:url" content="https://Divine Infoverse.dreamstechnologies.com/html/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Doctors Appointment HTML Website Templates | Divine Infoverse">
-    <meta property="og:description"
-        content="The responsive professional Divine Infoverse template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
-    <meta property="og:image" content="backend-assets/img/preview-banner.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="https://Divine Infoverse.dreamstechnologies.com/html/">
-    <meta property="twitter:url" content="https://Divine Infoverse.dreamstechnologies.com/html/">
-    <meta name="twitter:title" content="Doctors Appointment HTML Website Templates | Divine Infoverse">
-    <meta name="twitter:description"
-        content="The responsive professional Divine Infoverse template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
-    <meta name="twitter:image" content="backend-assets/img/preview-banner.jpg">
+
 
     <title>Forgot Password | Divyashakti Enterprise</title>
 
@@ -53,9 +36,15 @@
                             <h1>Forgot Password?</h1>
                             <p class="account-subtitle">Enter your email to get a OTP</p>
 
-                            <form action="login.html">
+                            <form action="{{ url('/admin-forgot-password-submit') }}" method="POST">
+                                @csrf
                                 <div class="mb-3">
-                                    <input class="form-control" type="text" placeholder="Email">
+                                    <input class="form-control" type="text" placeholder="Email" name="email">
+                                    <span class="text-danger">
+                                        @error('email')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
                                 </div>
                                 <div class="mb-0">
                                     <button class="btn auth-btn w-100" type="submit">Send OTP</button>
@@ -63,7 +52,7 @@
                             </form>
 
                             <div class="text-center dont-have">Remember your password? <a
-                                    href="/auth/login.html">Login</a>
+                                    href="{{ url('/login') }}">Login</a>
                             </div>
                         </div>
                     </div>

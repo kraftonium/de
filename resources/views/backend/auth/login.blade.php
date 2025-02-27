@@ -4,24 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="The responsive professional Divine Infoverse template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
-    <meta name="keywords"
-        content="practo clone, Divine Infoverse, doctor appointment, Practo clone html template, doctor booking template">
-    <meta name="author" content="Practo Clone HTML Template - Doctor Booking Template">
-    <meta property="og:url" content="https://Divine Infoverse.dreamstechnologies.com/html/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Doctors Appointment HTML Website Templates | Divine Infoverse">
-    <meta property="og:description"
-        content="The responsive professional Divine Infoverse template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
-    <meta property="og:image" content="backend-assets/img/preview-banner.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="https://Divine Infoverse.dreamstechnologies.com/html/">
-    <meta property="twitter:url" content="https://Divine Infoverse.dreamstechnologies.com/html/">
-    <meta name="twitter:title" content="Doctors Appointment HTML Website Templates | Divine Infoverse">
-    <meta name="twitter:description"
-        content="The responsive professional Divine Infoverse template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
-    <meta name="twitter:image" content="backend-assets/img/preview-banner.jpg">
 
     <title>Login | Divyashakti Enterprise</title>
 
@@ -63,19 +45,40 @@
                         <div class="login-right-wrap">
                             <h1>Login</h1>
                             <p class="account-subtitle">Access to our dashboard</p>
+                            <span class="text-danger">
+                                @error('access')
+                                    {{ $message }}
+                                @enderror
+                            </span>
 
-                            <form action="/index.html">
+                            <form action="{{ url('/login-submit') }}" method="POST">
+                                @csrf
                                 <div class="mb-3">
-                                    <input class="form-control" type="text" placeholder="Email">
+                                    <input class="form-control" type="text" placeholder="Email" name="email"
+                                        value="{{ old('email') }}">
+                                    <span class="text-danger">
+                                        @error('email')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
                                 </div>
                                 <div class="mb-3" style="position: relative;">
                                     <input id="passwordInput" class="form-control" type="password"
-                                        placeholder="Password" style="padding-right: 40px;">
+                                        placeholder="Password" style="padding-right: 40px;" name="password">
                                     <span id="togglePassword"
                                         style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer;">
                                         <i class="fa-solid fa-eye"></i>
                                         <!-- Replace with your preferred icon library -->
                                     </span>
+                                    <span class="text-danger">
+                                        @error('password')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="checkbox" class="from-control mx-1" name="remember" id="remember">
+                                    <label for="remember">Remember Me</label>
                                 </div>
                                 <div class="mb-3">
                                     <button class="btn auth-btn w-100" type="submit">Login</button>
@@ -92,7 +95,7 @@
 
 
                             <div class="text-center dont-have">Don’t have an account? <a
-                                    href="/auth/register.html">Register</a></div>
+                                    href="{{ url('/register') }}">Register</a></div>
                         </div>
                     </div>
                 </div>

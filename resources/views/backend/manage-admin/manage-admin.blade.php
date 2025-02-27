@@ -30,24 +30,36 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td><a href="/profile.html" class="avatar avatar-sm me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="/backend-assets/img/doctors/doctor-thumb-01.jpg"
-                                                        alt="User Image"></a></td>
-                                            <td>
-                                                <h2 class="table-avatar">
-                                                    <a href="/profile.html">Dr. Ruby Perrin</a>
-                                                </h2>
-                                            </td>
-                                            <td>ruby@gmail.com</td>
-                                            <td>12345 45675</td>
-                                            <td>12-12-2000</td>
-                                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, nobis.
-                                            </td>
-                                            <td><a href="edit-admin.html"><i class="fa fa-edit"></i></a><a
-                                                    href="javascript:void(0)"><i class="fa fa-trash"></i></a></td>
-                                        </tr>
+                                        @foreach ($users as $user)
+                                            <tr>
+                                                <td><a href="/profile.html" class="avatar avatar-sm me-2"><img
+                                                            class="avatar-img rounded-circle"
+                                                            src="{{ asset($user->image) }}" alt="User Image"></a></td>
+                                                <td>
+                                                    <h2 class="table-avatar">
+                                                        <a href="/profile.html">{{ $user->name }}</a>
+                                                    </h2>
+                                                </td>
+                                                <td>{{ $user->email }}</td>
+                                                <td>{{ $user->phoneno }}</td>
+                                                <td>
+                                                    @if ($user->gender == '0')
+                                                        Female
+                                                    @elseif($user->gender == '1')
+                                                        Male
+                                                    @elseif($user->gender == '2')
+                                                        Other
+                                                    @endif
+                                                </td>
+                                                <td>{{ \Carbon\Carbon::parse($user->dob)->format('d-m-Y') }}</td>
+                                                <td>{{ $user->address }}
+                                                </td>
+                                                <td><a href="{{ url('/edit-admin') }}/{{ $user->id }}"><i
+                                                            class="fa fa-edit"></i></a><a
+                                                        href="{{ url('/delete-admin') }}/{{ $user->id }}"><i
+                                                            class="fa fa-trash"></i></a></td>
+                                            </tr>
+                                        @endforeach
 
                                     </tbody>
                                 </table>

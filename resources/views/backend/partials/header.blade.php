@@ -4,28 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="The responsive professional Divine Infoverse template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
-    <meta name="keywords"
-        content="practo clone, Divine Infoverse, doctor appointment, Practo clone html template, doctor booking template">
-    <meta name="author" content="Practo Clone HTML Template - Doctor Booking Template">
-    <meta property="og:url" content="https://Divine Infoverse.dreamstechnologies.com/html/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Doctors Appointment HTML Website Templates | Divine Infoverse">
-    <meta property="og:description"
-        content="The responsive professional Divine Infoverse template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
-    <meta property="og:image" content="backend-assets/img/preview-banner.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="https://Divine Infoverse.dreamstechnologies.com/html/">
-    <meta property="twitter:url" content="https://Divine Infoverse.dreamstechnologies.com/html/">
-    <meta name="twitter:title" content="Doctors Appointment HTML Website Templates | Divine Infoverse">
-    <meta name="twitter:description"
-        content="The responsive professional Divine Infoverse template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
-    <meta name="twitter:image" content="backend-assets/img/preview-banner.jpg">
+
 
     @stack('title')
 
-
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -101,9 +84,9 @@
                                 <p class="text-muted mb-0">State Dealer</p>
                             </div>
                         </div>
-                        <a class="dropdown-item" href="/profile.html">My Profile</a>
+                        <a class="dropdown-item" href="{{ url('/admin-profile') }}">My Profile</a>
                         <!-- <a class="dropdown-item" href="settings.html">Settings</a> -->
-                        <a class="dropdown-item" href="/auth/login.html">Logout</a>
+                        <a class="dropdown-item" href="{{ url('/logout') }}">Logout</a>
                     </div>
                 </li>
 
@@ -112,4 +95,114 @@
         </div>
 
         <!-- navbar comes from navbar.js file -->
-        <div id="navbar-container"></div>
+        <div id="navbar-container">
+
+            <div class="sidebar" id="sidebar">
+                <div class="sidebar-inner slimscroll">
+                    <div id="sidebar-menu" class="sidebar-menu">
+                        <ul>
+                            <li class="">
+                                <a href="/index.html"><i class="fe fe-home"></i> <span>Dashboard</span></a>
+                            </li>
+
+                            <li class="">
+                                <a href="/manage-admin/manage-admin.html"><i class="fa fa-user-tie"></i> <span>Manage
+                                        Admin</span></a>
+                            </li>
+
+                            <li class="">
+                                <a href="/manage-customer/manage-customer.html"><i class="fa fa-user"></i> <span>Manage
+                                        Customer</span></a>
+                            </li>
+
+                            <li class="">
+                                <a href="/manage-stock/manage-stock.html"><i class="fa fa-boxes "></i> <span>Manage
+                                        Stock</span></a>
+                            </li>
+
+                            <li class="">
+                                <a href="/manage-order/manage-order.html"><i class="fa fa-shopping-cart "></i>
+                                    <span>Manage Order</span></a>
+                            </li>
+
+                            <li class="">
+                                <a href="/manage-state-dealership/manage-state-dealership.html"><i
+                                        class="fa fa-store "></i> <span>Manage State Dealership</span></a>
+                            </li>
+
+                            <li class="">
+                                <a href="/manage-zone-dealership/manage-zone-dealership.html"><i
+                                        class="fa fa-store "></i> <span>Manage Zone Dealership</span></a>
+                            </li>
+
+                            <li class="">
+                                <a href="/manage-jilla-dealership/manage-jilla-dealership.html"><i
+                                        class="fa fa-store "></i> <span>Manage Jilla Dealership</span></a>
+                            </li>
+
+                            <li class="">
+                                <a href="/manage-taluka-dealership/manage-taluka-dealership.html"><i
+                                        class="fa fa-store "></i> <span>Manage Taluka Dealership</span></a>
+                            </li>
+
+                            <li class="">
+                                <a href="/manage-area-dealership/manage-area-dealership.html"><i
+                                        class="fa fa-store "></i> <span>Manage Area Dealership</span></a>
+                            </li>
+
+                            <li>
+                                <a href="/manage-contactus/manage-contactus.html"><i class="fa fa-phone-alt"></i>
+                                    <span>Manage Contact Us</span></a>
+                            </li>
+
+                            <li>
+                                <a href="/manage-gps/manage-gps.html"><i class="fa fa-map "></i> <span>Manage
+                                        Gps</span></a>
+                            </li>
+
+                            <li>
+                                <a href="/manage-dealership-form/manage-dealership-form.html"><i
+                                        class="fa fa-file-alt"></i> <span>Manage Dealership Form</span></a>
+                            </li>
+
+                            <li>
+                                <a href="/manage-book-ride/manage-book-ride.html"><i class="fa fa-motorcycle "></i>
+                                    <span>Manage Book Ride</span></a>
+                            </li>
+
+                            <li>
+                                <a href="/manage-lucky-draw/manage-lucky-draw.html"><i class="fa fa-ticket-alt"></i>
+                                    <span>Manage Lucky Draw</span></a>
+                            </li>
+
+                            <li>
+                                <a href="/manage-career/manage-career.html"><i class="fa fa-briefcase "></i>
+                                    <span>Manage Career</span></a>
+                            </li>
+
+                            <li>
+                                <a href="/appointment-list.html"><i class="fe fe-layout"></i>
+                                    <span>Appointments</span></a>
+                            </li>
+
+                            <li>
+                                <a href="/specialities.html"><i class="fe fe-users"></i> <span>Specialities</span></a>
+                            </li>
+
+                            <li>
+                                <a href="/doctor-list.html"><i class="fe fe-user-plus"></i> <span>Doctors</span></a>
+                            </li>
+
+                            <li>
+                                <a href="/patient-list.html"><i class="fe fe-user"></i> <span>Patients</span></a>
+                            </li>
+
+                            <li>
+                                <a href="/reviews.html"><i class="fe fe-star-o"></i> <span>Reviews</span></a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
