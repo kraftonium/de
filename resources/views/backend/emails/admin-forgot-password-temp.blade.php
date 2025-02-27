@@ -69,7 +69,7 @@
 
 <body>
     <div class="container">
-        <img src="/backend-assets/img/logo/logo-divyashakti.png" alt="">
+        <img src="/backend-assets/img/logo/logo-divyashakti.png" alt="Divyashakti Enterprise Logo">
         <div class="header">Forgot Your Password?</div>
         <p class="message">Use the OTP below to reset your password..</p>
         <div class="otp-box">{{ $fotp['Title'] }}</div>
