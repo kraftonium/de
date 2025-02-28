@@ -34,11 +34,11 @@
         <div class="header">
 
             <div class="header-left">
-                <a href="/index.html" class="logo">
+                <a href="{{ url('/dashboard') }}" class="logo">
                     <img src="/backend-assets/img/logo/logo-divyashakti.png" alt="Logo">
                 </a>
-                <a href="/index.html" class="logo logo-small">
-                    <img src="/backend-assets/img/logo/logo-divyashakti.png" alt="Logo" height="50">
+                <a href="{{ url('/dashboard') }}" class="logo logo-small">
+                    <img src="/backend-assets/img/logo/logo-divyashakti.png" alt="Logo">
                 </a>
             </div>
 

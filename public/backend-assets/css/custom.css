@@ -988,7 +988,8 @@ p:last-child {
 @media(min-width:992px) {
     .mini-sidebar .header .header-left {
         padding: 0 5px;
-        width: 78px
+        /* width: 78px */
+        width: 180px;
     }
 }
 
@@ -1470,9 +1471,9 @@ html.menu-opened body {
     }
 }
 
-.mini-sidebar #toggle_btn {
+/* .mini-sidebar #toggle_btn {
     margin-left: 90px !important;
-}
+} */
 
 @media(max-width:991.98px) {
     #toggle_btn {

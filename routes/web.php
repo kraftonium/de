@@ -9,6 +9,9 @@ use App\Http\Controllers\DLuckyDrawController;
 use App\Http\Controllers\DNewsletterController;
 use App\Http\Controllers\DSolarController;
 use App\Http\Controllers\DUsersController;
+use App\Http\Controllers\DUserstypeController;
+use App\Http\Controllers\DVehiclesController;
+use App\Http\Controllers\DVehicleTypeController;
 use Illuminate\Support\Facades\Route;
 use Termwind\Components\Dl;
 
@@ -113,9 +116,9 @@ Route::get('/login', function () {
 Route::post('/login-submit', [DUsersController::class, 'login']);
 
 
-//manage admin routes starts here
 Route::middleware('usersauth')->group(function () {
 
+    //manage admin routes starts here
     Route::get('/logout', [DUsersController::class, 'logout']);
     Route::get('/admin-profile', [DUsersController::class, 'profile']);
     Route::get('/edit-admin/{id}', [DUsersController::class, 'edit']);
@@ -132,8 +135,55 @@ Route::middleware('usersauth')->group(function () {
         return view('backend.auth.re-password');
     });
     Route::post('/admin-reset-password-submit', [DUsersController::class, 'adminresetpassword']);
+
+    //manage admin routes ends here
+
+
+    //manage usertype routes starts here
+
+    Route::get('/add-usertype', function () {
+        return view('backend.manage-usertype.add-usertype');
+    });
+    Route::post('/add-usertype-submit', [DUserstypeController::class, 'create']);
+    Route::get('/manage-usertype', [DUserstypeController::class, 'manage']);
+    Route::get('/edit-usertype/{id}', [DUserstypeController::class, 'edit']);
+    Route::post('/update-usertype/{id}', [DUserstypeController::class, 'update']);
+    Route::get('/delete-usertype/{id}', [DUserstypeController::class, 'delete']);
+
+    //manage usertype routes ends here
+
+
+    //manage vehicletype routes starts here
+
+    Route::get('/manage-vehicle-type', [DVehicleTypeController::class, 'manage']);
+    Route::get('/add-vehicle-type', function () {
+        return view('backend.manage-vehicle-type.add-vehicletype');
+    });
+    Route::post(
+        '/add-vehicle-type-submit',
+        [DVehicleTypeController::class, 'create']
+    );
+    Route::get('/edit-vehicle-type/{id}', [DVehicleTypeController::class, 'edit']);
+    Route::post('/update-vehicle-type/{id}', [DVehicleTypeController::class, 'update']);
+    Route::get(
+        '/delete-vehicle-type/{id}',
+        [DVehicleTypeController::class, 'delete']
+    );
+
+    //manage vehicletype routes starts here
+
+
+    //manage vehicles routes starts here
+
+    Route::get('/add-vehicle', [DVehiclesController::class, 'add']);
+    Route::post('/add-vehicle-submit', [DVehiclesController::class, 'create']);
+    Route::get('/edit-vehicle/{id}', [DVehiclesController::class, 'edit']);
+    Route::post('/update-vehicle/{id}', [DVehiclesController::class, 'update']);
+    Route::get('/delete-vehicle/{id}', [DVehiclesController::class, 'delete']);
+    Route::get('/manage-vehicles', [DVehiclesController::class, 'manage']);
+
+    //manage vehicles routes ends here
 });
 
-//manage admin routes starts here
 
 // Admin Panel Routes Ends Here
