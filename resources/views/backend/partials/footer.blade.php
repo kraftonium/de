@@ -13,7 +13,7 @@
         type="1e8e4c23584c3657211db4d2-text/javascript"></script>
 <script src="/backend-assets/plugins/raphael/raphael.min.js" type="1e8e4c23584c3657211db4d2-text/javascript"></script>
 <script src="/backend-assets/plugins/morris/morris.min.js" type="1e8e4c23584c3657211db4d2-text/javascript"></script>
-<!-- <script src="/backend-assets/js/chart.morris.js" type="1e8e4c23584c3657211db4d2-text/javascript"></script> -->
+{{-- <script src="/backend-assets/js/chart.morris.js" type="1e8e4c23584c3657211db4d2-text/javascript"></script> --}}
 
 <script src="/backend-assets/js/script.js" type="1e8e4c23584c3657211db4d2-text/javascript"></script>
 <script src="/backend-assets/js/navbar.js"></script>

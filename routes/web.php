@@ -102,7 +102,6 @@ Route::post('/send-solar', [DSolarController::class, 'create']);
 Route::post('/send-lucky-draw', [DLuckyDrawController::class, 'create']);
 
 
-// Admin Panel Routes Starts Here
 
 Route::get('/dashboard', function () {
     return view('backend.dashboard');
@@ -118,72 +117,89 @@ Route::post('/login-submit', [DUsersController::class, 'login']);
 
 Route::middleware('usersauth')->group(function () {
 
-    //manage admin routes starts here
-    Route::get('/logout', [DUsersController::class, 'logout']);
-    Route::get('/admin-profile', [DUsersController::class, 'profile']);
-    Route::get('/edit-admin/{id}', [DUsersController::class, 'edit']);
-    Route::post('/update-admin/{id}', [DUsersController::class, 'update']);
-    Route::post('/update-admin-profile/{id}', [DUsersController::class, 'updateprofile']);
-    Route::get('/delete-admin/{id}', [DUsersController::class, 'delete']);
-    Route::get('/manage-admin', [DUsersController::class, 'manage']);
-    Route::post('/change-password/{id}', [DUsersController::class, 'changepassword']);
-    Route::get('/admin-forgot-password', function () {
-        return view('backend.auth.forgot-password');
+    // Admin Panel Routes Starts Here
+    Route::middleware('adminuth')->group(function () {
+        //manage admin routes starts here
+        Route::get('/logout', [DUsersController::class, 'logout']);
+        Route::get('/admin-profile', [DUsersController::class, 'profile']);
+        Route::get('/edit-admin/{id}', [DUsersController::class, 'edit']);
+        Route::post('/update-admin/{id}', [DUsersController::class, 'update']);
+        Route::post('/update-admin-profile/{id}', [DUsersController::class, 'updateprofile']);
+        Route::get('/delete-admin/{id}', [DUsersController::class, 'delete']);
+        Route::get('/manage-admin', [DUsersController::class, 'manage']);
+        Route::post('/change-password/{id}', [DUsersController::class, 'changepassword']);
+        Route::get('/admin-forgot-password', function () {
+            return view('backend.auth.forgot-password');
+        });
+        Route::post('/admin-forgot-password-submit', [DUsersController::class, 'adminforgotpasswordotp']);
+        Route::get('/admin-reset-password', function () {
+            return view('backend.auth.re-password');
+        });
+        Route::post('/admin-reset-password-submit', [DUsersController::class, 'adminresetpassword']);
+
+        //manage admin routes ends here
+
+
+        //manage usertype routes starts here
+
+        Route::get('/add-usertype', function () {
+            return view('backend.manage-usertype.add-usertype');
+        });
+        Route::post('/add-usertype-submit', [DUserstypeController::class, 'create']);
+        Route::get('/manage-usertype', [DUserstypeController::class, 'manage']);
+        Route::get('/edit-usertype/{id}', [DUserstypeController::class, 'edit']);
+        Route::post('/update-usertype/{id}', [DUserstypeController::class, 'update']);
+        Route::get('/delete-usertype/{id}', [DUserstypeController::class, 'delete']);
+
+        //manage usertype routes ends here
+
+
+        //manage vehicletype routes starts here
+
+        Route::get('/manage-vehicle-type', [DVehicleTypeController::class, 'manage']);
+        Route::get('/add-vehicle-type', function () {
+            return view('backend.manage-vehicle-type.add-vehicletype');
+        });
+        Route::post(
+            '/add-vehicle-type-submit',
+            [DVehicleTypeController::class, 'create']
+        );
+        Route::get('/edit-vehicle-type/{id}', [DVehicleTypeController::class, 'edit']);
+        Route::post('/update-vehicle-type/{id}', [DVehicleTypeController::class, 'update']);
+        Route::get(
+            '/delete-vehicle-type/{id}',
+            [DVehicleTypeController::class, 'delete']
+        );
+
+        //manage vehicletype routes starts here
+
+
+        //manage vehicles routes starts here
+
+        Route::get('/add-vehicle', [DVehiclesController::class, 'add']);
+        Route::post('/add-vehicle-submit', [DVehiclesController::class, 'create']);
+        Route::get('/edit-vehicle/{id}', [DVehiclesController::class, 'edit']);
+        Route::post('/update-vehicle/{id}', [DVehiclesController::class, 'update']);
+        Route::get('/delete-vehicle/{id}', [DVehiclesController::class, 'delete']);
+        Route::get('/manage-vehicles', [DVehiclesController::class, 'manage']);
+
+        //manage vehicles routes ends here
     });
-    Route::post('/admin-forgot-password-submit', [DUsersController::class, 'adminforgotpasswordotp']);
-    Route::get('/admin-reset-password', function () {
-        return view('backend.auth.re-password');
+    Route::get('/search-users', [DUsersController::class, 'searchUsers']);
+    Route::get('/add-dealership', function () {
+        return view('backend.add-edit-dealership.add-dealer');
     });
-    Route::post('/admin-reset-password-submit', [DUsersController::class, 'adminresetpassword']);
-
-    //manage admin routes ends here
-
-
-    //manage usertype routes starts here
-
-    Route::get('/add-usertype', function () {
-        return view('backend.manage-usertype.add-usertype');
+    Route::get('/edit-dealership', function () {
+        return view('backend.add-edit-dealership.edit-dealer');
     });
-    Route::post('/add-usertype-submit', [DUserstypeController::class, 'create']);
-    Route::get('/manage-usertype', [DUserstypeController::class, 'manage']);
-    Route::get('/edit-usertype/{id}', [DUserstypeController::class, 'edit']);
-    Route::post('/update-usertype/{id}', [DUserstypeController::class, 'update']);
-    Route::get('/delete-usertype/{id}', [DUserstypeController::class, 'delete']);
-
-    //manage usertype routes ends here
+    // Admin Panel Routes Ends Here
 
 
-    //manage vehicletype routes starts here
+    //manage state dealership routes starts here
 
-    Route::get('/manage-vehicle-type', [DVehicleTypeController::class, 'manage']);
-    Route::get('/add-vehicle-type', function () {
-        return view('backend.manage-vehicle-type.add-vehicletype');
+    Route::get('/manage-state-dealership', function () {
+        return view('backend.manage-state-dealership.manage-state-dealership');
     });
-    Route::post(
-        '/add-vehicle-type-submit',
-        [DVehicleTypeController::class, 'create']
-    );
-    Route::get('/edit-vehicle-type/{id}', [DVehicleTypeController::class, 'edit']);
-    Route::post('/update-vehicle-type/{id}', [DVehicleTypeController::class, 'update']);
-    Route::get(
-        '/delete-vehicle-type/{id}',
-        [DVehicleTypeController::class, 'delete']
-    );
 
-    //manage vehicletype routes starts here
-
-
-    //manage vehicles routes starts here
-
-    Route::get('/add-vehicle', [DVehiclesController::class, 'add']);
-    Route::post('/add-vehicle-submit', [DVehiclesController::class, 'create']);
-    Route::get('/edit-vehicle/{id}', [DVehiclesController::class, 'edit']);
-    Route::post('/update-vehicle/{id}', [DVehiclesController::class, 'update']);
-    Route::get('/delete-vehicle/{id}', [DVehiclesController::class, 'delete']);
-    Route::get('/manage-vehicles', [DVehiclesController::class, 'manage']);
-
-    //manage vehicles routes ends here
+    //manage state dealership routes ends here
 });
-
-
-// Admin Panel Routes Ends Here

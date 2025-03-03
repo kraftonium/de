@@ -306,4 +306,15 @@ class DUsersController extends Controller
             return redirect()->back()->withInput()->withErrors(['otp' => 'Entered The Wrong OTP.']);
         }
     }
+
+    public function searchUsers(Request $request)
+    {
+        $query = $request->input('query');
+
+        $users = D_Users::where('name', 'LIKE', "%{$query}%")
+            ->limit(10)
+            ->get(['id', 'name']);
+
+        return response()->json($users);
+    }
 }

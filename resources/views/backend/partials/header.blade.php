@@ -7,11 +7,11 @@
 
 
     @stack('title')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <link rel="shortcut icon" type="image/x-icon" href="/backend-assets/img/logo/favicon.png">
 
@@ -80,8 +80,8 @@
                                     class="avatar-img rounded-circle">
                             </div>
                             <div class="user-text">
-                                <h6>Dr. Jhon Doe</h6>
-                                <p class="text-muted mb-0">State Dealer</p>
+                                <h6>{{ Auth::user()->name }}</h6>
+                                <p class="text-muted mb-0">{{ Auth::user()->usertype->usertype }}</p>
                             </div>
                         </div>
                         <a class="dropdown-item" href="{{ url('/admin-profile') }}">My Profile</a>
@@ -102,11 +102,25 @@
                     <div id="sidebar-menu" class="sidebar-menu">
                         <ul>
                             <li class="">
-                                <a href="/index.html"><i class="fe fe-home"></i> <span>Dashboard</span></a>
+                                <a href="{{ url('/') }}"><i class="fe fe-home"></i> <span>Dashboard</span></a>
                             </li>
 
                             <li class="">
-                                <a href="/manage-admin/manage-admin.html"><i class="fa fa-user-tie"></i> <span>Manage
+                                <a href="{{ url('/manage-usertype') }}"> <i class="fas fa-user-lock"></i>
+                                    <span>Manage UserType</span></a>
+                            </li>
+
+                            <li class="">
+                                <a href="{{ url('/manage-vehicles') }}"><i class="fas fa-car"></i> <span>Manage
+                                        Vehicle</span></a>
+                            </li>
+                            <li class="">
+                                <a href="{{ url('/manage-vehicle-type') }}"> <i
+                                        class="fas fa-user-lock"></i><span>Manage Vehicle Type</span></a>
+                            </li>
+
+                            <li class="">
+                                <a href="{{ url('/manage-admin') }}"><i class="fa fa-user-tie"></i> <span>Manage
                                         Admin</span></a>
                             </li>
 
@@ -180,26 +194,7 @@
                                     <span>Manage Career</span></a>
                             </li>
 
-                            <li>
-                                <a href="/appointment-list.html"><i class="fe fe-layout"></i>
-                                    <span>Appointments</span></a>
-                            </li>
 
-                            <li>
-                                <a href="/specialities.html"><i class="fe fe-users"></i> <span>Specialities</span></a>
-                            </li>
-
-                            <li>
-                                <a href="/doctor-list.html"><i class="fe fe-user-plus"></i> <span>Doctors</span></a>
-                            </li>
-
-                            <li>
-                                <a href="/patient-list.html"><i class="fe fe-user"></i> <span>Patients</span></a>
-                            </li>
-
-                            <li>
-                                <a href="/reviews.html"><i class="fe fe-star-o"></i> <span>Reviews</span></a>
-                            </li>
 
                         </ul>
                     </div>

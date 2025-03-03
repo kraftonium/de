@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\D_Admin_Auth;
 use App\Http\Middleware\D_Users_Auth;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -13,7 +14,8 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
-            'usersauth' => D_Users_Auth::class
+            'usersauth' => D_Users_Auth::class,
+            'adminauth' => D_Admin_Auth::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

@@ -1222,8 +1222,8 @@ p:last-child {
 .user-img {
     display: inline-block;
     margin-right: 3px;
-    /* margin-top:  7px; */
-    position: relative
+    margin-top: 7px;
+    position: relative;
 }
 
 @media (max-width:370px) {

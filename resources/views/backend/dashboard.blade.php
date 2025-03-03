@@ -1,4 +1,4 @@
-﻿@extends('backend.partials.mainindex')
+@extends('backend.partials.mainindex')
 
 @push('title')
     <title>Dashboard | Divyashakti Enterprise</title>
@@ -11,7 +11,7 @@
             <div class="page-header">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h3 class="page-title h3-heading">Welcome Admin!</h3>
+                        <h3 class="page-title h3-heading">Welcome {{ Auth::user()->name }}!</h3>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ul>
@@ -72,7 +72,7 @@
                                 </div>
                             </div>
                             <div class="dash-widget-info">
-                                <h6 class="text-muted">Jilla Dealers</h6>
+                                <h6 class="text-muted">District Dealers</h6>
                                 <div class="progress progress-sm">
                                     <div class="progress-bar w-50"></div>
                                 </div>
@@ -328,7 +328,7 @@
 
             </div>
             <div class="row">
-                <div class="col-md-6 d-flex">
+                <div class="col-md-12 d-flex">
 
                     <div class="card card-table flex-fill">
                         <div class="card-header">
@@ -339,28 +339,63 @@
                                 <table class="table table-hover table-center mb-0">
                                     <thead>
                                         <tr>
-                                            <th>Photo</th>
-                                            <th>Dealer Name</th>
-                                            <th>Firm Name</th>
-                                            <th>Location</th>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
                                             <th>Phone</th>
+                                            <th>Photo</th>
+                                            <th>Dob</th>
+                                            <th>Address</th>
+                                            <th>Gender</th>
+                                            <th>User-Type</th>
+                                            <th>Firm Address</th>
+                                            <th>Firm Phone</th>
+                                            <th>Firm Email</th>
+                                            <th>Firm Name</th>
+                                            <th>Firm GST No.</th>
+                                            <th>Total Revenue</th>
+                                            <th>Total Profit</th>
+                                            <th>Firm Photo</th>
+                                            <th>Whose Dealer</th>
+                                            <th>Firm Pincode </th>
+                                            <th>Firm State</th>
+                                            <th>Firm Country</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td> <a href="../doctor-dashboard.html" class="avatar avatar-sm me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="backend-assets/img/doctors/doctor-thumb-01.jpg"
-                                                        alt="User Image"></a></td>
+                                            <td>1</td>
                                             <td>
                                                 <h2 class="table-avatar">
-
                                                     <a href="/profile.html">Dr. Ruby Perrin</a>
                                                 </h2>
                                             </td>
-                                            <td>Lorem, ipsum.</td>
+                                            <td>ruby@gmail.com</td>
+                                            <td>12345 45675</td>
+                                            <td><a href="/profile.html" class="avatar avatar-sm me-2"><img
+                                                        class="avatar-img rounded-circle"
+                                                        src="/backend-assets/img/doctors/doctor-thumb-01.jpg"
+                                                        alt="User Image"></a></td>
+                                            <td>12-12-2000</td>
+                                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
+                                                nobis.</td>
+                                            <td>Male</td>
+                                            <td>Admin</td>
+                                            <td>Lorem ipsum dolor sit amet consectetur.</td>
+                                            <td>1231231231</td>
+                                            <td>contact@divyashakti.com</td>
+                                            <td>Divyashakti Enterprise</td>
+                                            <td>123123</td>
+                                            <td>500000</td>
+                                            <td>50000</td>
+                                            <td><a href="/profile.html" class="avatar avatar-sm me-2"><img
+                                                        class="avatar-img rounded-circle"
+                                                        src="/backend-assets/img/doctors/doctor-thumb-01.jpg"
+                                                        alt="User Image"></a></td>
+                                            <td>Divyashakti</td>
+                                            <td>382010</td>
                                             <td>Gujarat</td>
-                                            <td>12345 56789</td>
+                                            <td>India</td>
                                         </tr>
 
                                     </tbody>
@@ -370,7 +405,7 @@
                     </div>
 
                 </div>
-                <div class="col-md-6 d-flex">
+                <div class="col-md-12 d-flex">
 
                     <div class="card card-table flex-fill">
                         <div class="card-header">
@@ -381,28 +416,65 @@
                                 <table class="table table-hover table-center mb-0">
                                     <thead>
                                         <tr>
-                                            <th>Photo</th>
-                                            <th>Dealer Name</th>
-                                            <th>Firm Name</th>
-                                            <th>Location</th>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
                                             <th>Phone</th>
+                                            <th>Photo</th>
+                                            <th>Dob</th>
+                                            <th>Address</th>
+                                            <th>Gender</th>
+                                            <th>User-Type</th>
+                                            <th>Firm Address</th>
+                                            <th>Firm Phone</th>
+                                            <th>Firm Email</th>
+                                            <th>Firm Name</th>
+                                            <th>Firm GST No.</th>
+                                            <th>Total Revenue</th>
+                                            <th>Total Profit</th>
+                                            <th>Firm Photo</th>
+                                            <th>Whose Dealer</th>
+                                            <th>Firm Pincode </th>
+                                            <th>Firm Zone</th>
+                                            <th>Firm State</th>
+                                            <th>Firm Country</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td> <a href="../doctor-dashboard.html" class="avatar avatar-sm me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="backend-assets/img/doctors/doctor-thumb-01.jpg"
-                                                        alt="User Image"></a></td>
+                                            <td>1</td>
                                             <td>
                                                 <h2 class="table-avatar">
-
                                                     <a href="/profile.html">Dr. Ruby Perrin</a>
                                                 </h2>
                                             </td>
-                                            <td>Lorem, ipsum.</td>
+                                            <td>ruby@gmail.com</td>
+                                            <td>12345 45675</td>
+                                            <td><a href="/profile.html" class="avatar avatar-sm me-2"><img
+                                                        class="avatar-img rounded-circle"
+                                                        src="/backend-assets/img/doctors/doctor-thumb-01.jpg"
+                                                        alt="User Image"></a></td>
+                                            <td>12-12-2000</td>
+                                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
+                                                nobis.</td>
+                                            <td>Male</td>
+                                            <td>Admin</td>
+                                            <td>Lorem ipsum dolor sit amet consectetur.</td>
+                                            <td>1231231231</td>
+                                            <td>contact@divyashakti.com</td>
+                                            <td>Divyashakti Enterprise</td>
+                                            <td>123123</td>
+                                            <td>500000</td>
+                                            <td>50000</td>
+                                            <td><a href="/profile.html" class="avatar avatar-sm me-2"><img
+                                                        class="avatar-img rounded-circle"
+                                                        src="/backend-assets/img/doctors/doctor-thumb-01.jpg"
+                                                        alt="User Image"></a></td>
+                                            <td>Divyashakti</td>
+                                            <td>382010</td>
+                                            <td>Gandhinagar</td>
                                             <td>Gujarat</td>
-                                            <td>12345 56789</td>
+                                            <td>India</td>
                                         </tr>
 
                                     </tbody>
@@ -412,39 +484,78 @@
                     </div>
 
                 </div>
-                <div class="col-md-6 d-flex">
+                <div class="col-md-12 d-flex">
 
                     <div class="card card-table flex-fill">
                         <div class="card-header">
-                            <h4 class="card-title">Jilla Dealership List</h4>
+                            <h4 class="card-title">District Dealership List</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive" style="max-height: 420px; overflow-y: auto;">
                                 <table class="table table-hover table-center mb-0">
                                     <thead>
                                         <tr>
-                                            <th>Photo</th>
-                                            <th>Dealer Name</th>
-                                            <th>Firm Name</th>
-                                            <th>Location</th>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
                                             <th>Phone</th>
+                                            <th>Photo</th>
+                                            <th>Dob</th>
+                                            <th>Address</th>
+                                            <th>Gender</th>
+                                            <th>User-Type</th>
+                                            <th>Firm Address</th>
+                                            <th>Firm Phone</th>
+                                            <th>Firm Email</th>
+                                            <th>Firm Name</th>
+                                            <th>Firm GST No.</th>
+                                            <th>Total Revenue</th>
+                                            <th>Total Profit</th>
+                                            <th>Firm Photo</th>
+                                            <th>Whose Dealer</th>
+                                            <th>Firm Pincode </th>
+                                            <th>Firm District</th>
+                                            <th>Firm Zone</th>
+                                            <th>Firm State</th>
+                                            <th>Firm Country</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td> <a href="../doctor-dashboard.html" class="avatar avatar-sm me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="backend-assets/img/doctors/doctor-thumb-01.jpg"
-                                                        alt="User Image"></a></td>
+                                            <td>1</td>
                                             <td>
                                                 <h2 class="table-avatar">
-
                                                     <a href="/profile.html">Dr. Ruby Perrin</a>
                                                 </h2>
                                             </td>
-                                            <td>Lorem, ipsum.</td>
+                                            <td>ruby@gmail.com</td>
+                                            <td>12345 45675</td>
+                                            <td><a href="/profile.html" class="avatar avatar-sm me-2"><img
+                                                        class="avatar-img rounded-circle"
+                                                        src="/backend-assets/img/doctors/doctor-thumb-01.jpg"
+                                                        alt="User Image"></a></td>
+                                            <td>12-12-2000</td>
+                                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
+                                                nobis.</td>
+                                            <td>Male</td>
+                                            <td>Admin</td>
+                                            <td>Lorem ipsum dolor sit amet consectetur.</td>
+                                            <td>1231231231</td>
+                                            <td>contact@divyashakti.com</td>
+                                            <td>Divyashakti Enterprise</td>
+                                            <td>123123</td>
+                                            <td>500000</td>
+                                            <td>50000</td>
+                                            <td><a href="/profile.html" class="avatar avatar-sm me-2"><img
+                                                        class="avatar-img rounded-circle"
+                                                        src="/backend-assets/img/doctors/doctor-thumb-01.jpg"
+                                                        alt="User Image"></a></td>
+                                            <td>Divyashakti</td>
+                                            <td>382010</td>
+                                            <td>Gandhinagar</td>
+                                            <td>Gandhinagar</td>
                                             <td>Gujarat</td>
-                                            <td>12345 56789</td>
+                                            <td>India</td>
                                         </tr>
 
                                     </tbody>
@@ -454,7 +565,7 @@
                     </div>
 
                 </div>
-                <div class="col-md-6 d-flex">
+                <div class="col-md-12 d-flex">
 
                     <div class="card card-table flex-fill">
                         <div class="card-header">
@@ -465,28 +576,69 @@
                                 <table class="table table-hover table-center mb-0">
                                     <thead>
                                         <tr>
-                                            <th>Photo</th>
-                                            <th>Dealer Name</th>
-                                            <th>Firm Name</th>
-                                            <th>Location</th>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
                                             <th>Phone</th>
+                                            <th>Photo</th>
+                                            <th>Dob</th>
+                                            <th>Address</th>
+                                            <th>Gender</th>
+                                            <th>User-Type</th>
+                                            <th>Firm Address</th>
+                                            <th>Firm Phone</th>
+                                            <th>Firm Email</th>
+                                            <th>Firm Name</th>
+                                            <th>Firm GST No.</th>
+                                            <th>Total Revenue</th>
+                                            <th>Total Profit</th>
+                                            <th>Firm Photo</th>
+                                            <th>Whose Dealer</th>
+                                            <th>Firm Pincode </th>
+                                            <th>Firm Taluka</th>
+                                            <th>Firm District</th>
+                                            <th>Firm Zone</th>
+                                            <th>Firm State</th>
+                                            <th>Firm Country</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td> <a href="../doctor-dashboard.html" class="avatar avatar-sm me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="backend-assets/img/doctors/doctor-thumb-01.jpg"
-                                                        alt="User Image"></a></td>
+                                            <td>1</td>
                                             <td>
                                                 <h2 class="table-avatar">
-
                                                     <a href="/profile.html">Dr. Ruby Perrin</a>
                                                 </h2>
                                             </td>
-                                            <td>Lorem, ipsum.</td>
+                                            <td>ruby@gmail.com</td>
+                                            <td>12345 45675</td>
+                                            <td><a href="/profile.html" class="avatar avatar-sm me-2"><img
+                                                        class="avatar-img rounded-circle"
+                                                        src="/backend-assets/img/doctors/doctor-thumb-01.jpg"
+                                                        alt="User Image"></a></td>
+                                            <td>12-12-2000</td>
+                                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
+                                                nobis.</td>
+                                            <td>Male</td>
+                                            <td>Admin</td>
+                                            <td>Lorem ipsum dolor sit amet consectetur.</td>
+                                            <td>1231231231</td>
+                                            <td>contact@divyashakti.com</td>
+                                            <td>Divyashakti Enterprise</td>
+                                            <td>123123</td>
+                                            <td>500000</td>
+                                            <td>50000</td>
+                                            <td><a href="/profile.html" class="avatar avatar-sm me-2"><img
+                                                        class="avatar-img rounded-circle"
+                                                        src="/backend-assets/img/doctors/doctor-thumb-01.jpg"
+                                                        alt="User Image"></a></td>
+                                            <td>Divyashakti</td>
+                                            <td>382010</td>
+                                            <td>Infocity</td>
+                                            <td>Gandhinagar</td>
+                                            <td>Gandhinagar</td>
                                             <td>Gujarat</td>
-                                            <td>12345 56789</td>
+                                            <td>India</td>
                                         </tr>
 
                                     </tbody>
@@ -496,7 +648,7 @@
                     </div>
 
                 </div>
-                <div class="col-md-6 d-flex">
+                <div class="col-md-12 d-flex">
 
                     <div class="card card-table flex-fill">
                         <div class="card-header">
@@ -507,28 +659,71 @@
                                 <table class="table table-hover table-center mb-0">
                                     <thead>
                                         <tr>
-                                            <th>Photo</th>
-                                            <th>Dealer Name</th>
-                                            <th>Firm Name</th>
-                                            <th>Location</th>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
                                             <th>Phone</th>
+                                            <th>Photo</th>
+                                            <th>Dob</th>
+                                            <th>Address</th>
+                                            <th>Gender</th>
+                                            <th>User-Type</th>
+                                            <th>Firm Address</th>
+                                            <th>Firm Phone</th>
+                                            <th>Firm Email</th>
+                                            <th>Firm Name</th>
+                                            <th>Firm GST No.</th>
+                                            <th>Total Revenue</th>
+                                            <th>Total Profit</th>
+                                            <th>Firm Photo</th>
+                                            <th>Whose Dealer</th>
+                                            <th>Firm Pincode </th>
+                                            <th>Firm Area</th>
+                                            <th>Firm Taluka</th>
+                                            <th>Firm District</th>
+                                            <th>Firm Zone</th>
+                                            <th>Firm State</th>
+                                            <th>Firm Country</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td> <a href="../doctor-dashboard.html" class="avatar avatar-sm me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="backend-assets/img/doctors/doctor-thumb-01.jpg"
-                                                        alt="User Image"></a></td>
+                                            <td>1</td>
                                             <td>
                                                 <h2 class="table-avatar">
-
                                                     <a href="/profile.html">Dr. Ruby Perrin</a>
                                                 </h2>
                                             </td>
-                                            <td>Lorem, ipsum.</td>
+                                            <td>ruby@gmail.com</td>
+                                            <td>12345 45675</td>
+                                            <td><a href="/profile.html" class="avatar avatar-sm me-2"><img
+                                                        class="avatar-img rounded-circle"
+                                                        src="/backend-assets/img/doctors/doctor-thumb-01.jpg"
+                                                        alt="User Image"></a></td>
+                                            <td>12-12-2000</td>
+                                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
+                                                nobis.</td>
+                                            <td>Male</td>
+                                            <td>Admin</td>
+                                            <td>Lorem ipsum dolor sit amet consectetur.</td>
+                                            <td>1231231231</td>
+                                            <td>contact@divyashakti.com</td>
+                                            <td>Divyashakti Enterprise</td>
+                                            <td>123123</td>
+                                            <td>500000</td>
+                                            <td>50000</td>
+                                            <td><a href="/profile.html" class="avatar avatar-sm me-2"><img
+                                                        class="avatar-img rounded-circle"
+                                                        src="/backend-assets/img/doctors/doctor-thumb-01.jpg"
+                                                        alt="User Image"></a></td>
+                                            <td>Divyashakti</td>
+                                            <td>382010</td>
+                                            <td>Infocity</td>
+                                            <td>Infocity</td>
+                                            <td>Gandhinagar</td>
+                                            <td>Gandhinagar</td>
                                             <td>Gujarat</td>
-                                            <td>12345 56789</td>
+                                            <td>India</td>
                                         </tr>
 
                                     </tbody>
@@ -540,195 +735,7 @@
                 </div>
 
             </div>
-            <div class="row">
-                <div class="col-md-12">
 
-                    <div class="card card-table">
-                        <div class="card-header">
-                            <h4 class="card-title">Appointment List</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-hover table-center mb-0">
-                                    <thead>
-                                        <tr>
-                                            <th>Doctor Name</th>
-                                            <th>Speciality</th>
-                                            <th>Patient Name</th>
-                                            <th>Apointment Time</th>
-                                            <th>Status</th>
-                                            <th>Amount</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <h2 class="table-avatar">
-                                                    <a href="../doctor-dashboard.html" class="avatar avatar-sm me-2"><img
-                                                            class="avatar-img rounded-circle"
-                                                            src="backend-assets/img/doctors/doctor-thumb-01.jpg"
-                                                            alt="User Image"></a>
-                                                    <a href="../doctor-dashboard.html">Dr. Ruby Perrin</a>
-                                                </h2>
-                                            </td>
-                                            <td>Dental</td>
-                                            <td>
-                                                <h2 class="table-avatar">
-                                                    <a href="../patient-dashboard.html" class="avatar avatar-sm me-2"><img
-                                                            class="avatar-img rounded-circle"
-                                                            src="backend-assets/img/patients/patient1.jpg"
-                                                            alt="User Image"></a>
-                                                    <a href="../patient-dashboard.html">Charlene Reed </a>
-                                                </h2>
-                                            </td>
-                                            <td>9 Nov 2023 <span class="text-primary d-block">11.00 AM - 11.15
-                                                    AM</span></td>
-                                            <td>
-                                                <div class="status-toggle">
-                                                    <input type="checkbox" id="status_1" class="check" checked="">
-                                                    <label for="status_1" class="checktoggle">checkbox</label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                $200.00
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <h2 class="table-avatar">
-                                                    <a href="../doctor-dashboard.html" class="avatar avatar-sm me-2"><img
-                                                            class="avatar-img rounded-circle"
-                                                            src="backend-assets/img/doctors/doctor-thumb-02.jpg"
-                                                            alt="User Image"></a>
-                                                    <a href="../doctor-dashboard.html">Dr. Darren Elder</a>
-                                                </h2>
-                                            </td>
-                                            <td>Dental</td>
-                                            <td>
-                                                <h2 class="table-avatar">
-                                                    <a href="../patient-dashboard.html" class="avatar avatar-sm me-2"><img
-                                                            class="avatar-img rounded-circle"
-                                                            src="backend-assets/img/patients/patient2.jpg"
-                                                            alt="User Image"></a>
-                                                    <a href="../patient-dashboard.html">Travis Trimble </a>
-                                                </h2>
-                                            </td>
-                                            <td>5 Nov 2023 <span class="text-primary d-block">11.00 AM - 11.35
-                                                    AM</span></td>
-                                            <td>
-                                                <div class="status-toggle">
-                                                    <input type="checkbox" id="status_2" class="check" checked="">
-                                                    <label for="status_2" class="checktoggle">checkbox</label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                $300.00
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <h2 class="table-avatar">
-                                                    <a href="../doctor-dashboard.html" class="avatar avatar-sm me-2"><img
-                                                            class="avatar-img rounded-circle"
-                                                            src="backend-assets/img/doctors/doctor-thumb-03.jpg"
-                                                            alt="User Image"></a>
-                                                    <a href="../doctor-dashboard.html">Dr. Deborah Angel</a>
-                                                </h2>
-                                            </td>
-                                            <td>Cardiology</td>
-                                            <td>
-                                                <h2 class="table-avatar">
-                                                    <a href="../patient-dashboard.html" class="avatar avatar-sm me-2"><img
-                                                            class="avatar-img rounded-circle"
-                                                            src="backend-assets/img/patients/patient3.jpg"
-                                                            alt="User Image"></a>
-                                                    <a href="../patient-dashboard.html">Carl Kelly</a>
-                                                </h2>
-                                            </td>
-                                            <td>11 Nov 2023 <span class="text-primary d-block">12.00 PM - 12.15
-                                                    PM</span></td>
-                                            <td>
-                                                <div class="status-toggle">
-                                                    <input type="checkbox" id="status_3" class="check" checked="">
-                                                    <label for="status_3" class="checktoggle">checkbox</label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                $150.00
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <h2 class="table-avatar">
-                                                    <a href="../doctor-dashboard.html" class="avatar avatar-sm me-2"><img
-                                                            class="avatar-img rounded-circle"
-                                                            src="backend-assets/img/doctors/doctor-thumb-04.jpg"
-                                                            alt="User Image"></a>
-                                                    <a href="../doctor-dashboard.html">Dr. Sofia Brient</a>
-                                                </h2>
-                                            </td>
-                                            <td>Urology</td>
-                                            <td>
-                                                <h2 class="table-avatar">
-                                                    <a href="../patient-dashboard.html" class="avatar avatar-sm me-2"><img
-                                                            class="avatar-img rounded-circle"
-                                                            src="backend-assets/img/patients/patient4.jpg"
-                                                            alt="User Image"></a>
-                                                    <a href="../patient-dashboard.html"> Michelle Fairfax</a>
-                                                </h2>
-                                            </td>
-                                            <td>7 Nov 2023<span class="text-primary d-block">1.00 PM - 1.20
-                                                    PM</span></td>
-                                            <td>
-                                                <div class="status-toggle">
-                                                    <input type="checkbox" id="status_4" class="check" checked="">
-                                                    <label for="status_4" class="checktoggle">checkbox</label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                $150.00
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <h2 class="table-avatar">
-                                                    <a href="../doctor-dashboard.html" class="avatar avatar-sm me-2"><img
-                                                            class="avatar-img rounded-circle"
-                                                            src="backend-assets/img/doctors/doctor-thumb-05.jpg"
-                                                            alt="User Image"></a>
-                                                    <a href="../doctor-dashboard.html">Dr. Marvin Campbell</a>
-                                                </h2>
-                                            </td>
-                                            <td>Orthopaedics</td>
-                                            <td>
-                                                <h2 class="table-avatar">
-                                                    <a href="../patient-dashboard.html" class="avatar avatar-sm me-2"><img
-                                                            class="avatar-img rounded-circle"
-                                                            src="backend-assets/img/patients/patient5.jpg"
-                                                            alt="User Image"></a>
-                                                    <a href="../patient-dashboard.html">Gina Moore</a>
-                                                </h2>
-                                            </td>
-                                            <td>15 Nov 2023 <span class="text-primary d-block">1.00 PM - 1.15
-                                                    PM</span></td>
-                                            <td>
-                                                <div class="status-toggle">
-                                                    <input type="checkbox" id="status_5" class="check" checked="">
-                                                    <label for="status_5" class="checktoggle">checkbox</label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                $200.00
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
         </div>
     </div>
 
