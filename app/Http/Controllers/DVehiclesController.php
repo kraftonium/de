@@ -36,7 +36,7 @@ class DVehiclesController extends Controller
                 mkdir($path, 0755, true);
             }
 
-            $imagename = 'vehicle_images/' . time() . '.' . $image->getClientOriginalExtension();
+            $imagename = 'vehicle_images/' . time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
             $image->move($path, basename($imagename));
         } else {
             Log::warning('Image file was not found in the request.');
@@ -79,7 +79,7 @@ class DVehiclesController extends Controller
                 mkdir($path, 0755, true);
             }
 
-            $imagename = 'vehicle_images/' . time() . '.' . $image->getClientOriginalExtension();
+            $imagename = 'vehicle_images/' . time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
             $image->move($path, basename($imagename));
         } else {
             Log::warning('Image file was not found in the request.');

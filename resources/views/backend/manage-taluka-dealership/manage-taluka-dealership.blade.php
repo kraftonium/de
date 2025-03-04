@@ -1,7 +1,7 @@
 @extends('backend.partials.mainindex')
 
 @push('title')
-    <title>Manage State Dealership | Divyashakti Enterprise</title>
+    <title>Manage Taluka Dealership | Divyashakti Enterprise</title>
 @endpush
 
 @section('mainsection')
@@ -38,11 +38,11 @@
                                     <i class="fa fa-boxes "></i>
                                 </span>
                                 <div class="dash-count">
-                                    <h3>{{ $totalstatedealerships }}</h3>
+                                    <h3>{{ $totaltalukadealerships }}</h3>
                                 </div>
                             </div>
                             <div class="dash-widget-info">
-                                <h6 class="text-muted">Total State Dealerships</h6>
+                                <h6 class="text-muted">Total Taluka Dealerships</h6>
                                 <div class="progress progress-sm">
                                     <div class="progress-bar  w-50"></div>
                                 </div>
@@ -97,7 +97,7 @@
 
                     <div class="card card-table flex-fill">
                         <div class="card-header">
-                            <h4 class="card-title">Manage State Dealers List</h4>
+                            <h4 class="card-title">Manage Taluka Dealers List</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive" style="max-height: 420px; overflow-y: auto;">

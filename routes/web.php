@@ -3,7 +3,9 @@
 use App\Http\Controllers\DBookRideController;
 use App\Http\Controllers\DCareersController;
 use App\Http\Controllers\DContactUsController;
+use App\Http\Controllers\DCustomersController;
 use App\Http\Controllers\DDealershipController;
+use App\Http\Controllers\DDealershipDetailsController;
 use App\Http\Controllers\DGpsController;
 use App\Http\Controllers\DLuckyDrawController;
 use App\Http\Controllers\DNewsletterController;
@@ -118,7 +120,7 @@ Route::post('/login-submit', [DUsersController::class, 'login']);
 Route::middleware('usersauth')->group(function () {
 
     // Admin Panel Routes Starts Here
-    Route::middleware('adminuth')->group(function () {
+    Route::middleware('adminauth')->group(function () {
         //manage admin routes starts here
         Route::get('/logout', [DUsersController::class, 'logout']);
         Route::get('/admin-profile', [DUsersController::class, 'profile']);
@@ -184,22 +186,69 @@ Route::middleware('usersauth')->group(function () {
         Route::get('/manage-vehicles', [DVehiclesController::class, 'manage']);
 
         //manage vehicles routes ends here
+
+
+        //manage dealership routes starts here
+        Route::get('/search-users', [DUsersController::class, 'searchUsers']);
+        Route::get('/add-dealership', function () {
+            return view('backend.manage-dealership.add-dealer');
+        });
+        Route::post('/add-dealership-submit', [DDealershipDetailsController::class, 'create']);
+        Route::get('/edit-dealership/{id}', [DDealershipDetailsController::class, 'edit']);
+        Route::post('/update-dealership/{id}', [DDealershipDetailsController::class, 'update']);
+        Route::get('/delete-dealership/{id}', [DDealershipDetailsController::class, 'delete']);
+        Route::get('/manage-dealership', [DDealershipDetailsController::class, 'manage']);
+        //manage dealership routes starts here
+
     });
-    Route::get('/search-users', [DUsersController::class, 'searchUsers']);
-    Route::get('/add-dealership', function () {
-        return view('backend.add-edit-dealership.add-dealer');
-    });
-    Route::get('/edit-dealership', function () {
-        return view('backend.add-edit-dealership.edit-dealer');
-    });
+
     // Admin Panel Routes Ends Here
 
 
-    //manage state dealership routes starts here
+    //manage zone dealership routes starts here
 
-    Route::get('/manage-state-dealership', function () {
-        return view('backend.manage-state-dealership.manage-state-dealership');
-    });
+    Route::get('/manage-state-dealership', [DDealershipDetailsController::class, 'manage_state_dealership']);
 
-    //manage state dealership routes ends here
+    //manage zone dealership routes ends here
+
+
+    //manage zone dealership routes starts here
+
+    Route::get('/manage-zone-dealership', [DDealershipDetailsController::class, 'manage_zone_dealership']);
+
+    //manage zone dealership routes ends here
+
+
+
+    //manage district dealership routes starts here
+
+    Route::get('/manage-district-dealership', [DDealershipDetailsController::class, 'manage_district_dealership']);
+
+    //manage district dealership routes ends here
+
+
+    //manage taluka dealership routes starts here
+
+    Route::get('/manage-taluka-dealership', [DDealershipDetailsController::class, 'manage_taluka_dealership']);
+
+    //manage taluka dealership routes ends here
+
+
+    //manage area dealership routes starts here
+
+    Route::get('/manage-area-dealership', [DDealershipDetailsController::class, 'manage_area_dealership']);
+
+    //manage area dealership routes ends here
+
+
+    //manage customer routes starts here
+
+    Route::get('/manage-customers', [DCustomersController::class, 'manage']);
+    Route::get('/add-customers', [DCustomersController::class, 'add']);
+    Route::post('/add-customer-submit', [DCustomersController::class, 'create']);
+    Route::get('/edit-customer/{id}', [DCustomersController::class, 'edit']);
+    Route::post('/update-customer/{id}', [DCustomersController::class, 'update']);
+    Route::get('/delete-customer/{id}', [DCustomersController::class, 'delete']);
+
+    //manage customer routes ends here
 });

@@ -25,7 +25,7 @@ class DCareersController extends Controller
                     mkdir($path, 0755, true);
                 }
 
-                $resumename = 'career_resumes/' . time() . '.' . $resume->getClientOriginalExtension();
+                $resumename = 'career_resumes/' . time() . '_' . uniqid() . '.' . $resume->getClientOriginalExtension();
                 $resume->move($path, basename($resumename));
             } else {
                 Log::warning('Resume file was not found in the request.');

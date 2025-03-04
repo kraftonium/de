@@ -13,4 +13,14 @@ class D_Dealership_Details extends Model
 
     protected $table = 'd__dealership__details';
     protected $primarykey = 'id';
+
+    public function user()
+    {
+        return $this->belongsTo(D_Users::class, 'user_id');
+    }
+
+    public function whoseuser()
+    {
+        return $this->belongsTo(D_Users::class, 'whose_dealer');
+    }
 }

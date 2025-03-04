@@ -49,7 +49,7 @@ class DUsersController extends Controller
                 mkdir($path, 0755, true);
             }
 
-            $imagename = 'users_images/' . time() . '.' . $image->getClientOriginalExtension();
+            $imagename = 'users_images/' . time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
             $image->move($path, basename($imagename));
         } else {
             Log::warning('image file was not found in the request.');
@@ -151,7 +151,7 @@ class DUsersController extends Controller
                 mkdir($path, 0755, true);
             }
 
-            $imagename = 'users_images/' . time() . '.' . $image->getClientOriginalExtension();
+            $imagename = 'users_images/' . time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
             $image->move($path, basename($imagename));
         } else {
             Log::warning('image file was not found in the request.');
@@ -221,7 +221,7 @@ class DUsersController extends Controller
                 mkdir($path, 0755, true);
             }
 
-            $imagename = 'users_images/' . time() . '.' . $image->getClientOriginalExtension();
+            $imagename = 'users_images/' . time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
             $image->move($path, basename($imagename));
         } else {
             Log::warning('image file was not found in the request.');
