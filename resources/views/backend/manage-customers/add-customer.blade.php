@@ -29,28 +29,6 @@
                         </div>
 
                         <div class="mb-3  col-12">
-                            <label for="email">Email</label>
-                            <input class="form-control" type="text" id="email" placeholder="Email" name="email"
-                                value="{{ old('email') }}">
-                            <span class="text-danger">
-                                @error('email')
-                                    {{ $message }}
-                                @enderror
-                            </span>
-                        </div>
-
-                        <div class="mb-3  col-12">
-                            <label for="phoneno">Phone No.</label>
-                            <input class="form-control" type="text" id="phoneno" placeholder="Phone No." name="phoneno"
-                                maxlength="10" value="{{ old('phoneno') }}">
-                            <span class="text-danger">
-                                @error('phoneno')
-                                    {{ $message }}
-                                @enderror
-                            </span>
-                        </div>
-
-                        <div class="mb-3  col-12">
                             <label for="battery">Battery No.</label>
                             <input class="form-control" type="text" id="battery" placeholder="Battery No."
                                 name="battery_no" value="{{ old('battery_no') }}">
@@ -124,8 +102,8 @@
                         <div class="mb-3  col-12">
                             <input type="hidden" id="whose_customer" name="whose_customer">
                             <label for="name">Whose Customer</label>
-                            <input class="form-control" type="text" id="whose_customer_name"
-                                placeholder="Whose Customer" name="whose_customer_name" oninput="searchWhoseCustomer()">
+                            <input class="form-control" type="text" id="whose_customer_name" placeholder="Whose Customer"
+                                name="whose_customer_name" oninput="searchWhoseCustomer()">
                             <div id="whose_customer_list" class="dropdown-menu w-100"
                                 style="display: none; position: absolute; max-height: 200px; overflow-y: auto;"></div>
                             <span class="text-danger">

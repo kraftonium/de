@@ -1407,7 +1407,7 @@ html.menu-opened body {
 .top-nav-search form {
     margin-top: 10px;
     position: relative;
-    width: 600px;
+    width: 500px;
     /* width: 230px */
 }
 
@@ -4727,4 +4727,159 @@ form {
 .custom-date:focus+.custom-placeholder,
 .custom-date.filled+.custom-placeholder {
     display: none;
+}
+
+/*================calculator=================*/
+.page-wrapper-calculator {
+    padding: 1rem 6rem;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+}
+
+.title-calculator {
+    text-align: center;
+    color: #FC8F00;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    text-decoration: underline;
+}
+
+.profit-calculator-details {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.profit-calculator-details p {
+    color: #050741;
+}
+
+.profit-calculator-details ul li {
+    color: #383838;
+}
+
+.select-details {
+    padding-top: 3rem;
+}
+
+.select-details form label {
+    font-weight: bold;
+    color: #050741;
+}
+
+.select-details form input,
+.select-details form select {
+    border-color: #07ACDA !important;
+}
+
+.add-customer {
+    margin: 3rem 0;
+}
+
+.add-customer h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    color: #FC8F00;
+}
+
+.flex-inputs {
+    display: grid;
+    grid-template-columns: 160px 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: left;
+}
+
+.flex-inputs input,
+.flex-inputs select {
+    display: block;
+    width: 50px;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15sease-in-out, box-shadow .15sease-in-out;
+}
+
+.customerdiv {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.note-calculator {
+    font-weight: bold;
+    color: #FB3D87;
+    margin-bottom: 2rem;
+}
+
+.totalprofit h3 {
+    text-align: center;
+    font-weight: bold;
+    color: #0D0A41;
+    border: 1px solid #FB3D87;
+    width: fit-content;
+    margin: auto;
+    padding: 0.6rem;
+    border-radius: 20px;
+}
+
+@media (max-width:767px) {
+    .logo-container .logo img {
+        width: 250px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .page-wrapper-calculator {
+        padding: 1rem 1.5rem;
+    }
+
+    .customerdiv {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .title-calculator {
+        font-size: 1.5rem;
+    }
+}
+
+.grid-column {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.card-title {
+    color: #050741;
+    font-weight: bold;
+}
+
+@media (max-width:767px) {
+    .grid-column {
+        grid-template-columns: auto;
+    }
+}
+
+p {
+    margin-bottom: 0 !important;
 }

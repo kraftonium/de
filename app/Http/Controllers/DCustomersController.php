@@ -22,7 +22,7 @@ class DCustomersController extends Controller
             'battery_no' => 'required',
             'chassis_no' => 'required',
             'controller_no' => 'required',
-            'vehicle' => 'required',
+            'vehicle_id' => 'required',
             'date_of_purchase' => 'required|date',
             'produce_date' => 'required|date',
             'whose_customer_name' => 'required',
@@ -50,8 +50,9 @@ class DCustomersController extends Controller
 
     public function edit($id)
     {
+        $vehicles = D_Vehicles::all();
         $customer = D_Customers::where('id', $id)->first();
-        $data = compact('customer');
+        $data = compact('customer', 'vehicles');
         return view('backend.manage-customers.edit-customer')->with($data);
     }
 
@@ -62,7 +63,7 @@ class DCustomersController extends Controller
             'battery_no' => 'required',
             'chassis_no' => 'required',
             'controller_no' => 'required',
-            'vehicle' => 'required',
+            'vehicle_id' => 'required',
             'date_of_purchase' => 'required|date',
             'produce_date' => 'required|date',
             'whose_customer_name' => 'required',

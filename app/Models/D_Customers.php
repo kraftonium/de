@@ -13,4 +13,19 @@ class D_Customers extends Model
 
     protected $table = 'd__customers';
     protected $primarykey = 'id';
+
+    public function user()
+    {
+        return $this->belongsTo(D_Users::class, 'user_id');
+    }
+
+    public function whoseuser()
+    {
+        return $this->belongsTo(D_Users::class, 'whose_customer');
+    }
+
+    public function vehicle()
+    {
+        return $this->belongsTo(D_Vehicles::class, 'vehicle_id');
+    }
 }

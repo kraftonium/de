@@ -11,149 +11,148 @@
             <div class="container">
                 <h3 class="h3-heading mb-4">Edit Customer</h3>
 
-                <form>
+                <form action="{{ url('/update-customer') }}/{{ $customer->id }}" method="POST">
+                    @csrf
                     <div class="col-lg-12 form-input-container ">
-
-
                         <div class="mb-3  col-12">
+                            <input type="hidden" id="user_id" name="user_id" value="{{ $customer->user_id }}">
                             <label for="name">Name</label>
-                            <input class="form-control" type="text" id="name" placeholder="Name">
-                        </div>
-
-                        <div class="mb-3  col-12">
-                            <label for="email">Email</label>
-                            <input class="form-control" type="text" id="email" placeholder="Email">
-                        </div>
-
-                        <div class="mb-3  col-12">
-                            <label for="phone">Phone No.</label>
-                            <input class="form-control" type="text" id="phone" placeholder="Phone No.">
-                        </div>
-
-                        <div class="mb-3  col-12">
-                            <label for="img">Photo</label>
-                            <input class="form-control" type="file" id="img" placeholder="Image">
-                        </div>
-
-                        <div class="mb-3  col-12">
-                            <label for="dob">DOB</label>
-                            <input class="form-control" type="date" id="dob" placeholder="DOB">
-                        </div>
-
-                        <div class="mb-3  col-12">
-                            <label for="address">Address</label>
-                            <textarea name="address" id="address" class="form-control" placeholder="Address"></textarea>
-                        </div>
-
-                        <div class="mb-3 col-12">
-                            <label for="gender">Gender</label>
-                            <select name="gender" id="gender" class="form-control">
-                                <option value="">Select Gender</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                            </select>
-                        </div>
-
-                        <div class="mb-3 col-12">
-                            <label for="usertype">User-Type</label>
-                            <select name="usertype" id="usertype" class="form-control">
-                                <option value="">Select Type</option>
-                                <option value="Admin">Admin</option>
-                                <option value="Customer">Customer</option>
-                                <option value="State Dealer">State Dealer</option>
-                                <option value="Zone Dealer">Zone Dealer</option>
-                                <option value="District Dealer">District Dealer</option>
-                                <option value="Taluka Dealer">Taluka Dealer</option>
-                                <option value="Area Dealer">Area Dealer</option>
-                            </select>
+                            <input class="form-control" type="text" id="name" placeholder="Name" name="name"
+                                oninput="searchUsers()" value="{{ $customer->user->name }}">
+                            <div id="userList" class="dropdown-menu w-100"
+                                style="display: none; position: absolute; max-height: 200px; overflow-y: auto;"></div>
+                            <span class="text-danger">
+                                @error('name')
+                                    {{ $message }}
+                                @enderror
+                            </span>
                         </div>
 
                         <div class="mb-3  col-12">
                             <label for="battery">Battery No.</label>
-                            <input class="form-control" type="text" id="battery" placeholder="Battery No.">
+                            <input class="form-control" type="text" id="battery" placeholder="Battery No."
+                                name="battery_no" value="{{ $customer->battery_no }}">
+                            <span class="text-danger">
+                                @error('battery_no')
+                                    {{ $message }}
+                                @enderror
+                            </span>
                         </div>
 
                         <div class="mb-3  col-12">
-                            <label for="chaches">Chaches No.</label>
-                            <input class="form-control" type="text" id="chaches" placeholder="Chaches No.">
+                            <label for="chassis_no">Chassis No.</label>
+                            <input class="form-control" type="text" id="chassis_no" placeholder="Chassis No."
+                                name="chassis_no" value="{{ $customer->chassis_no }}">
+                            <span class="text-danger">
+                                @error('chassis_no')
+                                    {{ $message }}
+                                @enderror
+                            </span>
                         </div>
 
                         <div class="mb-3  col-12">
-                            <label for="controller">Controller No.</label>
-                            <input class="form-control" type="text" id="controller" placeholder="Controller No.">
+                            <label for="controller_no">Controller No.</label>
+                            <input class="form-control" type="text" id="controller_no" placeholder="Controller No."
+                                name="controller_no" value="{{ $customer->controller_no }}">
+                            <span class="text-danger">
+                                @error('controller_no')
+                                    {{ $message }}
+                                @enderror
+                            </span>
                         </div>
 
                         <div class="mb-3 col-12">
-                            <label for="vehiclename">Vehicle Name</label>
-                            <select name="vehiclename" id="vehiclename" class="form-control">
+                            <label for="vehicle_id">Vehicle Name</label>
+                            <select name="vehicle_id" id="vehicle_id" class="form-control">
                                 <option value="">Vehicle Name</option>
-                                <option value="Classic">Classic</option>
-                                <option value="Divine 24">Divine 24</option>
+                                @foreach ($vehicles as $vehicle)
+                                    <option value="{{ $vehicle->id }}" @if ($customer->vehicle_id == $vehicle->id) selected @endif>
+                                        {{ $vehicle->name_of_vehicle }}</option>
+                                @endforeach
                             </select>
-                        </div>
-
-                        <div class="mb-3 col-12">
-                            <label for="vehicle">Vehicle-Type</label>
-                            <select name="usertype" id="vehicle" class="form-control">
-                                <option value="">Vehicle-Type</option>
-                                <option value="2-wheeler">2-wheeler</option>
-                                <option value="3-wheeler">3-wheeler</option>
-                            </select>
+                            <span class="text-danger">
+                                @error('vehicle_id')
+                                    {{ $message }}
+                                @enderror
+                            </span>
                         </div>
 
                         <div class="mb-3  col-12">
-                            <label for="vimg">Vehicle Img</label>
-                            <input class="form-control" type="file" id="vimg" placeholder="Vehicle Image">
-                        </div>
-
-                        <div class="mb-3 col-12">
-                            <label for="vehiclecolor">Vehicle Color</label>
-                            <select name="vehiclecolor" id="vehiclecolor" class="form-control">
-                                <option value="">Vehicle Color</option>
-                                <option value="Black">Black</option>
-                                <option value="Red">Red</option>
-                            </select>
+                            <label for="date_of_purchase">Purchase Date</label>
+                            <input class="form-control" type="date" id="date_of_purchase" placeholder="Purchase Date"
+                                name="date_of_purchase" value="{{ $customer->date_of_purchase }}">
+                            <span class="text-danger">
+                                @error('date_of_purchase')
+                                    {{ $message }}
+                                @enderror
+                            </span>
                         </div>
 
                         <div class="mb-3  col-12">
-                            <label for="purchasedate">Purchase Date</label>
-                            <input class="form-control" type="date" id="purchasedate" placeholder="Purchase Date">
+                            <label for="produce_date">Produce Date</label>
+                            <input class="form-control" type="date" id="produce_date" name="produce_date"
+                                placeholder="Produce Date" value="{{ $customer->produce_date }}">
+                            <span class="text-danger">
+                                @error('produce_date')
+                                    {{ $message }}
+                                @enderror
+                            </span>
                         </div>
 
                         <div class="mb-3  col-12">
-                            <label for="producedate">Produce Date</label>
-                            <input class="form-control" type="date" id="producedate" placeholder="Produce Date">
-                        </div>
-
-                        <div class="mb-3  col-12">
-                            <label for="whomcustomer">Whose Customer</label>
-                            <input class="form-control" type="text" id="whomcustomer" placeholder="Whom Customer">
+                            <input type="hidden" id="whose_customer" name="whose_customer"
+                                value="{{ $customer->whose_customer }}">
+                            <label for="name">Whose Customer</label>
+                            <input class="form-control" type="text" id="whose_customer_name" placeholder="Whose Customer"
+                                name="whose_customer_name" oninput="searchWhoseCustomer()"
+                                value="{{ $customer->whoseuser->name }}">
+                            <div id="whose_customer_list" class="dropdown-menu w-100"
+                                style="display: none; position: absolute; max-height: 200px; overflow-y: auto;"></div>
+                            <span class="text-danger">
+                                @error('whose_customer_name')
+                                    {{ $message }}
+                                @enderror
+                            </span>
                         </div>
 
                         <div class="mb-3  col-12">
                             <label for="insurance">Insurance No.</label>
-                            <input class="form-control" type="text" id="insurance" placeholder="Insurance No.">
+                            <input class="form-control" type="text" id="insurance" placeholder="Insurance No."
+                                name="insurance_policy_no" value="{{ $customer->insurance_policy_no }}">
+                            <span class="text-danger">
+                                @error('insurance_policy_no')
+                                    {{ $message }}
+                                @enderror
+                            </span>
                         </div>
 
                         <div class="mb-3  col-12">
                             <label for="invoice">Invoice No.</label>
-                            <input class="form-control" type="text" id="invoice" placeholder="Invoice No.">
+                            <input class="form-control" type="text" id="invoice" placeholder="Invoice No."
+                                name="invoice_no" value="{{ $customer->invoice_no }}">
+                            <span class="text-danger">
+                                @error('invoice_no')
+                                    {{ $message }}
+                                @enderror
+                            </span>
                         </div>
 
                         <div class="mb-3  col-12">
-                            <label for="gst">GST No.</label>
-                            <input class="form-control" type="text" id="gst" placeholder="GST No.">
+                            <label for="gst">Customer GST No.</label>
+                            <input class="form-control" type="text" id="gst" placeholder="Customer GST No."
+                                name="customer_gstno" value="{{ $customer->customer_gstno }}">
+                            <span class="text-danger">
+                                @error('customer_gstno')
+                                    {{ $message }}
+                                @enderror
+                            </span>
                         </div>
-
-
 
                     </div>
 
                     <div class="mb-0 d-flex gap-3 mt-4">
-                        <!-- <button class="btn auth-btn w-50 mt-5" style="display: block; margin: auto;"
-                                    type="submit">Register</button> -->
                         <button class="btn submit-btn w-50 " type="submit">Submit</button>
-                        <button class="btn cancel-btn w-50"><a href="manage-customer.html">Cancel</a></button>
+                        <button class="btn cancel-btn w-50"><a href="{{ url('/manage-customers') }}">Cancel</a></button>
                     </div>
                 </form>
             </div>
@@ -163,4 +162,78 @@
     </div>
 
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function searchUsers() {
+            let query = $("#name").val();
+
+            if (query.length > 2) { // Start searching after 2 characters
+                $.ajax({
+                    url: '/search-users',
+                    type: "GET",
+                    data: {
+                        query: query
+                    },
+                    success: function(data) {
+                        let dropdown = $("#userList");
+                        dropdown.empty();
+                        if (data.length > 0) {
+                            data.forEach(user => {
+                                dropdown.append(
+                                    `<a href="#" class="dropdown-item" onclick="selectUser(${user.id}, '${user.name}')">${user.name}</a>`
+                                );
+                            });
+                            dropdown.show();
+                        } else {
+                            dropdown.hide();
+                        }
+                    }
+                });
+            } else {
+                $("#userList").hide();
+            }
+        }
+
+        function selectUser(id, name) {
+            $("#user_id").val(id);
+            $("#name").val(name);
+            $("#userList").hide();
+        }
+
+        function searchWhoseCustomer() {
+            let query = $("#whose_customer_name").val();
+
+            if (query.length > 2) { // Start searching after 2 characters
+                $.ajax({
+                    url: '/search-users',
+                    type: "GET",
+                    data: {
+                        query: query
+                    },
+                    success: function(data) {
+                        let dropdown = $("#whose_customer_list");
+                        dropdown.empty();
+                        if (data.length > 0) {
+                            data.forEach(user => {
+                                dropdown.append(
+                                    `<a href="#" class="dropdown-item" onclick="selectWhoseUser(${user.id}, '${user.name}')">${user.name}</a>`
+                                );
+                            });
+                            dropdown.show();
+                        } else {
+                            dropdown.hide();
+                        }
+                    }
+                });
+            } else {
+                $("#whose_customer_list").hide();
+            }
+        }
+
+        function selectWhoseUser(id, name) {
+            $("#whose_customer").val(id);
+            $("#whose_customer_name").val(name);
+            $("#whose_customer_list").hide();
+        }
+    </script>
 @endsection

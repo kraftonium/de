@@ -28,9 +28,9 @@
                                             <th>Dob</th>
                                             <th>Address</th>
                                             <th>Gender</th>
-                                            <th>User-Type</th>
+                                            {{-- <th>User-Type</th> --}}
                                             <th>Battery No.</th>
-                                            <th>Chaches No.</th>
+                                            <th>Chassis No.</th>
                                             <th>Controller No.</th>
                                             <th>Vehicle Name</th>
                                             <th>Vehicle-Type</th>
@@ -47,48 +47,63 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>
-                                                <h2 class="table-avatar">
-                                                    <a href="/profile.html">Dr. Ruby Perrin</a>
-                                                </h2>
-                                            </td>
-                                            <td>ruby@gmail.com</td>
-                                            <td>12345 45675</td>
-                                            <td><a href="/profile.html" class="avatar avatar-sm me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="/backend-assets/img/doctors/doctor-thumb-01.jpg"
-                                                        alt="User Image"></a></td>
-                                            <td>12-12-2000</td>
-                                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
-                                                nobis.</td>
-                                            <td>Male</td>
-                                            <td>Admin</td>
-                                            <td>123456</td>
-                                            <td>123456</td>
-                                            <td>123456</td>
-                                            <td>Divine 24</td>
-                                            <td>2 wheelr</td>
-                                            <td><a href="/profile.html" class="avatar avatar-sm me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="/backend-assets/img/doctors/doctor-thumb-01.jpg"
-                                                        alt="User Image"></a>
-                                            </td>
-                                            <td>Black</td>
+                                        @foreach ($customers as $customer)
+                                            <tr>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td>
+                                                    <h2 class="table-avatar">
+                                                        <a href="/profile.html">{{ $customer->user->name }}</a>
+                                                    </h2>
+                                                </td>
+                                                <td>{{ $customer->user->email }}</td>
+                                                <td>{{ $customer->user->phoneno }}</td>
+                                                <td><a href="/profile.html" class="avatar avatar-sm me-2"><img
+                                                            class="avatar-img rounded-circle"
+                                                            src="{{ asset($customer->user->image) }}" alt="User Image"></a>
+                                                </td>
+                                                <td>{{ \Carbon\Carbon::parse($customer->user->dob)->format('d-m-Y') }}
+                                                </td>
+                                                <td>{{ $customer->user->address }}</td>
+                                                <td>
+                                                    @if ($customer->user->gender == 0)
+                                                        Female
+                                                    @elseif($customer->user->gender == 1)
+                                                        Male
+                                                    @else
+                                                        Other
+                                                    @endif
+                                                </td>
+                                                {{-- <td>Admin</td> --}}
+                                                <td>{{ $customer->battery_no }}</td>
+                                                <td>{{ $customer->chassis_no }}</td>
+                                                <td>{{ $customer->controller_no }}</td>
+                                                <td>{{ $customer->vehicle->name_of_vehicle }}</td>
+                                                <td>{{ $customer->vehicle->vehicletype->type_of_vehicle }}</td>
+                                                <td><a href="/profile.html" class="avatar avatar-sm me-2"><img
+                                                            class="avatar-img rounded-circle"
+                                                            src="{{ asset($customer->vehicle->image) }}"
+                                                            alt="User Image"></a>
+                                                </td>
+                                                <td>{{ $customer->vehicle->color }}</td>
 
-                                            <td>12-02-2025</td>
-                                            <td>01-01-2025</td>
-                                            <td>Divyashakti Enterprise</td>
-                                            <td>123456</td>
-                                            <td>123456</td>
-                                            <td>123456</td>
-                                            <td><a href="edit-customer.html"><i class="fa fa-edit"></i></a><a
-                                                    href="javascript:void(0)"><i class="fa fa-trash"></i></a></td>
-                                        </tr>
+                                                <td>{{ \Carbon\Carbon::parse($customer->date_of_purchase)->format('d-m-Y') }}
+                                                </td>
+                                                <td>{{ \Carbon\Carbon::parse($customer->produce_date)->format('d-m-Y') }}
+                                                </td>
+                                                <td>{{ $customer->whoseuser->name }}</td>
+                                                <td>{{ $customer->invoice_no }}</td>
+                                                <td>{{ $customer->insurance_policy_no }}</td>
+                                                <td>{{ $customer->customer_gstno }}</td>
+                                                <td><a href="{{ url('/edit-customer') }}/{{ $customer->id }}"><i
+                                                            class="fa fa-edit"></i></a><a
+                                                        href="{{ url('/delete-customer') }}/{{ $customer->id }}"><i
+                                                            class="fa fa-trash"></i></a></td>
+                                            </tr>
+                                        @endforeach
 
                                     </tbody>
                                 </table>
+                                {{ $customers->links() }}
                             </div>
                         </div>
                     </div>

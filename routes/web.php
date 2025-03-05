@@ -9,7 +9,9 @@ use App\Http\Controllers\DDealershipDetailsController;
 use App\Http\Controllers\DGpsController;
 use App\Http\Controllers\DLuckyDrawController;
 use App\Http\Controllers\DNewsletterController;
+use App\Http\Controllers\DOrdersController;
 use App\Http\Controllers\DSolarController;
+use App\Http\Controllers\DStocksController;
 use App\Http\Controllers\DUsersController;
 use App\Http\Controllers\DUserstypeController;
 use App\Http\Controllers\DVehiclesController;
@@ -251,4 +253,32 @@ Route::middleware('usersauth')->group(function () {
     Route::get('/delete-customer/{id}', [DCustomersController::class, 'delete']);
 
     //manage customer routes ends here
+
+
+
+    //manage order routes starts here
+
+    Route::get('/add-order', function () {
+        return view('backend.manage-orders.add-order');
+    });
+    Route::post('/add-order-submit', [DOrdersController::class, 'create']);
+    Route::get('/edit-order/{id}', [DOrdersController::class, 'edit']);
+    Route::post('/update-order/{id}', [DOrdersController::class, 'update']);
+    Route::get('/delete-order/{id}', [DOrdersController::class, 'delete']);
+    Route::get('/manage-orders', [DOrdersController::class, 'manage']);
+
+    //manage order routes ends here
+
+
+
+    //manage stock routes starts here
+
+    Route::get('/add-stock', [DStocksController::class, 'add']);
+    Route::post('/add-stock-submit', [DStocksController::class, 'create']);
+    Route::get('/edit-stock/{id}', [DStocksController::class, 'edit']);
+    Route::post('/update-stock/{id}', [DStocksController::class, 'update']);
+    Route::get('/delete-stock/{id}', [DStocksController::class, 'delete']);
+    Route::get('/manage-stock', [DStocksController::class, 'manage']);
+
+    //manage stock routes ends here
 });
