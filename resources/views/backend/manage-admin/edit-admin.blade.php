@@ -29,13 +29,13 @@
                     </div>
 
                     <div class="col-lg-12 form-input-container ">
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="img">Photo</label>
                             <input class="form-control" type="file" id="img" placeholder="Image" name="image">
                             <img src="{{ asset($user->image) }}" alt="User Image" width="150" height="150">
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="name">Name</label>
                             <input class="form-control" type="text" id="name" placeholder="Name" name="name"
                                 value="{{ $user->name }}">
@@ -47,7 +47,7 @@
 
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="email">Email.</label>
                             <input class="form-control" type="text" id="email" placeholder="Email" name="email"
                                 value="{{ $user->email }}">
@@ -58,7 +58,7 @@
                             </span>
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="phone">Phone No.</label>
                             <input class="form-control" type="text" id="phone" placeholder="Phone No." name="phoneno"
                                 maxlength="10" value="{{ $user->phoneno }}">
@@ -100,7 +100,7 @@
                         </div>
 
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="dob">DOB</label>
                             <input class="form-control" type="date" id="dob" placeholder="Date" name="dob"
                                 value="{{ $user->dob }}">
@@ -112,7 +112,7 @@
                         </div>
 
 
-                        <div class="mb-3 col-12">
+                        <div class="mb-3 ">
                             <label for="address">Address</label>
                             <textarea name="address" id="address" class="form-control" name="address" placeholder="Address">{{ $user->address }}</textarea>
                             <span class="text-danger">

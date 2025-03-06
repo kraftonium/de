@@ -34,4 +34,17 @@ class DLuckyDrawController extends Controller
             return redirect()->back()->with('error', 'Sorry Something Went Wrong.');
         }
     }
+
+    public function manage()
+    {
+        $draws = D_Lucky_Draw::paginate(10);
+        $data = compact('draws');
+        return view('backend.manage-lucky-draw.manage-lucky-draw')->with($data);
+    }
+
+    public function delete($id)
+    {
+        $draw = D_Lucky_Draw::find($id)->delete();
+        return redirect()->back();
+    }
 }

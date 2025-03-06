@@ -107,9 +107,6 @@ Route::post('/send-lucky-draw', [DLuckyDrawController::class, 'create']);
 
 
 
-Route::get('/dashboard', function () {
-    return view('backend.dashboard');
-});
 
 Route::get('/register', [DUsersController::class, 'register']);
 Route::post('/register-submit', [DUsersController::class, 'create']);
@@ -123,6 +120,10 @@ Route::middleware('usersauth')->group(function () {
 
     // Admin Panel Routes Starts Here
     Route::middleware('adminauth')->group(function () {
+
+        Route::get('/dashboard', [DUsersController::class, 'dashboard']);
+
+
         //manage admin routes starts here
         Route::get('/logout', [DUsersController::class, 'logout']);
         Route::get('/admin-profile', [DUsersController::class, 'profile']);
@@ -202,7 +203,59 @@ Route::middleware('usersauth')->group(function () {
         Route::get('/manage-dealership', [DDealershipDetailsController::class, 'manage']);
         //manage dealership routes starts here
 
+
+        //manage book a ride routes starts here
+
+        Route::get('/manage-book-ride', [DBookRideController::class, 'manage']);
+        Route::get('/delete-book-ride/{id}', [DBookRideController::class, 'delete']);
+
+        //manage book a ride routes ends here
+
+
+        //manage career routes starts here
+
+        Route::get('/manage-career', [DCareersController::class, 'manage']);
+        Route::get('/delete-career/{id}', [DCareersController::class, 'delete']);
+
+        //manage career routes ends here
+
+
+        //manage contact us routes starts here
+
+        Route::get('/manage-contact-us', [DContactUsController::class, 'manage']);
+        Route::get('/delete-contact-us/{id}', [DContactUsController::class, 'delete']);
+
+        //manage contact us routes ends here
+
+
+        //manage dealership form routes starts here
+
+        Route::get('/manage-form-dealership', [DDealershipController::class, 'manage']);
+        Route::get('/delete-dealership-form/{id}', [DDealershipController::class, 'delete']);
+
+        //manage dealership form routes ends here
+
+
+        //manage gps routes starts here
+
+        Route::get('/manage-gps', [DGpsController::class, 'manage']);
+        Route::get('/delete-gps/{id}', [DGpsController::class, 'delete']);
+
+        //manage gps routes ends here
+
+
+        //manage gps routes starts here
+
+        Route::get('/manage-lucky-draw', [DLuckyDrawController::class, 'manage']);
+        Route::get('/delete-lucky-draw/{id}', [DLuckyDrawController::class, 'delete']);
+
+        //manage gps routes ends here
     });
+
+
+    Route::get('/dealer-profile/{id}', [DDealershipDetailsController::class, 'dealerprofile']);
+    Route::get('/user-profile/{id}', [DUsersController::class, 'userprofile']);
+
 
     // Admin Panel Routes Ends Here
 

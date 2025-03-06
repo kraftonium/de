@@ -15,7 +15,7 @@
                     @csrf
                     <div class="col-lg-12 form-input-container ">
 
-                        <div class="mb-3 col-12">
+                        <div class="mb-3 ">
                             <label for="vehiclename">Vehicle Name</label>
                             <input type="text" name="name_of_vehicle" id="vehiclename" class="form-control"
                                 placeholder=" Vehicle Name" value="{{ $vehicle->name_of_vehicle }}">
@@ -26,7 +26,7 @@
                             </span>
                         </div>
 
-                        <div class="mb-3 col-12">
+                        <div class="mb-3 ">
                             <label for="vehicletype">Vehicle Type</label>
                             <select name="type_of_vehicle_id" id="vehicletype" class="form-control">
                                 <option value="">Select Vehicle Type</option>
@@ -44,7 +44,7 @@
                             </span>
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="img">Vehicle Img</label>
                             <input class="form-control" type="file" id="img" placeholder="Vehicle Image"
                                 name="image">
@@ -56,7 +56,7 @@
                             </span>
                         </div>
 
-                        <div class="mb-3 col-12">
+                        <div class="mb-3 ">
                             <label for="vehiclecolor">Vehicle Color</label>
                             <input type="text" name="color" id="vehiclecolor" class="form-control"
                                 placeholder=" Vehicle Color" value="{{ $vehicle->color }}">

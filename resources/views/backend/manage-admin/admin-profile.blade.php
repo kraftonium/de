@@ -144,7 +144,7 @@
                                                         </div>
 
                                                         <div class="col-lg-12 form-input-container ">
-                                                            <div class="mb-3  col-12">
+                                                            <div class="mb-3  ">
                                                                 <label for="img">Photo</label>
                                                                 <input class="form-control" type="file" id="img"
                                                                     placeholder="Image" name="image">
@@ -152,7 +152,7 @@
                                                                     width="150" height="150">
                                                             </div>
 
-                                                            <div class="mb-3  col-12">
+                                                            <div class="mb-3  ">
                                                                 <label for="name">Name</label>
                                                                 <input class="form-control" type="text" id="name"
                                                                     placeholder="Name" name="name"
@@ -165,7 +165,7 @@
 
                                                             </div>
 
-                                                            <div class="mb-3  col-12">
+                                                            <div class="mb-3  ">
                                                                 <label for="email">Email.</label>
                                                                 <input class="form-control" type="text" id="email"
                                                                     placeholder="Email" name="email"
@@ -177,7 +177,7 @@
                                                                 </span>
                                                             </div>
 
-                                                            <div class="mb-3  col-12">
+                                                            <div class="mb-3  ">
                                                                 <label for="phone">Phone No.</label>
                                                                 <input class="form-control" type="text" id="phone"
                                                                     placeholder="Phone No." name="phoneno" maxlength="10"
@@ -225,7 +225,7 @@
                                                             </div>
 
 
-                                                            <div class="mb-3  col-12">
+                                                            <div class="mb-3  ">
                                                                 <label for="dob">DOB</label>
                                                                 <input class="form-control" type="date" id="dob"
                                                                     placeholder="Date" name="dob"
@@ -238,7 +238,7 @@
                                                             </div>
 
 
-                                                            <div class="mb-3 col-12">
+                                                            <div class="mb-3 ">
                                                                 <label for="address">Address</label>
                                                                 <textarea name="address" id="address" class="form-control" name="address" placeholder="Address">{{ $user->address }}</textarea>
                                                                 <span class="text-danger">
@@ -261,21 +261,21 @@
                                                     </form>
                                                     {{-- <form>
                                                         <div class="row">
-                                                            <div class="col-12 col-sm-6">
+                                                            <div class=" col-sm-6">
                                                                 <div class="mb-3">
                                                                     <label class="mb-2">First Name</label>
                                                                     <input type="text" class="form-control"
                                                                         value="John">
                                                                 </div>
                                                             </div>
-                                                            <div class="col-12 col-sm-6">
+                                                            <div class=" col-sm-6">
                                                                 <label class="mb-2">Last Name</label>
                                                                 <div class="mb-3">
                                                                     <input type="text" class="form-control"
                                                                         value="Doe">
                                                                 </div>
                                                             </div>
-                                                            <div class="col-12">
+                                                            <div class="">
                                                                 <div class="mb-3">
                                                                     <label class="mb-2">Date of
                                                                         Birth</label>
@@ -286,53 +286,53 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-12 col-sm-6">
+                                                            <div class=" col-sm-6">
                                                                 <div class="mb-3">
                                                                     <label class="mb-2">Email ID</label>
                                                                     <input type="email" class="form-control"
                                                                         value="johndoe@example.com">
                                                                 </div>
                                                             </div>
-                                                            <div class="col-12 col-sm-6">
+                                                            <div class=" col-sm-6">
                                                                 <div class="mb-3">
                                                                     <label class="mb-2">Mobile</label>
                                                                     <input type="text" value="+1 202-555-0125"
                                                                         class="form-control">
                                                                 </div>
                                                             </div>
-                                                            <div class="col-12">
+                                                            <div class="">
                                                                 <h5 class="form-title"><span>Address</span>
                                                                 </h5>
                                                             </div>
-                                                            <div class="col-12">
+                                                            <div class="">
                                                                 <div class="mb-3">
                                                                     <label class="mb-2">Address</label>
                                                                     <input type="text" class="form-control"
                                                                         value="4663 Agriculture Lane">
                                                                 </div>
                                                             </div>
-                                                            <div class="col-12 col-sm-6">
+                                                            <div class=" col-sm-6">
                                                                 <div class="mb-3">
                                                                     <label class="mb-2">City</label>
                                                                     <input type="text" class="form-control"
                                                                         value="Miami">
                                                                 </div>
                                                             </div>
-                                                            <div class="col-12 col-sm-6">
+                                                            <div class=" col-sm-6">
                                                                 <div class="mb-3">
                                                                     <label class="mb-2">State</label>
                                                                     <input type="text" class="form-control"
                                                                         value="Florida">
                                                                 </div>
                                                             </div>
-                                                            <div class="col-12 col-sm-6">
+                                                            <div class=" col-sm-6">
                                                                 <div class="mb-3">
                                                                     <label class="mb-2">Zip Code</label>
                                                                     <input type="text" class="form-control"
                                                                         value="22434">
                                                                 </div>
                                                             </div>
-                                                            <div class="col-12 col-sm-6">
+                                                            <div class=" col-sm-6">
                                                                 <div class="mb-3">
                                                                     <label class="mb-2">Country</label>
                                                                     <input type="text" class="form-control"

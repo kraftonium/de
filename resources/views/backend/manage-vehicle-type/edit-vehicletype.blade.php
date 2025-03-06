@@ -15,7 +15,7 @@
                     @csrf
                     <div class="col-lg-12 form-input-container ">
 
-                        <div class="mb-3 col-12">
+                        <div class="mb-3 ">
                             <label for="vehicletype">Vehicle Type</label>
                             <input type="text" id="vehicletype" class="form-control" placeholder="Add Vehicle Type"
                                 name="type_of_vehicle" value="{{ $type->type_of_vehicle }}">
@@ -30,7 +30,7 @@
 
                     <div class="mb-0 d-flex gap-3 mt-4">
                         <!-- <button class="btn auth-btn w-50 mt-5" style="display: block; margin: auto;"
-                                                                                                                    type="submit">Register</button> -->
+                                                                                                                        type="submit">Register</button> -->
                         <button class="btn submit-btn w-50 " type="submit">Submit</button>
                         <button class="btn cancel-btn w-50"><a href="{{ url('/manage-vehicle-type') }}">Cancel</a></button>
                     </div>

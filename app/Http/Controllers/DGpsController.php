@@ -49,4 +49,17 @@ class DGpsController extends Controller
             // Log::info('cancel');
         }
     }
+
+    public function manage()
+    {
+        $gpss = D_Gps::paginate(10);
+        $data = compact('gpss');
+        return view('backend.manage-gps.manage-gps')->with($data);
+    }
+
+    public function delete($id)
+    {
+        $gps = D_Gps::find($id)->delete();
+        return redirect()->back();
+    }
 }

@@ -52,4 +52,17 @@ class DDealershipController extends Controller
             // Log::info('cancel');
         }
     }
+
+    public function manage()
+    {
+        $dealers = D_Dealership::paginate(10);
+        $data = compact('dealers');
+        return view('backend.manage-dealership-form.manage-dealership-form')->with($data);
+    }
+
+    public function delete($id)
+    {
+        $dealer = D_Dealership::find($id)->delete();
+        return redirect()->back();
+    }
 }

@@ -20,7 +20,7 @@
             </div>
 
             <div class="row">
-                <div class="col-xl-3 col-sm-6 col-12">
+                <div class="col-xl-3 col-sm-6 ">
                     <div class="card">
                         <div class="card-body">
                             <div class="dash-widget-header">
@@ -28,7 +28,7 @@
                                     <i class="fa fa-warehouse  "></i>
                                 </span>
                                 <div class="dash-count">
-                                    <h3>168</h3>
+                                    <h3>{{ $statedealers }}</h3>
                                 </div>
                             </div>
                             <div class="dash-widget-info">
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-sm-6 col-12">
+                <div class="col-xl-3 col-sm-6 ">
                     <div class="card">
                         <div class="card-body">
                             <div class="dash-widget-header">
@@ -48,7 +48,7 @@
                                     <i class="fa fa-warehouse"></i>
                                 </span>
                                 <div class="dash-count">
-                                    <h3>487</h3>
+                                    <h3>{{ $zonedealers }}</h3>
                                 </div>
                             </div>
                             <div class="dash-widget-info">
@@ -60,7 +60,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-sm-6 col-12">
+                <div class="col-xl-3 col-sm-6 ">
                     <div class="card">
                         <div class="card-body">
                             <div class="dash-widget-header">
@@ -68,7 +68,7 @@
                                     <i class="fa fa-warehouse"></i>
                                 </span>
                                 <div class="dash-count">
-                                    <h3>485</h3>
+                                    <h3>{{ $districtdealers }}</h3>
                                 </div>
                             </div>
                             <div class="dash-widget-info">
@@ -80,7 +80,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-sm-6 col-12">
+                <div class="col-xl-3 col-sm-6 ">
                     <div class="card">
                         <div class="card-body">
                             <div class="dash-widget-header">
@@ -88,7 +88,7 @@
                                     <i class="fa fa-warehouse"></i>
                                 </span>
                                 <div class="dash-count">
-                                    <h3>62523</h3>
+                                    <h3>{{ $talukadealers }}</h3>
                                 </div>
                             </div>
                             <div class="dash-widget-info">
@@ -105,7 +105,7 @@
 
 
             <div class="row">
-                <div class="col-xl-3 col-sm-6 col-12">
+                <div class="col-xl-3 col-sm-6 ">
                     <div class="card">
                         <div class="card-body">
                             <div class="dash-widget-header">
@@ -113,7 +113,7 @@
                                     <i class="fa fa-warehouse"></i>
                                 </span>
                                 <div class="dash-count">
-                                    <h3>168</h3>
+                                    <h3>{{ $areadealers }}</h3>
                                 </div>
                             </div>
                             <div class="dash-widget-info">
@@ -125,7 +125,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-sm-6 col-12">
+                <div class="col-xl-3 col-sm-6 ">
                     <div class="card">
                         <div class="card-body">
                             <div class="dash-widget-header">
@@ -133,7 +133,7 @@
                                     <i class="fa fa-users "></i>
                                 </span>
                                 <div class="dash-count">
-                                    <h3>487</h3>
+                                    <h3>{{ $customers }}</h3>
                                 </div>
                             </div>
                             <div class="dash-widget-info">
@@ -145,7 +145,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-sm-6 col-12">
+                <div class="col-xl-3 col-sm-6 ">
                     <div class="card">
                         <div class="card-body">
                             <div class="dash-widget-header">
@@ -153,7 +153,7 @@
                                     <i class="fa fa-user-tie"></i>
                                 </span>
                                 <div class="dash-count">
-                                    <h3>485</h3>
+                                    <h3>{{ $totaldealers }}</h3>
                                 </div>
                             </div>
                             <div class="dash-widget-info">
@@ -165,7 +165,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-sm-6 col-12">
+                <div class="col-xl-3 col-sm-6 ">
                     <div class="card">
                         <div class="card-body">
                             <div class="dash-widget-header">
@@ -173,11 +173,11 @@
                                     <i class="fa fa-chart-bar"></i>
                                 </span>
                                 <div class="dash-count">
-                                    <h3>$62523</h3>
+                                    <h3>Rs.{{ $totalrevenue }}</h3>
                                 </div>
                             </div>
                             <div class="dash-widget-info">
-                                <h6 class="text-muted">Total Vehicle Sell</h6>
+                                <h6 class="text-muted">Total Revenue</h6>
                                 <div class="progress progress-sm">
                                     <div class="progress-bar w-50"></div>
                                 </div>
@@ -193,8 +193,9 @@
                     <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
 
                     <script>
-                        const xValues = ["2024", "2023", "2022", "2021", "2020"];
-                        const yValues = [1000000, 850000, 700000, 620000, 500000];
+                        const xValues = ["2025", "2024", "2023", "2022", "2021"];
+                        // const yValues = [1000000, 850000, 700000, 620000, 500000];
+                        const yValues = @json($yValues);
                         const barColors = ["#FD9520", "#1555AC", "#FA3E86", "#20AED7", "#000"];
 
                         new Chart("myChart", {
@@ -261,8 +262,9 @@
                     <canvas id="myChart2" style="width:100%;max-width:700px"></canvas>
 
                     <script>
-                        const xValues2 = ["2024", "2023", "2022", "2021", "2020"];
-                        const yValues2 = [100000, 85000, 70000, 62000, 50000];
+                        const xValues2 = ["2021", "2022", "2023", "2024", "2025"];
+                        // const yValues2 = [100000, 85000, 70000, 62000, 50000];
+                        const yValues2 = @json($yDealers);
                         const barColors2 = ["#FD9520", "#1555AC", "#FA3E86", "#20AED7", "#000"];
 
                         new Chart("myChart2", {

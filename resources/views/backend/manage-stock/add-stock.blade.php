@@ -14,7 +14,7 @@
                 <form action="{{ url('/add-stock-submit') }}" method="POST">
                     @csrf
                     <div class="col-lg-12 form-input-container ">
-                        <div class="mb-3 col-12">
+                        <div class="mb-3 ">
                             <label for="vehiclename">Vehicle Name</label>
                             <select name="vehicle_id" id="vehicle_id" class="form-control">
                                 <option value="">Vehicle Name</option>
@@ -33,7 +33,7 @@
 
 
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="quantity">Quantity</label>
                             <input class="form-control" type="text" id="quantity" placeholder="Quantity" name="quantity"
                                 value="{{ old('quantity') }}">
@@ -45,7 +45,7 @@
                         </div>
 
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="name">Search Name Of Whose Stock</label>
                             {{-- this is for user id for this is used to search name of user --}}
                             <input type="hidden" id="user_id" name="user_id">

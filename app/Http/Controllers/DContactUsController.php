@@ -39,4 +39,17 @@ class DContactUsController extends Controller
             return redirect()->back()->with('error', 'Sorry Something Went Wrong.');
         }
     }
+
+    public function manage()
+    {
+        $contacts = D_Contact_Us::paginate(10);
+        $data = compact('contacts');
+        return view('backend.manage-contact-us.manage-contactus')->with($data);
+    }
+
+    public function delete($id)
+    {
+        $contact = D_Contact_Us::find($id)->delete();
+        return redirect()->back();
+    }
 }

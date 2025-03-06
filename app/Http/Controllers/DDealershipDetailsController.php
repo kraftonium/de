@@ -207,4 +207,11 @@ class DDealershipDetailsController extends Controller
         $data = compact('dealerships', 'totalstatedealerships');
         return view('backend.manage-state-dealership.manage-state-dealership')->with($data);
     }
+
+    public function dealerprofile($id)
+    {
+        $dealer = D_Dealership_Details::where('user_id', $id)->first();
+        $data = compact('dealer');
+        return view('backend.manage-dealership.dealer-profile')->with($data);
+    }
 }

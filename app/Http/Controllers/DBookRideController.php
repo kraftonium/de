@@ -56,4 +56,17 @@ class DBookRideController extends Controller
             // Log::info('cancel');
         }
     }
+
+    public function manage()
+    {
+        $rides = D_Book_Ride::paginate(10);
+        $data = compact('rides');
+        return view('backend.manage-book-ride.manage-book-ride')->with($data);
+    }
+
+    public function delete($id)
+    {
+        $ride = D_Book_Ride::find($id)->delete();
+        return redirect()->back();
+    }
 }

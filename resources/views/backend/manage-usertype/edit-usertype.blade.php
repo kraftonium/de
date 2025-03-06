@@ -15,7 +15,7 @@
                     @csrf
                     <div class="col-lg-12 form-input-container ">
 
-                        <div class="mb-3 col-12">
+                        <div class="mb-3 ">
                             <label for="usertype">User Type</label>
                             <input type="text" name="usertype" id="usertype" class="form-control"
                                 placeholder="Add UserType" value="{{ $type->usertype }}">

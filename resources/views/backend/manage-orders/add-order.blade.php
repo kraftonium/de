@@ -16,7 +16,7 @@
                     <div class="col-lg-12 form-input-container ">
 
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="name">Search Name Of Customer</label>
                             {{-- this is for user id for this is used to search name of user --}}
                             <input type="hidden" id="customer_id" name="customer_id">
@@ -33,7 +33,7 @@
                         </div>
 
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3 ">
                             <label for="whose_name">Search Name Of Whose Customer</label>
                             {{-- this is for user id for this is used to search name of user --}}
                             <input type="hidden" id="user_id" name="user_id">
@@ -52,7 +52,7 @@
 
 
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3 ">
                             <label for="price_including_gst">Price Including GST</label>
                             <input class="form-control" type="text" id="price_including_gst"
                                 placeholder="Price Including GST" name="price_including_gst"
@@ -65,7 +65,7 @@
                         </div>
 
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3 ">
                             <label for="warranty">Warranty</label>
                             <input class="form-control" type="text" id="warranty" placeholder="Warranty" name="warranty"
                                 value="{{ old('warranty') }}">

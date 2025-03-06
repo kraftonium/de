@@ -61,4 +61,17 @@ class DCareersController extends Controller
             return redirect()->back()->with('error', 'Sorry, something went wrong.');
         }
     }
+
+    public function manage()
+    {
+        $careers = D_Careers::paginate(10);
+        $data = compact('careers');
+        return view('backend.manage-career.manage-career')->with($data);
+    }
+
+    public function delete($id)
+    {
+        $career = D_Careers::find($id)->delete();
+        return redirect()->back();
+    }
 }

@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Mail\D_Admin_Forgot_Password_OTP;
+use App\Models\D_Orders;
 use App\Models\D_Users;
 use App\Models\D_Userstype;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
@@ -194,10 +196,18 @@ class DUsersController extends Controller
         return view('backend.manage-admin.admin-profile')->with($data);
     }
 
+    public function userprofile($id)
+    {
+        $user = D_Users::where('id', $id)->first();
+        $usertypes = D_Userstype::all();
+        $data = compact('user', 'usertypes');
+        return view('backend.user-profile')->with($data);
+    }
+
     public function updateprofile($id, Request $request)
     {
         $request->validate([
-            'usertype_id' => 'required',
+            // 'usertype_id' => 'required',
             'name' => 'required',
             'email' => 'required|email',
             'phoneno' => 'required|numeric|min:10',
@@ -228,7 +238,7 @@ class DUsersController extends Controller
         }
 
 
-        $user->usertype_id = $request['usertype_id'];
+        // $user->usertype_id = $request['usertype_id'];
         $user->name = $request['name'];
         $user->email = $request['email'];
         $user->phoneno = $request['phoneno'];
@@ -316,5 +326,39 @@ class DUsersController extends Controller
             ->get(['id', 'name']);
 
         return response()->json($users);
+    }
+
+    public function dashboard()
+    {
+        $statedealers = D_Users::where('usertype_id', 2)->count();
+        $zonedealers = D_Users::where('usertype_id', 3)->count();
+        $districtdealers = D_Users::where('usertype_id', 4)->count();
+        $talukadealers = D_Users::where('usertype_id', 5)->count();
+        $areadealers = D_Users::where('usertype_id', 6)->count();
+        $totaldealers = $statedealers + $zonedealers + $districtdealers + $talukadealers + $areadealers;
+        $customers = D_Users::where('usertype_id', 7)->count();
+        $totalrevenue = D_Orders::sum('total_price');
+
+        $yearrevenues = D_Orders::selectRaw('YEAR(created_at) as year, SUM(total_price) as total_revenue')
+            ->whereIn(DB::raw('YEAR(created_at)'), [2021, 2022, 2023, 2024, 2025])
+            ->groupBy('year')
+            ->orderBy('year')
+            ->get();
+        $yValues = $yearrevenues->pluck('total_revenue')->toArray();
+
+        $totaldealersdata = D_Users::selectRaw('YEAR(created_at) as year, COUNT(id) as total_dealers')
+            ->whereNotIn('id', [1, 7])
+            ->groupBy('year')
+            ->orderBy('year')
+            ->get();
+        $yDealers = $totaldealersdata->pluck('total_dealers')->toArray();
+        $years = [2021, 2022, 2023, 2024, 2025];
+        $yDealers = [];
+        foreach ($years as $year) {
+            $yDealers[] = $totaldealersdata->firstWhere('year', $year)->total_dealers ?? 0;
+        }
+
+        $data = compact('statedealers', 'zonedealers', 'districtdealers', 'talukadealers', 'areadealers', 'customers', 'totaldealers', 'totalrevenue', 'yearrevenues', 'yValues', 'yDealers');
+        return view('backend.dashboard')->with($data);
     }
 }

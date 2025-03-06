@@ -57,6 +57,18 @@
             $pagename = 'manage-area-dealership';
         } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-customers') !== false) {
             $pagename = 'manage-customers';
+        } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-contact-us') !== false) {
+            $pagename = 'manage-contact-us';
+        } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-career') !== false) {
+            $pagename = 'manage-career';
+        } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-book-ride') !== false) {
+            $pagename = 'manage-book-ride';
+        } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-gps') !== false) {
+            $pagename = 'manage-gps';
+        } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-lucky-draw') !== false) {
+            $pagename = 'manage-lucky-draw';
+        } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-form-dealership') !== false) {
+            $pagename = 'manage-form-dealership';
         }
     @endphp
 
@@ -172,6 +184,11 @@
                                     <span>Manage Order</span></a>
                             </li>
 
+                            <li class="@if ($pagename == 'manage-dealership') active @endif">
+                                <a href="{{ url('/manage-dealership') }}"><i class="fa fa-store "></i>
+                                    <span>Manage Dealership</span></a>
+                            </li>
+
                             <li class="@if ($pagename == 'manage-state-dealership') active @endif">
                                 <a href="{{ url('/manage-state-dealership') }}"><i class="fa fa-store "></i>
                                     <span>Manage State Dealership</span></a>
@@ -197,33 +214,33 @@
                                     <span>Manage Area Dealership</span></a>
                             </li>
 
-                            <li>
-                                <a href="/manage-contactus/manage-contactus.html"><i class="fa fa-phone-alt"></i>
+                            <li class="@if ($pagename == 'manage-contact-us') active @endif">
+                                <a href="{{ url('/manage-contact-us') }}"><i class="fa fa-phone-alt"></i>
                                     <span>Manage Contact Us</span></a>
                             </li>
 
-                            <li>
-                                <a href="/manage-gps/manage-gps.html"><i class="fa fa-map "></i> <span>Manage
+                            <li class="@if ($pagename == 'manage-gps') active @endif">
+                                <a href="{{ url('/manage-gps') }}"><i class="fa fa-map "></i> <span>Manage
                                         Gps</span></a>
                             </li>
 
-                            <li>
-                                <a href="/manage-dealership-form/manage-dealership-form.html"><i
-                                        class="fa fa-file-alt"></i> <span>Manage Dealership Form</span></a>
+                            <li class="@if ($pagename == 'manage-form-dealership') active @endif">
+                                <a href="{{ url('/manage-dealership-form') }}"><i class="fa fa-file-alt"></i>
+                                    <span>Manage Dealership Form</span></a>
                             </li>
 
-                            <li>
-                                <a href="/manage-book-ride/manage-book-ride.html"><i class="fa fa-motorcycle "></i>
+                            <li class="@if ($pagename == 'manage-book-ride') active @endif">
+                                <a href="{{ url('/manage-book-ride') }}"><i class="fa fa-motorcycle "></i>
                                     <span>Manage Book Ride</span></a>
                             </li>
 
-                            <li>
-                                <a href="/manage-lucky-draw/manage-lucky-draw.html"><i class="fa fa-ticket-alt"></i>
+                            <li class="@if ($pagename == 'manage-lucky-draw') active @endif">
+                                <a href="{{ url('/manage-lucky-draw') }}"><i class="fa fa-ticket-alt"></i>
                                     <span>Manage Lucky Draw</span></a>
                             </li>
 
-                            <li>
-                                <a href="/manage-career/manage-career.html"><i class="fa fa-briefcase "></i>
+                            <li class="@if ($pagename == 'manage-career') active @endif">
+                                <a href="{{ url('/manage-career') }}"><i class="fa fa-briefcase "></i>
                                     <span>Manage Career</span></a>
                             </li>
 

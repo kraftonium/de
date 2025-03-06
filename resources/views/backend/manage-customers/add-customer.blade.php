@@ -14,7 +14,7 @@
                 <form action="{{ url('/add-customer-submit') }}" method="POST">
                     @csrf
                     <div class="col-lg-12 form-input-container ">
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <input type="hidden" id="user_id" name="user_id">
                             <label for="name">Name</label>
                             <input class="form-control" type="text" id="name" placeholder="Name" name="name"
@@ -28,7 +28,7 @@
                             </span>
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="battery">Battery No.</label>
                             <input class="form-control" type="text" id="battery" placeholder="Battery No."
                                 name="battery_no" value="{{ old('battery_no') }}">
@@ -39,7 +39,7 @@
                             </span>
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="chassis_no">Chassis No.</label>
                             <input class="form-control" type="text" id="chassis_no" placeholder="Chassis No."
                                 name="chassis_no" value="{{ old('chassis_no') }}">
@@ -50,7 +50,7 @@
                             </span>
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="controller_no">Controller No.</label>
                             <input class="form-control" type="text" id="controller_no" placeholder="Controller No."
                                 name="controller_no" value="{{ old('controller_no') }}">
@@ -61,7 +61,7 @@
                             </span>
                         </div>
 
-                        <div class="mb-3 col-12">
+                        <div class="mb-3 ">
                             <label for="vehicle_id">Vehicle Name</label>
                             <select name="vehicle_id" id="vehicle_id" class="form-control">
                                 <option value="">Vehicle Name</option>
@@ -77,7 +77,7 @@
                             </span>
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="date_of_purchase">Purchase Date</label>
                             <input class="form-control" type="date" id="date_of_purchase" placeholder="Purchase Date"
                                 name="date_of_purchase" value="{{ old('date_of_purchase') }}">
@@ -88,7 +88,7 @@
                             </span>
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="produce_date">Produce Date</label>
                             <input class="form-control" type="date" id="produce_date" name="produce_date"
                                 placeholder="Produce Date" value="{{ old('produce_date') }}">
@@ -99,7 +99,7 @@
                             </span>
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <input type="hidden" id="whose_customer" name="whose_customer">
                             <label for="name">Whose Customer</label>
                             <input class="form-control" type="text" id="whose_customer_name" placeholder="Whose Customer"
@@ -113,7 +113,7 @@
                             </span>
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="insurance">Insurance No.</label>
                             <input class="form-control" type="text" id="insurance" placeholder="Insurance No."
                                 name="insurance_policy_no" value="{{ old('insurance_policy_no') }}">
@@ -124,7 +124,7 @@
                             </span>
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="invoice">Invoice No.</label>
                             <input class="form-control" type="text" id="invoice" placeholder="Invoice No."
                                 name="invoice_no" value="{{ old('invoice_no') }}">
@@ -135,7 +135,7 @@
                             </span>
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="gst">Customer GST No.</label>
                             <input class="form-control" type="text" id="gst" placeholder="Customer GST No."
                                 name="customer_gstno" value="{{ old('customer_gstno') }}">

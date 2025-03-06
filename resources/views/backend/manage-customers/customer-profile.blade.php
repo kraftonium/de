@@ -82,7 +82,8 @@
                     <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown" role="button"
                         aria-expanded="false">
                         <span class="user-img"><img class="rounded-circle"
-                                src="/backend-assets/img/profiles/avatar-01.jpg" width="45" alt="Ryan Taylor"></span>
+                                src="/backend-assets/img/profiles/avatar-01.jpg" width="45"
+                                alt="Ryan Taylor"></span>
                     </a>
                     <div class="dropdown-menu">
                         <div class="user-header">
@@ -139,7 +140,7 @@
                                     <h6 class="text-muted">rayan@gmail.com
                                     </h6>
                                 </div>
-                              
+
                             </div>
                         </div>
                         <div class="profile-menu">
@@ -253,12 +254,12 @@
                                                         <p class="col-sm-4 text-muted">Invoice No.</p>
                                                         <p class="col-sm-8">123456</p>
                                                     </div>
-                                                    
+
                                                     <div class="row">
                                                         <p class="col-sm-4 text-muted">Insurance No.</p>
                                                         <p class="col-sm-8">123456</p>
                                                     </div>
-                                                  
+
                                                     <div class="row">
                                                         <p class="col-sm-4 text-muted">GST No.</p>
                                                         <p class="col-sm-8">123456</p>
@@ -320,27 +321,28 @@
                                             <div class="col-md-12 col-lg-12">
                                                 <form>
                                                     <div class="row">
-                                                        <div class="col-12 col-sm-6">
+                                                        <div class=" col-sm-6">
                                                             <div class="mb-3">
                                                                 <label class="mb-2" for="name"> Name</label>
-                                                                <input type="text" class="form-control" value="John" id="name">
+                                                                <input type="text" class="form-control"
+                                                                    value="John" id="name">
                                                             </div>
                                                         </div>
-                                                        <div class="col-12 col-sm-6">
+                                                        <div class=" col-sm-6">
                                                             <div class="mb-3">
                                                                 <label class="mb-2" for="email">Email ID</label>
                                                                 <input type="email" class="form-control"
                                                                     value="johndoe@example.com" id="email">
                                                             </div>
                                                         </div>
-                                                        <div class="col-12 col-sm-6">
+                                                        <div class=" col-sm-6">
                                                             <div class="mb-3">
                                                                 <label class="mb-2" for="phone">Mobile</label>
                                                                 <input type="text" value="+1 202-555-0125"
                                                                     class="form-control" id="phone">
                                                             </div>
                                                         </div>
-                                                        <div class="col-12 col-sm-6">
+                                                        <div class=" col-sm-6">
                                                             <div class="mb-3">
                                                                 <label class="mb-2" for="date">Date of
                                                                     Birth</label>
@@ -348,111 +350,128 @@
                                                                     value="24-07-1983" id="date">
                                                             </div>
                                                         </div>
-                                                        <div class="col-12 col-sm-6">
+                                                        <div class=" col-sm-6">
                                                             <div class="mb-3">
                                                                 <label class="mb-2" for="gender">Gender</label>
-                                                                <select name="gender" id="gender" class="form-control">
+                                                                <select name="gender" id="gender"
+                                                                    class="form-control">
                                                                     <option value="Male">Male</option>
                                                                     <option value="Female">Female</option>
                                                                 </select>
                                                             </div>
                                                         </div>
-                                                        <div class="col-12 col-sm-6">
+                                                        <div class=" col-sm-6">
                                                             <div class="mb-3">
                                                                 <label class="mb-2" for="usertype">UserType</label>
-                                                                <select name="usertype" id="usertype" class="form-control">
+                                                                <select name="usertype" id="usertype"
+                                                                    class="form-control">
                                                                     <option value="Area Dealer">Area Dealer</option>
-                                                                    <option value="Taluka Dealer">Taluka Dealer</option>
-                                                                    <option value="District Dealer">District Dealer</option>
+                                                                    <option value="Taluka Dealer">Taluka Dealer
+                                                                    </option>
+                                                                    <option value="District Dealer">District Dealer
+                                                                    </option>
                                                                     <option value="Zone Dealer">Zone Dealer</option>
                                                                     <option value="State Dealer">State Dealer</option>
                                                                 </select>
                                                             </div>
                                                         </div>
 
-                                                        <div class="col-12 col-sm-6">
+                                                        <div class=" col-sm-6">
                                                             <div class="mb-3">
-                                                                <label class="mb-2" for="yourimg">Your Image</label>
-                                                                <input type="file"
-                                                                    class="form-control" id="yourimg">
+                                                                <label class="mb-2" for="yourimg">Your
+                                                                    Image</label>
+                                                                <input type="file" class="form-control"
+                                                                    id="yourimg">
                                                             </div>
                                                         </div>
-                                                      
-                                                        <div class="col-12">
+
+                                                        <div class="">
                                                             <div class="mb-3">
                                                                 <label class="mb-2" for="address">Address</label>
                                                                 <textarea name="address" id="address" rows="2" class="form-control">4663 Agriculture Lane</textarea>
                                                             </div>
                                                         </div>
 
-                                                        <div class="col-12 col-sm-6">
+                                                        <div class=" col-sm-6">
                                                             <div class="mb-3">
-                                                                <label class="mb-2" for="battery_no">Battery No.</label>
+                                                                <label class="mb-2" for="battery_no">Battery
+                                                                    No.</label>
                                                                 <input type="text" value="123456"
                                                                     class="form-control" id="battery_no">
                                                             </div>
                                                         </div>
 
-                                                        <div class="col-12 col-sm-6">
+                                                        <div class=" col-sm-6">
                                                             <div class="mb-3">
-                                                                <label class="mb-2" for="chassis_no">Chassis No.</label>
+                                                                <label class="mb-2" for="chassis_no">Chassis
+                                                                    No.</label>
                                                                 <input type="text" value="123456"
                                                                     class="form-control" id="chassis_no">
                                                             </div>
                                                         </div>
 
-                                                        <div class="col-12 col-sm-6">
+                                                        <div class=" col-sm-6">
                                                             <div class="mb-3">
-                                                                <label class="mb-2" for="controllerno">Controller No.</label>
+                                                                <label class="mb-2" for="controllerno">Controller
+                                                                    No.</label>
                                                                 <input type="text" value="123456"
                                                                     class="form-control" id="controllerno">
                                                             </div>
                                                         </div>
 
-                                                        <div class="col-12 col-sm-6">
+                                                        <div class=" col-sm-6">
                                                             <div class="mb-3">
-                                                                <label class="mb-2" for="vehiclename">Vehicle Name</label>
-                                                                <input type="text" class="form-control" value="Divine 24" id="vehiclename">
+                                                                <label class="mb-2" for="vehiclename">Vehicle
+                                                                    Name</label>
+                                                                <input type="text" class="form-control"
+                                                                    value="Divine 24" id="vehiclename">
                                                             </div>
                                                         </div>
 
-                                                        <div class="col-12 col-sm-6">
+                                                        <div class=" col-sm-6">
                                                             <div class="mb-3">
-                                                                <label class="mb-2" for="vehicletype">VehicleType</label>
-                                                                <select name="vehicletype" id="vehicletype" class="form-control">
-                                                                    <option value="2 Wheeler">2 Wheeler</option>
-                                                                    <option value="3 Wheeler">3 Wheeler</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <div class="col-12 col-sm-6">
-                                                            <div class="mb-3">
-                                                                <label class="mb-2" for="vehicleimg">Vehicle Image</label>
-                                                                <input type="file"
-                                                                    class="form-control" id="vehicleimg">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-12 col-sm-6">
-                                                            <div class="mb-3">
-                                                                <label class="mb-2" for="vehicletype">VehicleType</label>
-                                                                <select name="vehicletype" id="vehicletype" class="form-control">
+                                                                <label class="mb-2"
+                                                                    for="vehicletype">VehicleType</label>
+                                                                <select name="vehicletype" id="vehicletype"
+                                                                    class="form-control">
                                                                     <option value="2 Wheeler">2 Wheeler</option>
                                                                     <option value="3 Wheeler">3 Wheeler</option>
                                                                 </select>
                                                             </div>
                                                         </div>
 
-                                                        
-                                                        <div class="col-12 col-sm-6">
+                                                        <div class=" col-sm-6">
                                                             <div class="mb-3">
-                                                                <label class="mb-2" for="vehiclecolor">Vehicle Colour</label>
-                                                                <input type="text" class="form-control" value="Black" id="vehiclecolor">
+                                                                <label class="mb-2" for="vehicleimg">Vehicle
+                                                                    Image</label>
+                                                                <input type="file" class="form-control"
+                                                                    id="vehicleimg">
                                                             </div>
                                                         </div>
 
-                                                        <div class="col-12 col-sm-6">
+                                                        <div class=" col-sm-6">
+                                                            <div class="mb-3">
+                                                                <label class="mb-2"
+                                                                    for="vehicletype">VehicleType</label>
+                                                                <select name="vehicletype" id="vehicletype"
+                                                                    class="form-control">
+                                                                    <option value="2 Wheeler">2 Wheeler</option>
+                                                                    <option value="3 Wheeler">3 Wheeler</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class=" col-sm-6">
+                                                            <div class="mb-3">
+                                                                <label class="mb-2" for="vehiclecolor">Vehicle
+                                                                    Colour</label>
+                                                                <input type="text" class="form-control"
+                                                                    value="Black" id="vehiclecolor">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class=" col-sm-6">
                                                             <div class="mb-3">
                                                                 <label class="mb-2" for="purchasedate">Date of
                                                                     Purchase</label>
@@ -461,7 +480,7 @@
                                                             </div>
                                                         </div>
 
-                                                        <div class="col-12 col-sm-6">
+                                                        <div class=" col-sm-6">
                                                             <div class="mb-3">
                                                                 <label class="mb-2" for="producedate">Date of
                                                                     Produce</label>
@@ -470,34 +489,37 @@
                                                             </div>
                                                         </div>
 
-                                                        <div class="col-12 col-sm-6">
+                                                        <div class=" col-sm-6">
                                                             <div class="mb-3">
-                                                                <label class="mb-2" for="whosecustomer">Whose Customer</label>
+                                                                <label class="mb-2" for="whosecustomer">Whose
+                                                                    Customer</label>
                                                                 <input type="text" value="Divyashakti Enerprise"
                                                                     class="form-control" id="whosecustomer">
                                                             </div>
                                                         </div>
 
-                                                        
-                                                        <div class="col-12 col-sm-6">
+
+                                                        <div class=" col-sm-6">
                                                             <div class="mb-3">
-                                                                <label class="mb-2" for="insurance"> Insurance No.</label>
+                                                                <label class="mb-2" for="insurance"> Insurance
+                                                                    No.</label>
                                                                 <input type="text" value="123123"
                                                                     class="form-control" id="insurance">
                                                             </div>
                                                         </div>
 
-                                                        
-                                                        <div class="col-12 col-sm-6">
+
+                                                        <div class=" col-sm-6">
                                                             <div class="mb-3">
-                                                                <label class="mb-2" for="invoice"> Invoice No.</label>
+                                                                <label class="mb-2" for="invoice"> Invoice
+                                                                    No.</label>
                                                                 <input type="text" value="123123"
                                                                     class="form-control" id="invoice">
                                                             </div>
                                                         </div>
 
-                                                        
-                                                        <div class="col-12 col-sm-6">
+
+                                                        <div class=" col-sm-6">
                                                             <div class="mb-3">
                                                                 <label class="mb-2" for="gst"> GST No.</label>
                                                                 <input type="text" value="123123"
@@ -505,11 +527,11 @@
                                                             </div>
                                                         </div>
 
-                                                      
-                                                       
 
 
-                                                      
+
+
+
                                                     </div>
                                                     <button type="submit" class="btn btn-primary w-100">Save</button>
                                                 </form>

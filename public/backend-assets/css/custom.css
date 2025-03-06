@@ -89,10 +89,18 @@ html {
     height: 100%
 }
 
+/* .form-input-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+} */
+
 @media (min-width:991px) {
     .form-input-container {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:  1fr 1fr;
         justify-content: space-between;
         gap: 10px;
         width: 100%;

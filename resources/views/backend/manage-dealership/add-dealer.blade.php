@@ -16,7 +16,7 @@
 
                     <div class="col-lg-12 form-input-container">
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="name">Search Name</label>
                             {{-- this is for user id for this is used to search name of user --}}
                             <input type="hidden" id="user_id" name="user_id">
@@ -32,7 +32,7 @@
                             </span>
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="firm_address">Firm Address</label>
                             <textarea name="firm_address" id="firm_address" class="form-control" placeholder="Address">{{ old('firm_address') }}</textarea>
                             <span class="text-danger">
@@ -43,7 +43,7 @@
                         </div>
 
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="firm_phoneno">Firm Phone No.</label>
                             <input class="form-control" type="text" id="firm_phoneno" placeholder=" Firm Phone No."
                                 name="firm_phoneno" value="{{ old('firm_phoneno') }}">
@@ -54,7 +54,7 @@
                             </span>
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="firm_email">Firm Email</label>
                             <input class="form-control" type="text" id="firm_email" placeholder="Firm Email"
                                 name="firm_email" value="{{ old('firm_email') }}">
@@ -65,7 +65,7 @@
                             </span>
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="firm_name">Firm Name</label>
                             <input class="form-control" type="text" id="firm_name" placeholder="Firm Name"
                                 name="firm_name" value="{{ old('firm_name') }}">
@@ -76,7 +76,7 @@
                             </span>
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="firm_gstno">Firm GST No.</label>
                             <input class="form-control" type="text" id="firm_gstno" placeholder="Firm GST No."
                                 name="firm_gstno" value="{{ old('firm_gstno') }}">
@@ -87,7 +87,7 @@
                             </span>
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="total_revenue">Total Revenue</label>
                             <input class="form-control" type="text" id="total_revenue" name="total_revenue"
                                 placeholder="Total Revenue" value="{{ old('total_revenue') }}">
@@ -98,7 +98,7 @@
                             </span>
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="total_profit">Total Profit</label>
                             <input class="form-control" type="text" id="total_profit" placeholder="Total Profit"
                                 name="total_profit" value="{{ old('total_profit') }}">
@@ -109,7 +109,7 @@
                             </span>
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="firm_photo">Firm Photo</label>
                             <input class="form-control" type="file" id="firm_photo" name="firm_photo"
                                 placeholder="Firm Image" value="{{ old('firm_photo') }}">
@@ -120,7 +120,7 @@
                             </span>
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="business_profile_link">Firm Google Business Profile Link</label>
                             <input class="form-control" type="text" id="business_profile_link"
                                 name="business_profile_link" placeholder="Firm Google Business Profile Link"
@@ -128,7 +128,7 @@
 
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="whose_name">Search Name Of Whose Dealer</label>
                             {{-- this is for user id for this is used to search name of user --}}
                             <input type="hidden" id="whose_user_id" name="whose_user_id">
@@ -144,7 +144,7 @@
                             </span>
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="firm_pincode">Firm Pincode</label>
                             <input class="form-control" type="text" id="firm_pincode" placeholder="Firm Pincode"
                                 name="firm_pincode" value="{{ old('firm_pincode') }}">
@@ -155,7 +155,7 @@
                             </span>
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="firm_area">Firm Area</label>
                             <input class="form-control" type="text" id="firm_area" name="firm_area"
                                 placeholder="Firm Area" value="{{ old('firm_area') }}">
@@ -166,7 +166,7 @@
                             </span> --}}
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="firm_taluka">Firm Taluka</label>
                             <input class="form-control" type="text" id="firm_taluka" placeholder="Firm Taluka"
                                 name="firm_taluka" value="{{ old('firm_taluka') }}">
@@ -177,7 +177,7 @@
                             </span> --}}
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="firm_district">Firm District</label>
                             <input class="form-control" type="text" id="firm_district" placeholder="Firm District"
                                 name="firm_district" value="{{ old('firm_district') }}">
@@ -188,7 +188,7 @@
                             </span> --}}
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="firm_zone">Firm Zone</label>
                             <input class="form-control" type="text" id="firm_zone" name="firm_zone"
                                 placeholder="Firm Zone" value="{{ old('firm_zone') }}">
@@ -199,7 +199,7 @@
                             </span> --}}
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="firm_state">Firm State</label>
                             <input class="form-control" type="text" id="firm_state" name="firm_state"
                                 value="{{ old('firm_state') }}" placeholder="Firm State">
@@ -210,7 +210,7 @@
                             </span> --}}
                         </div>
 
-                        <div class="mb-3  col-12">
+                        <div class="mb-3  ">
                             <label for="firm_country">Firm Country</label>
                             <input class="form-control" type="text" id="firm_country" name="firm_country"
                                 value="{{ old('firm_country') }}" placeholder="Firm Country">
