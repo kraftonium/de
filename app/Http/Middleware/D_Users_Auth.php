@@ -20,9 +20,9 @@ class D_Users_Auth
         if (!$user) {
             return redirect('/login');
         }
-        if ($user->usertype->usertype !== 'Admin') {
-            return redirect('/login')->withErrors(['access' => 'Unauthorized access. Please log in as an admin.']);
-        }
+        // if ($user->usertype->usertype !== 'Admin') {
+        //     return redirect('/login')->withErrors(['access' => 'Unauthorized access. Please log in as an admin.']);
+        // }
         return $next($request);
     }
 }

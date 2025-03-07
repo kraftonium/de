@@ -35,7 +35,7 @@
             @endif
 
 
-            @if (session('change-passord-success'))
+            @if (session('change-password-success'))
                 <div class="alert alert-success" id="password-success-message">
                     {{ session('change-passord-success') }}
                 </div>

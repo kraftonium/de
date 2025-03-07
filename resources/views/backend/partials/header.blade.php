@@ -69,6 +69,8 @@
             $pagename = 'manage-lucky-draw';
         } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-form-dealership') !== false) {
             $pagename = 'manage-form-dealership';
+        } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-users') !== false) {
+            $pagename = 'manage-users';
         }
     @endphp
 
@@ -102,12 +104,25 @@
 
 
             <ul class="nav user-menu">
-
-                <!-- <li class="nav-item dropdown noti-dropdown">
-                    <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
-                        <i class="fa-solid fa-plus"></i>
-                    </a>
-                </li> -->
+                @if ($pagename == 'manage-admin')
+                    <li class="nav-item dropdown noti-dropdown">
+                        <a href="{{ url('/register') }}">
+                            <i class="fa-solid fa-plus"></i>
+                        </a>
+                    </li>
+                @elseif($pagename == 'manage-customers')
+                    <li class="nav-item dropdown noti-dropdown">
+                        <a href="{{ url('/add-customers') }}">
+                            <i class="fa-solid fa-plus"></i>
+                        </a>
+                    </li>
+                @elseif($pagename == 'manage-orders')
+                    <li class="nav-item dropdown noti-dropdown">
+                        <a href="{{ url('/add-order') }}">
+                            <i class="fa-solid fa-plus"></i>
+                        </a>
+                    </li>
+                @endif
 
 
                 <li class="nav-item dropdown has-arrow">
@@ -127,7 +142,11 @@
                                 <p class="text-muted mb-0">{{ Auth::user()->usertype->usertype }}</p>
                             </div>
                         </div>
-                        <a class="dropdown-item" href="{{ url('/admin-profile') }}">My Profile</a>
+                        @if (Auth::user()->usertype_id == 1)
+                            <a class="dropdown-item" href="{{ url('/admin-profile') }}">My Profile</a>
+                        @elseif(in_array(Auth::user()->usertype_id, [2, 3, 4, 5, 6]))
+                            <a class="dropdown-item" href="{{ url('/dealer-profile') }}">My Profile</a>
+                        @endif
                         <!-- <a class="dropdown-item" href="settings.html">Settings</a> -->
                         <a class="dropdown-item" href="{{ url('/logout') }}">Logout</a>
                     </div>
@@ -145,104 +164,148 @@
                     <div id="sidebar-menu" class="sidebar-menu">
                         <ul>
 
-                            <li class="@if ($pagename == 'home') active @endif">
-                                <a href="{{ url('/dashboard') }}"><i class="fe fe-home"></i> <span>Dashboard</span></a>
-                            </li>
+                            @if (Auth::user()->usertype_id == 1)
+                                <li class="@if ($pagename == 'home') active @endif">
+                                    <a href="{{ url('/dashboard') }}"><i class="fe fe-home"></i>
+                                        <span>Dashboard</span></a>
+                                </li>
 
-                            <li class="@if ($pagename == 'manage-usertype') active @endif">
-                                <a href="{{ url('/manage-usertype') }}"> <i class="fas fa-user-lock"></i>
-                                    <span>Manage UserType</span></a>
-                            </li>
+                                <li class="@if ($pagename == 'manage-usertype') active @endif">
+                                    <a href="{{ url('/manage-usertype') }}"> <i class="fas fa-user-lock"></i>
+                                        <span>Manage UserType</span></a>
+                                </li>
 
-                            <li class="@if ($pagename == 'manage-admin') active @endif">
-                                <a href="{{ url('/manage-admin') }}"><i class="fa fa-user-tie"></i> <span>Manage
-                                        Admin</span></a>
-                            </li>
+                                <li class="@if ($pagename == 'manage-admin') active @endif">
+                                    <a href="{{ url('/manage-admin') }}"><i class="fa fa-user-tie"></i> <span>Manage
+                                            Admin</span></a>
+                                </li>
 
-                            <li class="@if ($pagename == 'manage-vehicle-type') active @endif">
-                                <a href="{{ url('/manage-vehicle-type') }}"> <i
-                                        class="fas fa-user-lock"></i><span>Manage Vehicle Type</span></a>
-                            </li>
+                                <li class="@if ($pagename == 'manage-users') active @endif">
+                                    <a href="{{ url('/manage-users') }}"><i class="fa fa-user-tie"></i> <span>Manage
+                                            Users</span></a>
+                                </li>
 
-                            <li class="@if ($pagename == 'manage-vehicles') active @endif">
-                                <a href="{{ url('/manage-vehicles') }}"><i class="fas fa-car"></i> <span>Manage
-                                        Vehicle</span></a>
-                            </li>
+                                <li class="@if ($pagename == 'manage-vehicle-type') active @endif">
+                                    <a href="{{ url('/manage-vehicle-type') }}"> <i
+                                            class="fas fa-user-lock"></i><span>Manage Vehicle Type</span></a>
+                                </li>
 
-                            <li class="@if ($pagename == 'manage-customers') active @endif">
-                                <a href="{{ url('/manage-customers') }}"><i class="fa fa-user"></i> <span>Manage
-                                        Customer</span></a>
-                            </li>
+                                <li class="@if ($pagename == 'manage-vehicles') active @endif">
+                                    <a href="{{ url('/manage-vehicles') }}"><i class="fas fa-car"></i> <span>Manage
+                                            Vehicle</span></a>
+                                </li>
 
-                            <li class="@if ($pagename == 'manage-stock') active @endif">
-                                <a href="{{ url('/manage-stock') }}"><i class="fa fa-boxes "></i> <span>Manage
-                                        Stock</span></a>
-                            </li>
 
-                            <li class="@if ($pagename == 'manage-orders') active @endif">
-                                <a href="{{ url('/manage-orders') }}"><i class="fa fa-shopping-cart "></i>
-                                    <span>Manage Order</span></a>
-                            </li>
+                                <li class="@if ($pagename == 'manage-state-dealership') active @endif">
+                                    <a href="{{ url('/manage-state-dealership') }}"><i class="fa fa-store "></i>
+                                        <span>Manage State Dealership</span></a>
+                                </li>
 
-                            <li class="@if ($pagename == 'manage-dealership') active @endif">
-                                <a href="{{ url('/manage-dealership') }}"><i class="fa fa-store "></i>
-                                    <span>Manage Dealership</span></a>
-                            </li>
+                                <li class="@if ($pagename == 'manage-zone-dealership') active @endif">
+                                    <a href="{{ url('/manage-zone-dealership') }}"><i class="fa fa-store "></i>
+                                        <span>Manage Zone Dealership</span></a>
+                                </li>
 
-                            <li class="@if ($pagename == 'manage-state-dealership') active @endif">
-                                <a href="{{ url('/manage-state-dealership') }}"><i class="fa fa-store "></i>
-                                    <span>Manage State Dealership</span></a>
-                            </li>
+                                <li class="@if ($pagename == 'manage-district-dealership') active @endif">
+                                    <a href="{{ url('/manage-district-dealership') }}"><i class="fa fa-store "></i>
+                                        <span>Manage District Dealership</span></a>
+                                </li>
 
-                            <li class="@if ($pagename == 'manage-zone-dealership') active @endif">
-                                <a href="{{ url('/manage-zone-dealership') }}"><i class="fa fa-store "></i>
-                                    <span>Manage Zone Dealership</span></a>
-                            </li>
+                                <li class="@if ($pagename == 'manage-taluka-dealership') active @endif">
+                                    <a href="{{ url('/manage-taluka-dealership') }}"><i class="fa fa-store "></i>
+                                        <span>Manage Taluka Dealership</span></a>
+                                </li>
 
-                            <li class="@if ($pagename == 'manage-district-dealership') active @endif">
-                                <a href="{{ url('/manage-district-dealership') }}"><i class="fa fa-store "></i>
-                                    <span>Manage District Dealership</span></a>
-                            </li>
+                                <li class="@if ($pagename == 'manage-area-dealership') active @endif">
+                                    <a href="{{ url('/manage-area-dealership') }}"><i class="fa fa-store "></i>
+                                        <span>Manage Area Dealership</span></a>
+                                </li>
 
-                            <li class="@if ($pagename == 'manage-taluka-dealership') active @endif">
-                                <a href="{{ url('/manage-taluka-dealership') }}"><i class="fa fa-store "></i>
-                                    <span>Manage Taluka Dealership</span></a>
-                            </li>
+                                <li class="@if ($pagename == 'manage-stock') active @endif">
+                                    <a href="{{ url('/manage-stock') }}"><i class="fa fa-boxes "></i> <span>Manage
+                                            Stock</span></a>
+                                </li>
+                                <li class="@if ($pagename == 'manage-dealership') active @endif">
+                                    <a href="{{ url('/manage-dealership') }}"><i class="fa fa-store "></i>
+                                        <span>Manage Dealership</span></a>
+                                </li>
+                                <li class="@if ($pagename == 'manage-customers') active @endif">
+                                    <a href="{{ url('/manage-customers') }}"><i class="fa fa-user"></i> <span>Manage
+                                            Customer</span></a>
+                                </li>
 
-                            <li class="@if ($pagename == 'manage-area-dealership') active @endif">
-                                <a href="{{ url('/manage-area-dealership') }}"><i class="fa fa-store "></i>
-                                    <span>Manage Area Dealership</span></a>
-                            </li>
+                                <li class="@if ($pagename == 'manage-orders') active @endif">
+                                    <a href="{{ url('/manage-orders') }}"><i class="fa fa-shopping-cart "></i>
+                                        <span>Manage Order</span></a>
+                                </li>
 
-                            <li class="@if ($pagename == 'manage-contact-us') active @endif">
-                                <a href="{{ url('/manage-contact-us') }}"><i class="fa fa-phone-alt"></i>
-                                    <span>Manage Contact Us</span></a>
-                            </li>
+                                <li class="@if ($pagename == 'manage-contact-us') active @endif">
+                                    <a href="{{ url('/manage-contact-us') }}"><i class="fa fa-phone-alt"></i>
+                                        <span>Manage Contact Us</span></a>
+                                </li>
 
-                            <li class="@if ($pagename == 'manage-gps') active @endif">
-                                <a href="{{ url('/manage-gps') }}"><i class="fa fa-map "></i> <span>Manage
-                                        Gps</span></a>
-                            </li>
+                                <li class="@if ($pagename == 'manage-gps') active @endif">
+                                    <a href="{{ url('/manage-gps') }}"><i class="fa fa-map "></i> <span>Manage
+                                            Gps</span></a>
+                                </li>
 
-                            <li class="@if ($pagename == 'manage-form-dealership') active @endif">
-                                <a href="{{ url('/manage-dealership-form') }}"><i class="fa fa-file-alt"></i>
-                                    <span>Manage Dealership Form</span></a>
-                            </li>
+                                <li class="@if ($pagename == 'manage-form-dealership') active @endif">
+                                    <a href="{{ url('/manage-dealership-form') }}"><i class="fa fa-file-alt"></i>
+                                        <span>Manage Dealership Form</span></a>
+                                </li>
 
-                            <li class="@if ($pagename == 'manage-book-ride') active @endif">
-                                <a href="{{ url('/manage-book-ride') }}"><i class="fa fa-motorcycle "></i>
-                                    <span>Manage Book Ride</span></a>
-                            </li>
+                                <li class="@if ($pagename == 'manage-book-ride') active @endif">
+                                    <a href="{{ url('/manage-book-ride') }}"><i class="fa fa-motorcycle "></i>
+                                        <span>Manage Book Ride</span></a>
+                                </li>
 
-                            <li class="@if ($pagename == 'manage-lucky-draw') active @endif">
-                                <a href="{{ url('/manage-lucky-draw') }}"><i class="fa fa-ticket-alt"></i>
-                                    <span>Manage Lucky Draw</span></a>
-                            </li>
+                                <li class="@if ($pagename == 'manage-lucky-draw') active @endif">
+                                    <a href="{{ url('/manage-lucky-draw') }}"><i class="fa fa-ticket-alt"></i>
+                                        <span>Manage Lucky Draw</span></a>
+                                </li>
 
-                            <li class="@if ($pagename == 'manage-career') active @endif">
-                                <a href="{{ url('/manage-career') }}"><i class="fa fa-briefcase "></i>
-                                    <span>Manage Career</span></a>
-                            </li>
+                                <li class="@if ($pagename == 'manage-career') active @endif">
+                                    <a href="{{ url('/manage-career') }}"><i class="fa fa-briefcase "></i>
+                                        <span>Manage Career</span></a>
+                                </li>
+                            @elseif(Auth::user()->usertype_id == 2)
+                                <li class="@if ($pagename == 'manage-state-dealership') active @endif">
+                                    <a href="{{ url('/manage-state-dealership') }}"><i class="fa fa-store "></i>
+                                        <span>Dashboard</span></a>
+                                </li>
+
+                                <li class="@if ($pagename == 'manage-customers') active @endif">
+                                    <a href="{{ url('/manage-customers') }}"><i class="fa fa-user"></i> <span>Manage
+                                            Customer</span></a>
+                                </li>
+
+                                <li class="@if ($pagename == 'manage-orders') active @endif">
+                                    <a href="{{ url('/manage-orders') }}"><i class="fa fa-shopping-cart "></i>
+                                        <span>Manage Order</span></a>
+                                </li>
+
+
+                                <li class="@if ($pagename == 'manage-zone-dealership') active @endif">
+                                    <a href="{{ url('/manage-zone-dealership') }}"><i class="fa fa-store "></i>
+                                        <span>Manage Zone Dealership</span></a>
+                                </li>
+
+                                <li class="@if ($pagename == 'manage-district-dealership') active @endif">
+                                    <a href="{{ url('/manage-district-dealership') }}"><i class="fa fa-store "></i>
+                                        <span>Manage District Dealership</span></a>
+                                </li>
+
+                                <li class="@if ($pagename == 'manage-taluka-dealership') active @endif">
+                                    <a href="{{ url('/manage-taluka-dealership') }}"><i class="fa fa-store "></i>
+                                        <span>Manage Taluka Dealership</span></a>
+                                </li>
+
+                                <li class="@if ($pagename == 'manage-area-dealership') active @endif">
+                                    <a href="{{ url('/manage-area-dealership') }}"><i class="fa fa-store "></i>
+                                        <span>Manage Area Dealership</span></a>
+                                </li>
+                            @endif
+
 
 
 

@@ -239,4 +239,79 @@
     </div>
 
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function searchUsers() {
+            let query = $("#name").val();
+
+            if (query.length > 2) { // Start searching after 2 characters
+                $.ajax({
+                    url: '/search-users',
+                    type: "GET",
+                    data: {
+                        query: query
+                    },
+                    success: function(data) {
+                        let dropdown = $("#userList");
+                        dropdown.empty();
+                        if (data.length > 0) {
+                            data.forEach(user => {
+                                dropdown.append(
+                                    `<a href="#" class="dropdown-item" onclick="selectUser(${user.id}, '${user.name}')">${user.name}</a>`
+                                );
+                            });
+                            dropdown.show();
+                        } else {
+                            dropdown.hide();
+                        }
+                    }
+                });
+            } else {
+                $("#userList").hide();
+            }
+        }
+
+        function selectUser(id, name) {
+            $("#user_id").val(id);
+            $("#name").val(name);
+            $("#userList").hide();
+        }
+
+        function searchWhoseUsers() {
+            let query = $("#whose_name").val();
+
+            if (query.length > 2) { // Start searching after 2 characters
+                $.ajax({
+                    url: '/search-users',
+                    type: "GET",
+                    data: {
+                        query: query
+                    },
+                    success: function(data) {
+                        let dropdown = $("#whose_userList");
+                        dropdown.empty();
+                        if (data.length > 0) {
+                            data.forEach(user => {
+                                dropdown.append(
+                                    `<a href="#" class="dropdown-item" onclick="selectWhoseUser(${user.id}, '${user.name}')">${user.name}</a>`
+                                );
+                            });
+                            dropdown.show();
+                        } else {
+                            dropdown.hide();
+                        }
+                    }
+                });
+            } else {
+                $("#whose_userList").hide();
+            }
+        }
+
+        function selectWhoseUser(id, name) {
+            $("#whose_user_id").val(id);
+            $("#whose_name").val(name);
+            $("#whose_userList").hide();
+        }
+    </script>
 @endsection

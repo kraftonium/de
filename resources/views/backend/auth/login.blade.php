@@ -41,10 +41,25 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="login-right">
                         <div class="login-right-wrap">
                             <h1>Login</h1>
                             <p class="account-subtitle">Access to our dashboard</p>
+                            @if (session('change-password-success'))
+                                <div class="alert alert-success" id="password-success-message">
+                                    {{ session('change-password-success') }}
+                                </div>
+                                <script>
+                                    setTimeout(function() {
+                                        let message = document.getElementById('password-success-message');
+                                        if (message) {
+                                            message.style.display = 'none';
+                                        }
+                                    }, 5000); // 5 seconds
+                                </script>
+                            @endif
+
                             <span class="text-danger">
                                 @error('access')
                                     {{ $message }}

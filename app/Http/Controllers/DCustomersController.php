@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\D_Customers;
+use App\Models\D_Stocks;
 use App\Models\D_Vehicles;
 use Illuminate\Http\Request;
 
@@ -45,6 +46,21 @@ class DCustomersController extends Controller
         $customer->customer_gstno = $request['customer_gstno'];
         $customer->save();
 
+        // Decrease stock by 1 for the given vehicle_id
+        $stock = D_Stocks::where('vehicle_id', $request['vehicle_id'])
+            ->where('whose_stock', $request['whose_customer'])
+            ->first();
+
+        if ($stock) {
+            if ($stock->quantity > 0) {
+                $stock->decrement('quantity', 1);
+            } else {
+                return redirect()->back()->withInput()->withErrors('vehicle_id', 'Stock for this vehicle is empty!');
+            }
+        } else {
+            return redirect()->back()->withInput()->withErrors('vehicle_id', 'No stock found for this vehicle!');
+        }
+
         return redirect('/manage-customers');
     }
 
@@ -73,6 +89,9 @@ class DCustomersController extends Controller
         ]);
 
         $customer = D_Customers::find($id);
+        $oldVehicleId = $customer->vehicle_id; // Get the old vehicle_id
+        $userId = $customer->whose_customer;
+
         $customer->user_id = $request['user_id'];
         $customer->battery_no = $request['battery_no'];
         $customer->chassis_no = $request['chassis_no'];
@@ -85,6 +104,30 @@ class DCustomersController extends Controller
         $customer->insurance_policy_no = $request['insurance_policy_no'];
         $customer->customer_gstno = $request['customer_gstno'];
         $customer->save();
+
+        // Adjust stock if vehicle_id has changed
+        if ($oldVehicleId != $request['vehicle_id']) {
+            // Add 1 back to the old vehicle's stock
+            D_Stocks::where('vehicle_id', $oldVehicleId)
+                ->where('whose_stock', $userId)
+                ->increment('quantity', 1);
+
+            // Reduce 1 from the new vehicle's stock
+            $newStock = D_Stocks::where('vehicle_id', $request['vehicle_id'])
+                ->where('whose_stock', $request['whose_customer'])
+                ->first();
+
+            if ($newStock) {
+                if ($newStock->quantity > 0) {
+                    $newStock->decrement('quantity', 1);
+                } else {
+                    return redirect()->back()->withInput()->withErrors('vehicle_id', 'Stock for this vehicle is empty!');
+                }
+            } else {
+                return redirect()->back()->withInput()->withErrors('vehicle_id', 'No stock found for this vehicle!');
+            }
+        }
+
 
         return redirect('/manage-customers');
     }

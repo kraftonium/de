@@ -329,7 +329,7 @@
                 </div>
 
             </div>
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-md-12 d-flex">
 
                     <div class="card card-table flex-fill">
@@ -736,7 +736,7 @@
 
                 </div>
 
-            </div>
+            </div> --}}
 
         </div>
     </div>

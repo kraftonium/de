@@ -9,7 +9,7 @@
         <div class="content container-fluid">
 
 
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-xl-3 col-sm-6 col-12">
                     <div class="card">
                         <div class="card-body">
@@ -90,6 +90,89 @@
                         </div>
                     </div>
                 </div>
+            </div> --}}
+
+            <div class="row">
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="dash-widget-header">
+                                <span class="dash-widget-icon">
+                                    <i class="fa fa-users  "></i>
+                                </span>
+                                <div class="dash-count">
+                                    <h3>{{ $totalcustomers }}</h3>
+                                </div>
+                            </div>
+                            <div class="dash-widget-info">
+                                <h6 class="text-muted">Total Customers</h6>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar  w-50"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="dash-widget-header">
+                                <span class="dash-widget-icon ">
+                                    <i class="fa fa-boxes "></i>
+                                </span>
+                                <div class="dash-count">
+                                    <h3>{{ $totalzonedealerships }}</h3>
+                                </div>
+                            </div>
+                            <div class="dash-widget-info">
+                                <h6 class="text-muted">Total Zone Dealerships</h6>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar  w-50"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="dash-widget-header">
+                                <span class="dash-widget-icon ">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </span>
+                                <div class="dash-count">
+                                    <h3>{{ $totalorders }}</h3>
+                                </div>
+                            </div>
+                            <div class="dash-widget-info">
+                                <h6 class="text-muted">Total Orders</h6>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar w-50"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="dash-widget-header">
+                                <span class="dash-widget-icon ">
+                                    <i class="fa fa-dollar-sign"></i>
+                                </span>
+                                <div class="dash-count">
+                                    <h3>{{ $totalrevenue }}</h3>
+                                </div>
+                            </div>
+                            <div class="dash-widget-info">
+                                <h6 class="text-muted">Total Revenue</h6>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar  w-50"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="row">
@@ -119,7 +202,7 @@
                                             <th>Firm Name</th>
                                             <th>Firm GST No.</th>
                                             <th>Total Revenue</th>
-                                            <th>Total Profit</th>
+                                            {{-- <th>Total Profit</th> --}}
                                             <th>Firm Photo</th>
                                             <th>Whose Dealer</th>
                                             <th>Firm Pincode </th>
@@ -138,7 +221,8 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>
                                                     <h2 class="table-avatar">
-                                                        <a href="/profile.html">{{ $dealership->user->name }}</a>
+                                                        <a
+                                                            href="{{ url('/manage-single-dealer') }}/{{ $dealership->user_id }}">{{ $dealership->user->name }}</a>
                                                     </h2>
                                                 </td>
                                                 <td>{{ $dealership->user->email }}</td>

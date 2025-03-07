@@ -115,13 +115,27 @@ Route::get('/login', function () {
 });
 Route::post('/login-submit', [DUsersController::class, 'login']);
 
+Route::get('/admin-forgot-password', function () {
+    return view('backend.auth.forgot-password');
+});
+Route::post('/admin-forgot-password-submit', [DUsersController::class, 'adminforgotpasswordotp']);
+Route::get('/admin-reset-password', function () {
+    return view('backend.auth.re-password');
+});
+Route::post('/admin-reset-password-submit', [DUsersController::class, 'adminresetpassword']);
+
+// Route::get('/user-profile/{id}', [DUsersController::class, 'userprofile']);
 
 Route::middleware('usersauth')->group(function () {
+
+    Route::get('/manage-single-dealer/{id}', [DDealershipDetailsController::class, 'manage_single_dealer']);
 
     // Admin Panel Routes Starts Here
     Route::middleware('adminauth')->group(function () {
 
         Route::get('/dashboard', [DUsersController::class, 'dashboard']);
+
+
 
 
         //manage admin routes starts here
@@ -132,15 +146,8 @@ Route::middleware('usersauth')->group(function () {
         Route::post('/update-admin-profile/{id}', [DUsersController::class, 'updateprofile']);
         Route::get('/delete-admin/{id}', [DUsersController::class, 'delete']);
         Route::get('/manage-admin', [DUsersController::class, 'manage']);
+        Route::get('/manage-users', [DUsersController::class, 'manageusers']);
         Route::post('/change-password/{id}', [DUsersController::class, 'changepassword']);
-        Route::get('/admin-forgot-password', function () {
-            return view('backend.auth.forgot-password');
-        });
-        Route::post('/admin-forgot-password-submit', [DUsersController::class, 'adminforgotpasswordotp']);
-        Route::get('/admin-reset-password', function () {
-            return view('backend.auth.re-password');
-        });
-        Route::post('/admin-reset-password-submit', [DUsersController::class, 'adminresetpassword']);
 
         //manage admin routes ends here
 
@@ -250,53 +257,43 @@ Route::middleware('usersauth')->group(function () {
         Route::get('/delete-lucky-draw/{id}', [DLuckyDrawController::class, 'delete']);
 
         //manage gps routes ends here
+
+
+        //manage stock routes starts here
+
+        Route::get('/add-stock', [DStocksController::class, 'add']);
+        Route::post('/add-stock-submit', [DStocksController::class, 'create']);
+        Route::get('/edit-stock/{id}', [DStocksController::class, 'edit']);
+        Route::post('/update-stock/{id}', [DStocksController::class, 'update']);
+        Route::get('/delete-stock/{id}', [DStocksController::class, 'delete']);
+        Route::get('/manage-stock', [DStocksController::class, 'manage']);
+
+        //manage stock routes ends here
+
+
+        Route::get('/dealer-profile', [DDealershipDetailsController::class, 'dealerprofile']);
+        Route::get('/manage-state-dealership', [DDealershipDetailsController::class, 'manage_state_dealership']);
+        Route::get('/manage-zone-dealership', [DDealershipDetailsController::class, 'manage_zone_dealership']);
+        Route::get('/manage-district-dealership', [DDealershipDetailsController::class, 'manage_district_dealership']);
+        Route::get('/manage-taluka-dealership', [DDealershipDetailsController::class, 'manage_taluka_dealership']);
+        Route::get('/manage-area-dealership', [DDealershipDetailsController::class, 'manage_area_dealership']);
     });
-
-
-    Route::get('/dealer-profile/{id}', [DDealershipDetailsController::class, 'dealerprofile']);
-    Route::get('/user-profile/{id}', [DUsersController::class, 'userprofile']);
-
-
     // Admin Panel Routes Ends Here
 
-
-    //manage zone dealership routes starts here
-
-    Route::get('/manage-state-dealership', [DDealershipDetailsController::class, 'manage_state_dealership']);
-
-    //manage zone dealership routes ends here
-
-
-    //manage zone dealership routes starts here
-
-    Route::get('/manage-zone-dealership', [DDealershipDetailsController::class, 'manage_zone_dealership']);
-
-    //manage zone dealership routes ends here
+    //State Dealership Routes Starts Here
+    Route::middleware('stateauth')->group(function () {
+        Route::get('/dealer-profile', [DDealershipDetailsController::class, 'dealerprofile']);
+        Route::get('/manage-state-dealership', [DDealershipDetailsController::class, 'manage_state_dealership']);
+        Route::get('/manage-zone-dealership', [DDealershipDetailsController::class, 'manage_zone_dealership']);
+        Route::get('/manage-district-dealership', [DDealershipDetailsController::class, 'manage_district_dealership']);
+        Route::get('/manage-taluka-dealership', [DDealershipDetailsController::class, 'manage_taluka_dealership']);
+        Route::get('/manage-area-dealership', [DDealershipDetailsController::class, 'manage_area_dealership']);
+    });
+    //State Dealership Routes Ends Here
 
 
 
-    //manage district dealership routes starts here
 
-    Route::get('/manage-district-dealership', [DDealershipDetailsController::class, 'manage_district_dealership']);
-
-    //manage district dealership routes ends here
-
-
-    //manage taluka dealership routes starts here
-
-    Route::get('/manage-taluka-dealership', [DDealershipDetailsController::class, 'manage_taluka_dealership']);
-
-    //manage taluka dealership routes ends here
-
-
-    //manage area dealership routes starts here
-
-    Route::get('/manage-area-dealership', [DDealershipDetailsController::class, 'manage_area_dealership']);
-
-    //manage area dealership routes ends here
-
-
-    //manage customer routes starts here
 
     Route::get('/manage-customers', [DCustomersController::class, 'manage']);
     Route::get('/add-customers', [DCustomersController::class, 'add']);
@@ -324,14 +321,5 @@ Route::middleware('usersauth')->group(function () {
 
 
 
-    //manage stock routes starts here
 
-    Route::get('/add-stock', [DStocksController::class, 'add']);
-    Route::post('/add-stock-submit', [DStocksController::class, 'create']);
-    Route::get('/edit-stock/{id}', [DStocksController::class, 'edit']);
-    Route::post('/update-stock/{id}', [DStocksController::class, 'update']);
-    Route::get('/delete-stock/{id}', [DStocksController::class, 'delete']);
-    Route::get('/manage-stock', [DStocksController::class, 'manage']);
-
-    //manage stock routes ends here
 });

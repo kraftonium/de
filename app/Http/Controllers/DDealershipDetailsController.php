@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\D_Customers;
 use App\Models\D_Dealership_Details;
+use App\Models\D_Orders;
+use App\Models\D_Stocks;
 use App\Models\D_Users;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
 
@@ -192,10 +196,25 @@ class DDealershipDetailsController extends Controller
 
     public function manage_zone_dealership()
     {
+        // $totalzonedealerships = D_Users::where('usertype_id', 3)->count();
+        // $zonedealerships = D_Users::where('usertype_id', 3)->pluck('id'); // Get only the user IDs
+        // $dealerships = D_Dealership_Details::whereIn('user_id', $zonedealerships)->paginate(10);
+        // $data = compact('dealerships', 'totalzonedealerships');
+        // dd($dealerships);
         $totalzonedealerships = D_Users::where('usertype_id', 3)->count();
         $zonedealerships = D_Users::where('usertype_id', 3)->pluck('id'); // Get only the user IDs
+        $totalcustomers = D_Customers::whereHas('whoseuser', function ($query) {
+            $query->where('usertype_id', 3);
+        })->count();
+        $totalorders = D_Orders::whereHas('orderByWhom', function ($query) {
+            $query->where('usertype_id', 3);
+        })->count();
+        $totalrevenue = D_Dealership_Details::whereHas('user', function ($query) {
+            $query->where('usertype_id', 3);
+        })->sum('total_revenue');
+
         $dealerships = D_Dealership_Details::whereIn('user_id', $zonedealerships)->paginate(10);
-        $data = compact('dealerships', 'totalzonedealerships');
+        $data = compact('dealerships', 'totalzonedealerships', 'totalcustomers', 'totalorders', 'totalrevenue');
         return view('backend.manage-zone-dealership.manage-zone-dealership')->with($data);
     }
 
@@ -203,15 +222,37 @@ class DDealershipDetailsController extends Controller
     {
         $totalstatedealerships = D_Users::where('usertype_id', 2)->count();
         $statedealerships = D_Users::where('usertype_id', 2)->pluck('id'); // Get only the user IDs
+        $totalcustomers = D_Customers::whereHas('whoseuser', function ($query) {
+            $query->where('usertype_id', 2);
+        })->count();
+        $totalorders = D_Orders::whereHas('orderByWhom', function ($query) {
+            $query->where('usertype_id', 2);
+        })->count();
+        $totalrevenue = D_Dealership_Details::whereHas('user', function ($query) {
+            $query->where('usertype_id', 2);
+        })->sum('total_revenue');
+
         $dealerships = D_Dealership_Details::whereIn('user_id', $statedealerships)->paginate(10);
-        $data = compact('dealerships', 'totalstatedealerships');
+        $data = compact('dealerships', 'totalstatedealerships', 'totalcustomers', 'totalorders', 'totalrevenue');
         return view('backend.manage-state-dealership.manage-state-dealership')->with($data);
     }
 
-    public function dealerprofile($id)
+    public function dealerprofile()
     {
-        $dealer = D_Dealership_Details::where('user_id', $id)->first();
+        $dealer = D_Dealership_Details::where('user_id', Auth::user()->id)->first();
         $data = compact('dealer');
         return view('backend.manage-dealership.dealer-profile')->with($data);
+    }
+
+    public function manage_single_dealer($id)
+    {
+
+        $totalcustomers = D_Customers::where('user_id', $id)->count();
+        $totalorders = D_Orders::where('user_id', $id)->count();
+        $totalrevenue = D_Dealership_Details::where('user_id', $id)->sum('total_revenue');
+        $dealership = D_Dealership_Details::where('user_id', $id)->first();
+        $totalstock = D_Stocks::where('whose_stock', $id)->sum('quantity');
+        $data = compact('dealership', 'totalcustomers', 'totalorders', 'totalrevenue', 'totalstock');
+        return view('backend.manage-single-dealer')->with($data);
     }
 }

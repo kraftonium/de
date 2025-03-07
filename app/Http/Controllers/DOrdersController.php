@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\D_Dealership_Details;
 use App\Models\D_Orders;
 use Illuminate\Http\Request;
 
@@ -23,6 +24,10 @@ class DOrdersController extends Controller
         $order->warranty = $request['warranty'];
         $order->save();
 
+        // Update total_revenue in D_Dealership_Details
+        D_Dealership_Details::where('user_id', $request['user_id'])
+            ->increment('total_revenue', $request['price_including_gst']);
+
         return redirect('/manage-orders');
     }
 
@@ -43,11 +48,23 @@ class DOrdersController extends Controller
         ]);
 
         $order = D_Orders::find($id);
+
+        // Get the old total price before updating
+        $oldPrice = $order->total_price;
+
+
         $order->user_id = $request['user_id'];
         $order->customer_id = $request['customer_id'];
         $order->total_price = $request['price_including_gst'];
         $order->warranty = $request['warranty'];
         $order->save();
+
+        // Calculate the price difference
+        $priceDifference = $request['price_including_gst'] - $oldPrice;
+
+        // Update total_revenue in D_Dealership_Details
+        D_Dealership_Details::where('user_id', $request['user_id'])
+            ->increment('total_revenue', $priceDifference);
 
         return redirect('/manage-orders');
     }

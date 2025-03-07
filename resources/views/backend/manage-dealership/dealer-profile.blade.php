@@ -52,12 +52,12 @@
                             <li class="nav-item">
                                 <a class="nav-link active" data-bs-toggle="tab" href="#per_details_tab">About</a>
                             </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a class="nav-link" data-bs-toggle="tab" href="#password_tab">Password</a>
-                            </li>
-                            <li class="nav-item">
+                            </li> --}}
+                            {{-- <li class="nav-item">
                                 <a class="nav-link" data-bs-toggle="tab" href="#changeabout_tab">Edit Info</a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                     <div class="tab-content profile-tab-cont">
@@ -241,7 +241,7 @@
                                                     </span>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <a href="/auth/forgot-password.html"
+                                                    <a href="{{ url('/admin-forgot-password') }}"
                                                         style="color: #4874BB !important; font-weight: bold;">Forgot
                                                         Password</a>
                                                 </div>
@@ -388,6 +388,237 @@
 
 
 
+                                                    <div class="col-sm-12">
+                                                        <div class="mb-3">
+                                                            <label class="mb-2" for="firmimg">Firm Image</label>
+                                                            <input type="file" class="form-control" id="firmimg"
+                                                                name="firm_photo">
+                                                            <img src="{{ asset($dealer->firm_photo) }}" alt="Firm Photo"
+                                                                height="150" width="150">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class=" col-sm-12">
+                                                        <div class="mb-3">
+                                                            <label class="mb-2" for="business_profile_link">Firm
+                                                                Google Business Profile Link</label>
+                                                            <input type="text" class="form-control"
+                                                                value="{{ $dealer->firm_google_business_profile_link }}"
+                                                                id="business_profile_link" name="business_profile_link">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-12">
+                                                        <div class="mb-3">
+                                                            <label class="mb-2" for="firmaddress">Firm Address</label>
+                                                            <textarea name="firmaddress" id="firmaddress" rows="2" name="firm_address" class="form-control">{{ $dealer->firm_address }}</textarea>
+                                                            <span class="text-danger">
+                                                                @error('firm_address')
+                                                                    {{ $message }}
+                                                                @enderror
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class=" col-sm-12">
+                                                        <div class="mb-3">
+                                                            <label class="mb-2" for="firmname">Firm Name</label>
+                                                            <input type="text" class="form-control"
+                                                                value="{{ $dealer->firm_name }}" id="firmname"
+                                                                name="firm_name">
+                                                            <span class="text-danger">
+                                                                @error('firm_name')
+                                                                    {{ $message }}
+                                                                @enderror
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class=" col-sm-12">
+                                                        <div class="mb-3">
+                                                            <label class="mb-2" for="firmemail">Firm Email ID</label>
+                                                            <input type="email" class="form-control"
+                                                                value="{{ $dealer->firm_email }}" id="firmemail"
+                                                                name="firm_email">
+                                                            <span class="text-danger">
+                                                                @error('firm_email')
+                                                                    {{ $message }}
+                                                                @enderror
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class=" col-sm-12">
+                                                        <div class="mb-3">
+                                                            <label class="mb-2" for="firmphone">Firm Mobile</label>
+                                                            <input type="text" value="{{ $dealer->firm_phoneno }}"
+                                                                class="form-control" id="firmphone" name="firm_phoneno">
+                                                            <span class="text-danger">
+                                                                @error('firm_phoneno')
+                                                                    {{ $message }}
+                                                                @enderror
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class=" col-sm-12">
+                                                        <div class="mb-3">
+                                                            <label class="mb-2" for="firmgst">Firm GST</label>
+                                                            <input type="text" value="{{ $dealer->firm_gstno }}"
+                                                                class="form-control" id="firmgst" name="firm_gstno">
+                                                            <span class="text-danger">
+                                                                @error('firm_gstno')
+                                                                    {{ $message }}
+                                                                @enderror
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class=" col-sm-12">
+                                                        <div class="mb-3">
+                                                            <label class="mb-2" for="totalrevenue">Total Revenue</label>
+                                                            <input type="text" value="{{ $dealer->total_revenue }}"
+                                                                class="form-control" id="totalrevenue"
+                                                                name="total_revenue">
+                                                            <span class="text-danger">
+                                                                @error('total_revenue')
+                                                                    {{ $message }}
+                                                                @enderror
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class=" col-sm-12">
+                                                        <div class="mb-3">
+                                                            <label class="mb-2" for="totalprofit">Total Profit</label>
+                                                            <input type="text" value="{{ $dealer->total_profit }}"
+                                                                class="form-control" id="totalprofit">
+                                                            <span class="text-danger">
+                                                                @error('total_profit')
+                                                                    {{ $message }}
+                                                                @enderror
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    {{-- <div class=" col-sm-12">
+                                                        <div class="mb-3">
+                                                            <label class="mb-2" for="whosedealer">Whose Dealer</label>
+                                                            <input type="text" value="{{ $dealer->whoseuser->name }}"
+                                                                class="form-control" id="whosedealer">
+                                                        </div>
+                                                    </div> --}}
+
+                                                    <div class="mb-3  ">
+                                                        <label for="whose_name">Search Name Of Whose Dealer</label>
+                                                        {{-- this is for user id for this is used to search name of user --}}
+                                                        <input type="hidden" id="whose_user_id" name="whose_user_id"
+                                                            value="{{ $dealer->whose_dealer }}">
+
+                                                        <input class="form-control" type="text" id="whose_name"
+                                                            placeholder="Search Name" name="whose_name"
+                                                            oninput="searchWhoseUsers()"
+                                                            value="{{ $dealer->whoseuser->name }}">
+                                                        <div id="whose_userList" class="dropdown-menu w-100"
+                                                            style="display: none; position: absolute; max-height: 200px; overflow-y: auto;">
+                                                        </div>
+                                                        <span class="text-danger">
+                                                            @error('whose_name')
+                                                                {{ $message }}
+                                                            @enderror
+                                                        </span>
+                                                    </div>
+
+                                                    <div class=" col-sm-12">
+                                                        <div class="mb-3">
+                                                            <label class="mb-2" for="firmpincode">Firm Pincode</label>
+                                                            <input type="text" value="{{ $dealer->firm_pincode }}"
+                                                                class="form-control" id="firmpincode">
+                                                            <span class="text-danger">
+                                                                @error('firm_pincode')
+                                                                    {{ $message }}
+                                                                @enderror
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class=" col-sm-12">
+                                                        <div class="mb-3">
+                                                            <label class="mb-2" for="firmarea">Firm Area</label>
+                                                            <input type="text" value="{{ $dealer->firm_area }}"
+                                                                class="form-control" id="firmarea">
+                                                            <span class="text-danger">
+                                                                @error('firm_area')
+                                                                    {{ $message }}
+                                                                @enderror
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class=" col-sm-12">
+                                                        <div class="mb-3">
+                                                            <label class="mb-2" for="firmtaluka">Firm Taluka</label>
+                                                            <input type="text" value="{{ $dealer->firm_taluka }}"
+                                                                class="form-control" id="firmtaluka">
+                                                            <span class="text-danger">
+                                                                @error('firm_taluka')
+                                                                    {{ $message }}
+                                                                @enderror
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class=" col-sm-12">
+                                                        <div class="mb-3">
+                                                            <label class="mb-2" for="firmdistrict">Firm District</label>
+                                                            <input type="text" value="{{ $dealer->firm_district }}"
+                                                                class="form-control" id="firmdistrict">
+                                                            <span class="text-danger">
+                                                                @error('firm_district')
+                                                                    {{ $message }}
+                                                                @enderror
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class=" col-sm-12">
+                                                        <div class="mb-3">
+                                                            <label class="mb-2" for="firmzone">Firm Zone</label>
+                                                            <input type="text" value="{{ $dealer->firm_zone }}"
+                                                                class="form-control" id="firmzone">
+                                                            <span class="text-danger">
+                                                                @error('firm_zone')
+                                                                    {{ $message }}
+                                                                @enderror
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class=" col-sm-12">
+                                                        <div class="mb-3">
+                                                            <label class="mb-2" for="firmstate">Firm State</label>
+                                                            <input type="text" value="{{ $dealer->firm_state }}"
+                                                                class="form-control" id="firmstate">
+                                                            <span class="text-danger">
+                                                                @error('firm_state')
+                                                                    {{ $message }}
+                                                                @enderror
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class=" col-sm-12">
+                                                        <div class="mb-3">
+                                                            <label class="mb-2" for="firmcountry">Firm Country</label>
+                                                            <input type="text" value="{{ $dealer->firm_country }}"
+                                                                class="form-control" id="firmcountry">
+                                                            <span class="text-danger">
+                                                                @error('firm_country')
+                                                                    {{ $message }}
+                                                                @enderror
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
 
                                                 <div class="mb-0 d-flex gap-3 mt-4">
@@ -409,4 +640,78 @@
     </div>
 
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function searchUsers() {
+            let query = $("#name").val();
+
+            if (query.length > 2) { // Start searching after 2 characters
+                $.ajax({
+                    url: '/search-users',
+                    type: "GET",
+                    data: {
+                        query: query
+                    },
+                    success: function(data) {
+                        let dropdown = $("#userList");
+                        dropdown.empty();
+                        if (data.length > 0) {
+                            data.forEach(user => {
+                                dropdown.append(
+                                    `<a href="#" class="dropdown-item" onclick="selectUser(${user.id}, '${user.name}')">${user.name}</a>`
+                                );
+                            });
+                            dropdown.show();
+                        } else {
+                            dropdown.hide();
+                        }
+                    }
+                });
+            } else {
+                $("#userList").hide();
+            }
+        }
+
+        function selectUser(id, name) {
+            $("#user_id").val(id);
+            $("#name").val(name);
+            $("#userList").hide();
+        }
+
+        function searchWhoseUsers() {
+            let query = $("#whose_name").val();
+
+            if (query.length > 2) { // Start searching after 2 characters
+                $.ajax({
+                    url: '/search-users',
+                    type: "GET",
+                    data: {
+                        query: query
+                    },
+                    success: function(data) {
+                        let dropdown = $("#whose_userList");
+                        dropdown.empty();
+                        if (data.length > 0) {
+                            data.forEach(user => {
+                                dropdown.append(
+                                    `<a href="#" class="dropdown-item" onclick="selectWhoseUser(${user.id}, '${user.name}')">${user.name}</a>`
+                                );
+                            });
+                            dropdown.show();
+                        } else {
+                            dropdown.hide();
+                        }
+                    }
+                });
+            } else {
+                $("#whose_userList").hide();
+            }
+        }
+
+        function selectWhoseUser(id, name) {
+            $("#whose_user_id").val(id);
+            $("#whose_name").val(name);
+            $("#whose_userList").hide();
+        }
+    </script>
 @endsection

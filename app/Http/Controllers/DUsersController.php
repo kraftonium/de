@@ -85,18 +85,18 @@ class DUsersController extends Controller
             if (Hash::check($credentials['password'], $user->password)) {
                 if (Auth::attempt($credentials, $request->has('remember'))) {
                     $request->session()->regenerate();
-                    switch ($user->usertype->usertype) {
-                        case 'Admin':
+                    switch ($user->usertype_id) {
+                        case 1:
                             return redirect('/dashboard');
-                        case 'State Dealer':
+                        case 2:
                             return redirect('/manage-state-dealership');
-                        case 'Zone Dealer':
+                        case 'Zone Dealership':
                             return redirect('/manage-zone-dealership');
-                        case 'District Dealer':
+                        case 'District Dealership':
                             return redirect('/manage-district-dealership');
-                        case 'Taluka Dealer':
+                        case 'Taluka Dealership':
                             return redirect('/manage-taluka-dealership');
-                        case 'Area Dealer':
+                        case 'Area Dealership':
                             return redirect('/manage-area-dealership');
                     }
                 } else {
@@ -183,6 +183,13 @@ class DUsersController extends Controller
 
     public function manage()
     {
+        $users = D_Users::where('usertype_id', 1)->paginate(10);
+        $data = compact('users');
+        return view('backend.manage-admin.manage-admin')->with($data);
+    }
+
+    public function manageusers()
+    {
         $users = D_Users::paginate(10);
         $data = compact('users');
         return view('backend.manage-admin.manage-admin')->with($data);
@@ -266,7 +273,7 @@ class DUsersController extends Controller
             $user->password = Hash::make($request['password']);
             $user->save();
 
-            return redirect('/admin-profile')->with('change-passord-success', 'Your Password Changed Successfully!');
+            return redirect('/login')->with('change-password-success', 'Your Password Changed Successfully!');
         } else {
             return redirect()->back()->withInput()->withErrors(['current_password' => 'Current Password Is Wrong.']);
         }
@@ -278,7 +285,9 @@ class DUsersController extends Controller
             'email' => 'required|email',
         ]);
 
-        if (Auth::user()->email == $request['email']) {
+        $email = D_Users::where('email', $request['email'])->first();
+
+        if ($email->email == $request['email']) {
 
             $otp = random_int(100000, 999999);
 
