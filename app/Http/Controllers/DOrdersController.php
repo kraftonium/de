@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\D_Dealership_Details;
 use App\Models\D_Orders;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DOrdersController extends Controller
 {
@@ -71,13 +72,36 @@ class DOrdersController extends Controller
 
     public function delete($id)
     {
-        $order = D_Orders::find($id)->delete();
+        // $order = D_Orders::find($id)->delete();
+        $order = D_Orders::find($id);
+
+        if ($order) {
+            // Get the total price of the order before deletion
+            $orderTotalPrice = $order->total_price;
+
+            // Get the user_id associated with the order
+            $userId = $order->user_id;
+
+            // Delete the order
+            $order->delete();
+
+            // Decrease total_revenue in D_Dealership_Details
+            D_Dealership_Details::where('user_id', $userId)
+                ->decrement('total_revenue', $orderTotalPrice);
+        }
         return redirect()->back();
     }
 
     public function manage()
     {
         $orders = D_Orders::paginate(10);
+        $data = compact('orders');
+        return view('backend.manage-orders.manage-order')->with($data);
+    }
+
+    public function manage_own_orders()
+    {
+        $orders = D_Orders::where('user_id', Auth::user()->id)->paginate(10);
         $data = compact('orders');
         return view('backend.manage-orders.manage-order')->with($data);
     }

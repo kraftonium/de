@@ -3,6 +3,7 @@
 use App\Http\Middleware\D_Admin_Auth;
 use App\Http\Middleware\D_State_Dealership_Auth;
 use App\Http\Middleware\D_Users_Auth;
+use App\Http\Middleware\D_Zone_Dealership_Auth;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -18,6 +19,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'usersauth' => D_Users_Auth::class,
             'adminauth' => D_Admin_Auth::class,
             'stateauth' => D_State_Dealership_Auth::class,
+            'zoneauth' => D_Zone_Dealership_Auth::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

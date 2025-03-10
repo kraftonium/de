@@ -227,8 +227,8 @@
                                                 </td>
                                                 <td>{{ $dealership->user->email }}</td>
                                                 <td>{{ $dealership->user->phoneno }}</td>
-                                                <td><a href="/profile.html" class="avatar avatar-sm me-2"><img
-                                                            class="avatar-img rounded-circle"
+                                                <td><a href="{{ url('/manage-single-dealer') }}/{{ $dealership->user_id }}"
+                                                        class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle"
                                                             src="{{ $dealership->user->image }}" alt="User Image"></a></td>
                                                 <td>{{ $dealership->user->dob }}</td>
                                                 <td>{{ $dealership->user->address }}</td>
@@ -248,9 +248,9 @@
                                                 <td>{{ $dealership->firm_name }}</td>
                                                 <td>{{ $dealership->firm_gstno }}</td>
                                                 <td>{{ $dealership->total_revenue }}</td>
-                                                <td>{{ $dealership->total_profit }}</td>
-                                                <td><a href="/profile.html" class="avatar avatar-sm me-2"><img
-                                                            class="avatar-img rounded-circle"
+                                                {{-- <td>{{ $dealership->total_profit }}</td> --}}
+                                                <td><a href="{{ url('/manage-single-dealer') }}/{{ $dealership->user_id }}"
+                                                        class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle"
                                                             src="{{ asset($dealership->firm_photo) }}"
                                                             alt="User Image"></a></td>
                                                 <td>{{ $dealership->whoseuser->name }}</td>

@@ -271,7 +271,7 @@ Route::middleware('usersauth')->group(function () {
         //manage stock routes ends here
 
 
-        Route::get('/dealer-profile', [DDealershipDetailsController::class, 'dealerprofile']);
+        // Route::get('/dealer-profile', [DDealershipDetailsController::class, 'dealerprofile']);
         Route::get('/manage-state-dealership', [DDealershipDetailsController::class, 'manage_state_dealership']);
         Route::get('/manage-zone-dealership', [DDealershipDetailsController::class, 'manage_zone_dealership']);
         Route::get('/manage-district-dealership', [DDealershipDetailsController::class, 'manage_district_dealership']);
@@ -283,19 +283,23 @@ Route::middleware('usersauth')->group(function () {
     //State Dealership Routes Starts Here
     Route::middleware('stateauth')->group(function () {
         Route::get('/dealer-profile', [DDealershipDetailsController::class, 'dealerprofile']);
-        Route::get('/manage-state-dealership', [DDealershipDetailsController::class, 'manage_state_dealership']);
-        Route::get('/manage-zone-dealership', [DDealershipDetailsController::class, 'manage_zone_dealership']);
-        Route::get('/manage-district-dealership', [DDealershipDetailsController::class, 'manage_district_dealership']);
-        Route::get('/manage-taluka-dealership', [DDealershipDetailsController::class, 'manage_taluka_dealership']);
-        Route::get('/manage-area-dealership', [DDealershipDetailsController::class, 'manage_area_dealership']);
+        Route::get('/manage-state-dealership-dashboard', [DDealershipDetailsController::class, 'dashboard_of_dealership']);
+        Route::get('/manage-zone-dealership-by-state', [DDealershipDetailsController::class, 'manage_zone_for_state']);
+        Route::get('/manage-district-dealership-by-state', [DDealershipDetailsController::class, 'manage_district_for_state']);
+        Route::get('/manage-taluka-dealership-by-state', [DDealershipDetailsController::class, 'manage_taluka_for_state']);
+        Route::get('/manage-area-dealership-by-state', [DDealershipDetailsController::class, 'manage_area_for_state']);
     });
     //State Dealership Routes Ends Here
 
 
 
 
+    //This Route is only for admin because this route shows all customer 
+    Route::get('/manage-all-customers', [DCustomersController::class, 'manage']);
+    //This Route is only for admin because this route shows all customer 
 
-    Route::get('/manage-customers', [DCustomersController::class, 'manage']);
+    Route::get('/manage-customers', [DCustomersController::class, 'manage_own_customers']);
+
     Route::get('/add-customers', [DCustomersController::class, 'add']);
     Route::post('/add-customer-submit', [DCustomersController::class, 'create']);
     Route::get('/edit-customer/{id}', [DCustomersController::class, 'edit']);

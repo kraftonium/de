@@ -6,6 +6,7 @@ use App\Models\D_Customers;
 use App\Models\D_Stocks;
 use App\Models\D_Vehicles;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DCustomersController extends Controller
 {
@@ -134,13 +135,34 @@ class DCustomersController extends Controller
 
     public function delete($id)
     {
-        $customer = D_Customers::find($id)->delete();
+        // $customer = D_Customers::find($id)->delete();
+        $customer = D_Customers::find($id);
+
+        if ($customer) {
+            $vehicleId = $customer->vehicle_id;
+            $userId = $customer->whose_customer;
+
+            // Delete the customer
+            $customer->delete();
+
+            // Add 1 back to the stock for the vehicle
+            D_Stocks::where('vehicle_id', $vehicleId)
+                ->where('whose_stock', $userId)
+                ->increment('quantity', 1);
+        }
         return redirect()->back();
     }
 
     public function manage()
     {
         $customers = D_Customers::paginate(10);
+        $data = compact('customers');
+        return view('backend.manage-customers.manage-customer')->with($data);
+    }
+
+    public function manage_own_customers()
+    {
+        $customers = D_Customers::where('whose_customer', Auth::user()->id)->paginate(10);
         $data = compact('customers');
         return view('backend.manage-customers.manage-customer')->with($data);
     }

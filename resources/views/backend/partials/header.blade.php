@@ -71,6 +71,10 @@
             $pagename = 'manage-form-dealership';
         } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-users') !== false) {
             $pagename = 'manage-users';
+        } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-state-dealership-dashboard') !== false) {
+            $pagename = 'manage-state-dealership';
+        } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-zone-dealership-by-state') !== false) {
+            $pagename = 'manage-zone-dealership';
         }
     @endphp
 
@@ -250,7 +254,7 @@
                                 </li>
 
                                 <li class="@if ($pagename == 'manage-form-dealership') active @endif">
-                                    <a href="{{ url('/manage-dealership-form') }}"><i class="fa fa-file-alt"></i>
+                                    <a href="{{ url('/manage-form-dealership') }}"><i class="fa fa-file-alt"></i>
                                         <span>Manage Dealership Form</span></a>
                                 </li>
 
@@ -270,7 +274,8 @@
                                 </li>
                             @elseif(Auth::user()->usertype_id == 2)
                                 <li class="@if ($pagename == 'manage-state-dealership') active @endif">
-                                    <a href="{{ url('/manage-state-dealership') }}"><i class="fa fa-store "></i>
+                                    <a href="{{ url('/manage-state-dealership-dashboard') }}"><i
+                                            class="fa fa-store "></i>
                                         <span>Dashboard</span></a>
                                 </li>
 
@@ -286,22 +291,26 @@
 
 
                                 <li class="@if ($pagename == 'manage-zone-dealership') active @endif">
-                                    <a href="{{ url('/manage-zone-dealership') }}"><i class="fa fa-store "></i>
+                                    <a href="{{ url('/manage-zone-dealership-by-state') }}"><i
+                                            class="fa fa-store "></i>
                                         <span>Manage Zone Dealership</span></a>
                                 </li>
 
                                 <li class="@if ($pagename == 'manage-district-dealership') active @endif">
-                                    <a href="{{ url('/manage-district-dealership') }}"><i class="fa fa-store "></i>
+                                    <a href="{{ url('/manage-district-dealership-by-state') }}"><i
+                                            class="fa fa-store "></i>
                                         <span>Manage District Dealership</span></a>
                                 </li>
 
                                 <li class="@if ($pagename == 'manage-taluka-dealership') active @endif">
-                                    <a href="{{ url('/manage-taluka-dealership') }}"><i class="fa fa-store "></i>
+                                    <a href="{{ url('/manage-taluka-dealership-by-state') }}"><i
+                                            class="fa fa-store "></i>
                                         <span>Manage Taluka Dealership</span></a>
                                 </li>
 
                                 <li class="@if ($pagename == 'manage-area-dealership') active @endif">
-                                    <a href="{{ url('/manage-area-dealership') }}"><i class="fa fa-store "></i>
+                                    <a href="{{ url('/manage-area-dealership-by-state') }}"><i
+                                            class="fa fa-store "></i>
                                         <span>Manage Area Dealership</span></a>
                                 </li>
                             @endif

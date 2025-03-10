@@ -20,4 +20,8 @@ class D_Users extends Authenticatable implements AuthenticatableContract
     {
         return $this->belongsTo(D_Userstype::class, 'usertype_id');
     }
+    public function dealershipDetails()
+    {
+        return $this->hasOne(D_Dealership_Details::class, 'user_id', 'id');
+    }
 }

@@ -141,14 +141,18 @@
                                             {{-- <td>{{ $loop->iteration }}</td> --}}
                                             <td>
                                                 <h2 class="table-avatar">
-                                                    <a href="/profile.html">{{ $dealership->user->name }}</a>
+                                                    {{-- <a href="/profile.html"> --}}
+                                                    {{ $dealership->user->name }}
+                                                    {{-- </a> --}}
                                                 </h2>
                                             </td>
                                             <td>{{ $dealership->user->email }}</td>
                                             <td>{{ $dealership->user->phoneno }}</td>
-                                            <td><a href="/profile.html" class="avatar avatar-sm me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="{{ asset($dealership->user->image) }}" alt="User Image"></a>
+                                            <td>
+                                                {{-- <a href="/profile.html" class="avatar avatar-sm me-2"> --}}
+                                                <img class="avatar-img rounded-circle"
+                                                    src="{{ asset($dealership->user->image) }}" alt="User Image">
+                                                {{-- </a> --}}
                                             </td>
                                             <td>{{ $dealership->user->dob }}</td>
                                             <td>{{ $dealership->user->address }}</td>

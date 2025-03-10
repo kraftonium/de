@@ -18,7 +18,7 @@
                                     <i class="fa fa-users  "></i>
                                 </span>
                                 <div class="dash-count">
-                                    <h3>168</h3>
+                                    <h3>{{ $totalcustomers }}</h3>
                                 </div>
                             </div>
                             <div class="dash-widget-info">
@@ -58,7 +58,7 @@
                                     <i class="fa fa-shopping-cart"></i>
                                 </span>
                                 <div class="dash-count">
-                                    <h3>485</h3>
+                                    <h3>{{ $totalorders }}</h3>
                                 </div>
                             </div>
                             <div class="dash-widget-info">
@@ -78,11 +78,11 @@
                                     <i class="fa fa-dollar-sign"></i>
                                 </span>
                                 <div class="dash-count">
-                                    <h3>62523</h3>
+                                    <h3>{{ $totalrevenue }}</h3>
                                 </div>
                             </div>
                             <div class="dash-widget-info">
-                                <h6 class="text-muted">Total Profit</h6>
+                                <h6 class="text-muted">Total Revenue</h6>
                                 <div class="progress progress-sm">
                                     <div class="progress-bar  w-50"></div>
                                 </div>
@@ -119,7 +119,7 @@
                                             <th>Firm Name</th>
                                             <th>Firm GST No.</th>
                                             <th>Total Revenue</th>
-                                            <th>Total Profit</th>
+                                            {{-- <th>Total Profit</th> --}}
                                             <th>Firm Photo</th>
                                             <th>Whose Dealer</th>
                                             <th>Firm Pincode </th>
@@ -138,13 +138,14 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>
                                                     <h2 class="table-avatar">
-                                                        <a href="/profile.html">{{ $dealership->user->name }}</a>
+                                                        <a
+                                                            href="{{ url('/manage-single-dealer') }}/{{ $dealership->user_id }}">{{ $dealership->user->name }}</a>
                                                     </h2>
                                                 </td>
                                                 <td>{{ $dealership->user->email }}</td>
                                                 <td>{{ $dealership->user->phoneno }}</td>
-                                                <td><a href="/profile.html" class="avatar avatar-sm me-2"><img
-                                                            class="avatar-img rounded-circle"
+                                                <td><a href="{{ url('/manage-single-dealer') }}/{{ $dealership->user_id }}"
+                                                        class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle"
                                                             src="{{ $dealership->user->image }}" alt="User Image"></a></td>
                                                 <td>{{ $dealership->user->dob }}</td>
                                                 <td>{{ $dealership->user->address }}</td>
@@ -164,9 +165,9 @@
                                                 <td>{{ $dealership->firm_name }}</td>
                                                 <td>{{ $dealership->firm_gstno }}</td>
                                                 <td>{{ $dealership->total_revenue }}</td>
-                                                <td>{{ $dealership->total_profit }}</td>
-                                                <td><a href="/profile.html" class="avatar avatar-sm me-2"><img
-                                                            class="avatar-img rounded-circle"
+                                                {{-- <td>{{ $dealership->total_profit }}</td> --}}
+                                                <td><a href="{{ url('/manage-single-dealer') }}/{{ $dealership->user_id }}"
+                                                        class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle"
                                                             src="{{ asset($dealership->firm_photo) }}"
                                                             alt="User Image"></a></td>
                                                 <td>{{ $dealership->whoseuser->name }}</td>

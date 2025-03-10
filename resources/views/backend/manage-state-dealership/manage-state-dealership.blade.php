@@ -119,7 +119,7 @@
                                             <th>Firm Name</th>
                                             <th>Firm GST No.</th>
                                             <th>Total Revenue</th>
-                                            <th>Total Profit</th>
+                                            {{-- <th>Total Profit</th> --}}
                                             <th>Firm Photo</th>
                                             <th>Whose Dealer</th>
                                             <th>Firm Pincode </th>
@@ -165,9 +165,9 @@
                                                 <td>{{ $dealership->firm_name }}</td>
                                                 <td>{{ $dealership->firm_gstno }}</td>
                                                 <td>{{ $dealership->total_revenue }}</td>
-                                                <td>{{ $dealership->total_profit }}</td>
-                                                <td><a href="/profile.html" class="avatar avatar-sm me-2"><img
-                                                            class="avatar-img rounded-circle"
+                                                {{-- <td>{{ $dealership->total_profit }}</td> --}}
+                                                <td><a href="{{ url('/manage-single-dealer') }}/{{ $dealership->user_id }}"
+                                                        class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle"
                                                             src="{{ asset($dealership->firm_photo) }}"
                                                             alt="User Image"></a></td>
                                                 <td>{{ $dealership->whoseuser->name }}</td>

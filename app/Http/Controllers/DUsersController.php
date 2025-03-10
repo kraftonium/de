@@ -89,8 +89,8 @@ class DUsersController extends Controller
                         case 1:
                             return redirect('/dashboard');
                         case 2:
-                            return redirect('/manage-state-dealership');
-                        case 'Zone Dealership':
+                            return redirect('/manage-state-dealership-dashboard');
+                        case 3:
                             return redirect('/manage-zone-dealership');
                         case 'District Dealership':
                             return redirect('/manage-district-dealership');
