@@ -100,7 +100,7 @@ html {
 @media (min-width:991px) {
     .form-input-container {
         display: grid;
-        grid-template-columns:  1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         justify-content: space-between;
         gap: 10px;
         width: 100%;
@@ -3008,6 +3008,13 @@ button.bg-danger:hover {
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover
+}
+
+.rounded-circle {
+    border-radius: 50% !important;
+    height: 45px !important;
+    width: 45px !important;
+    object-fit: cover !important;
 }
 
 .avatar .avatar-title {

@@ -16,7 +16,8 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('d__users')->onDelete('cascade');
             $table->unsignedBigInteger('customer_id');
-            $table->foreign('customer_id')->references('id')->on('d__users')->onDelete('cascade');
+            // $table->foreign('customer_id')->references('id')->on('d__users')->onDelete('cascade');
+            $table->foreign('customer_id')->references('id')->on('d__customers')->onDelete('cascade');
             $table->string('total_price', 655);
             $table->string('warranty', 655);
             $table->softDeletes();

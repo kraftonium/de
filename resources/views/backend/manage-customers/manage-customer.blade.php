@@ -11,12 +11,17 @@
             <div class="row">
                 <div class="col-md-12 d-flex">
 
+
+
                     <div class="card card-table flex-fill">
                         <div class="card-header">
                             <h4 class="card-title">Manage Customer List</h4>
                         </div>
+
                         <div class="card-body">
+
                             <div class="table-responsive" style="max-height: 420px; overflow-y: auto;">
+
                                 <table class="table table-hover table-center mb-0">
                                     <thead>
                                         <tr>

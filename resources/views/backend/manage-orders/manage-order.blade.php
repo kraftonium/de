@@ -58,30 +58,31 @@
                                                 <td>
 
                                                     <h2 class="table-avatar">
-                                                        <a href="/profile.html">{{ $order->orderByCustomer->name }}</a>
+                                                        <a
+                                                            href="/profile.html">{{ $order->orderByCustomer->user->name }}</a>
 
 
                                                     </h2>
                                                 </td>
-                                                <td>{{ $order->orderByCustomer->email }}</td>
-                                                <td>{{ $order->orderByCustomer->phoneno }}</td>
+                                                <td>{{ $order->orderByCustomer->user->email }}</td>
+                                                <td>{{ $order->orderByCustomer->user->phoneno }}</td>
                                                 <td><a href="/profile.html" class="avatar avatar-sm me-2"><img
                                                             class="avatar-img rounded-circle"
-                                                            src="{{ asset($order->orderByCustomer->image) }}"
+                                                            src="{{ asset($order->orderByCustomer->user->image) }}"
                                                             alt="User Image"></a></td>
-                                                <td>{{ \Carbon\Carbon::parse($order->orderByCustomer->dob)->format('d-m-Y') }}
+                                                <td>{{ \Carbon\Carbon::parse($order->orderByCustomer->user->dob)->format('d-m-Y') }}
                                                 </td>
-                                                <td>{{ $order->orderByCustomer->address }}</td>
+                                                <td>{{ $order->orderByCustomer->user->address }}</td>
                                                 <td>
-                                                    @if ($order->orderByCustomer->gender == 0)
+                                                    @if ($order->orderByCustomer->user->gender == 0)
                                                         Female
-                                                    @elseif($order->orderByCustomer->gender == 1)
+                                                    @elseif($order->orderByCustomer->user->gender == 1)
                                                         Male
                                                     @else
                                                         Other
                                                     @endif
                                                 </td>
-                                                {{-- <td>Admin</td> --}}
+
                                                 <td>{{ $order->customerDetails->battery_no }}</td>
                                                 <td>{{ $order->customerDetails->chassis_no }}</td>
                                                 <td>{{ $order->customerDetails->controller_no }}</td>
@@ -111,6 +112,7 @@
                                                             class="fa fa-trash"></i></a></td>
                                             </tr>
                                         @endforeach
+
 
                                     </tbody>
                                 </table>

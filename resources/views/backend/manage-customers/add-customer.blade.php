@@ -14,6 +14,8 @@
                 <form action="{{ url('/add-customer-submit') }}" method="POST">
                     @csrf
                     <div class="col-lg-12 form-input-container ">
+
+
                         <div class="mb-3  ">
                             <input type="hidden" id="user_id" name="user_id">
                             <label for="name">Name</label>

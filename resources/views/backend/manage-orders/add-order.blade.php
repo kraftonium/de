@@ -17,16 +17,16 @@
 
 
                         <div class="mb-3  ">
-                            <label for="name">Search Name Of Customer</label>
+                            <label for="name">Search Chassis No Of Customer</label>
                             {{-- this is for user id for this is used to search name of user --}}
                             <input type="hidden" id="customer_id" name="customer_id">
 
-                            <input class="form-control" type="text" id="name" placeholder="Search Name Of Customer"
-                                name="name" oninput="searchUsers()">
+                            <input class="form-control" type="text" id="name"
+                                placeholder="Search Chassis No Of Customer" name="chassis_no" oninput="searchUsers()">
                             <div id="userList" class="dropdown-menu w-100"
                                 style="display: none; position: absolute; max-height: 200px; overflow-y: auto;"></div>
                             <span class="text-danger">
-                                @error('customer_name')
+                                @error('chassis_no')
                                     {{ $message }}
                                 @enderror
                             </span>
@@ -96,7 +96,7 @@
 
             if (query.length > 2) { // Start searching after 2 characters
                 $.ajax({
-                    url: '/search-users',
+                    url: '/search-customer-chassisno',
                     type: "GET",
                     data: {
                         query: query
@@ -107,7 +107,7 @@
                         if (data.length > 0) {
                             data.forEach(user => {
                                 dropdown.append(
-                                    `<a href="#" class="dropdown-item" onclick="selectUser(${user.id}, '${user.name}')">${user.name}</a>`
+                                    `<a href="#" class="dropdown-item" onclick="selectUser(${user.id}, '${user.chassis_no}')">${user.chassis_no}</a>`
                                 );
                             });
                             dropdown.show();
@@ -121,9 +121,9 @@
             }
         }
 
-        function selectUser(id, name) {
+        function selectUser(id, chassis_no) {
             $("#customer_id").val(id);
-            $("#name").val(name);
+            $("#name").val(chassis_no);
             $("#userList").hide();
         }
 

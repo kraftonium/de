@@ -89,15 +89,15 @@ class DUsersController extends Controller
                         case 1:
                             return redirect('/dashboard');
                         case 2:
-                            return redirect('/manage-state-dealership-dashboard');
+                            return redirect('/manage-dealership-dashboard');
                         case 3:
-                            return redirect('/manage-zone-dealership');
-                        case 'District Dealership':
-                            return redirect('/manage-district-dealership');
-                        case 'Taluka Dealership':
-                            return redirect('/manage-taluka-dealership');
-                        case 'Area Dealership':
-                            return redirect('/manage-area-dealership');
+                            return redirect('/manage-dealership-dashboard');
+                        case 4:
+                            return redirect('/manage-dealership-dashboard');
+                        case 5:
+                            return redirect('/manage-dealership-dashboard');
+                        case 6:
+                            return redirect('/manage-dealership-dashboard');
                     }
                 } else {
                     return redirect()->back()->withInput()->withErrors(['problem' => 'Sorry, Something went wrong here.']);

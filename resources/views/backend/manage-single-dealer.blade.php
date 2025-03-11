@@ -1,7 +1,7 @@
 @extends('backend.partials.mainindex')
 
 @push('title')
-    <title>Manage State Dealership | Divyashakti Enterprise</title>
+    <title>Manage Dealership | Divyashakti Enterprise</title>
 @endpush
 
 @section('mainsection')

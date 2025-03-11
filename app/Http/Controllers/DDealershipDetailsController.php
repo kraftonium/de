@@ -446,4 +446,232 @@ class DDealershipDetailsController extends Controller
         // dd($data);
         return view('backend.manage-area-dealership.manage-area-dealership')->with($data);
     }
+
+    public function manage_district_for_zone()
+    {
+        $dealer = D_Dealership_Details::where('user_id', Auth::user()->id)->first();
+
+        if (!$dealer) {
+            return redirect()->back()->withErrors('No dealership found for the current user.');
+        }
+
+
+        $districtDealerUserIds = D_Users::where('usertype_id', 4)
+            ->whereHas('dealershipDetails', function ($query) use ($dealer) {
+                $query->where('firm_zone', $dealer->firm_zone);
+            })->pluck('id');
+
+        // Debug - Check zone dealer user IDs
+        // Log::info('Zone dealer user IDs:', $zoneDealerUserIds->toArray());
+
+        // Total zone dealerships
+        $totaldistrictdealerships = $districtDealerUserIds->count();
+
+        // Total customers of zone dealers in this state
+        $totalcustomers = D_Customers::whereIn('whose_customer', $districtDealerUserIds)->count();
+
+        // Total orders from zone dealers in this state
+        $totalorders = D_Orders::whereIn('user_id', $districtDealerUserIds)->count();
+
+        // Total revenue from those dealerships
+        $totalrevenue = D_Dealership_Details::whereIn('user_id', $districtDealerUserIds)->sum('total_revenue');
+
+        $dealerships = D_Dealership_Details::whereIn('user_id', $districtDealerUserIds)
+            ->where('firm_state', $dealer->firm_state)
+            ->paginate(10);
+
+        $data = compact('totaldistrictdealerships', 'totalcustomers', 'totalorders', 'totalrevenue', 'dealerships');
+        // dd($data);
+        return view('backend.manage-district-dealership.manage-district-dealership')->with($data);
+    }
+
+    public function manage_taluka_for_zone()
+    {
+        $dealer = D_Dealership_Details::where('user_id', Auth::user()->id)->first();
+
+        if (!$dealer) {
+            return redirect()->back()->withErrors('No dealership found for the current user.');
+        }
+
+        // Get the IDs of users (zone dealerships) in the same state and with usertype_id = 3
+        $talukaDealerUserIds = D_Users::where('usertype_id', 5)
+            ->whereHas('dealershipDetails', function ($query) use ($dealer) {
+                $query->where('firm_zone', $dealer->firm_zone);
+            })->pluck('id');
+
+        // Debug - Check zone dealer user IDs
+        // Log::info('Zone dealer user IDs:', $zoneDealerUserIds->toArray());
+
+        // Total zone dealerships
+        $totaltalukadealerships = $talukaDealerUserIds->count();
+
+        // Total customers of zone dealers in this state
+        $totalcustomers = D_Customers::whereIn('whose_customer', $talukaDealerUserIds)->count();
+
+        // Total orders from zone dealers in this state
+        $totalorders = D_Orders::whereIn('user_id', $talukaDealerUserIds)->count();
+
+        // Total revenue from those dealerships
+        $totalrevenue = D_Dealership_Details::whereIn('user_id', $talukaDealerUserIds)->sum('total_revenue');
+
+        $dealerships = D_Dealership_Details::whereIn('user_id', $talukaDealerUserIds)
+            ->where('firm_state', $dealer->firm_state)
+            ->paginate(10);
+
+        $data = compact('totaltalukadealerships', 'totalcustomers', 'totalorders', 'totalrevenue', 'dealerships');
+        // dd($data);
+        return view('backend.manage-taluka-dealership.manage-taluka-dealership')->with($data);
+    }
+
+    public function manage_area_for_zone()
+    {
+        $dealer = D_Dealership_Details::where('user_id', Auth::user()->id)->first();
+
+        if (!$dealer) {
+            return redirect()->back()->withErrors('No dealership found for the current user.');
+        }
+
+        // Get the IDs of users (zone dealerships) in the same state and with usertype_id = 3
+        $areaDealerUserIds = D_Users::where('usertype_id', 6)
+            ->whereHas('dealershipDetails', function ($query) use ($dealer) {
+                $query->where('firm_zone', $dealer->firm_zone);
+            })->pluck('id');
+
+        // Debug - Check zone dealer user IDs
+        // Log::info('Zone dealer user IDs:', $zoneDealerUserIds->toArray());
+
+        // Total zone dealerships
+        $totalareadealerships = $areaDealerUserIds->count();
+
+        // Total customers of zone dealers in this state
+        $totalcustomers = D_Customers::whereIn('whose_customer', $areaDealerUserIds)->count();
+
+        // Total orders from zone dealers in this state
+        $totalorders = D_Orders::whereIn('user_id', $areaDealerUserIds)->count();
+
+        // Total revenue from those dealerships
+        $totalrevenue = D_Dealership_Details::whereIn('user_id', $areaDealerUserIds)->sum('total_revenue');
+
+        $dealerships = D_Dealership_Details::whereIn('user_id', $areaDealerUserIds)
+            ->where('firm_state', $dealer->firm_state)
+            ->paginate(10);
+
+        $data = compact('totalareadealerships', 'totalcustomers', 'totalorders', 'totalrevenue', 'dealerships');
+        // dd($data);
+        return view('backend.manage-area-dealership.manage-area-dealership')->with($data);
+    }
+
+    public function manage_taluka_for_district()
+    {
+        $dealer = D_Dealership_Details::where('user_id', Auth::user()->id)->first();
+
+        if (!$dealer) {
+            return redirect()->back()->withErrors('No dealership found for the current user.');
+        }
+
+        // Get the IDs of users (zone dealerships) in the same state and with usertype_id = 3
+        $talukaDealerUserIds = D_Users::where('usertype_id', 5)
+            ->whereHas('dealershipDetails', function ($query) use ($dealer) {
+                $query->where('firm_district', $dealer->firm_district);
+            })->pluck('id');
+
+        // Debug - Check zone dealer user IDs
+        // Log::info('Zone dealer user IDs:', $zoneDealerUserIds->toArray());
+
+        // Total zone dealerships
+        $totaltalukadealerships = $talukaDealerUserIds->count();
+
+        // Total customers of zone dealers in this state
+        $totalcustomers = D_Customers::whereIn('whose_customer', $talukaDealerUserIds)->count();
+
+        // Total orders from zone dealers in this state
+        $totalorders = D_Orders::whereIn('user_id', $talukaDealerUserIds)->count();
+
+        // Total revenue from those dealerships
+        $totalrevenue = D_Dealership_Details::whereIn('user_id', $talukaDealerUserIds)->sum('total_revenue');
+
+        $dealerships = D_Dealership_Details::whereIn('user_id', $talukaDealerUserIds)
+            ->where('firm_state', $dealer->firm_state)
+            ->paginate(10);
+
+        $data = compact('totaltalukadealerships', 'totalcustomers', 'totalorders', 'totalrevenue', 'dealerships');
+        // dd($data);
+        return view('backend.manage-taluka-dealership.manage-taluka-dealership')->with($data);
+    }
+
+    public function manage_area_for_district()
+    {
+        $dealer = D_Dealership_Details::where('user_id', Auth::user()->id)->first();
+
+        if (!$dealer) {
+            return redirect()->back()->withErrors('No dealership found for the current user.');
+        }
+
+        // Get the IDs of users (zone dealerships) in the same state and with usertype_id = 3
+        $areaDealerUserIds = D_Users::where('usertype_id', 6)
+            ->whereHas('dealershipDetails', function ($query) use ($dealer) {
+                $query->where('firm_district', $dealer->firm_district);
+            })->pluck('id');
+
+        // Debug - Check zone dealer user IDs
+        // Log::info('Zone dealer user IDs:', $zoneDealerUserIds->toArray());
+
+        // Total zone dealerships
+        $totalareadealerships = $areaDealerUserIds->count();
+
+        // Total customers of zone dealers in this state
+        $totalcustomers = D_Customers::whereIn('whose_customer', $areaDealerUserIds)->count();
+
+        // Total orders from zone dealers in this state
+        $totalorders = D_Orders::whereIn('user_id', $areaDealerUserIds)->count();
+
+        // Total revenue from those dealerships
+        $totalrevenue = D_Dealership_Details::whereIn('user_id', $areaDealerUserIds)->sum('total_revenue');
+
+        $dealerships = D_Dealership_Details::whereIn('user_id', $areaDealerUserIds)
+            ->where('firm_state', $dealer->firm_state)
+            ->paginate(10);
+
+        $data = compact('totalareadealerships', 'totalcustomers', 'totalorders', 'totalrevenue', 'dealerships');
+        // dd($data);
+        return view('backend.manage-area-dealership.manage-area-dealership')->with($data);
+    }
+
+    public function manage_area_for_taluka()
+    {
+        $dealer = D_Dealership_Details::where('user_id', Auth::user()->id)->first();
+
+        if (!$dealer) {
+            return redirect()->back()->withErrors('No dealership found for the current user.');
+        }
+
+        // Get the IDs of users (zone dealerships) in the same state and with usertype_id = 3
+        $areaDealerUserIds = D_Users::where('usertype_id', 6)
+            ->whereHas('dealershipDetails', function ($query) use ($dealer) {
+                $query->where('firm_taluka', $dealer->firm_taluka);
+            })->pluck('id');
+
+        // Debug - Check zone dealer user IDs
+        // Log::info('Zone dealer user IDs:', $zoneDealerUserIds->toArray());
+
+        // Total zone dealerships
+        $totalareadealerships = $areaDealerUserIds->count();
+
+        // Total customers of zone dealers in this state
+        $totalcustomers = D_Customers::whereIn('whose_customer', $areaDealerUserIds)->count();
+
+        // Total orders from zone dealers in this state
+        $totalorders = D_Orders::whereIn('user_id', $areaDealerUserIds)->count();
+
+        // Total revenue from those dealerships
+        $totalrevenue = D_Dealership_Details::whereIn('user_id', $areaDealerUserIds)->sum('total_revenue');
+
+        $dealerships = D_Dealership_Details::whereIn('user_id', $areaDealerUserIds)
+            ->where('firm_state', $dealer->firm_state)
+            ->paginate(10);
+
+        $data = compact('totalareadealerships', 'totalcustomers', 'totalorders', 'totalrevenue', 'dealerships');
+        // dd($data);
+        return view('backend.manage-area-dealership.manage-area-dealership')->with($data);
+    }
 }

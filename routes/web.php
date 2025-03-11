@@ -199,7 +199,7 @@ Route::middleware('usersauth')->group(function () {
 
 
         //manage dealership routes starts here
-        Route::get('/search-users', [DUsersController::class, 'searchUsers']);
+
         Route::get('/add-dealership', function () {
             return view('backend.manage-dealership.add-dealer');
         });
@@ -277,34 +277,66 @@ Route::middleware('usersauth')->group(function () {
         Route::get('/manage-district-dealership', [DDealershipDetailsController::class, 'manage_district_dealership']);
         Route::get('/manage-taluka-dealership', [DDealershipDetailsController::class, 'manage_taluka_dealership']);
         Route::get('/manage-area-dealership', [DDealershipDetailsController::class, 'manage_area_dealership']);
+
+        //This Route is only for admin because this route shows all customer and orders
+        Route::get('/manage-all-customers', [DCustomersController::class, 'manage']);
+        Route::get('/manage-all-orders', [DOrdersController::class, 'manage']);
     });
     // Admin Panel Routes Ends Here
 
+    Route::get('/search-users', [DUsersController::class, 'searchUsers']);
+    Route::get('/dealer-profile', [DDealershipDetailsController::class, 'dealerprofile']);
+    Route::get('/my-stock', [DStocksController::class, 'my_stock']);
+    //this route work for all dealership's dasboard
+    Route::get('/manage-dealership-dashboard', [DDealershipDetailsController::class, 'dashboard_of_dealership']);
+
     //State Dealership Routes Starts Here
     Route::middleware('stateauth')->group(function () {
-        Route::get('/dealer-profile', [DDealershipDetailsController::class, 'dealerprofile']);
-        Route::get('/manage-state-dealership-dashboard', [DDealershipDetailsController::class, 'dashboard_of_dealership']);
+        // Route::get('/manage-dealership-dashboard', [DDealershipDetailsController::class, 'dashboard_of_dealership']);
         Route::get('/manage-zone-dealership-by-state', [DDealershipDetailsController::class, 'manage_zone_for_state']);
         Route::get('/manage-district-dealership-by-state', [DDealershipDetailsController::class, 'manage_district_for_state']);
         Route::get('/manage-taluka-dealership-by-state', [DDealershipDetailsController::class, 'manage_taluka_for_state']);
         Route::get('/manage-area-dealership-by-state', [DDealershipDetailsController::class, 'manage_area_for_state']);
+        // Route::get('/header/state-customers/search', [DCustomersController::class, 'search_state_customers']);
     });
     //State Dealership Routes Ends Here
 
 
+    //Zone Dealership Routes Starts Here
+    Route::middleware('zoneauth')->group(function () {
+        Route::get('/manage-district-dealership-by-zone', [DDealershipDetailsController::class, 'manage_district_for_zone']);
+        Route::get('/manage-taluka-dealership-by-zone', [DDealershipDetailsController::class, 'manage_taluka_for_zone']);
+        Route::get('/manage-area-dealership-by-zone', [DDealershipDetailsController::class, 'manage_area_for_zone']);
+    });
+    //Zone Dealership Routes Ends Here
 
 
-    //This Route is only for admin because this route shows all customer 
-    Route::get('/manage-all-customers', [DCustomersController::class, 'manage']);
+    //District Dealership Routes Starts Here
+    Route::middleware('districtauth')->group(function () {
+        Route::get('/manage-taluka-dealership-by-district', [DDealershipDetailsController::class, 'manage_taluka_for_district']);
+        Route::get('/manage-area-dealership-by-district', [DDealershipDetailsController::class, 'manage_area_for_district']);
+    });
+    //District Dealership Routes Ends Here
+
+
+    //District Dealership Routes Starts Here
+    Route::middleware('talukaauth')->group(function () {
+        Route::get('/manage-area-dealership-by-taluka', [DDealershipDetailsController::class, 'manage_area_for_taluka']);
+    });
+    //District Dealership Routes Ends Here
+
+
+
+
     //This Route is only for admin because this route shows all customer 
 
     Route::get('/manage-customers', [DCustomersController::class, 'manage_own_customers']);
-
     Route::get('/add-customers', [DCustomersController::class, 'add']);
     Route::post('/add-customer-submit', [DCustomersController::class, 'create']);
     Route::get('/edit-customer/{id}', [DCustomersController::class, 'edit']);
     Route::post('/update-customer/{id}', [DCustomersController::class, 'update']);
     Route::get('/delete-customer/{id}', [DCustomersController::class, 'delete']);
+    Route::get('/search-customer-chassisno', [DCustomersController::class, 'search_chassisno']);
 
     //manage customer routes ends here
 
@@ -319,7 +351,8 @@ Route::middleware('usersauth')->group(function () {
     Route::get('/edit-order/{id}', [DOrdersController::class, 'edit']);
     Route::post('/update-order/{id}', [DOrdersController::class, 'update']);
     Route::get('/delete-order/{id}', [DOrdersController::class, 'delete']);
-    Route::get('/manage-orders', [DOrdersController::class, 'manage']);
+    Route::get('/manage-orders', [DOrdersController::class, 'manage_own_orders']);
+
 
     //manage order routes ends here
 

@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Middleware\D_Admin_Auth;
+use App\Http\Middleware\D_District_Dealership_Auth;
 use App\Http\Middleware\D_State_Dealership_Auth;
+use App\Http\Middleware\D_Taluka_Dealership_Auth;
 use App\Http\Middleware\D_Users_Auth;
 use App\Http\Middleware\D_Zone_Dealership_Auth;
 use Illuminate\Foundation\Application;
@@ -20,6 +22,8 @@ return Application::configure(basePath: dirname(__DIR__))
             'adminauth' => D_Admin_Auth::class,
             'stateauth' => D_State_Dealership_Auth::class,
             'zoneauth' => D_Zone_Dealership_Auth::class,
+            'districtauth' => D_District_Dealership_Auth::class,
+            'talukaauth' => D_Taluka_Dealership_Auth::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

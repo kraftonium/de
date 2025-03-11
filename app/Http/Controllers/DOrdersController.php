@@ -12,7 +12,7 @@ class DOrdersController extends Controller
     public function create(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'chassis_no' => 'required',
             'whose_name' => 'required',
             'price_including_gst' => 'required',
             'warranty' => 'required',
@@ -42,7 +42,7 @@ class DOrdersController extends Controller
     public function update($id, Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'chassis_no' => 'required',
             'whose_name' => 'required',
             'price_including_gst' => 'required',
             'warranty' => 'required',
@@ -94,7 +94,10 @@ class DOrdersController extends Controller
 
     public function manage()
     {
-        $orders = D_Orders::paginate(10);
+        // $orders = D_Orders::paginate(10);
+        // $data = compact('orders');
+        // return view('backend.manage-orders.manage-order')->with($data);
+        $orders = D_Orders::with(['orderByCustomer', 'customerDetails.vehicle.vehicletype', 'orderByWhom'])->paginate(10);
         $data = compact('orders');
         return view('backend.manage-orders.manage-order')->with($data);
     }

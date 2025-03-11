@@ -166,4 +166,15 @@ class DCustomersController extends Controller
         $data = compact('customers');
         return view('backend.manage-customers.manage-customer')->with($data);
     }
+
+    public function search_chassisno(Request $request)
+    {
+        $query = $request->input('query');
+
+        $customers = D_Customers::where('chassis_no', 'LIKE', "%{$query}%")
+            ->limit(10)
+            ->get(['id', 'chassis_no']);
+
+        return response()->json($customers);
+    }
 }

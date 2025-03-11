@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\D_Stocks;
 use App\Models\D_Vehicles;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DStocksController extends Controller
 {
@@ -69,5 +70,12 @@ class DStocksController extends Controller
         $stocks = D_Stocks::paginate(10);
         $data = compact('stocks');
         return view('backend.manage-stock.manage-stock')->with($data);
+    }
+
+    public function my_stock()
+    {
+        $stocks = D_Stocks::where('whose_stock', Auth::user()->id)->get();
+        $data = compact('stocks');
+        return view('backend.manage-stock.dealer-stock')->with($data);
     }
 }

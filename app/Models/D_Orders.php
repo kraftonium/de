@@ -23,12 +23,13 @@ class D_Orders extends Model
     public function customerDetails()
     {
         // customer_id in D_Orders matches user_id in D_Customers
-        return $this->belongsTo(D_Customers::class, 'customer_id', 'user_id');
+        return $this->belongsTo(D_Customers::class, 'customer_id', 'id');
     }
 
     // Actual user relationship (customer_id is really a user id)
     public function orderByCustomer()
     {
-        return $this->belongsTo(D_Users::class, 'customer_id', 'id');
+        // return $this->belongsTo(D_Users::class, 'customer_id', 'id');
+        return $this->belongsTo(D_Customers::class, 'customer_id', 'id');
     }
 }
