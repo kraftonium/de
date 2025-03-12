@@ -99,16 +99,25 @@
             </a>
 
 
-            {{-- @if (strpos($_SERVER['REQUEST_URI'], 'manage-customers') !== false)
+            @if (strpos($_SERVER['REQUEST_URI'], 'manage-dealership') !== false)
                 <div class="top-nav-search">
                     <form>
                         <input type="text" class="form-control" id="search_header"
-                            placeholder="Search by Chassis No, Battery No, Controller No, or Name">
+                            placeholder="Search by Name, Phoneno, Email, or Address">
                         <button class="btn" type="submit"><i class="fa fa-search"></i></button>
-                       
+
                     </form>
                 </div>
-            @endif --}}
+            @elseif(strpos($_SERVER['REQUEST_URI'], 'manage-state-dealership') !== false)
+                <div class="top-nav-search">
+                    <form>
+                        <input type="text" class="form-control" id="search_header"
+                            placeholder="Search by Name, Phoneno, Email, or Address">
+                        <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+
+                    </form>
+                </div>
+            @endif
             <a class="mobile_btn" id="mobile_btn">
                 <i class="fa fa-bars"></i>
             </a>

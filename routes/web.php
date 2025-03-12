@@ -336,11 +336,12 @@ Route::middleware('usersauth')->group(function () {
     Route::get('/edit-customer/{id}', [DCustomersController::class, 'edit']);
     Route::post('/update-customer/{id}', [DCustomersController::class, 'update']);
     Route::get('/delete-customer/{id}', [DCustomersController::class, 'delete']);
-    Route::get('/search-customer-chassisno', [DCustomersController::class, 'search_chassisno']);
+
 
     //manage customer routes ends here
 
-
+    Route::get('/search-dealership', [DDealershipDetailsController::class, 'search_dealership']);
+    Route::get('/search-state-dealership', [DDealershipDetailsController::class, 'search_state_dealership']);
 
     //manage order routes starts here
 

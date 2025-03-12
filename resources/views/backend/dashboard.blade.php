@@ -285,7 +285,7 @@
                                     },
                                     title: {
                                         display: true,
-                                        text: "Total Profit",
+                                        text: "Total Dealers",
                                         font: {
                                             size: 18
                                         }
