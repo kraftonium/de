@@ -3024,6 +3024,16 @@ button.bg-danger:hover {
     color: #fff
 }
 
+#search_results {
+    margin-bottom: 2rem !important; 
+}
+
+#search_results tr {
+    background-color: #fcd19f;
+    border-bottom: 2px solid black;
+
+}
+
 .avatar.avatar-online::before {
     width: 25%;
     height: 25%;
