@@ -342,12 +342,19 @@ Route::middleware('usersauth')->group(function () {
 
     Route::get('/search-dealership', [DDealershipDetailsController::class, 'search_dealership']);
     Route::get('/search-state-dealership', [DDealershipDetailsController::class, 'search_state_dealership']);
+    Route::get('/search-zone-dealership', [DDealershipDetailsController::class, 'search_zone_dealership']);
+    Route::get('/search-district-dealership', [DDealershipDetailsController::class, 'search_district_dealership']);
+    Route::get('/search-taluka-dealership', [DDealershipDetailsController::class, 'search_taluka_dealership']);
+    Route::get('/search-area-dealership', [DDealershipDetailsController::class, 'search_area_dealership']);
+    Route::get('/search-customer-by-admin', [DCustomersController::class, 'search_customer_by_admin']);
+    Route::get('/search-orders', [DOrdersController::class, 'searchOrders']);
 
     //manage order routes starts here
 
     Route::get('/add-order', function () {
         return view('backend.manage-orders.add-order');
     });
+    Route::get('/search-customer-chassisno', [DCustomersController::class, 'search_chassisno']);
     Route::post('/add-order-submit', [DOrdersController::class, 'create']);
     Route::get('/edit-order/{id}', [DOrdersController::class, 'edit']);
     Route::post('/update-order/{id}', [DOrdersController::class, 'update']);

@@ -50,6 +50,9 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
+                                    <tbody id="search_results">
+
+                                    </tbody>
                                     <tbody>
 
                                         @foreach ($orders as $order)

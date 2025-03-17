@@ -218,6 +218,9 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
+                                    <tbody id="search_results">
+
+                                    </tbody>
                                     <tbody>
                                         @foreach ($dealerships as $dealership)
                                             <tr>
@@ -285,4 +288,63 @@
     </div>
 
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#search_header').on('keyup', function() {
+                let query = $(this).val();
+                $.ajax({
+                    url: '/search-area-dealership',
+                    type: 'GET',
+                    data: {
+                        query: query
+                    },
+                    success: function(data) {
+                        let output = '';
+
+                        $.each(data, function(index, dealership) {
+                            output += `
+                        <tr>
+                            <td>${index + 1}</td>
+                            <td><h2 class="table-avatar"><a href="/manage-single-dealer/${dealership.user_id}">${dealership.user.name}</a></h2></td>
+                            <td>${dealership.user.email}</td>
+                            <td>${dealership.user.phoneno}</td>
+                            <td><a href="/profile.html" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="${dealership.user.image}" alt="User Image"></a></td>
+                            <td>${dealership.user.dob}</td>
+                            <td>${dealership.user.address}</td>
+                            <td>${dealership.user.gender == 0 ? 'Female' : dealership.user.gender == 1 ? 'Male' : 'Other'}</td>
+                            <td>${dealership.user.usertype.usertype}</td>
+                            <td>${dealership.firm_address}</td>
+                            <td>${dealership.firm_phoneno}</td>
+                            <td>${dealership.firm_email}</td>
+                            <td>${dealership.firm_name}</td>
+                            <td>${dealership.firm_gstno}</td>
+                            <td>${dealership.total_revenue}</td>                        
+                            <td><a href="/manage-single-dealer/${dealership.user_id}" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="${dealership.firm_photo}" alt="User Image"></a></td>
+                            <td>${dealership.whoseuser.name}</td>
+                            <td>${dealership.firm_pincode}</td>
+                            <td>${dealership.firm_area}</td>
+                            <td>${dealership.firm_taluka}</td>
+                            <td>${dealership.firm_district}</td>
+                            <td>${dealership.firm_zone}</td>
+                            <td>${dealership.firm_state}</td>
+                            <td>${dealership.firm_country}</td>
+                            <td><a href="/edit-dealership/${dealership.id}"><i class="fa fa-edit"></i></a><a href="/delete-dealership/${dealership.id}"><i class="fa fa-trash"></i></a></td>
+                        </tr>`;
+                        });
+
+                        $('#search_results').html(output);
+
+                        // Hide tbody if no results, show if there are results
+                        if (data.length === 0 || query === '') {
+                            $('#search_results').hide();
+                        } else {
+                            $('#search_results').show();
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 @endsection

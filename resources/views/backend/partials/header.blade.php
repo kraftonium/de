@@ -57,6 +57,8 @@
             $pagename = 'manage-area-dealership';
         } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-customers') !== false) {
             $pagename = 'manage-customers';
+        } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-all-customers') !== false) {
+            $pagename = 'manage-all-customers';
         } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-contact-us') !== false) {
             $pagename = 'manage-contact-us';
         } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-career') !== false) {
@@ -109,6 +111,78 @@
                     </form>
                 </div>
             @elseif(strpos($_SERVER['REQUEST_URI'], 'manage-state-dealership') !== false)
+                <div class="top-nav-search">
+                    <form>
+                        <input type="text" class="form-control" id="search_header"
+                            placeholder="Search by Name, Phoneno, Email, or Address">
+                        <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+
+                    </form>
+                </div>
+            @elseif(strpos($_SERVER['REQUEST_URI'], 'manage-zone-dealership') !== false)
+                <div class="top-nav-search">
+                    <form>
+                        <input type="text" class="form-control" id="search_header"
+                            placeholder="Search by Name, Phoneno, Email, or Address">
+                        <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+
+                    </form>
+                </div>
+            @elseif(strpos($_SERVER['REQUEST_URI'], 'manage-district-dealership') !== false)
+                <div class="top-nav-search">
+                    <form>
+                        <input type="text" class="form-control" id="search_header"
+                            placeholder="Search by Name, Phoneno, Email, or Address">
+                        <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+
+                    </form>
+                </div>
+            @elseif(strpos($_SERVER['REQUEST_URI'], 'manage-taluka-dealership') !== false)
+                <div class="top-nav-search">
+                    <form>
+                        <input type="text" class="form-control" id="search_header"
+                            placeholder="Search by Name, Phoneno, Email, or Address">
+                        <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+
+                    </form>
+                </div>
+            @elseif(strpos($_SERVER['REQUEST_URI'], 'manage-area-dealership') !== false)
+                <div class="top-nav-search">
+                    <form>
+                        <input type="text" class="form-control" id="search_header"
+                            placeholder="Search by Name, Phoneno, Email, or Address">
+                        <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+
+                    </form>
+                </div>
+            @elseif(strpos($_SERVER['REQUEST_URI'], 'manage-customers') !== false)
+                <div class="top-nav-search">
+                    <form>
+                        <input type="text" class="form-control" id="search_header"
+                            placeholder="Search by Name, Phoneno, Email, or Address">
+                        <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+
+                    </form>
+                </div>
+            @elseif(strpos($_SERVER['REQUEST_URI'], 'manage-all-customers') !== false)
+                <div class="top-nav-search">
+                    <form>
+                        <input type="text" class="form-control" id="search_header"
+                            placeholder="Search by Name, Phoneno, Email, or Address">
+                        <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+
+                    </form>
+                </div>
+            @elseif(strpos($_SERVER['REQUEST_URI'], 'manage-orders') !== false)
+                <div class="top-nav-search">
+                    <form>
+                        <input type="text" class="form-control" id="search_header"
+                            placeholder="Search by Name, Phoneno, Email, or Address">
+                        <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+
+                    </form>
+                </div>
+            @elseif(strpos($_SERVER['REQUEST_URI'], 'manage-all-orders') !== false)
                 <div class="top-nav-search">
                     <form>
                         <input type="text" class="form-control" id="search_header"
@@ -185,19 +259,20 @@
                                 <i class="fa-solid fa-plus"></i>
                             </a>
                         </li>
+                        {{-- @endif --}}
+                    @elseif($pagename == 'manage-customers')
+                        <li class="nav-item dropdown noti-dropdown">
+                            <a href="{{ url('/add-customers') }}">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                        </li>
+                    @elseif($pagename == 'manage-orders')
+                        <li class="nav-item dropdown noti-dropdown">
+                            <a href="{{ url('/add-order') }}">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                        </li>
                     @endif
-                @elseif($pagename == 'manage-customers')
-                    <li class="nav-item dropdown noti-dropdown">
-                        <a href="{{ url('/add-customers') }}">
-                            <i class="fa-solid fa-plus"></i>
-                        </a>
-                    </li>
-                @elseif($pagename == 'manage-orders')
-                    <li class="nav-item dropdown noti-dropdown">
-                        <a href="{{ url('/add-order') }}">
-                            <i class="fa-solid fa-plus"></i>
-                        </a>
-                    </li>
                 @endif
 
 
@@ -308,6 +383,11 @@
                                 <li class="@if ($pagename == 'manage-customers') active @endif">
                                     <a href="{{ url('/manage-customers') }}"><i class="fa fa-user"></i> <span>Manage
                                             Customer</span></a>
+                                </li>
+                                <li class="@if ($pagename == 'manage-all-customers') active @endif">
+                                    <a href="{{ url('/manage-all-customers') }}"><i class="fa fa-user"></i>
+                                        <span>Manage
+                                            All Customer</span></a>
                                 </li>
 
                                 <li class="@if ($pagename == 'manage-orders') active @endif">

@@ -7,6 +7,7 @@ use App\Models\D_Stocks;
 use App\Models\D_Vehicles;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class DCustomersController extends Controller
 {
@@ -45,7 +46,7 @@ class DCustomersController extends Controller
         $customer->invoice_no = $request['invoice_no'];
         $customer->insurance_policy_no = $request['insurance_policy_no'];
         $customer->customer_gstno = $request['customer_gstno'];
-        $customer->save();
+
 
         // Decrease stock by 1 for the given vehicle_id
         $stock = D_Stocks::where('vehicle_id', $request['vehicle_id'])
@@ -55,6 +56,7 @@ class DCustomersController extends Controller
         if ($stock) {
             if ($stock->quantity > 0) {
                 $stock->decrement('quantity', 1);
+                $customer->save();
             } else {
                 return redirect()->back()->withInput()->withErrors('vehicle_id', 'Stock for this vehicle is empty!');
             }
@@ -176,5 +178,46 @@ class DCustomersController extends Controller
             ->get(['id', 'chassis_no']);
 
         return response()->json($customers);
+    }
+
+    public function search_customer_by_admin(Request $request)
+    {
+        try {
+            $query = $request->get('query');
+
+            $customersQuery = D_Customers::with(['user', 'whoseuser', 'vehicle'])
+                ->where(function ($q) use ($query) {
+                    $q->where('chassis_no', 'LIKE', "%$query%")
+                        ->orWhere('battery_no', 'LIKE', "%$query%")
+                        ->orWhere('controller_no', 'LIKE', "%$query%");
+                })
+                ->orWhereHas('user', function ($q) use ($query) {
+                    $q->where('name', 'LIKE', "%$query%")
+                        ->orWhere('email', 'LIKE', "%$query%")
+                        ->orWhere('phoneno', 'LIKE', "%$query%");
+                })
+                ->orWhereHas('whoseuser', function ($q) use ($query) {
+                    $q->where('name', 'LIKE', "%$query%")
+                        ->orWhere('email', 'LIKE', "%$query%")
+                        ->orWhere('phoneno', 'LIKE', "%$query%");
+                })
+                ->orWhereHas('vehicle', function ($q) use ($query) {
+                    $q->where('name_of_vehicle', 'LIKE', "%$query%")
+                        ->orWhere('color', 'LIKE', "%$query%");
+                });
+
+            // Debug SQL BEFORE running the query
+            // Log::info($customersQuery->toSql());
+            // Log::info($customersQuery->getBindings());
+
+            $customers = $customersQuery->get();
+
+            // Log::info('Total customers found: ' . $customers->count());
+
+            return response()->json($customers);
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return response()->json(['error' => 'Something went wrong'], 500);
+        }
     }
 }

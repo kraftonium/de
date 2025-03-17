@@ -6,6 +6,7 @@ use App\Models\D_Dealership_Details;
 use App\Models\D_Orders;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class DOrdersController extends Controller
 {
@@ -107,5 +108,80 @@ class DOrdersController extends Controller
         $orders = D_Orders::where('user_id', Auth::user()->id)->paginate(10);
         $data = compact('orders');
         return view('backend.manage-orders.manage-order')->with($data);
+    }
+
+    // public function searchOrders(Request $request)
+    // {
+    //     try {
+    //         $query = $request->get('query');
+
+    //         $orders = D_Orders::with([
+    //             'orderByWhom',  // Admin/Dealer who placed the order
+    //             'orderByCustomer.user', // The actual customer
+    //             'customerDetails.vehicle.vehicletype' // Vehicle & its type
+    //         ])
+    //             ->where('id', 'LIKE', "%$query%")
+    //             ->orWhereHas('orderByWhom', function ($q) use ($query) {
+    //                 $q->where('name', 'LIKE', "%$query%");
+    //             })
+    //             ->orWhereHas('orderByCustomer.user', function ($q) use ($query) {
+    //                 $q->where('name', 'LIKE', "%$query%")
+    //                     ->orWhere('email', 'LIKE', "%$query%")
+    //                     ->orWhere('phoneno', 'LIKE', "%$query%");
+    //             })
+    //             ->orWhereHas('customerDetails', function ($q) use ($query) {
+    //                 $q->where('chassis_no', 'LIKE', "%$query%")
+    //                     ->orWhere('battery_no', 'LIKE', "%$query%")
+    //                     ->orWhere('controller_no', 'LIKE', "%$query%");
+    //             })
+    //             ->orWhereHas('customerDetails.vehicle', function ($q) use ($query) {
+    //                 $q->where('name_of_vehicle', 'LIKE', "%$query%");
+    //             })
+    //             ->get();
+
+    //         // Debug: Check if data is loading correctly
+    //         foreach ($orders as $order) {
+    //             Log::info('Order ID: ' . $order->id);
+    //             Log::info('Order By: ' . optional($order->orderByWhom)->name);
+    //             Log::info('Customer Name: ' . optional(optional($order->orderByCustomer)->user)->name);
+    //             Log::info('Chassis No: ' . optional($order->customerDetails)->chassis_no);
+    //         }
+
+    //         return response()->json($orders);
+    //     } catch (\Exception $e) {
+    //         Log::error($e->getMessage());
+    //         return response()->json(['error' => 'Something went wrong'], 500);
+    //     }
+    // }
+
+    public function searchOrders(Request $request)
+    {
+        try {
+            $query = $request->get('query');
+
+            $order = D_Orders::with([
+                'orderByWhom',
+                'orderByCustomer.user',
+                'customerDetails.vehicle.vehicletype'
+            ])
+                ->where('id', 'LIKE', "%$query%")
+                ->orWhereHas('orderByWhom', function ($q) use ($query) {
+                    $q->where('name', 'LIKE', "%$query%");
+                })
+                ->orWhereHas('orderByCustomer.user', function ($q) use ($query) {
+                    $q->where('name', 'LIKE', "%$query%");
+                })
+                ->orWhereHas('customerDetails', function ($q) use ($query) {
+                    $q->where('chassis_no', 'LIKE', "%$query%");
+                })
+                ->get();
+
+            // Debug: Return JSON response in proper structure
+            Log::info(json_encode($order));
+            return response()->json($order);
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return response()->json(['error' => 'Something went wrong'], 500);
+        }
     }
 }

@@ -51,18 +51,21 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
+                                    <tbody id="search_results">
+
+                                    </tbody>
                                     <tbody>
                                         @foreach ($customers as $customer)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>
                                                     <h2 class="table-avatar">
-                                                        <a href="/profile.html">{{ $customer->user->name }}</a>
+                                                        <a href="javacript:void(0)">{{ $customer->user->name }}</a>
                                                     </h2>
                                                 </td>
                                                 <td>{{ $customer->user->email }}</td>
                                                 <td>{{ $customer->user->phoneno }}</td>
-                                                <td><a href="/profile.html" class="avatar avatar-sm me-2"><img
+                                                <td><a href="javacript:void(0)" class="avatar avatar-sm me-2"><img
                                                             class="avatar-img rounded-circle"
                                                             src="{{ asset($customer->user->image) }}" alt="User Image"></a>
                                                 </td>
@@ -84,7 +87,7 @@
                                                 <td>{{ $customer->controller_no }}</td>
                                                 <td>{{ $customer->vehicle->name_of_vehicle }}</td>
                                                 <td>{{ $customer->vehicle->vehicletype->type_of_vehicle }}</td>
-                                                <td><a href="/profile.html" class="avatar avatar-sm me-2"><img
+                                                <td><a href="javacript:void(0)" class="avatar avatar-sm me-2"><img
                                                             class="avatar-img rounded-circle"
                                                             src="{{ asset($customer->vehicle->image) }}"
                                                             alt="User Image"></a>
@@ -120,4 +123,124 @@
     </div>
 
     </div>
+
+    {{-- 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#search_header').on('keyup', function() {
+                let query = $(this).val();
+                $.ajax({
+                    url: '/search-customer-by-admin',
+                    type: 'GET',
+                    data: {
+                        query: query
+                    },
+                    success: function(data) {
+                        let output = '';
+
+                        $.each(data, function(index, dealership) {
+                            output += `
+                         <tr>
+                            <td>${index + 1}</td>
+                            <td><h2 class="table-avatar"><a href="/manage-single-customer/${customer.id}">${customer.user.name}</a></h2></td>
+                            <td>${customer.user.email}</td>
+                            <td>${customer.user.phoneno}</td>
+                            <td><a href="/profile.html" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="${customer.user.image}" alt="User Image"></a></td>
+                            <td>${customer.user.dob}</td>
+                            <td>${customer.user.address}</td>
+                            <td>${customer.user.gender == 0 ? 'Female' : customer.user.gender == 1 ? 'Male' : 'Other'}</td>
+                            <td>${customer.battery_number}</td>
+                            <td>${customer.chassis_number}</td>
+                            <td>${customer.controller_number}</td>
+                            <td>${customer.vehicle.model}</td>
+                            <td>${customer.vehicle.type}</td>
+                            <td><a href="/vehicle/${customer.vehicle.id}" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="${customer.vehicle.image}" alt="Vehicle Image"></a></td>
+                            <td>${customer.vehicle.color}</td>
+                            <td>${customer.purchase_date}</td>
+                            <td>${customer.produce_date}</td>
+                            <td>${customer.whoseuser ? customer.whoseuser.name : 'N/A'}</td>
+                            <td>${customer.invoice_no}</td>
+                            <td>${customer.insurance_no}</td>
+                            <td>${customer.gst_no}</td>
+                            <td>
+                                <a href="/edit-customer/${customer.id}"><i class="fa fa-edit"></i></a>
+                                <a href="/delete-customer/${customer.id}"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                       `;
+                        });
+
+                        $('#search_results').html(output);
+
+                        // Hide tbody if no results, show if there are results
+                        if (data.length === 0 || query === '') {
+                            $('#search_results').hide();
+                        } else {
+                            $('#search_results').show();
+                        }
+                    }
+                });
+            });
+        });
+    </script> --}}
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#search_header').on('keyup', function() {
+                let query = $(this).val();
+                $.ajax({
+                    url: '/search-customer-by-admin',
+                    type: 'GET',
+                    data: {
+                        query: query
+                    },
+                    success: function(data) {
+                        let output = '';
+
+                        $.each(data, function(index, customer) {
+                            output += `
+                        <tr>
+                            <td>${index + 1}</td>
+                            <td><h2 class="table-avatar"><a href="/manage-single-customer/${customer.id}">${customer.user.name}</a></h2></td>
+                            <td>${customer.user.email}</td>
+                            <td>${customer.user.phoneno}</td>
+                            <td><a href="/profile.html" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="${customer.user.image}" alt="User Image"></a></td>
+                            <td>${customer.user.dob}</td>
+                            <td>${customer.user.address}</td>
+                            <td>${customer.user.gender == 0 ? 'Female' : customer.user.gender == 1 ? 'Male' : 'Other'}</td>
+                            <td>${customer.battery_number}</td>
+                            <td>${customer.chassis_number}</td>
+                            <td>${customer.controller_number}</td>
+                            <td>${customer.vehicle.model}</td>
+                            <td>${customer.vehicle.type}</td>
+                            <td><a href="/vehicle/${customer.vehicle.id}" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="${customer.vehicle.image}" alt="Vehicle Image"></a></td>
+                            <td>${customer.vehicle.color}</td>
+                            <td>${customer.purchase_date}</td>
+                            <td>${customer.produce_date}</td>
+                            <td>${customer.whoseuser ? customer.whoseuser.name : 'N/A'}</td>
+                            <td>${customer.invoice_no}</td>
+                            <td>${customer.insurance_no}</td>
+                            <td>${customer.gst_no}</td>
+                            <td>
+                                <a href="/edit-customer/${customer.id}"><i class="fa fa-edit"></i></a>
+                                <a href="/delete-customer/${customer.id}"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>`;
+                        });
+
+                        $('#search_results').html(output);
+
+                        // Hide tbody if no results, show if there are results
+                        if (data.length === 0 || query === '') {
+                            $('#search_results').hide();
+                        } else {
+                            $('#search_results').show();
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 @endsection

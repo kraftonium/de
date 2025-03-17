@@ -745,5 +745,181 @@ class DDealershipDetailsController extends Controller
         }
     }
 
+    public function search_zone_dealership(Request $request)
+    {
+        try {
+            $query = $request->get('query');
+
+            $dealershipsQuery = D_Dealership_Details::with(['user.usertype', 'whoseuser'])
+                ->whereHas('user', function ($q) use ($query) {
+                    $q->where('usertype_id', 3)
+                        ->where(function ($q) use ($query) {
+                            $q->where('name', 'LIKE', "%$query%")
+                                ->orWhere('email', 'LIKE', "%$query%")
+                                ->orWhere('phoneno', 'LIKE', "%$query%");
+                        });
+                })
+                ->orWhere(function ($q) use ($query) {
+                    $q->whereHas('user', function ($q) {
+                        $q->where('usertype_id', 3); // Enforce the same condition here
+                    })
+                        ->where(function ($q) use ($query) {
+                            $q->where('firm_name', 'LIKE', "%$query%")
+                                ->orWhere('firm_email', 'LIKE', "%$query%");
+                        });
+                });
+
+
+            // Debug SQL BEFORE running the query
+            // Log::info($dealershipsQuery->toSql());
+            // Log::info($dealershipsQuery->getBindings());
+
+            $dealerships = $dealershipsQuery->get();
+
+            // Log::info('Total dealerships: ' . $dealerships->count());
+
+            // foreach ($dealerships as $dealership) {
+            //     Log::info('Usertype ID: ' . ($dealership->user->usertype_id ?? 'No user'));
+            // }
+
+            return response()->json($dealerships);
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return response()->json(['error' => 'Something went wrong'], 500);
+        }
+    }
+
+    public function search_district_dealership(Request $request)
+    {
+        try {
+            $query = $request->get('query');
+
+            $dealershipsQuery = D_Dealership_Details::with(['user.usertype', 'whoseuser'])
+                ->whereHas('user', function ($q) use ($query) {
+                    $q->where('usertype_id', 4)
+                        ->where(function ($q) use ($query) {
+                            $q->where('name', 'LIKE', "%$query%")
+                                ->orWhere('email', 'LIKE', "%$query%")
+                                ->orWhere('phoneno', 'LIKE', "%$query%");
+                        });
+                })
+                ->orWhere(function ($q) use ($query) {
+                    $q->whereHas('user', function ($q) {
+                        $q->where('usertype_id', 4); // Enforce the same condition here
+                    })
+                        ->where(function ($q) use ($query) {
+                            $q->where('firm_name', 'LIKE', "%$query%")
+                                ->orWhere('firm_email', 'LIKE', "%$query%");
+                        });
+                });
+
+
+            // Debug SQL BEFORE running the query
+            // Log::info($dealershipsQuery->toSql());
+            // Log::info($dealershipsQuery->getBindings());
+
+            $dealerships = $dealershipsQuery->get();
+
+            // Log::info('Total dealerships: ' . $dealerships->count());
+
+            // foreach ($dealerships as $dealership) {
+            //     Log::info('Usertype ID: ' . ($dealership->user->usertype_id ?? 'No user'));
+            // }
+
+            return response()->json($dealerships);
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return response()->json(['error' => 'Something went wrong'], 500);
+        }
+    }
+
+    public function search_taluka_dealership(Request $request)
+    {
+        try {
+            $query = $request->get('query');
+
+            $dealershipsQuery = D_Dealership_Details::with(['user.usertype', 'whoseuser'])
+                ->whereHas('user', function ($q) use ($query) {
+                    $q->where('usertype_id', 5)
+                        ->where(function ($q) use ($query) {
+                            $q->where('name', 'LIKE', "%$query%")
+                                ->orWhere('email', 'LIKE', "%$query%")
+                                ->orWhere('phoneno', 'LIKE', "%$query%");
+                        });
+                })
+                ->orWhere(function ($q) use ($query) {
+                    $q->whereHas('user', function ($q) {
+                        $q->where('usertype_id', 5); // Enforce the same condition here
+                    })
+                        ->where(function ($q) use ($query) {
+                            $q->where('firm_name', 'LIKE', "%$query%")
+                                ->orWhere('firm_email', 'LIKE', "%$query%");
+                        });
+                });
+
+
+            // Debug SQL BEFORE running the query
+            // Log::info($dealershipsQuery->toSql());
+            // Log::info($dealershipsQuery->getBindings());
+
+            $dealerships = $dealershipsQuery->get();
+
+            // Log::info('Total dealerships: ' . $dealerships->count());
+
+            // foreach ($dealerships as $dealership) {
+            //     Log::info('Usertype ID: ' . ($dealership->user->usertype_id ?? 'No user'));
+            // }
+
+            return response()->json($dealerships);
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return response()->json(['error' => 'Something went wrong'], 500);
+        }
+    }
+
+    public function search_area_dealership(Request $request)
+    {
+        try {
+            $query = $request->get('query');
+
+            $dealershipsQuery = D_Dealership_Details::with(['user.usertype', 'whoseuser'])
+                ->whereHas('user', function ($q) use ($query) {
+                    $q->where('usertype_id', 6)
+                        ->where(function ($q) use ($query) {
+                            $q->where('name', 'LIKE', "%$query%")
+                                ->orWhere('email', 'LIKE', "%$query%")
+                                ->orWhere('phoneno', 'LIKE', "%$query%");
+                        });
+                })
+                ->orWhere(function ($q) use ($query) {
+                    $q->whereHas('user', function ($q) {
+                        $q->where('usertype_id', 6); // Enforce the same condition here
+                    })
+                        ->where(function ($q) use ($query) {
+                            $q->where('firm_name', 'LIKE', "%$query%")
+                                ->orWhere('firm_email', 'LIKE', "%$query%");
+                        });
+                });
+
+
+            // Debug SQL BEFORE running the query
+            // Log::info($dealershipsQuery->toSql());
+            // Log::info($dealershipsQuery->getBindings());
+
+            $dealerships = $dealershipsQuery->get();
+
+            // Log::info('Total dealerships: ' . $dealerships->count());
+
+            // foreach ($dealerships as $dealership) {
+            //     Log::info('Usertype ID: ' . ($dealership->user->usertype_id ?? 'No user'));
+            // }
+
+            return response()->json($dealerships);
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return response()->json(['error' => 'Something went wrong'], 500);
+        }
+    }
+
     //this functions for search menu on navbar ends
 }

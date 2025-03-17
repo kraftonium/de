@@ -28,4 +28,10 @@ class D_Customers extends Model
     {
         return $this->belongsTo(D_Vehicles::class, 'vehicle_id');
     }
+
+    // Customer.php
+    public function orders()
+    {
+        return $this->hasMany(D_Orders::class, 'customer_id', 'id');
+    }
 }
