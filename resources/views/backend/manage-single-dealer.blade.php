@@ -185,10 +185,12 @@
                                             <td>{{ $dealership->firm_zone }}</td>
                                             <td>{{ $dealership->firm_state }}</td>
                                             <td>{{ $dealership->firm_country }}</td>
-                                            <td><a href="{{ url('/edit-dealership') }}/{{ $dealership->id }}"><i
-                                                        class="fa fa-edit"></i></a><a
-                                                    href="{{ url('/delete-dealership') }}/{{ $dealership->id }}"><i
-                                                        class="fa fa-trash"></i></a></td>
+                                            @if (Auth::user()->id == 1)
+                                                <td><a href="{{ url('/edit-dealership') }}/{{ $dealership->id }}"><i
+                                                            class="fa fa-edit"></i></a><a
+                                                        href="{{ url('/delete-dealership') }}/{{ $dealership->id }}"><i
+                                                            class="fa fa-trash"></i></a></td>
+                                            @endif
                                         </tr>
 
 

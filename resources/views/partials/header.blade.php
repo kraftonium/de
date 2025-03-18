@@ -6,7 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     {{-- <title>DIVYASHAKTI ENTERPRISE</title> --}}
     @stack('title')
-     <meta name="keywords"
+    <meta name="keywords"
         content="The Divyashakti, Divyashakti Enterprise, thedivyashakti.com, divyashakti.in, EVVehicles, evvehicles, evscooters, evauto, EV Vehicles, ev vehicle, EV Scooter" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @stack('meta')
@@ -14,7 +14,9 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/favicon.png">
 
     <!-- all css here -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
@@ -58,13 +60,13 @@
                                     <div class="main-menu">
                                         <nav>
                                             <ul>
-                                                <li><a href="{{url('/')}}">home</a></li>
-                                                <li class="active"><a href="{{url('/about-us')}}">about us </a></li>
-                                                <li><a href="{{url('/vehicles')}}">Vehicles</a></li>
-                                                <li><a href="{{url('/gps')}}">GPS</a></li>
-                                                <li><a href="{{url('/dealership')}}">Dealership</a></li>
-                                                 <li><a href="{{url('/solar')}}">Solar</a></li>
-                                                <li><a href="{{url('/contact-us')}}">contact us</a></li>
+                                                <li><a href="{{ url('/') }}">home</a></li>
+                                                <li class="active"><a href="{{ url('/about-us') }}">about us </a></li>
+                                                <li><a href="{{ url('/vehicles') }}">Vehicles</a></li>
+                                                <li><a href="{{ url('/gps') }}">GPS</a></li>
+                                                <li><a href="{{ url('/dealership') }}">Dealership</a></li>
+                                                <li><a href="{{ url('/solar') }}">Solar</a></li>
+                                                <li><a href="{{ url('/contact-us') }}">contact us</a></li>
                                             </ul>
                                         </nav>
                                     </div>
@@ -76,13 +78,13 @@
                             <div class="mobile-menu">
                                 <nav id="mobile-menu-active">
                                     <ul class="menu-overflow">
-                                        <li><a href="{{url('/')}}">home</a></li>
-                                                <li class="active"><a href="{{url('/about-us')}}">about us </a></li>
-                                                <li><a href="{{url('/vehicles')}}">Vehicles</a></li>
-                                                <li><a href="{{url('/gps')}}">GPS</a></li>
-                                                <li><a href="{{url('/dealership')}}">Dealership</a></li>
-                                                 <li><a href="{{url('/solar')}}">Solar</a></li>
-                                                <li><a href="{{url('/contact-us')}}">contact us</a></li>
+                                        <li><a href="{{ url('/') }}">home</a></li>
+                                        <li class="active"><a href="{{ url('/about-us') }}">about us </a></li>
+                                        <li><a href="{{ url('/vehicles') }}">Vehicles</a></li>
+                                        <li><a href="{{ url('/gps') }}">GPS</a></li>
+                                        <li><a href="{{ url('/dealership') }}">Dealership</a></li>
+                                        <li><a href="{{ url('/solar') }}">Solar</a></li>
+                                        <li><a href="{{ url('/contact-us') }}">contact us</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -92,9 +94,10 @@
             </div>
         </header>
 
-        
+
         <div class="floating-buttons" style="z-index: 99;">
-    <a href="#" data-bs-toggle="modal" data-bs-target="#modalId"><b>Lucky Draw</b></a>
-            <a href="{{url('/book-ride')}}"><b>Book A Ride</b></a>
-            <a href="{{url('/dealership')}}"><b>Apply For Dealership</b></a>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#modalId"><b>Lucky Draw</b></a>
+            <a href="{{ url('/book-ride') }}"><b>Book A Ride</b></a>
+            <a href="{{ url('/dealership') }}"><b>Apply For Dealership</b></a>
+            <a href="{{ url('/calculator') }}"><b>Profit Calculator</b></a>
         </div>

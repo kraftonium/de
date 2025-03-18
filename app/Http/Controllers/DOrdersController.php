@@ -110,78 +110,31 @@ class DOrdersController extends Controller
         return view('backend.manage-orders.manage-order')->with($data);
     }
 
-    // public function searchOrders(Request $request)
-    // {
-    //     try {
-    //         $query = $request->get('query');
-
-    //         $orders = D_Orders::with([
-    //             'orderByWhom',  // Admin/Dealer who placed the order
-    //             'orderByCustomer.user', // The actual customer
-    //             'customerDetails.vehicle.vehicletype' // Vehicle & its type
-    //         ])
-    //             ->where('id', 'LIKE', "%$query%")
-    //             ->orWhereHas('orderByWhom', function ($q) use ($query) {
-    //                 $q->where('name', 'LIKE', "%$query%");
-    //             })
-    //             ->orWhereHas('orderByCustomer.user', function ($q) use ($query) {
-    //                 $q->where('name', 'LIKE', "%$query%")
-    //                     ->orWhere('email', 'LIKE', "%$query%")
-    //                     ->orWhere('phoneno', 'LIKE', "%$query%");
-    //             })
-    //             ->orWhereHas('customerDetails', function ($q) use ($query) {
-    //                 $q->where('chassis_no', 'LIKE', "%$query%")
-    //                     ->orWhere('battery_no', 'LIKE', "%$query%")
-    //                     ->orWhere('controller_no', 'LIKE', "%$query%");
-    //             })
-    //             ->orWhereHas('customerDetails.vehicle', function ($q) use ($query) {
-    //                 $q->where('name_of_vehicle', 'LIKE', "%$query%");
-    //             })
-    //             ->get();
-
-    //         // Debug: Check if data is loading correctly
-    //         foreach ($orders as $order) {
-    //             Log::info('Order ID: ' . $order->id);
-    //             Log::info('Order By: ' . optional($order->orderByWhom)->name);
-    //             Log::info('Customer Name: ' . optional(optional($order->orderByCustomer)->user)->name);
-    //             Log::info('Chassis No: ' . optional($order->customerDetails)->chassis_no);
-    //         }
-
-    //         return response()->json($orders);
-    //     } catch (\Exception $e) {
-    //         Log::error($e->getMessage());
-    //         return response()->json(['error' => 'Something went wrong'], 500);
-    //     }
-    // }
-
     public function searchOrders(Request $request)
     {
-        try {
-            $query = $request->get('query');
+        $query = $request->query('query');
 
-            $order = D_Orders::with([
-                'orderByWhom',
-                'orderByCustomer.user',
-                'customerDetails.vehicle.vehicletype'
-            ])
-                ->where('id', 'LIKE', "%$query%")
-                ->orWhereHas('orderByWhom', function ($q) use ($query) {
-                    $q->where('name', 'LIKE', "%$query%");
-                })
-                ->orWhereHas('orderByCustomer.user', function ($q) use ($query) {
-                    $q->where('name', 'LIKE', "%$query%");
-                })
-                ->orWhereHas('customerDetails', function ($q) use ($query) {
-                    $q->where('chassis_no', 'LIKE', "%$query%");
-                })
-                ->get();
+        $orders = D_Orders::with(['orderByCustomer.user', 'customerDetails.vehicle.vehicletype', 'orderByWhom'])
+            ->whereHas('orderByCustomer.user', function ($q) use ($query) {
+                $q->where('name', 'like', "%$query%")
+                    ->orWhere('email', 'like', "%$query%")
+                    ->orWhere('phoneno', 'like', "%$query%");
+            })
+            ->orWhereHas('customerDetails', function ($q) use ($query) {
+                $q->where('battery_no', 'like', "%$query%")
+                    ->orWhere('chassis_no', 'like', "%$query%")
+                    ->orWhere('controller_no', 'like', "%$query%")
+                    ->orWhereHas('vehicle', function ($q) use ($query) {
+                        $q->where('name_of_vehicle', 'like', "%$query%")
+                            ->orWhereHas('vehicletype', function ($q) use ($query) {
+                                $q->where('type_of_vehicle', 'like', "%$query%");
+                            });
+                    });
+            })
+            ->orWhere('total_price', 'like', "%$query%")
+            ->orWhere('warranty', 'like', "%$query%")
+            ->get();
 
-            // Debug: Return JSON response in proper structure
-            Log::info(json_encode($order));
-            return response()->json($order);
-        } catch (\Exception $e) {
-            Log::error($e->getMessage());
-            return response()->json(['error' => 'Something went wrong'], 500);
-        }
+        return response()->json($orders);
     }
 }

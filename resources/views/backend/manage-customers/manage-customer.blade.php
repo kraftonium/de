@@ -102,10 +102,13 @@
                                                 <td>{{ $customer->invoice_no }}</td>
                                                 <td>{{ $customer->insurance_policy_no }}</td>
                                                 <td>{{ $customer->customer_gstno }}</td>
-                                                <td><a href="{{ url('/edit-customer') }}/{{ $customer->id }}"><i
-                                                            class="fa fa-edit"></i></a><a
-                                                        href="{{ url('/delete-customer') }}/{{ $customer->id }}"><i
-                                                            class="fa fa-trash"></i></a></td>
+                                                @if (Auth::user()->id == 1)
+                                                    <td><a href="{{ url('/edit-customer') }}/{{ $customer->id }}"><i
+                                                                class="fa fa-edit"></i></a><a
+                                                            href="{{ url('/delete-customer') }}/{{ $customer->id }}"><i
+                                                                class="fa fa-trash"></i></a></td>
+                                                @endif
+
                                             </tr>
                                         @endforeach
 
@@ -210,23 +213,25 @@
                             <td>${customer.user.dob}</td>
                             <td>${customer.user.address}</td>
                             <td>${customer.user.gender == 0 ? 'Female' : customer.user.gender == 1 ? 'Male' : 'Other'}</td>
-                            <td>${customer.battery_number}</td>
-                            <td>${customer.chassis_number}</td>
-                            <td>${customer.controller_number}</td>
-                            <td>${customer.vehicle.model}</td>
-                            <td>${customer.vehicle.type}</td>
-                            <td><a href="/vehicle/${customer.vehicle.id}" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="${customer.vehicle.image}" alt="Vehicle Image"></a></td>
+                            <td>${customer.battery_no}</td>
+                            <td>${customer.chassis_no}</td>
+                            <td>${customer.controller_no}</td>
+                            <td>${customer.vehicle.name_of_vehicle}</td>
+                            <td>${customer.vehicle.vehicletype.type_of_vehicle}</td>
+                            <td><a href="javascript:void(0)" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="${customer.vehicle.image}" alt="Vehicle Image"></a></td>
                             <td>${customer.vehicle.color}</td>
-                            <td>${customer.purchase_date}</td>
+                            <td>${customer.date_of_purchase}</td>
                             <td>${customer.produce_date}</td>
                             <td>${customer.whoseuser ? customer.whoseuser.name : 'N/A'}</td>
                             <td>${customer.invoice_no}</td>
-                            <td>${customer.insurance_no}</td>
-                            <td>${customer.gst_no}</td>
+                            <td>${customer.insurance_policy_no}</td>
+                            <td>${customer.customer_gstno}</td>
+                            @if (Auth::user()->id == 1)
                             <td>
                                 <a href="/edit-customer/${customer.id}"><i class="fa fa-edit"></i></a>
                                 <a href="/delete-customer/${customer.id}"><i class="fa fa-trash"></i></a>
                             </td>
+                            @endif
                         </tr>`;
                         });
 

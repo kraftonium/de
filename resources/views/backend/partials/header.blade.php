@@ -59,6 +59,8 @@
             $pagename = 'manage-customers';
         } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-all-customers') !== false) {
             $pagename = 'manage-all-customers';
+        } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-all-orders') !== false) {
+            $pagename = 'manage-all-orders';
         } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-contact-us') !== false) {
             $pagename = 'manage-contact-us';
         } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-career') !== false) {
@@ -394,6 +396,12 @@
                                     <a href="{{ url('/manage-orders') }}"><i class="fa fa-shopping-cart "></i>
                                         <span>Manage Order</span></a>
                                 </li>
+
+                                <li class="@if ($pagename == 'manage-all-orders') active @endif">
+                                    <a href="{{ url('/manage-all-orders') }}"><i class="fa fa-shopping-cart "></i>
+                                        <span>Manage All Order</span></a>
+                                </li>
+
 
                                 <li class="@if ($pagename == 'manage-contact-us') active @endif">
                                     <a href="{{ url('/manage-contact-us') }}"><i class="fa fa-phone-alt"></i>

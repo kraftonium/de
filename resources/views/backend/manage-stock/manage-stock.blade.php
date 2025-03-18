@@ -39,10 +39,12 @@
                                                         {{ $stock->vehicle->color }}</h2>
                                                 <td>{{ $stock->quantity }}</td>
                                                 <td>{{ $stock->whoseStock->name }}</td>
-                                                <td><a href="{{ url('/edit-stock') }}/{{ $stock->id }}"><i
-                                                            class="fa fa-edit"></i></a><a
-                                                        href="{{ url('/delete-stock') }}/{{ $stock->id }}"><i
-                                                            class="fa fa-trash"></i></a></td>
+                                                @if (Auth::user()->id == 1)
+                                                    <td><a href="{{ url('/edit-stock') }}/{{ $stock->id }}"><i
+                                                                class="fa fa-edit"></i></a><a
+                                                            href="{{ url('/delete-stock') }}/{{ $stock->id }}"><i
+                                                                class="fa fa-trash"></i></a></td>
+                                                @endif
                                             </tr>
                                         @endforeach
                                     </tbody>

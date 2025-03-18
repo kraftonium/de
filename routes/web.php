@@ -96,6 +96,10 @@ Route::get('/terms-and-conditions', function () {
     return view('terms-and-conditions');
 });
 
+Route::get('/calculator', function () {
+    return view('calculator');
+});
+
 Route::post('/contact-submit', [DContactUsController::class, 'create']);
 Route::post('/send-career', [DCareersController::class, 'create']);
 Route::post('/send-dealership', [DDealershipController::class, 'create']);
@@ -348,6 +352,8 @@ Route::middleware('usersauth')->group(function () {
     Route::get('/search-area-dealership', [DDealershipDetailsController::class, 'search_area_dealership']);
     Route::get('/search-customer-by-admin', [DCustomersController::class, 'search_customer_by_admin']);
     Route::get('/search-orders', [DOrdersController::class, 'searchOrders']);
+
+
 
     //manage order routes starts here
 

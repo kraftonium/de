@@ -185,7 +185,7 @@ class DCustomersController extends Controller
         try {
             $query = $request->get('query');
 
-            $customersQuery = D_Customers::with(['user', 'whoseuser', 'vehicle'])
+            $customersQuery = D_Customers::with(['user', 'whoseuser', 'vehicle', 'vehicle.vehicletype'])
                 ->where(function ($q) use ($query) {
                     $q->where('chassis_no', 'LIKE', "%$query%")
                         ->orWhere('battery_no', 'LIKE', "%$query%")

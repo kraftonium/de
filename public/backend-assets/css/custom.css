@@ -3025,7 +3025,7 @@ button.bg-danger:hover {
 }
 
 #search_results {
-    margin-bottom: 2rem !important; 
+    margin-bottom: 2rem !important;
 }
 
 #search_results tr {
@@ -4839,10 +4839,10 @@ form {
 }
 
 .customerdiv {
-    display: flex;
+    display: flex !important;
     gap: 10px;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     margin-bottom: 2rem;
 }
 
@@ -4852,7 +4852,7 @@ form {
     margin-bottom: 2rem;
 }
 
-.totalprofit h3 {
+/* .totalprofit h3 {
     text-align: center;
     font-weight: bold;
     color: #0D0A41;
@@ -4861,7 +4861,7 @@ form {
     margin: auto;
     padding: 0.6rem;
     border-radius: 20px;
-}
+} */
 
 @media (max-width:767px) {
     .logo-container .logo img {
