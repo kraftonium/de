@@ -38,21 +38,47 @@
                             <form action="{{ url('/register-submit') }}" style="padding-bottom: 10px !important;"
                                 method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <div class="mb-3">
-                                    <select class="form-control" name="usertype_id" id="usertype_id">
-                                        <option value="">Select User Type</option>
-                                        @foreach ($usertypes as $usertype)
-                                            <option value="{{ $usertype->id }}"
-                                                @if (old('usertype_id') == $usertype->id) selected @endif>
-                                                {{ $usertype->usertype }}</option>
-                                        @endforeach
-                                    </select>
-                                    <span class="text-danger">
-                                        @error('usertype_id')
-                                            {{ $message }}
-                                        @enderror
-                                    </span>
-                                </div>
+                                <!--<div class="mb-3">-->
+                                <!--    <select class="form-control" name="usertype_id" id="usertype_id">-->
+                                <!--        <option value="">Select User Type</option>-->
+                                <!--        @foreach ($usertypes as $usertype)
+-->
+                                <!--            <option value="{{ $usertype->id }}"-->
+                                <!--                @if (old('usertype_id') == $usertype->id)
+selected
+@endif>-->
+                                <!--                {{ $usertype->usertype }}</option>-->
+                                <!--
+@endforeach-->
+                                <!--    </select>-->
+                                <!--    <span class="text-danger">-->
+                                <!--        @error('usertype_id')
+    -->
+                                    <!--            {{ $message }}-->
+                                    <!--
+@enderror-->
+                                <!--    </span>-->
+                                <!--</div>-->
+
+                                @if (Auth::user()->id == 1)
+                                    <div class="mb-3">
+                                        <select class="form-control" name="usertype_id" id="usertype_id">
+                                            <option value="">Select User Type</option>
+                                            @foreach ($usertypes as $usertype)
+                                                <option value="{{ $usertype->id }}"
+                                                    @if (old('usertype_id') == $usertype->id) selected @endif>
+                                                    {{ $usertype->usertype }}</option>
+                                            @endforeach
+                                        </select>
+                                        <span class="text-danger">
+                                            @error('usertype_id')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
+                                    </div>
+                                @else
+                                    <input type="hidden" value="7" name="usertype_id" id="usertype_id">
+                                @endif
 
                                 <div class="mb-3">
                                     <input class="form-control" type="text" placeholder="Name" name="name"

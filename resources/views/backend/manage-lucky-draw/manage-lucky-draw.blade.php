@@ -42,6 +42,7 @@
                                         @endforeach
 
                                     </tbody>
+                                    {{$draws->links()}}
                                 </table>
                             </div>
                         </div>

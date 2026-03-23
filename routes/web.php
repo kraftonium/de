@@ -1,21 +1,28 @@
 <?php
 
+use App\Http\Controllers\DAreaActiveInactiveDealershipsController;
 use App\Http\Controllers\DBookRideController;
 use App\Http\Controllers\DCareersController;
 use App\Http\Controllers\DContactUsController;
 use App\Http\Controllers\DCustomersController;
 use App\Http\Controllers\DDealershipController;
 use App\Http\Controllers\DDealershipDetailsController;
+use App\Http\Controllers\DDistrictActiveInactiveDealershipsController;
 use App\Http\Controllers\DGpsController;
+use App\Http\Controllers\DInquiriesController;
 use App\Http\Controllers\DLuckyDrawController;
 use App\Http\Controllers\DNewsletterController;
 use App\Http\Controllers\DOrdersController;
 use App\Http\Controllers\DSolarController;
+use App\Http\Controllers\DStateActiveInactiveDealershipsController;
+use App\Http\Controllers\DStocksByColorsController;
 use App\Http\Controllers\DStocksController;
+use App\Http\Controllers\DTalukaActiveInactiveDealershipsController;
 use App\Http\Controllers\DUsersController;
 use App\Http\Controllers\DUserstypeController;
 use App\Http\Controllers\DVehiclesController;
 use App\Http\Controllers\DVehicleTypeController;
+use App\Http\Controllers\DZoneActiveInactiveDealershipsController;
 use Illuminate\Support\Facades\Route;
 use Termwind\Components\Dl;
 
@@ -27,8 +34,12 @@ Route::get('/about-us', function () {
     return view('about-us');
 });
 
-Route::get('/vehicles', function () {
+Route::get('/scooters', function () {
     return view('vehicles');
+});
+
+Route::get('/scooter-details', function () {
+    return view('scooter-details');
 });
 
 Route::get('/gps', function () {
@@ -96,8 +107,12 @@ Route::get('/terms-and-conditions', function () {
     return view('terms-and-conditions');
 });
 
-Route::get('/calculator', function () {
-    return view('calculator');
+Route::get('/profit-calculator', function () {
+    return view('profit-calculator');
+});
+
+Route::get('/solar-in-gandhinagar', function () {
+    return view('solar-in-gandhinagar');
 });
 
 Route::post('/contact-submit', [DContactUsController::class, 'create']);
@@ -133,11 +148,55 @@ Route::post('/admin-reset-password-submit', [DUsersController::class, 'adminrese
 Route::middleware('usersauth')->group(function () {
 
     Route::get('/manage-single-dealer/{id}', [DDealershipDetailsController::class, 'manage_single_dealer']);
+    Route::get('/manage-state-active-inactive', [DStateActiveInactiveDealershipsController::class, 'manage']);
+    Route::get('/manage-zone-active-inactive/{id}', [DZoneActiveInactiveDealershipsController::class, 'manage']);
+    Route::get('/manage-district-active-inactive/{id}', [DDistrictActiveInactiveDealershipsController::class, 'manage']);
+    Route::get('/manage-taluka-active-inactive/{id}', [DTalukaActiveInactiveDealershipsController::class, 'manage']);
+    Route::get('/manage-area-active-inactive/{id}', [DAreaActiveInactiveDealershipsController::class, 'manage']);
 
     // Admin Panel Routes Starts Here
     Route::middleware('adminauth')->group(function () {
 
         Route::get('/dashboard', [DUsersController::class, 'dashboard']);
+
+
+        Route::get('/add-state-active-inactive', function () {
+            return view('backend.manage-state-active-inactive.add-state-active-inactive');
+        });
+        Route::post('/add-state-active-inactive-submit', [DStateActiveInactiveDealershipsController::class, 'create']);
+        Route::get('/edit-state-active-inactive/{id}', [DStateActiveInactiveDealershipsController::class, 'edit']);
+        Route::post('/update-state-active-inactive/{id}', [DStateActiveInactiveDealershipsController::class, 'update']);
+        Route::get('/delete-state-active-inactive/{id}', [DStateActiveInactiveDealershipsController::class, 'delete']);
+
+
+        Route::get('/add-zone-active-inactive', [DZoneActiveInactiveDealershipsController::class, 'add']);
+        Route::post('/add-zone-active-inactive-submit', [DZoneActiveInactiveDealershipsController::class, 'create']);
+        Route::get('/edit-zone-active-inactive/{id}', [DZoneActiveInactiveDealershipsController::class, 'edit']);
+        Route::post('/update-zone-active-inactive/{id}', [DZoneActiveInactiveDealershipsController::class, 'update']);
+        Route::get('/delete-zone-active-inactive/{id}', [DZoneActiveInactiveDealershipsController::class, 'delete']);
+
+
+        Route::get('/add-district-active-inactive', [DDistrictActiveInactiveDealershipsController::class, 'add']);
+        Route::post('/add-district-active-inactive-submit', [DDistrictActiveInactiveDealershipsController::class, 'create']);
+        Route::get('/edit-district-active-inactive/{id}', [DDistrictActiveInactiveDealershipsController::class, 'edit']);
+        Route::post('/update-district-active-inactive/{id}', [DDistrictActiveInactiveDealershipsController::class, 'update']);
+        Route::get('/delete-district-active-inactive/{id}', [DDistrictActiveInactiveDealershipsController::class, 'delete']);
+
+        Route::get('/add-taluka-active-inactive', [DTalukaActiveInactiveDealershipsController::class, 'add']);
+        Route::post('/add-taluka-active-inactive-submit', [DTalukaActiveInactiveDealershipsController::class, 'create']);
+        Route::get('/edit-taluka-active-inactive/{id}', [DTalukaActiveInactiveDealershipsController::class, 'edit']);
+        Route::post('/update-taluka-active-inactive/{id}', [DTalukaActiveInactiveDealershipsController::class, 'update']);
+        Route::get('/delete-taluka-active-inactive/{id}', [DTalukaActiveInactiveDealershipsController::class, 'delete']);
+
+        Route::get('/add-area-active-inactive', [DAreaActiveInactiveDealershipsController::class, 'add']);
+        Route::post('/add-area-active-inactive-submit', [DAreaActiveInactiveDealershipsController::class, 'create']);
+        Route::get('/edit-area-active-inactive/{id}', [DAreaActiveInactiveDealershipsController::class, 'edit']);
+        Route::post('/update-area-active-inactive/{id}', [DAreaActiveInactiveDealershipsController::class, 'update']);
+        Route::get('/delete-area-active-inactive/{id}', [DAreaActiveInactiveDealershipsController::class, 'delete']);
+
+
+
+
 
 
 
@@ -273,6 +332,38 @@ Route::middleware('usersauth')->group(function () {
         Route::get('/manage-stock', [DStocksController::class, 'manage']);
 
         //manage stock routes ends here
+
+
+        //manage colors stock routes starts here
+
+        Route::get('/add-colors-stock', function () {
+            return view('backend.manage-colors-stock.add-colors-stock');
+        });
+        Route::post('/add-colors-stock-submit', [DStocksByColorsController::class, 'create']);
+        Route::get('/edit-colors-stock/{id}', [DStocksByColorsController::class, 'edit']);
+        Route::post('/update-colors-stock/{id}', [DStocksByColorsController::class, 'update']);
+        Route::get('/delete-colors-stock/{id}', [DStocksByColorsController::class, 'delete']);
+        Route::get('/manage-colors-stock', [DStocksByColorsController::class, 'manage']);
+
+        //manage colors stock routes ends here
+
+
+        //manage inquiries routes starts here
+
+        Route::get('/add-inquiries', function () {
+            return view('backend.manage-inquiries.add-inquiries');
+        });
+        Route::post('/add-inquiries-submit', [DInquiriesController::class, 'create']);
+        Route::get('/edit-inquiries/{id}', [DInquiriesController::class, 'edit']);
+        Route::post('/update-inquiries/{id}', [DInquiriesController::class, 'update']);
+        Route::get('/delete-inquiries/{id}', [DInquiriesController::class, 'delete']);
+        Route::get('/manage-inquiries', [DInquiriesController::class, 'manage']);
+        Route::get('/manage-single-dealer-inquiries/{id}', [DInquiriesController::class, 'manage_single_dealer_inquiries']);
+        Route::get('/search-inquiries', [DInquiriesController::class, 'search_inquiries']);
+
+
+        //manage inquiries routes ends here
+
 
 
         // Route::get('/dealer-profile', [DDealershipDetailsController::class, 'dealerprofile']);

@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\D_Customers;
 use App\Models\D_Dealership_Details;
+use App\Models\D_Inquiries;
 use App\Models\D_Orders;
 use App\Models\D_Stocks;
+use App\Models\D_Stocks_By_Colors;
 use App\Models\D_Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
+use Carbon\Carbon;
 
 class DDealershipDetailsController extends Controller
 {
@@ -274,9 +277,22 @@ class DDealershipDetailsController extends Controller
         $totalcustomers = D_Customers::where('whose_customer', $id)->count();
         $totalorders = D_Orders::where('user_id', $id)->count();
         $totalrevenue = D_Dealership_Details::where('user_id', $id)->sum('total_revenue');
+        $tds = round($totalrevenue * 0.05, 2);
+        $lastmonthrevenue = D_Dealership_Details::where('user_id', $id)
+            ->whereMonth('created_at', Carbon::now()->subMonth()->month)
+            ->whereYear('created_at', Carbon::now()->subMonth()->year)
+            ->sum('total_revenue');
+        $lastmonthorders = D_Orders::where('user_id', $id)
+            ->whereMonth('created_at', Carbon::now()->subMonth()->month)
+            ->whereYear('created_at', Carbon::now()->subMonth()->year)
+            ->count();
         $dealership = D_Dealership_Details::where('user_id', $id)->first();
         $totalstock = D_Stocks::where('whose_stock', $id)->sum('quantity');
-        $data = compact('dealership', 'totalcustomers', 'totalorders', 'totalrevenue', 'totalstock');
+        $colorstocks = D_Stocks_By_Colors::where('whose_stocks_id', $id)->get();
+        $stocks = D_Stocks::where('whose_stock', $id)->get();
+        $totalhisdealers = D_Dealership_Details::where('whose_dealer', $id)->paginate(10);
+        $inquiries = D_Inquiries::where('whose_inquiry', $id)->paginate(10);
+        $data = compact('dealership', 'totalcustomers', 'totalorders', 'totalrevenue', 'totalstock', 'stocks', 'lastmonthrevenue', 'lastmonthorders', 'colorstocks', 'totalhisdealers', 'inquiries', 'tds');
         return view('backend.manage-single-dealer')->with($data);
     }
 
@@ -289,7 +305,8 @@ class DDealershipDetailsController extends Controller
         $totalrevenue = D_Dealership_Details::where('user_id', $id)->sum('total_revenue');
         $dealership = D_Dealership_Details::where('user_id', $id)->first();
         $totalstock = D_Stocks::where('whose_stock', $id)->sum('quantity');
-        $data = compact('dealership', 'totalcustomers', 'totalorders', 'totalrevenue', 'totalstock');
+        $stocks = D_Stocks::where('whose_stock', $id)->get();
+        $data = compact('dealership', 'totalcustomers', 'totalorders', 'totalrevenue', 'totalstock', 'stocks');
         return view('backend.manage-single-dealer')->with($data);
         // $data = compact('dealerships', 'totalstatedealerships', 'totalcustomers', 'totalorders', 'totalrevenue');
         // return view('backend.manage-state-dealership.manage-state-dealership')->with($data);

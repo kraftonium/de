@@ -45,6 +45,8 @@
             $pagename = 'manage-orders';
         } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-stock') !== false) {
             $pagename = 'manage-stock';
+        } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-colors-stock') !== false) {
+            $pagename = 'manage-colors-stock';
         } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-state-dealership') !== false) {
             $pagename = 'manage-state-dealership';
         } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-zone-dealership') !== false) {
@@ -81,6 +83,20 @@
             $pagename = 'manage-zone-dealership';
         } elseif (strpos($_SERVER['REQUEST_URI'], 'my-stock') !== false) {
             $pagename = 'my-stock';
+        } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-inquiries') !== false) {
+            $pagename = 'manage-inquiries';
+        } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-state-active-inactive') !== false) {
+            $pagename = 'manage-state-active-inactive';
+        } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-zone-active-inactive') !== false) {
+            $pagename = 'manage-zone-active-inactive';
+        } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-district-active-inactive') !== false) {
+            $pagename = 'manage-district-active-inactive';
+        } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-taluka-active-inactive') !== false) {
+            $pagename = 'manage-taluka-active-inactive';
+        } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-area-active-inactive') !== false) {
+            $pagename = 'manage-area-active-inactive';
+        } elseif (strpos($_SERVER['REQUEST_URI'], 'manage-single-dealer-inquiries') !== false) {
+            $pagename = 'manage-single-dealer-inquiries';
         }
     @endphp
 
@@ -193,6 +209,24 @@
 
                     </form>
                 </div>
+            @elseif(strpos($_SERVER['REQUEST_URI'], 'manage-inquiries') !== false)
+                <div class="top-nav-search">
+                    <form>
+                        <input type="text" class="form-control" id="search_header"
+                            placeholder="Search by Name, Phoneno, Email, or City">
+                        <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+
+                    </form>
+                </div>
+            @elseif(strpos($_SERVER['REQUEST_URI'], 'manage-single-dealer-inquiries') !== false)
+                <div class="top-nav-search">
+                    <form>
+                        <input type="text" class="form-control" id="search_header"
+                            placeholder="Search by Name, Phoneno, Email, or City">
+                        <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+
+                    </form>
+                </div>
             @endif
             <a class="mobile_btn" id="mobile_btn">
                 <i class="fa fa-bars"></i>
@@ -210,6 +244,36 @@
                     @elseif($pagename == 'manage-vehicle-type')
                         <li class="nav-item dropdown noti-dropdown">
                             <a href="{{ url('/add-vehicle-type') }}">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                        </li>
+                    @elseif($pagename == 'manage-state-active-inactive')
+                        <li class="nav-item dropdown noti-dropdown">
+                            <a href="{{ url('/add-state-active-inactive') }}">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                        </li>
+                    @elseif($pagename == 'manage-zone-active-inactive')
+                        <li class="nav-item dropdown noti-dropdown">
+                            <a href="{{ url('/add-zone-active-inactive') }}">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                        </li>
+                    @elseif($pagename == 'manage-district-active-inactive')
+                        <li class="nav-item dropdown noti-dropdown">
+                            <a href="{{ url('/add-district-active-inactive') }}">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                        </li>
+                    @elseif($pagename == 'manage-taluka-active-inactive')
+                        <li class="nav-item dropdown noti-dropdown">
+                            <a href="{{ url('/add-taluka-active-inactive') }}">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                        </li>
+                    @elseif($pagename == 'manage-area-active-inactive')
+                        <li class="nav-item dropdown noti-dropdown">
+                            <a href="{{ url('/add-area-active-inactive') }}">
                                 <i class="fa-solid fa-plus"></i>
                             </a>
                         </li>
@@ -249,9 +313,21 @@
                                 <i class="fa-solid fa-plus"></i>
                             </a>
                         </li>
+                    @elseif($pagename == 'manage-inquiries')
+                        <li class="nav-item dropdown noti-dropdown">
+                            <a href="{{ url('/add-inquiries') }}">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                        </li>
                     @elseif($pagename == 'manage-stock')
                         <li class="nav-item dropdown noti-dropdown">
                             <a href="{{ url('/add-stock') }}">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                        </li>
+                    @elseif($pagename == 'manage-colors-stock')
+                        <li class="nav-item dropdown noti-dropdown">
+                            <a href="{{ url('/add-colors-stock') }}">
                                 <i class="fa-solid fa-plus"></i>
                             </a>
                         </li>
@@ -263,6 +339,30 @@
                         </li>
                         {{-- @endif --}}
                     @elseif($pagename == 'manage-customers')
+                        <li class="nav-item dropdown noti-dropdown">
+                            <a href="{{ url('/register') }}">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown noti-dropdown">
+                            <a href="{{ url('/add-customers') }}">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                        </li>
+                    @elseif($pagename == 'manage-orders')
+                        <li class="nav-item dropdown noti-dropdown">
+                            <a href="{{ url('/add-order') }}">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                        </li>
+                    @endif
+                @else
+                    @if ($pagename == 'manage-customers')
+                        <li class="nav-item dropdown noti-dropdown">
+                            <a href="{{ url('/register') }}">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                        </li>
                         <li class="nav-item dropdown noti-dropdown">
                             <a href="{{ url('/add-customers') }}">
                                 <i class="fa-solid fa-plus"></i>
@@ -374,10 +474,33 @@
                                         <span>Manage Area Dealership</span></a>
                                 </li>
 
+
+                                <li class="@if ($pagename == 'manage-inquiries') active @endif">
+                                    <a href="{{ url('/manage-inquiries') }}"><i class="fa fa-store "></i>
+                                        <span>Manage Inquiries</span></a>
+                                </li>
+
+                                <li class="@if (
+                                    $pagename == 'manage-state-active-inactive' ||
+                                        $pagename == 'manage-zone-active-inactive' ||
+                                        $pagename == 'manage-district-active-inactive' ||
+                                        $pagename == 'manage-taluka-active-inactive' ||
+                                        $pagename == 'manage-area-active-inactive') active @endif">
+                                    <a href="{{ url('/manage-state-active-inactive') }}"><i class="fa fa-store "></i>
+                                        <span>Manage Dealership Status</span></a>
+                                </li>
+
                                 <li class="@if ($pagename == 'manage-stock') active @endif">
                                     <a href="{{ url('/manage-stock') }}"><i class="fa fa-boxes "></i> <span>Manage
                                             Stock</span></a>
                                 </li>
+
+                                <li class="@if ($pagename == 'manage-colors-stock') active @endif">
+                                    <a href="{{ url('/manage-colors-stock') }}"><i class="fa fa-boxes "></i>
+                                        <span>Manage
+                                            Colors Stock</span></a>
+                                </li>
+
                                 <li class="@if ($pagename == 'manage-dealership') active @endif">
                                     <a href="{{ url('/manage-dealership') }}"><i class="fa fa-store "></i>
                                         <span>Manage Dealership</span></a>

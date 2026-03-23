@@ -1,408 +1,279 @@
 @extends('partials.mainindex')
 
 @push('title')
-    <title>GPS | Divyashakti Enterprise</title>
-@endpush
-
-@push('meta')
-<meta property="og:type" content="website" />
-<meta property="og:title" content="GPS | Divyashakti Enterprise" />
-<meta property="og:description"
-    content="DIVYASHAKTI ENTERPRISE the most largest EV VEHICLES Showroom in the gandhinagar can serve you latest qulity of EV VEHICLES. Discover a new era of transportation at our electric vehicles showroom. Embrace sustainable, stylish, and powerful rides designed for the future." />
-<meta property="og:image" content="{{asset('assets/img/logo/logo.png')}}" />
-<meta property="og:url" content="https://www.thedivyashakti.com/gps" />
-<meta property="og:site_name" content="Divyashakti Enterprise" />
-<link rel="canonical" href="https://www.thedivyashakti.com/gps">
-@endpush
-
-@push('logo')
-    <a class="logo-sticky-none" href="{{url('/')}}"><img alt="Logo"
-                                            src="assets/img/logo/logo-white.png"></a>
-                                    <a class="logo-for-sticky" href="{{url('/')}}"><img alt="Logo"
-                                            src="assets/img/logo/logo.png"></a>
+    <title>GPS | Divyashakti Enterprise | Drive The Future</title>
 @endpush
 
 @section('main-section')
+    <!-- breadcrumb starts here -->
 
-<!-- ----- POPUP DISPLAY START ----- -->
-    <!-- Modal trigger button (Optional if you want manual trigger) -->
-    <button type="button" class="btn btn-primary btn-lg d-none" data-bs-toggle="modal" data-bs-target="#modalId">
-        Launch
-    </button>
-    <!-- Modal Body -->
-    <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
-        aria-labelledby="modalTitleId" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollablee modal-dialog-centered modal-sm" role="document">
-            <div class="modal-content">
-                <!-- <div class="modal-headerr py-3 font-weight-bold ">
-                    <h4 class="modal-title text-center" id="modalTitleId">LUCKY DROW OF DIVYASHAKTI ENTERPRISE</h4>
-                </div> -->
-                <div class="modal-bodyy popup-modal-body">
-                    <div class="popup-image">
-                        <img src="assets/img/popup/popup.png" alt="Lucky Draw Image">
-                    </div>
-                    <div class="popup-content">
-                        <h2 class="text-dark"><b>LUCKY DRAW</b></h2>
-                        <div class="form-center">
-                            <h5 class="mb-4"><b> Won Electric Scooter Or Gold </b></h5>
-                            <form action="" class="popup-form" id="ld_form" method="post">
-                                @csrf
-                                <input type="text" name="ldname" id="ldname" placeholder="Your Name" onblur="validatecontactLDName()">
-                                <span class="text-danger" id="ldname-error"></span>
-                                <input type="text" name="ldphoneno" id="ldphoneno" placeholder="Your Phone No" maxlength="10" onblur="validatecontactLDPhoneno()">
-                                <span class="text-danger" id="ldphoneno-error"></span>
-                                <input type="text" name="ldcity" id="ldcity" placeholder="Your City" onblur="validatecontactLDCity()">
-                                <span class="text-danger" id="ldcity-error"></span>
-                                <div class="modal-btns">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-warning" id="ldbutton">Apply</button>
-                                </div>
-                                <div id="ldconsuccess"></div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+    <section class="page-banner">
+
+        <div class="banner-bg"></div>
+
+        <div class="banner-content fade-up">
+
+            <h1>GPS Tracking Solutions</h1>
+
+            <p>
+                Advanced vehicle tracking systems designed for security,
+                efficiency, and real-time monitoring across Gujarat.
+            </p>
+
+            <div class="breadcrumb">
+
+                <a href="index.html">Home</a>
+
+                <span>›</span>
+
+                <span class="active">GPS Tracking</span>
+
             </div>
-        </div>
-    </div>
-    <!-- ----- POPUP DISPLAY END ----- -->
 
-
-
-        <div class="breadcrumb-area pt-255 pb-170" style="background-image: url(assets/img/banner/banner-4.jpg)">
-            <div class="container-fluid">
-                <div class="breadcrumb-content text-center">
-                    <h2>GPS Page </h2>
-                    <ul>
-                        <li>
-                            <a href="{{url('/')}}">Home</a>
-                        </li>
-                        <li>GPS Page </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-
-    <section class="about-gps">
-
-        <div class="gps-hero">
-            <div class="about-gps-content">
-                <h3>About GPS</h3>
-                <p><i class='fas fa-bullseye mr-10'></i> We have taken the standard of GPS solutions to international class in India, almost single handedly. Our continuous improvement, dedication to bring the ultra modern solution to our clients at an inexpensive rate and never compromising on the quality factor has made us the most respected name in this area with support of 31 team members</p>
-                <p><i class='fas fa-bullseye mr-10'></i> GPS is not a very complex technology. The piece of GPS tracker system which is installed in your car, is directly linked to the satellites above with 30 Days Live Reports Backup with us. get report at any time with 99% Accuracy in fuel. We got expertise in GPS Product and Tracking solution and expanding our product range to other technology product which would help to save water , environment and energy</p>
-            </div>
-            <div class="about-gps-img">
-                <img src="./assets/img/gps/gps-hero.webp" alt="gps-hero">
-            </div>
-        </div>
-        
-        <div class="gps-vision">
-            <h3>Vision</h3>
-            <p><i class='fas fa-bullseye mr-10'></i> People are not well educated with importance of GPS Tracking device , Home Automation Instrument as well Security & Surveillance System in Market</p>
-        </div>
-
-        <div class="gps-mission">
-            <h3>Mission</h3>
-            <p><i class='fas fa-bullseye mr-10'></i> Farming Activity still on traditional methods include there is not adequate water supply to crop as well some time over water supply to crop and those activities need to be automated to simplify life of Farmers.</p>
-        </div>
-
-
-        <div class="gps-highlights">
-            <div class="highlight-img">
-                <img src="./assets/img/gps/gps-highlight.jpg" alt="gps-highlight">
-            </div>
-            <div class="highlights-content">
-                <h3>Key Highlights Of GPS</h3>
-                <p>We are continuously focus on Automation and Innovation on GPS tracking device and Home Automation Solution which helps society to simplify their lives</p>
-                <div class="highlights-year">
-                        <p><i class='fas fa-bullseye mr-10'></i> We have installed more than 60 Devices in ONGC , Khambhat.</p>
-                        <p><i class='fas fa-bullseye mr-10'></i> We have also installed more than 8000 Devices in Gujarat.</p>
-                        <p><i class='fas fa-bullseye mr-10'></i>We have installed security system in Hospitals and Government Schools.</p>
-                        <p><i class='fas fa-bullseye mr-10'></i>Installation of GPS Devices in Gujarat Nagar Palika Infrastructure.</p>
-                        <p><i class='fas fa-bullseye mr-10'></i>
-                            Installation of GPS Device Government sector like GEMI , Sachivalay , Udhyog Bhavan.
-                        </p>
-                        <p><i class='fas fa-bullseye mr-10'></i>Installation of our GPS Device in more than 70 % reupdated Transport Companies
-                        </p>
-                        <p><i class='fas fa-bullseye mr-10'></i>
-                            We have also sold more than 13000 Devices in Gujarat.
-                        </p>
-                        <p><i class='fas fa-bullseye mr-10'></i>
-                            We have installed security system in Hospitals and Government Schools and Govt. Offices
-                        </p>
-                        <p><i class='fas fa-bullseye mr-10'></i>We have sold LED recharable Bulb + Solar Street Lights in Uttar Gujarat, Madhya Gujarat and also Ahmedabad- Gandhinagar by 250 Dealers. 
-                        </p>
-                        <p><i class='fas fa-bullseye mr-10'></i>We have sold LED recharable Bulb + Solar Street Lights in South Gujarat, Saurastra, and kutch by 150 Dealers.
-                        </p>
-                </div>
-            </div>
         </div>
 
     </section>
 
+    <!-- breadcrumb starts here -->
 
-    <section class="gps-contact-form">
-        <div class="col-lg-9">
-            <div class="contact-message-wrapper">
-                <h4 class="contact-title contact-title-custom">Get Your GPS</h4>
-                <div class="contact-message">
-                    <form id="gps_form" action="" method="post"
-                        class="contact-form-custom">
-                        @csrf
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="contact-form-style mb-20">
-                                    <input name="name" id="name" placeholder="Full Name" type="text" onblur="validatecareerName()">
-                                    <span class="text-danger" id="name-error"></span>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="contact-form-style mb-20">
-                                    <input name="email" id="email" placeholder="Email Address" type="email" onblur="validatecareerEmail()">
-                                    <span class="text-danger" id="email-error"></span>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="contact-form-style mb-20">
-                                    <input name="phoneno" id="phoneno" placeholder="Phone No" type="text" maxlength="10" onblur="validatecareerPhoneno()" >
-                                    <span class="text-danger" id="phoneno-error"></span>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="contact-form-style mb-20">
-                                    <input name="subject" id="subject" placeholder="Subject" type="text" onblur="validatecareerSubject()">
-                                    <span class="text-danger" id="subject-error"></span>
-                                </div>
-                            </div>
-                            
-                            <div class="col-lg-6">
-                                <div class="contact-form-style mb-20">
-                                    <input name="city" id="city" placeholder="City" type="text" onblur="validatecareerCity()">
-                                    <span class="text-danger" id="city-error"></span>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="contact-form-style mb-20">
-                                    <input name="state" id="state" placeholder="State" type="text" onblur="validatecareerState()">
-                                    <span class="text-danger" id="state-error"></span>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="contact-form-style">
-                                    <textarea name="message" id="message" placeholder="Message" onblur="validatecareerMessage()"></textarea>
-                                    <span class="text-danger" id="message-error"></span>
-                                    <button class="submit cr-btn btn-style" type="button" id="gpsbutton"><span>SUBMIT
-                                            </span></button>
-                                </div>
-                            </div>
-                            <div id="consuccess"></div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <!-- about gps section starts here -->
+
+    <section class="gps-about">
+
+        <div class="container fade-up">
+
+            <h2>About GPS Tracking Solutions</h2>
+
+            <p>
+                DivyaShakti Enterprise provides advanced GPS tracking
+                solutions and vehicle monitoring systems designed to improve
+                security, efficiency, and operational control.
+            </p>
+
+            <p>
+                With years of experience, we offer reliable GPS devices at
+                affordable prices. Our solutions are widely used across
+                Gujarat for vehicle tracking, fleet management, and security
+                monitoring.
+            </p>
+
         </div>
+
     </section>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- about gps section ends here -->
 
+    <!-- how gps works section starts here -->
 
-<script>
+    <section class="gps-how">
 
+        <div class="container">
 
-function validatecareerName() {
-    var name = document.getElementById('name').value;
-    if (name === '') {
-        document.getElementById('name-error').innerText = 'Please enter your name';
-        return false;
-    } else {
-        document.getElementById('name-error').innerText = '';
-        return true;
-    }
-}
+            <div class="how-text fade-up">
 
-function validatecareerEmail() {
-    var email = document.getElementById('email').value;
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                <h2>How GPS Tracking Works</h2>
 
-    if (email === '') {
-        document.getElementById('email-error').innerText = 'Please enter your email';
-        return false;
-    } else if (!emailRegex.test(email)) {
-        document.getElementById('email-error').innerText = 'Please enter a valid email address';
-        return false;
-    } else {
-        document.getElementById('email-error').innerText = '';
-        return true;
-    }
-}
+                <p>
+                    A GPS tracker installed in a vehicle connects with
+                    satellites to provide real-time location data. You can
+                    monitor your vehicle anytime through a secure platform.
+                </p>
 
-function validatecareerPhoneno() {
-    var phoneno = document.getElementById('phoneno').value;
-    var phoneRegex = /^[0-9]{10}$/;
-    if (phoneno === '') {
-        document.getElementById('phoneno-error').innerText = 'Please enter your phone no';
+            </div>
 
-        return false;
-    } else if (!phoneRegex.test(phoneno)) {
-        document.getElementById('phoneno-error').innerText = 'Please enter a valid phone no';
+            <div class="how-features">
 
-        return false;
-    } else {
-        document.getElementById('phoneno-error').innerText = '';
-        return true;
-    }
-}
+                <div class="feature fade-up delay-1">📍 Real-time
+                    Tracking</div>
+                <div class="feature fade-up delay-2">📊 30 Days Backup</div>
+                <div class="feature fade-up delay-3">⛽ Fuel Monitoring</div>
+                <div class="feature fade-up delay-4">🗺 Movement
+                    History</div>
+                <div class="feature fade-up delay-1">⚡ High
+                    Performance</div>
 
-function validatecareerSubject() {
-    var subject = document.getElementById('subject').value;
-    // console.log("Selected Dealership: ", subject); // Check if the value is being logged correctly
-    if (subject === '') {
-        document.getElementById('subject-error').innerText = 'Please enter the subject';
-        return false;
-    } else {
-        document.getElementById('subject-error').innerText = '';
-        return true;
-    }
-}
+            </div>
 
-function validatecareerCity() {
-    var city = document.getElementById('city').value;
-    if (city === '') {
-        document.getElementById('city-error').innerText = 'Please enter your city';
-        return false;
-    } else {
-        document.getElementById('city-error').innerText = '';
-        return true;
-    }
-}
+        </div>
 
-function validatecareerState() {
-    var state = document.getElementById('state').value;
-    if (state === '') {
-        document.getElementById('state-error').innerText = 'Please enter your state';
-        return false;
-    } else {
-        document.getElementById('state-error').innerText = '';
-        return true;
-    }
-}
+    </section>
 
+    <!-- how gps works section ends here -->
 
-function validatecareerMessage() {
-    var message = document.getElementById('message').value;
-    if (message === '') {
-        document.getElementById('message-error').innerText = 'Please enter your message';
-        return false;
-    } else {
-        document.getElementById('message-error').innerText = '';
-        return true;
-    }
-}
+    <!-- vision & mission section starts here -->
 
-function validatecontactFields() {
-    var isValid = true; // Assume all fields are valid initially
+    <section class="vision-mission">
 
-    // Validate Name
-    if (!validatecareerName()) {
-        isValid = false;
-    }
+        <div class="vm-container">
 
-    if (!validatecareerEmail()) {
-        isValid = false;
-    }
+            <div class="vm-box fade-up">
 
-    // Validate Phone Number
-    if (!validatecareerPhoneno()) {
-        isValid = false;
-    }
+                <h3>Our Vision</h3>
 
+                <p>
+                    We aim to increase awareness about GPS tracking, home
+                    automation, and security technologies to make operations
+                    safer and smarter.
+                </p>
 
-    if (!validatecareerSubject()) {
-        isValid = false;
-    }
+            </div>
 
+            <div class="vm-box fade-up delay-2">
 
-    if (!validatecareerCity()) {
-        isValid = false;
-    }
+                <h3>Our Mission</h3>
 
-    // Validate Message
-    if (!validatecareerState()) {
-        isValid = false;
-    }
+                <p>
+                    We promote automation and smart technology that
+                    simplifies daily life and improves productivity across
+                    industries like agriculture and transport.
+                </p>
 
-    if (!validatecareerMessage()) {
-        isValid = false;
-    }
+            </div>
 
-    // Return overall validation result
-    return isValid;
-}
+        </div>
 
+    </section>
 
+    <!-- vision & mission section ends here -->
 
-$('#gpsbutton').on('click',function(){
+    <!-- key highlights section starts here -->
 
-  if(validatecontactFields()){
-//   $("#contactbutton").prop("disabled", true);
-//       $("#contactbutton").val("Please wait..");
-$("#gpsbutton").prop("disabled", true);
-$("#gpsbutton").text("Please wait..");
-var formData = new FormData($('#gps_form')[0]);
+    <section class="gps-highlights">
 
-  $.ajax({
-    url:'/send-gps',
-    type:'POST',
-    data:formData,
-    contentType: false,
-            processData: false,
-    // data:$("#career_form").serialize(),
-    success:function(response){
-      console.log(response);
-      $("#gps_form")[0].reset();
-      $('#consuccess').html('<div class="alert alert-success alert-dismissible fade show marg text-dark" role="alert">'+
-        '<strong>Successfully</strong> Your Message Has Been Sent Please Wait For Community To Response.'+
-        '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>'+
-      '</div>');
-      setTimeout(function() {
-  $('.alert').alert('close'); // Bootstrap 5 way of closing alert
-}, 5000);
+        <div class="container">
 
-      $("#gpsbutton").prop("disabled", false);
-            $("#gpsbutton").text("Send Message");
-    },
-    error:function(response){
-      $('#consuccess').html('<div class="alert alert-danger alert-dismissible fade show marg text-dark" role="alert">'+
-        '<strong>Sorry</strong> something went wrong while submitting the form.'+
-        '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>'+
-      '</div>');
-      setTimeout(function() {
-        $('.alert').alert('close'); // Bootstrap 5 way of closing alert
-        }, 5000);
-      console.log(response);
+            <h2 class="fade-up">Key Highlights</h2>
 
-    $("#gpsbutton").prop("disabled", false);
-            $("#gpsbutton").text("Send Message");
-  }
+            <div class="highlight-grid">
 
+                <div class="highlight-card fade-up delay-1">
+                    <h3>8000+</h3>
+                    <p>GPS Devices Installed</p>
+                </div>
 
-  })
-}
-else{
-  $('#consuccess').html('<div class="alert alert-danger alert-dismissible fade show marg text-dark" role="alert">'+
-        '<strong>Please,</strong> fill the form properly.'+
-        '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>'+
-      '</div>');
-      setTimeout(function() {
-        $('.alert').alert('close'); // Bootstrap 5 way of closing alert
-        }, 5000);
-}
-})
-</script>
+                <div class="highlight-card fade-up delay-2">
+                    <h3>13000+</h3>
+                    <p>Technology Devices Sold</p>
+                </div>
 
+                <div class="highlight-card fade-up delay-3">
+                    <h3>70%</h3>
+                    <p>Transport Companies Covered</p>
+                </div>
 
+                <div class="highlight-card fade-up delay-4">
+                    <h3>ONGC</h3>
+                    <p>Major Client Deployment</p>
+                </div>
 
+            </div>
 
+        </div>
+
+    </section>
+
+    <!-- key highlights section ends here -->
+
+    <!-- gujarat coverage section starts here -->
+
+    <section class="gps-coverage">
+
+        <div class="container fade-up">
+
+            <h2>GPS Solutions Across Gujarat</h2>
+
+            <p>
+                We provide GPS tracking devices across Ahmedabad,
+                Gandhinagar, and all regions of Gujarat. Our focus is to
+                deliver smart tracking technology that improves safety,
+                transparency, and efficiency.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- gujarat coverage section ends here -->
+
+    <!-- gps from starts here -->
+
+    <section class="gps-form-section">
+
+        <div class="gps-form-wrapper">
+
+            <h2>Get GPS Tracking Solution</h2>
+
+            <p>Fill the form and our team will contact you for GPS tracking
+                setup.</p>
+
+            <form id="gps_form">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Full Name">
+                        <span id="name-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Email Address">
+                        <span id="email-error"></span>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group full">
+                        <input type="text" id="phoneno" placeholder="Phone Number">
+                        <span id="phoneno-error"></span>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group full">
+                        <input type="text" id="subject" placeholder="Subject">
+                        <span id="subject-error"></span>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <input type="text" id="city" placeholder="City">
+                        <span id="city-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" id="state" placeholder="State">
+                        <span id="state-error"></span>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group full">
+                        <textarea id="message" placeholder="Your Message"></textarea>
+                        <span id="message-error"></span>
+                    </div>
+
+                </div>
+
+                <button type="button" id="gpsbutton" class="submit-btn">
+                    Send Inquiry →
+                </button>
+
+                <div id="consuccess"></div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- gps from ends here -->
 @endsection

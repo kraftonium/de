@@ -1,6 +1,7 @@
 <div class="footer">
-    © 2024 DIVYASHAKTI ENTERPRISE, Inc. All rights reserved. Powered By <a href="https://www.divineinfoverse.com"
-        target="_blank"> DIVINE INFOVERSE</a>
+    © {{ date('Y') }} DIVYASHAKTI ENTERPRISE, Inc. All rights reserved.
+    <!--Powered By <a href="https://www.diviaura.com"-->
+    <!--    target="_blank">DIVIAURA</a>-->
 </div>
 
 

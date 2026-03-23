@@ -99,6 +99,9 @@
                         <div class="card-header">
                             <h4 class="card-title">Manage Dealership List</h4>
                         </div>
+                        <div class="card-header">
+                            <h4 class="card-title"><a href="{{ url('/add-dealership') }}">Add Dealership</a></h4>
+                        </div>
                         <div class="card-body">
                             <div class="table-responsive" style="max-height: 420px; overflow-y: auto;">
                                 <table class="table table-hover table-center mb-0">
