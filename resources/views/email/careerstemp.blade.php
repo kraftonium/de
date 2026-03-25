@@ -13,13 +13,15 @@
 </head>
 
 <body>
-    <h1>Title :- {{$careermail['Title']}}</h1>
-    <h2>Name :- {{$careermail['Name']}}</h2>
-    <p>Email :- {{$careermail['Email']}}</p>
-    <p>Phoneno :- {{$careermail['Phoneno']}}</p>
-    <p>Profile :- {{$careermail['Profile']}}</p>
-    <p>Resume :- {{$careermail['Resume']}}</p>
-    <p>Coverletter :- {{$careermail['Coverletter']}}</p>
+    <h1>Title :- {{ $careermail['Title'] }}</h1>
+    <h2>Name :- {{ $careermail['Name'] }}</h2>
+    <p>Email :- {{ $careermail['Email'] }}</p>
+    <p>Phoneno :- {{ $careermail['Phoneno'] }}</p>
+    <p>Experience :- {{ $careermail['Experience'] }}</p>
+    <p>City :- {{ $careermail['City'] }}</p>
+    <p>Profile :- {{ $careermail['Profile'] }}</p>
+    <p>Resume :- {{ $careermail['Resume'] }}</p>
+    <p>Coverletter :- {{ $careermail['Coverletter'] }}</p>
     <p>This Details Came From The Divyashakti Enterprise Website's Career Form.</p>
     <p>Thank You.</p>
     <!-- Optional JavaScript -->

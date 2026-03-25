@@ -25,7 +25,7 @@ class DSolarController extends Controller
         try {
             // Log::info('start');
             $maildata = [
-                'Title' => 'Delaership Details',
+                'Title' => 'Solar Details',
                 'Name' => $request['name'],
                 'Email' => $request['email'],
                 'Phoneno' => $request['phoneno'],

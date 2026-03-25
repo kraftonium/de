@@ -16,7 +16,7 @@ class DBookRideController extends Controller
         $dealer = new D_Book_Ride();
         $dealer->name = $request['name'];
         $dealer->email = $request['email'];
-        $dealer->phoneno = $request['phoneno'];
+        $dealer->phoneno = $request['phone'];
         $dealer->vehicle = $request['vehicle'];
         $dealer->ride_date = $request['ride_date'];
         $dealer->ride_time = $request['ride_time'];
@@ -32,7 +32,7 @@ class DBookRideController extends Controller
                 'Title' => 'Book Ride Details',
                 'Name' => $request['name'],
                 'Email' => $request['email'],
-                'Phoneno' => $request['phoneno'],
+                'Phoneno' => $request['phone'],
                 'Vehicle' => $request['vehicle'],
                 'Ride_Date' => $request['ride_date'],
                 'Ride_Time' => $request['ride_time'],

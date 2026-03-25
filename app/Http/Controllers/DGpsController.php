@@ -25,7 +25,7 @@ class DGpsController extends Controller
         try {
             // Log::info('start');
             $maildata = [
-                'Title' => 'Delaership Details',
+                'Title' => 'GPS Details',
                 'Name' => $request['name'],
                 'Email' => $request['email'],
                 'Phoneno' => $request['phoneno'],

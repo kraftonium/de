@@ -17,17 +17,19 @@ class DContactUsController extends Controller
 
         $contact->name = $request['name'];
         $contact->email = $request['email'];
-        $contact->phoneno = $request['phoneno'];
+        $contact->phoneno = $request['phone'];
+        $contact->service = $request['service'];
         $contact->subject = $request['subject'];
         $contact->message = $request['message'];
         $contact->save();
 
         try {
             $maildata = [
-                'Title' => 'Contact Details',
+                'Title' => 'Contact Us Details',
                 'Name' => $request['name'],
                 'Email' => $request['email'],
-                'Phoneno' => $request['phoneno'],
+                'Phoneno' => $request['phone'],
+                'Service' => $request['service'],
                 'Subject' => $request['subject'],
                 'Message' => $request['message'],
             ];

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name', 1255);
             $table->string('email', 655);
             $table->string('phoneno', 15);
+            $table->string('service', 655);
             $table->string('subject', 655);
             $table->text('message');
             $table->softDeletes();

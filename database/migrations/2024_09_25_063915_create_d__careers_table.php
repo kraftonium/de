@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('email', 655);
             $table->string('phoneno', 15);
             $table->string('profile', 655);
+            $table->string('experience', 655);
+            $table->string('city', 655);
             $table->string('resumepath', 655);
             $table->text('coverletter');
             $table->softDeletes();

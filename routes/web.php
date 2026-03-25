@@ -34,12 +34,36 @@ Route::get('/about-us', function () {
     return view('about-us');
 });
 
-Route::get('/scooters', function () {
-    return view('vehicles');
+Route::get('/ev-scooters', function () {
+    return view('ev-scooters');
 });
 
 Route::get('/scooter-details', function () {
     return view('scooter-details');
+});
+
+Route::get('/breeze-ev-scooter', function () {
+    return view('breeze-ev-scooter');
+});
+
+Route::get('/divine-24-ev-scooter', function () {
+    return view('divine-24-ev-scooter');
+});
+
+Route::get('/affair-lite-ev-scooter', function () {
+    return view('affair-lite-ev-scooter');
+});
+
+Route::get('/affair-ev-scooter', function () {
+    return view('affair-ev-scooter');
+});
+
+Route::get('/liberty-ev-scooter', function () {
+    return view('liberty-ev-scooter');
+});
+
+Route::get('/loader-ev-scooter', function () {
+    return view('loader-ev-scooter');
 });
 
 Route::get('/gps', function () {
@@ -91,8 +115,8 @@ Route::get('/passenger-auto', function () {
     return view('product-details-passenger');
 });
 
-Route::get('/career ', function () {
-    return view('carrers');
+Route::get('/careers', function () {
+    return view('careers');
 });
 
 Route::get('/contact-us', function () {

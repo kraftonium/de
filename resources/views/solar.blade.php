@@ -241,7 +241,8 @@
             <p>Fill the form and our team will contact you for solar
                 solutions.</p>
 
-            <form id="solar_form" method="POST">
+            <form id="solar_form" method="POST" action="">
+                @csrf
 
                 <div class="form-row">
 
@@ -317,4 +318,202 @@
     </section>
 
     <!-- solar form ends here -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+    <script>
+        function validatecareerName() {
+            var name = document.getElementById('name').value;
+            if (name === '') {
+                document.getElementById('name-error').innerText = 'Please enter your name';
+                return false;
+            } else {
+                document.getElementById('name-error').innerText = '';
+                return true;
+            }
+        }
+
+        function validatecareerEmail() {
+            var email = document.getElementById('email').value;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (email === '') {
+                document.getElementById('email-error').innerText = 'Please enter your email';
+                return false;
+            } else if (!emailRegex.test(email)) {
+                document.getElementById('email-error').innerText = 'Please enter a valid email address';
+                return false;
+            } else {
+                document.getElementById('email-error').innerText = '';
+                return true;
+            }
+        }
+
+        function validatecareerPhoneno() {
+            var phoneno = document.getElementById('phoneno').value;
+            var phoneRegex = /^[0-9]{10}$/;
+            if (phoneno === '') {
+                document.getElementById('phoneno-error').innerText = 'Please enter your phone no';
+
+                return false;
+            } else if (!phoneRegex.test(phoneno)) {
+                document.getElementById('phoneno-error').innerText = 'Please enter a valid phone no';
+
+                return false;
+            } else {
+                document.getElementById('phoneno-error').innerText = '';
+                return true;
+            }
+        }
+
+        function validatecareerSubject() {
+            var subject = document.getElementById('subject').value;
+            // console.log("Selected Dealership: ", subject); // Check if the value is being logged correctly
+            if (subject === '') {
+                document.getElementById('subject-error').innerText = 'Please enter the subject';
+                return false;
+            } else {
+                document.getElementById('subject-error').innerText = '';
+                return true;
+            }
+        }
+
+        function validatecareerCity() {
+            var city = document.getElementById('city').value;
+            if (city === '') {
+                document.getElementById('city-error').innerText = 'Please enter your city';
+                return false;
+            } else {
+                document.getElementById('city-error').innerText = '';
+                return true;
+            }
+        }
+
+        function validatecareerState() {
+            var state = document.getElementById('state').value;
+            if (state === '') {
+                document.getElementById('state-error').innerText = 'Please enter your state';
+                return false;
+            } else {
+                document.getElementById('state-error').innerText = '';
+                return true;
+            }
+        }
+
+
+        function validatecareerMessage() {
+            var message = document.getElementById('message').value;
+            if (message === '') {
+                document.getElementById('message-error').innerText = 'Please enter your message';
+                return false;
+            } else {
+                document.getElementById('message-error').innerText = '';
+                return true;
+            }
+        }
+
+        function validatecontactFields() {
+            var isValid = true; // Assume all fields are valid initially
+
+            // Validate Name
+            if (!validatecareerName()) {
+                isValid = false;
+            }
+
+            if (!validatecareerEmail()) {
+                isValid = false;
+            }
+
+            // Validate Phone Number
+            if (!validatecareerPhoneno()) {
+                isValid = false;
+            }
+
+
+            if (!validatecareerSubject()) {
+                isValid = false;
+            }
+
+
+            if (!validatecareerCity()) {
+                isValid = false;
+            }
+
+            // Validate Message
+            if (!validatecareerState()) {
+                isValid = false;
+            }
+
+            if (!validatecareerMessage()) {
+                isValid = false;
+            }
+
+            // Return overall validation result
+            return isValid;
+        }
+
+
+
+        $('#solarbutton').on('click', function() {
+
+            if (validatecontactFields()) {
+                //   $("#contactbutton").prop("disabled", true);
+                //       $("#contactbutton").val("Please wait..");
+                $("#solarbutton").prop("disabled", true);
+                $("#solarbutton").text("Please wait..");
+                var formData = new FormData($('#solar_form')[0]);
+
+                $.ajax({
+                    url: '/send-solar',
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    // data:$("#career_form").serialize(),
+                    success: function(response) {
+                        console.log(response);
+                        $("#solar_form")[0].reset();
+                        $('#consuccess').html(
+                            '<div class="alert alert-success alert-dismissible fade show marg text-dark" role="alert">' +
+                            '<strong>Successfully</strong> Your Message Has Been Sent Please Wait For Community To Response.' +
+                            '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+                            '</div>');
+                        setTimeout(function() {
+                            $('.alert').alert('close'); // Bootstrap 5 way of closing alert
+                        }, 5000);
+
+                        $("#solarbutton").prop("disabled", false);
+                        $("#solarbutton").text("Send Message");
+                    },
+                    error: function(response) {
+                        $('#consuccess').html(
+                            '<div class="alert alert-danger alert-dismissible fade show marg text-dark" role="alert">' +
+                            '<strong>Sorry</strong> something went wrong while submitting the form.' +
+                            '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+                            '</div>');
+                        setTimeout(function() {
+                            $('.alert').alert('close'); // Bootstrap 5 way of closing alert
+                        }, 5000);
+                        console.log(response);
+
+                        $("#solarbutton").prop("disabled", false);
+                        $("#solarbutton").text("Send Message");
+                    }
+
+
+                })
+            } else {
+                $('#consuccess').html(
+                    '<div class="alert alert-danger alert-dismissible fade show marg text-dark" role="alert">' +
+                    '<strong>Please,</strong> fill the form properly.' +
+                    '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+                    '</div>');
+                setTimeout(function() {
+                    $('.alert').alert('close'); // Bootstrap 5 way of closing alert
+                }, 5000);
+            }
+        })
+    </script>
 @endsection

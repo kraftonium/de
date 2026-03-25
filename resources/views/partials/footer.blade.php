@@ -32,11 +32,11 @@
              <h3>Quick Links</h3>
 
              <ul>
-                 <li><a href="#">Home</a></li>
-                 <li><a href="#">Scooters</a></li>
-                 <li><a href="#">About</a></li>
-                 <li><a href="#">Dealership</a></li>
-                 <li><a href="#">Contact</a></li>
+                 <li><a href="{{ url('/') }}">Home</a></li>
+                 <li><a href="{{ url('/about-us') }}">About Us</a></li>
+                 <li><a href="{{ url('/ev-scooters') }}">EV Scooters</a></li>
+                 <li><a href="{{ url('/dealership') }}">Dealership</a></li>
+                 <li><a href="{{ url('/contact-us') }}">Contact Us</a></li>
              </ul>
 
          </div>
@@ -48,11 +48,11 @@
              <h3>Our Services</h3>
 
              <ul>
-                 <li><a href="#">EV Scooters</a></li>
-                 <li><a href="#">EV Auto</a></li>
-                 <li><a href="#">GPS Tracker</a></li>
-                 <li><a href="#">Home Automation</a></li>
-                 <li><a href="#">Solar Products</a></li>
+                 <li><a href="{{ url('/ev-scooters') }}">EV Scooters</a></li>
+                 <li><a href="{{ url('/solar') }}">Solar Installation</a></li>
+                 <li><a href="{{ url('/gps') }}">GPS Tracker</a></li>
+                 <li><a href="{{ url('/dealership') }}">Get EV Dealership</a></li>
+                 <li><a href="{{ url('/careers') }}">Careers</a></li>
              </ul>
 
          </div>
@@ -107,6 +107,9 @@
  <!-- floating whatsapp icon ends here -->
 
  <script src="assets/script/script.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+ </script>
  </body>
 
  </html>

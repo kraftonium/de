@@ -140,34 +140,46 @@
 
             <h2>Apply for Job</h2>
 
-            <form>
+            {{-- <form method="POST" id="career_form" enctype="multipart/form-data" action="">
+                @csrf
 
                 <div class="form-row">
 
-                    <input type="text" placeholder="Full Name">
-                    <input type="email" placeholder="Email">
+                    <input type="text" placeholder="Full Name" id="name" name="name"
+                        onblur="validatecareerName()">
+                    <span id="name-error" class="text-danger"></span>
+                    <input type="email" placeholder="Email" id="email" name="email" onblur="validatecareerEmail()">
+                    <span id="email-error" class="text-danger"></span>
 
                 </div>
 
                 <div class="form-row">
 
-                    <input type="text" placeholder="Phone Number">
+                    <input type="text" placeholder="Phone Number" id="phoneno" name="phoneno"
+                        onblur="validatecareerPhoneno()">
+                    <br>
+                    <span class="text-danger" id="phoneno-error"></span>
 
-                    <select>
+                    <select name="profile" id="profile" onblur="validatecareerProfile()">
                         <option>Select Position</option>
                         <option>Sales Executive</option>
                         <option>Technician</option>
                         <option>Marketing</option>
                         <option>Don't See A Role That Fits</option>
                     </select>
+                    <span id="profile-error" class="text-danger"></span>
 
                 </div>
 
                 <div class="form-row">
 
-                    <input type="text" placeholder="Your Experience (e.g. 2 Years)">
+                    <input type="text" name="experience" id="experience" onblur="validatecareerExperience()"
+                        placeholder="Your Experience (e.g. 2 Years)">
+                    <span id="experience-error" class="text-danger"></span>
 
-                    <input type="text" placeholder="Current City">
+                    <input type="text" name="city" id="city" onblur="validatecareerCity()"
+                        placeholder="Current City">
+                    <span id="city-error" class="text-danger"></span>
 
                 </div>
 
@@ -177,23 +189,366 @@
 
                     <label class="file-label">Upload Resume / CV</label>
 
-                    <input type="file" class="file-input">
+                    <input type="file" class="file-input" name="resume" id="resume" onblur="validatecareerResume()">
+                    <span id="resume-error" class="text-danger"></span>
 
                 </div>
 
                 <div class="form-row full">
 
-                    <textarea placeholder="Tell us about yourself..."></textarea>
+                    <textarea placeholder="Tell us about yourself..." name="coverletter" id="coverletter"
+                        onblur="validatecareerCoverletter()"></textarea>
+                    <span id="coverletter-error" class="text-danger"></span>
 
                 </div>
 
-                <button>Submit Application →</button>
+                <button type="button" id="careerbutton">Submit Application →</button>
+
+            </form> --}}
+            <style>
+                /* FIX FIELD */
+
+                .field {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1;
+                }
+
+                /* FIX ERROR POSITION */
+
+                .text-danger {
+                    display: block;
+                    font-size: 12px;
+                    margin-top: 5px;
+                    color: red
+                }
+
+                /* REMOVE EXTRA SPACE IF EMPTY */
+
+                .text-danger:empty {
+                    display: none;
+                }
+            </style>
+
+
+            <form method="POST" id="career_form" enctype="multipart/form-data" action="">
+                @csrf
+
+                <div class="form-row">
+
+                    <div class="field">
+                        <input type="text" placeholder="Full Name" id="name" name="name"
+                            onblur="validatecareerName()">
+                        <span id="name-error" class="text-danger"></span>
+                    </div>
+
+                    <div class="field">
+                        <input type="email" placeholder="Email" id="email" name="email"
+                            onblur="validatecareerEmail()">
+                        <span id="email-error" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="field">
+                        <input type="text" placeholder="Phone Number" id="phoneno" name="phoneno"
+                            onblur="validatecareerPhoneno()">
+                        <span id="phoneno-error" class="text-danger"></span>
+                    </div>
+
+                    <div class="field">
+                        <select name="profile" id="profile" onblur="validatecareerProfile()">
+                            <option>Select Position</option>
+                            <option>Sales Executive</option>
+                            <option>Technician</option>
+                            <option>Marketing</option>
+                            <option>Don't See A Role That Fits</option>
+                        </select>
+                        <span id="profile-error" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="field">
+                        <input type="text" name="experience" id="experience" onblur="validatecareerExperience()"
+                            placeholder="Your Experience (e.g. 2 Years)">
+                        <span id="experience-error" class="text-danger"></span>
+                    </div>
+
+                    <div class="field">
+                        <input type="text" name="city" id="city" onblur="validatecareerCity()"
+                            placeholder="Current City">
+                        <span id="city-error" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <!-- FILE -->
+
+                <div class="form-row full">
+
+                    <div class="field">
+                        <label class="file-label">Upload Resume / CV</label>
+                        <input type="file" class="file-input" name="resume" id="resume"
+                            onblur="validatecareerResume()">
+                        <span id="resume-error" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <!-- TEXTAREA -->
+
+                <div class="form-row full">
+
+                    <div class="field">
+                        <textarea placeholder="Tell us about yourself..." name="coverletter" id="coverletter"
+                            onblur="validatecareerCoverletter()"></textarea>
+                        <span id="coverletter-error" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <button type="button" id="careerbutton">Submit Application →</button>
 
             </form>
+            <div id="consuccess"></div>
 
         </div>
 
     </section>
 
     <!-- career form ends here -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+    <script>
+        function validatecareerName() {
+            var name = document.getElementById('name').value;
+            if (name === '') {
+                document.getElementById('name-error').innerText = 'Please enter your name';
+                return false;
+            } else {
+                document.getElementById('name-error').innerText = '';
+                return true;
+            }
+        }
+
+        function validatecareerEmail() {
+            var email = document.getElementById('email').value;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (email === '') {
+                document.getElementById('email-error').innerText = 'Please enter your email';
+                return false;
+            } else if (!emailRegex.test(email)) {
+                document.getElementById('email-error').innerText = 'Please enter a valid email address';
+                return false;
+            } else {
+                document.getElementById('email-error').innerText = '';
+                return true;
+            }
+        }
+
+
+
+
+        function validatecareerPhoneno() {
+            var phoneno = document.getElementById('phoneno').value;
+            var phoneRegex = /^[0-9]{10}$/;
+            if (phoneno === '') {
+                document.getElementById('phoneno-error').innerText = 'Please enter your phone no';
+
+                return false;
+            } else if (!phoneRegex.test(phoneno)) {
+                document.getElementById('phoneno-error').innerText = 'Please enter a valid phone no';
+
+                return false;
+            } else {
+                document.getElementById('phoneno-error').innerText = '';
+                return true;
+            }
+        }
+
+        // function validatecareerProfile() {
+        //     var profile = document.getElementById('profile').value;
+        //     if (profile === 'Select') {
+        //         document.getElementById('profile-error').innerText = 'Please select your profile';
+        //         return false;
+        //     } else {
+        //         document.getElementById('profile-error').innerText = '';
+        //         return true;
+        //     }
+        // }
+
+        function validatecareerExperience() {
+            var experience = document.getElementById('experience').value;
+            if (experience === '') {
+                document.getElementById('experience-error').innerText = 'Please select your experience';
+                return false;
+            } else {
+                document.getElementById('experience-error').innerText = '';
+                return true;
+            }
+        }
+
+        function validatecareerCity() {
+            var city = document.getElementById('city').value;
+            if (city === '') {
+                document.getElementById('city-error').innerText = 'Please select your city';
+                return false;
+            } else {
+                document.getElementById('city-error').innerText = '';
+                return true;
+            }
+        }
+
+
+        function validatecareerResume() {
+            var fileInput = document.getElementById('resume');
+            var file = fileInput.files[0];
+
+            if (!file) {
+                document.getElementById('resume-error').innerText = 'Please select a file';
+                return false;
+            } else {
+                document.getElementById('resume-error').innerText = '';
+                return true;
+            }
+        }
+
+
+
+        function validatecareerCoverletter() {
+            var message = document.getElementById('coverletter').value;
+            if (message === '') {
+                document.getElementById('coverletter-error').innerText = 'Please enter your message';
+                return false;
+            } else {
+                document.getElementById('coverletter-error').innerText = '';
+                return true;
+            }
+        }
+
+
+        function validatecareerProfile() {
+            var profile = document.getElementById('profile').value;
+            if (profile === 'Select Position') {
+                document.getElementById('profile-error').innerText = 'Please select your profile';
+                return false;
+            } else {
+                document.getElementById('profile-error').innerText = '';
+                return true;
+            }
+        }
+
+        function validatecontactFields() {
+            var isValid = true; // Assume all fields are valid initially
+
+            // Validate Name
+            if (!validatecareerName()) {
+                isValid = false;
+            }
+
+            if (!validatecareerEmail()) {
+                isValid = false;
+            }
+
+            // Validate Phone Number
+            if (!validatecareerPhoneno()) {
+                isValid = false;
+            }
+
+            if (!validatecareerExperience()) {
+                isValid = false;
+            }
+
+            if (!validatecareerProfile()) {
+                isValid = false;
+            }
+
+            if (!validatecareerCity()) {
+                isValid = false;
+            }
+
+
+            if (!validatecareerResume()) {
+                isValid = false;
+            }
+
+            // Validate Message
+            if (!validatecareerCoverletter()) {
+                isValid = false;
+            }
+
+            // Return overall validation result
+            return isValid;
+        }
+
+
+
+
+
+        $('#careerbutton').on('click', function() {
+
+            if (validatecontactFields()) {
+                $("#careerbutton").prop("disabled", true);
+                $("#careerbutton").text("Please wait..");
+                var formData = new FormData($('#career_form')[0]);
+
+                $.ajax({
+                    url: '/send-career',
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    // data:$("#career_form").serialize(),
+                    success: function(response) {
+                        console.log(response);
+                        $("#career_form")[0].reset();
+                        $('#consuccess').html(
+                            '<div class="alert alert-success alert-dismissible fade show marg text-dark" role="alert">' +
+                            '<strong>Successfully</strong> Your Message Has Been Sent Please Wait For Community To Response.' +
+                            // '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+                            '</div>');
+                        setTimeout(function() {
+                            $('.alert').alert('close'); // Bootstrap 5 way of closing alert
+                        }, 5000);
+
+                        $("#careerbutton").prop("disabled", false);
+                        $("#careerbutton").text("Send Message");
+                    },
+                    error: function(response) {
+                        $('#consuccess').html(
+                            '<div class="alert alert-danger alert-dismissible fade show marg text-dark" role="alert">' +
+                            '<strong>Sorry</strong> something went wrong while submitting the form.' +
+                            // '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+                            '</div>');
+                        setTimeout(function() {
+                            $('.alert').alert('close'); // Bootstrap 5 way of closing alert
+                        }, 5000);
+                        console.log(response);
+
+                        $("#careerbutton").prop("disabled", false);
+                        $("#careerbutton").text("Send Message");
+                    }
+
+
+                })
+            } else {
+                $('#consuccess').html(
+                    '<div class="alert alert-danger alert-dismissible fade show marg text-dark" role="alert">' +
+                    '<strong>Please,</strong> fill the form properly.' +
+                    // '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+                    '</div>');
+                setTimeout(function() {
+                    $('.alert').alert('close'); // Bootstrap 5 way of closing alert
+                }, 5000);
+            }
+        })
+    </script>
 @endsection

@@ -153,18 +153,21 @@
                 support — our team will contact you shortly.
             </p>
 
-            <form id="contact_form">
+            <form action="" id="contact_form" method="POST">
+                @csrf
 
                 <div class="form-row">
 
                     <div class="form-group">
-                        <input type="text" id="name" placeholder="Full Name">
-                        <span id="name-error"></span>
+                        <input type="text" id="name" name="name" placeholder="Full Name"
+                            onblur="validatecontactName()">
+                        <span class="text-danger" id="name-error"></span>
                     </div>
 
                     <div class="form-group">
-                        <input type="email" id="email" placeholder="Email Address">
-                        <span id="email-error"></span>
+                        <input type="email" id="email" placeholder="Email Address" name="email"
+                            onblur="validatecontactEmail()">
+                        <span class="text-danger" id="email-error"></span>
                     </div>
 
                 </div>
@@ -172,12 +175,13 @@
                 <div class="form-row">
 
                     <div class="form-group">
-                        <input type="text" id="phone" placeholder="Phone Number">
-                        <span id="phone-error"></span>
+                        <input type="text" id="phone" name="phone" placeholder="Phone Number"
+                            onblur="validatecontactPhone()">
+                        <span class="text-danger" id="phone-error"></span>
                     </div>
 
                     <div class="form-group">
-                        <select id="service">
+                        <select id="service" name="service" onblur="validatecontactService()">
                             <option value>Select Inquiry Type</option>
                             <option>EV Scooter</option>
                             <option>EV Auto</option>
@@ -185,7 +189,7 @@
                             <option>Solar System</option>
                             <option>Dealership</option>
                         </select>
-                        <span id="service-error"></span>
+                        <span class="text-danger" id="service-error"></span>
                     </div>
 
                 </div>
@@ -193,8 +197,9 @@
                 <div class="form-row">
 
                     <div class="form-group full">
-                        <input type="text" id="subject" placeholder="Subject">
-                        <span id="subject-error"></span>
+                        <input type="text" id="subject" name="subject" placeholder="Subject"
+                            onblur="validatecontactSubject()">
+                        <span class="text-danger" id="subject-error"></span>
                     </div>
 
                 </div>
@@ -202,13 +207,13 @@
                 <div class="form-row">
 
                     <div class="form-group full">
-                        <textarea id="message" placeholder="Write your message..."></textarea>
-                        <span id="message-error"></span>
+                        <textarea id="message" name="message" placeholder="Write your message..." onblur="validatecontactMessage()"></textarea>
+                        <span class="text-danger" id="message-error"></span>
                     </div>
 
                 </div>
 
-                <button type="button" class="contact-submit-btn">
+                <button type="button" id="contactbutton" class="contact-submit-btn">
                     Send Message →
                 </button>
 
@@ -233,4 +238,183 @@
     </section>
 
     <!-- contact map ends here -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+    <script>
+        function validatecontactName() {
+            var name = document.getElementById('name').value;
+            if (name === '') {
+                document.getElementById('name-error').innerText = 'Please enter your name';
+                return false;
+            } else {
+                document.getElementById('name-error').innerText = '';
+                return true;
+            }
+        }
+
+        function validatecontactEmail() {
+            var email = document.getElementById('email').value;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (email === '') {
+                document.getElementById('email-error').innerText = 'Please enter your email';
+                return false;
+            } else if (!emailRegex.test(email)) {
+                document.getElementById('email-error').innerText = 'Please enter a valid email address';
+                return false;
+            } else {
+                document.getElementById('email-error').innerText = '';
+                return true;
+            }
+        }
+
+
+
+
+        function validatecontactPhoneno() {
+            var phoneno = document.getElementById('phone').value;
+            var phoneRegex = /^[0-9]{10}$/;
+            if (phoneno === '') {
+                document.getElementById('phone-error').innerText = 'Please enter your phone number';
+
+                return false;
+            } else if (!phoneRegex.test(phoneno)) {
+                document.getElementById('phone-error').innerText = 'Please enter a valid phone number';
+
+                return false;
+            } else {
+                document.getElementById('phone-error').innerText = '';
+                return true;
+            }
+        }
+
+        function validatecontactService() {
+            var service = document.getElementById('service').value;
+            if (service === '') {
+                document.getElementById('service-error').innerText = 'Please select a service';
+                return false;
+            } else {
+                document.getElementById('service-error').innerText = '';
+                return true;
+            }
+        }
+
+        function validatecontactSubject() {
+            var subject = document.getElementById('subject').value;
+            if (subject === '') {
+                document.getElementById('subject-error').innerText = 'Please enter your subject';
+                return false;
+            } else {
+                document.getElementById('subject-error').innerText = '';
+                return true;
+            }
+        }
+
+
+        function validatecontactMessage() {
+            var message = document.getElementById('message').value;
+            if (message === '') {
+                document.getElementById('message-error').innerText = 'Please enter your message';
+                return false;
+            } else {
+                document.getElementById('message-error').innerText = '';
+                return true;
+            }
+        }
+
+        function validatecontactFields() {
+            var isValid = true; // Assume all fields are valid initially
+
+            // Validate Name
+            if (!validatecontactName()) {
+                isValid = false;
+            }
+
+            if (!validatecontactEmail()) {
+                isValid = false;
+            }
+
+            // Validate Phone Number
+            if (!validatecontactPhoneno()) {
+                isValid = false;
+            }
+
+            // Validate Service
+            if (!validatecontactService()) {
+                isValid = false;
+            }
+
+            // Validate Subject
+            if (!validatecontactSubject()) {
+                isValid = false;
+            }
+
+            // Validate Message
+            if (!validatecontactMessage()) {
+                isValid = false;
+            }
+
+            // Return overall validation result
+            return isValid;
+        }
+
+
+
+        $('#contactbutton').on('click', function() {
+
+            if (validatecontactFields()) {
+                $("#contactbutton").prop("disabled", true);
+                $("#contactbutton").text("Please wait..");
+
+                $.ajax({
+                    url: '/contact-submit',
+                    type: 'POST',
+                    data: $("#contact_form").serialize(),
+                    success: function(response) {
+                        console.log(response);
+                        $("#contact_form")[0].reset();
+                        $('#consuccess').html(
+                            '<div class="alert alert-success alert-dismissible fade show marg text-dark" role="alert">' +
+                            '<strong>Successfully</strong> Your Message Has Been Sent Please Wait For Community To Response.' +
+                            '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+                            '</div>');
+                        setTimeout(function() {
+                            $('.alert').alert('close'); // Bootstrap 5 way of closing alert
+                        }, 5000);
+
+                        $("#contactbutton").prop("disabled", false);
+                        $("#contactbutton").text("Send Message");
+                    },
+                    error: function(response) {
+                        $('#consuccess').html(
+                            '<div class="alert alert-danger alert-dismissible fade show marg text-dark" role="alert">' +
+                            '<strong>Sorry</strong> something went wrong while submitting the form.' +
+                            '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+                            '</div>');
+                        setTimeout(function() {
+                            $('.alert').alert('close'); // Bootstrap 5 way of closing alert
+                        }, 5000);
+                        console.log(response);
+
+                        $("#contactbutton").prop("disabled", false);
+                        $("#contactbutton").text("Send Message");
+                    }
+
+
+                })
+            } else {
+                $('#consuccess').html(
+                    '<div class="alert alert-danger alert-dismissible fade show marg text-dark" role="alert">' +
+                    '<strong>Please,</strong> fill the form properly.' +
+                    '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+                    '</div>');
+                setTimeout(function() {
+                    $('.alert').alert('close'); // Bootstrap 5 way of closing alert
+                }, 5000);
+            }
+        })
+    </script>
 @endsection
