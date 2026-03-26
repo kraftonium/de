@@ -1,7 +1,112 @@
 @extends('partials.mainindex')
 
 @push('title')
-    <title>Dealership | Divyashakti Enterprise | Drive The Future</title>
+    <title>EV Dealership Opportunity in Gujarat | Divyashakti Enterprise | Drive The Future</title>
+@endpush
+
+@push('meta')
+    <meta name="description"
+        content="Start your EV dealership with Divyashakti Enterprise in Gujarat. Become a dealer for electric scooters and grow your business with high profit opportunities.">
+    <meta name="keywords"
+        content="ev dealership gujarat, electric scooter dealership india, ev business opportunity, dealership gandhinagar, electric vehicle franchise india">
+    <meta name="author" content="Divyashakti Enterprise">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.thedivyashakti.com/dealership">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="EV Dealership Opportunity | Divyashakti Enterprise | Drive The Future">
+    <meta property="og:description"
+        content="Join Divyashakti Enterprise and start your EV dealership business in Gujarat. High growth opportunity in electric mobility.">
+    <meta property="og:url" content="https://www.thedivyashakti.com/dealership">
+    <meta property="og:image" content="https://www.thedivyashakti.com/assets/images/vehicles/victory.png">
+    <meta property="og:site_name" content="Divyashakti Enterprise">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="EV Dealership Opportunity in Gujarat | Divyashakti Enterprise | Drive The Future">
+    <meta name="twitter:description"
+        content="Start your EV business with Divyashakti Enterprise and become a dealer today.">
+    <meta name="twitter:image" content="https://www.thedivyashakti.com/assets/images/vehicles/victory.png">
+@endpush
+
+@push('schema')
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "AutoDealer",
+"name": "Divyashakti Enterprise",
+"url": "https://www.thedivyashakti.com/dealership",
+"logo": "https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png",
+"description": "Become an EV dealer with Divyashakti Enterprise in Gujarat. We offer electric scooter dealership opportunities with high growth potential.",
+"telephone": "+919737561301",
+"address": {
+  "@type": "PostalAddress",
+  "addressLocality": "Gandhinagar",
+  "addressRegion": "Gujarat",
+  "postalCode": "382421",
+  "addressCountry": "IN"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Service",
+"name": "EV Dealership Opportunity",
+"provider": {
+  "@type": "Organization",
+  "name": "Divyashakti Enterprise"
+},
+"description": "Electric scooter dealership opportunity in Gujarat for individuals and businesses looking to grow in the EV industry.",
+"areaServed": {
+  "@type": "Place",
+  "name": "Gujarat"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "ContactPage",
+"name": "Dealership Application",
+"description": "Apply for EV dealership with Divyashakti Enterprise.",
+"url": "https://www.thedivyashakti.com/dealership"
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{
+  "@type": "Question",
+  "name": "How to get EV dealership in Gujarat?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "You can apply for EV dealership by filling the dealership form on Divyashakti Enterprise website."
+  }
+},
+{
+  "@type": "Question",
+  "name": "Is EV dealership profitable?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes, EV dealership is a fast-growing and profitable business opportunity in India."
+  }
+},
+{
+  "@type": "Question",
+  "name": "What is the investment for EV dealership?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Investment depends on dealership type such as area, taluka, district or state level."
+  }
+}
+]
+}
+</script>
 @endpush
 
 @section('main-section')

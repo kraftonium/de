@@ -1,7 +1,156 @@
 @extends('partials.mainindex')
 
 @push('title')
-    <title>Careers | Divyashakti Enterprise | Drive The Future</title>
+    <title>Careers at Divyashakti Enterprise | EV Jobs in Gandhinagar | Divyashakti Enterprise | Drive The Future</title>
+@endpush
+
+@push('meta')
+    <meta name="description"
+        content="Explore career opportunities at Divyashakti Enterprise in Gandhinagar. Apply for jobs in electric vehicles, GPS tracking, and solar technology sectors.">
+    <meta name="keywords"
+        content="ev jobs gandhinagar, careers divyashakti enterprise, electric vehicle jobs gujarat, solar jobs india, gps tracking jobs, marketing sales technician jobs gujarat">
+    <meta name="author" content="Divyashakti Enterprise">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.thedivyashakti.com/careers">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Careers at Divyashakti Enterprise">
+    <meta property="og:description"
+        content="Join our team and build your future in EV, GPS and solar technology industries.">
+    <meta property="og:url" content="https://www.thedivyashakti.com/careers">
+    <meta property="og:image" content="https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png">
+    <meta property="og:site_name" content="Divyashakti Enterprise">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Careers at Divyashakti Enterprise">
+    <meta name="twitter:description" content="Apply for EV, GPS, and solar industry jobs in Gujarat.">
+    <meta name="twitter:image" content="https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png">
+@endpush
+
+@push('schema')
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Organization",
+"name": "Divyashakti Enterprise",
+"url": "https://www.thedivyashakti.com/careers",
+"logo": "https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png",
+"description": "Join Divyashakti Enterprise and build your career in EV, GPS tracking, and solar solutions industry.",
+"telephone": "+919737561301",
+"address": {
+  "@type": "PostalAddress",
+  "addressLocality": "Gandhinagar",
+  "addressRegion": "Gujarat",
+  "postalCode": "382421",
+  "addressCountry": "IN"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "JobPosting",
+"title": "Sales Executive",
+"description": "We are hiring Sales Executives for EV scooters, GPS tracking and solar solutions. Candidates should have good communication skills.",
+"identifier": {
+  "@type": "PropertyValue",
+  "name": "Divyashakti Enterprise",
+  "value": "SE-001"
+},
+"datePosted": "2026-03-01",
+"employmentType": "Full-time",
+"hiringOrganization": {
+  "@type": "Organization",
+  "name": "Divyashakti Enterprise",
+  "sameAs": "https://www.thedivyashakti.com",
+  "logo": "https://www.thedivyashakti.com/assets/images/logo/logo.png"
+},
+"jobLocation": {
+  "@type": "Place",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Gandhinagar",
+    "addressRegion": "Gujarat",
+    "addressCountry": "IN"
+  }
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "JobPosting",
+"title": "Sales Executive",
+"description": "We are hiring Sales Executives for EV scooters, GPS tracking and solar solutions. Candidates should have good communication skills.",
+"identifier": {
+  "@type": "PropertyValue",
+  "name": "Divyashakti Enterprise",
+  "value": "SE-001"
+},
+"datePosted": "2026-03-01",
+"employmentType": "Full-time",
+"hiringOrganization": {
+  "@type": "Organization",
+  "name": "Divyashakti Enterprise",
+  "sameAs": "https://www.thedivyashakti.com",
+  "logo": "https://www.thedivyashakti.com/assets/images/logo/logo.png"
+},
+"jobLocation": {
+  "@type": "Place",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Gandhinagar",
+    "addressRegion": "Gujarat",
+    "addressCountry": "IN"
+  }
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "ContactPage",
+"name": "Career Application Form",
+"description": "Apply for jobs at Divyashakti Enterprise.",
+"url": "https://www.thedivyashakti.com/careers"
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{
+  "@type": "Question",
+  "name": "How can I apply for a job at Divyashakti Enterprise?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "You can apply by filling the career form on our website."
+  }
+},
+{
+  "@type": "Question",
+  "name": "What roles are available?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "We offer roles in sales, technician, and marketing positions."
+  }
+},
+{
+  "@type": "Question",
+  "name": "Where is the job location?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Jobs are based in Gandhinagar, Gujarat."
+  }
+}
+]
+}
+</script>
 @endpush
 
 @section('main-section')

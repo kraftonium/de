@@ -1,7 +1,93 @@
 @extends('partials.mainindex')
 
 @push('title')
-    <title>Divyashakti Enterprise | Drive The Future</title>
+    <title>Divyashakti Enterprise | Drive The Future | Best Electric Scooters in Gandhinagar</title>
+@endpush
+
+@push('meta')
+    <meta name="description"
+        content="Divyashakti Enterprise is the best electric scooter showroom in Gandhinagar offering affordable EV scooters, EV autos, GPS tracking and solar solutions across Gujarat.">
+    <meta name="keywords"
+        content="electric scooter gandhinagar, ev scooter gujarat, ev showroom gandhinagar, electric vehicle india, ev auto rickshaw, gps tracking gujarat, solar solutions gujarat">
+    <meta name="author" content="Divyashakti Enterprise">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.thedivyashakti.com/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Divyashakti Enterprise | Drive The Future | Best Electric Scooters in Gandhinagar">
+    <meta property="og:description"
+        content="Explore electric scooters, EV autos, GPS tracking & solar solutions in Gandhinagar and Ahmedabad.">
+    <meta property="og:url" content="https://www.thedivyashakti.com/">
+    <meta property="og:image" content="https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png">
+    <meta property="og:site_name" content="Divyashakti Enterprise">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Divyashakti Enterprise | Drive The Future | Best Electric Scooters in Gandhinagar">
+    <meta name="twitter:description"
+        content="Affordable EV scooters, EV autos, GPS tracking and solar solutions in Gujarat.">
+    <meta name="twitter:image" content="https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png">
+
+    {{-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> --}}
+    {{-- <link rel="icon" href="/assets/images/logo/favicon.png" type="image/png"> --}}
+@endpush
+
+@push('schema')
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "AutoDealer",
+"name": "Divyashakti Enterprise",
+"url": "https://www.thedivyashakti.com",
+"logo": "https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png",
+"description": "Electric scooter showroom in Gandhinagar offering EV scooters, EV autos, GPS tracking and solar solutions.",
+"telephone": "+919737561301",
+"address": {
+  "@type": "PostalAddress",
+  "streetAddress": "Swagat Flamingo, Sargasan",
+  "addressLocality": "Gandhinagar",
+  "addressRegion": "Gujarat",
+  "postalCode": "382421",
+  "addressCountry": "IN"
+},
+"areaServed": ["Gandhinagar", "Ahmedabad", "Gujarat"],
+"sameAs": [
+  "https://www.facebook.com/",
+  "https://www.instagram.com/"
+]
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Product",
+"name": "Electric Scooters",
+"brand": "Divyashakti Enterprise",
+"description": "Affordable electric scooters for daily commuting in Gujarat.",
+"offers": {
+  "@type": "Offer",
+  "priceCurrency": "INR",
+  "price": "60000",
+  "availability": "https://schema.org/InStock"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Review",
+"reviewRating": {
+  "@type": "Rating",
+  "ratingValue": "5"
+},
+"author": {
+  "@type": "Person",
+  "name": "Customer"
+},
+"reviewBody": "Very smooth riding experience and excellent performance."
+}
+</script>
 @endpush
 
 @section('main-section')

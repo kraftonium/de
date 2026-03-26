@@ -1,7 +1,128 @@
 @extends('partials.mainindex')
 
 @push('title')
-    <title>Scooters | Divyashakti Enterprise | Drive The Future</title>
+    <title>EV Scooters | Divyashakti Enterprise | Drive The Future</title>
+@endpush
+
+@push('meta')
+    <meta name="description"
+        content="Explore the best electric scooters in Gandhinagar at Divyashakti Enterprise. Affordable EV scooters with long range, fast charging, and low running cost across Gujarat.">
+    <meta name="keywords"
+        content="electric scooters gandhinagar, ev scooters gujarat, buy electric scooter india, best ev scooter gandhinagar, affordable electric scooter, lithium battery scooter">
+    <meta name="author" content="Divyashakti Enterprise">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.thedivyashakti.com/ev-scooters">
+
+    <meta property="og:type" content="product.group">
+    <meta property="og:title" content="Electric Scooters in Gandhinagar | Divyashakti Enterprise">
+    <meta property="og:description"
+        content="Explore affordable electric scooters with long range, lithium battery and smart features.">
+    <meta property="og:url" content="https://www.thedivyashakti.com/ev-scooters">
+    <meta property="og:image" content="https://www.thedivyashakti.com/assets/images/vehicles/victory.png">
+    <meta property="og:site_name" content="Divyashakti Enterprise">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Best Electric Scooters in Gandhinagar">
+    <meta name="twitter:description"
+        content="Buy electric scooters with low running cost and high performance across Gujarat.">
+    <meta name="twitter:image" content="https://www.thedivyashakti.com/assets/images/vehicles/victory.png">
+@endpush
+
+@push('schema')
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "AutoDealer",
+"name": "Divyashakti Enterprise",
+"url": "https://www.thedivyashakti.com/ev-scooters",
+"logo": "https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png",
+"description": "Electric scooter dealer in Gandhinagar offering affordable EV scooters with lithium battery and long range.",
+"telephone": "+919737561301",
+"address": {
+  "@type": "PostalAddress",
+  "addressLocality": "Gandhinagar",
+  "addressRegion": "Gujarat",
+  "postalCode": "382421",
+  "addressCountry": "IN"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "ItemList",
+"name": "Electric Scooters",
+"itemListElement": [
+{
+  "@type": "Product",
+  "name": "Victory EV Scooter",
+  "image": "https://www.thedivyashakti.com/assets/images/vehicles/victory.png",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "INR",
+    "price": "65000",
+    "availability": "https://schema.org/InStock"
+  }
+},
+{
+  "@type": "Product",
+  "name": "Breeze EV Scooter",
+  "image": "https://www.thedivyashakti.com/assets/images/vehicles/3.png",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "INR",
+    "price": "39999",
+    "availability": "https://schema.org/InStock"
+  }
+},
+{
+  "@type": "Product",
+  "name": "Classic EV Scooter",
+  "image": "https://www.thedivyashakti.com/assets/images/vehicles/classic.png",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "INR",
+    "price": "60000",
+    "availability": "https://schema.org/InStock"
+  }
+}
+]
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{
+  "@type": "Question",
+  "name": "What is the price of electric scooters in Gandhinagar?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Electric scooters start from ₹39,999 at Divyashakti Enterprise."
+  }
+},
+{
+  "@type": "Question",
+  "name": "What is the range of EV scooters?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Our EV scooters offer a range of 80–120 km on a single charge."
+  }
+},
+{
+  "@type": "Question",
+  "name": "How long does charging take?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Charging takes around 2–4 hours depending on battery type."
+  }
+}
+]
+}
+</script>
 @endpush
 
 @section('main-section')
@@ -82,7 +203,7 @@
         <div class="scooter-grid">
 
             <!-- Scooter 1 -->
-            <div class="scooter-card fade-up delay-1">
+            {{-- <div class="scooter-card fade-up delay-1">
 
                 <img src="assets/images/vehicles/victory.png" alt="Victory">
 
@@ -98,10 +219,10 @@
 
                 <a href="#" class="scooter-btn">View Details</a>
 
-            </div>
+            </div> --}}
 
             <!-- Scooter 2 -->
-            <div class="scooter-card fade-up delay-2">
+            {{-- <div class="scooter-card fade-up delay-2">
 
                 <img src="assets/images/vehicles/3.png" alt="Breeze EV Scooter | Divyashakti Enterprise | Drive The Future">
 
@@ -117,10 +238,10 @@
 
                 <a href="{{ url('/breeze-ev-scooter') }}" class="scooter-btn">View Details</a>
 
-            </div>
+            </div> --}}
 
             <!-- Scooter 3 -->
-            <div class="scooter-card fade-up delay-3">
+            {{-- <div class="scooter-card fade-up delay-3">
 
                 <img src="assets/images/vehicles/classic.png"
                     alt="Classic EV Scooter | Divyashakti Enterprise | Drive The Future">
@@ -137,10 +258,10 @@
 
                 <a href="{{ url('/classic-ev-scooter') }}" class="scooter-btn">View Details</a>
 
-            </div>
+            </div> --}}
 
             <!-- Scooter 4 -->
-            <div class="scooter-card fade-up delay-4">
+            {{-- <div class="scooter-card fade-up delay-4">
 
                 <img src="assets/images/vehicles/eternal.png"
                     alt="Eternal EV Scooter | Divyashakti Enterprise | Drive The Future">
@@ -157,7 +278,7 @@
 
                 <a href="{{ url('/eternal-ev-scooter') }}" class="scooter-btn">View Details</a>
 
-            </div>
+            </div> --}}
 
         </div>
 
@@ -242,6 +363,45 @@
 
             </div>
 
+            <!-- Scooter 1 -->
+            <div class="scooter-card fade-up delay-1">
+
+                <img src="assets/images/vehicles/2.png"
+                    alt="Divine 24 EV Scooter | Divyashakti Enterprise | Drive The Future">
+
+                <h3>Liberty Plus</h3>
+
+                <p class="price">Starting ₹44,999*</p>
+
+                <div class="scooter-features">
+                    <span>⚡ 45 km/h</span>
+                    <span>🔋 Leadgel Battery</span>
+                    <span>🛑 Disc Brake</span>
+                </div>
+
+                <a href="{{ url('/divine-24-ev-scooter') }}" class="scooter-btn">View Details</a>
+
+            </div>
+
+            <!-- Scooter 2 -->
+            <div class="scooter-card fade-up delay-2">
+
+                <img src="assets/images/vehicles/7.png" alt="Affair EV Scooter | Divyashakti Enterprise | Drive The Future">
+
+                <h3>Selfi</h3>
+
+                <p class="price">Starting ₹43,999*</p>
+
+                <div class="scooter-features">
+                    <span>⚡ 40 km/h</span>
+                    <span>🔋 Portable Battery</span>
+                    <span>💡 LED Lights</span>
+                </div>
+
+                <a href="{{ url('/affair-ev-scooter') }}" class="scooter-btn">View Details</a>
+
+            </div>
+
             <!-- Scooter 4 -->
             <div class="scooter-card fade-up delay-4">
 
@@ -258,6 +418,24 @@
                 </div>
 
                 <a href="{{ url('/loader-ev-scooter') }}" class="scooter-btn">View Details</a>
+
+            </div>
+
+            <div class="scooter-card fade-up delay-2">
+
+                <img src="assets/images/vehicles/3.png" alt="Breeze EV Scooter | Divyashakti Enterprise | Drive The Future">
+
+                <h3>Breeze</h3>
+
+                <p class="price">Starting ₹39,999*</p>
+
+                <div class="scooter-features">
+                    <span>⚡ 45 km/h</span>
+                    <span>🔋 Portable Battery</span>
+                    <span>💡 LED Lights</span>
+                </div>
+
+                <a href="{{ url('/breeze-ev-scooter') }}" class="scooter-btn">View Details</a>
 
             </div>
 

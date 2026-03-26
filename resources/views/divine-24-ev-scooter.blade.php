@@ -4,6 +4,136 @@
     <title>Divine 24 EV Scooter | EV Scooters | Divyashakti Enterprise | Drive The Future</title>
 @endpush
 
+@push('meta')
+    <meta name="description"
+        content="Buy Divine 24 EV Scooter in Gujarat at ₹44,999. 70km range, lithium battery, fast charging, disc brake and smart features. Book your test ride today.">
+    <meta name="keywords"
+        content="divine 24 ev scooter price, electric scooter under 45000, ev scooter 70 km range india, buy ev scooter gandhinagar, lithium battery scooter gujarat">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.thedivyashakti.com/ev-scooters/divine-24">
+
+    <meta property="og:type" content="product">
+    <meta property="og:title" content="Divine 24 EV Scooter | Price ₹44,999">
+    <meta property="og:description" content="Electric scooter with 70km range, lithium battery and smart performance.">
+    <meta property="og:url" content="https://www.thedivyashakti.com/ev-scooters/divine-24">
+    <meta property="og:image" content="https://www.thedivyashakti.com/assets/images/vehicles/1.png">
+    <meta property="og:site_name" content="Divyashakti Enterprise">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Divine 24 EV Scooter Price in Gujarat">
+    <meta name="twitter:description"
+        content="Explore 70km range electric scooter with smart features and strong performance.">
+    <meta name="twitter:image" content="https://www.thedivyashakti.com/assets/images/vehicles/1.png">
+@endpush
+
+@push('schema')
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Product",
+"name": "Divine 24 EV Scooter",
+"image": [
+"https://www.thedivyashakti.com/assets/images/vehicles/1.png",
+"https://www.thedivyashakti.com/assets/images/vehicles/2.png",
+"https://www.thedivyashakti.com/assets/images/vehicles/3.png"
+],
+"description": "Divine 24 EV Scooter with 70km range, lithium battery, fast charging, disc brake, reverse gear and durable performance.",
+"brand": {
+  "@type": "Brand",
+  "name": "Divyashakti Enterprise"
+},
+"offers": {
+  "@type": "Offer",
+  "url": "https://www.thedivyashakti.com/ev-scooters/divine-24",
+  "priceCurrency": "INR",
+  "price": "44999",
+  "availability": "https://schema.org/InStock"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "AggregateRating",
+"itemReviewed": {
+  "@type": "Product",
+  "name": "Divine 24 EV Scooter"
+},
+"ratingValue": "4.7",
+"reviewCount": "1100"
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "AutoDealer",
+"name": "Divyashakti Enterprise",
+"url": "https://www.thedivyashakti.com",
+"telephone": "+919737561301",
+"address": {
+  "@type": "PostalAddress",
+  "addressLocality": "Gandhinagar",
+  "addressRegion": "Gujarat",
+  "addressCountry": "IN"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Event",
+"name": "Divine 24 EV Scooter Test Ride",
+"description": "Book a test ride for Divine 24 EV Scooter at Divyashakti Enterprise.",
+"location": {
+  "@type": "Place",
+  "name": "Divyashakti Enterprise",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Gandhinagar",
+    "addressRegion": "Gujarat",
+    "addressCountry": "IN"
+  }
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{
+  "@type": "Question",
+  "name": "What is the price of Divine 24 EV Scooter?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The starting price of Divine 24 EV Scooter is ₹44,999."
+  }
+},
+{
+  "@type": "Question",
+  "name": "What is the range of Divine 24 scooter?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "It offers a range of up to 70 km per charge."
+  }
+},
+{
+  "@type": "Question",
+  "name": "Is Divine 24 good for daily use?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes, it is perfect for daily commuting with low running cost and reliable performance."
+  }
+}
+]
+}
+</script>
+@endpush
+
 @section('main-section')
     <!-- breadcrumb starts here -->
 
@@ -296,13 +426,15 @@
                 <div class="ride-grid">
 
                     <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder=" " onblur="validatecareerName()">
+                        <input type="text" id="name" name="name" placeholder=" "
+                            onblur="validatecareerName()">
                         <label>Full Name</label>
                         <span class="text-danger" id="name-error"></span>
                     </div>
 
                     <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder=" " onblur="validatecareerEmail()">
+                        <input type="email" id="email" name="email" placeholder=" "
+                            onblur="validatecareerEmail()">
                         <label>Email Address</label>
                         <span class="text-danger" id="email-error"></span>
                     </div>

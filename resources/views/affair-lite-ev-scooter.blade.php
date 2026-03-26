@@ -4,6 +4,139 @@
     <title>Affair Lite EV Scooter | EV Scooters | Divyashakti Enterprise | Drive The Future</title>
 @endpush
 
+@push('meta')
+    <meta name="description"
+        content="Buy Affair Lite EV Scooter in Gujarat at best price. Get 60 km range, lithium battery, fast charging and smart features. Book test ride at Divyashakti Enterprise.">
+    <meta name="keywords"
+        content="affair ev scooter price, electric scooter under 50000 gujarat, buy ev scooter gandhinagar, lithium battery scooter india, affordable ev scooter">
+    <meta name="author" content="Divyashakti Enterprise">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.thedivyashakti.com/ev-scooters/affair-lite">
+
+    <meta property="og:type" content="product">
+    <meta property="og:title" content="Affair Lite EV Scooter | EV Scooters | Divyashakti Enterprise | Drive The Future">
+    <meta property="og:description"
+        content="Affordable electric scooter with 60 km range, lithium battery and smart features.">
+    <meta property="og:url" content="https://www.thedivyashakti.com/ev-scooters/affair-lite">
+    <meta property="og:image" content="https://www.thedivyashakti.com/assets/images/vehicles/7.png">
+    <meta property="og:site_name" content="Divyashakti Enterprise">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Affair Lite EV Scooter | EV Scooters | Divyashakti Enterprise | Drive The Future">
+    <meta name="twitter:description" content="Explore affordable EV scooter with smart features and long range.">
+    <meta name="twitter:image" content="https://www.thedivyashakti.com/assets/images/vehicles/7.png">
+@endpush
+
+@push('schema')
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Product",
+"name": "Affair Lite EV Scooter",
+"image": [
+  "https://www.thedivyashakti.com/assets/images/vehicles/7.png",
+  "https://www.thedivyashakti.com/assets/images/vehicles/4.png",
+  "https://www.thedivyashakti.com/assets/images/vehicles/1.png"
+],
+"description": "Affordable electric scooter with lithium battery, 60 km range, fast charging and smart features like anti-theft alarm and reverse gear.",
+"brand": {
+  "@type": "Brand",
+  "name": "Divyashakti Enterprise"
+},
+"offers": {
+  "@type": "Offer",
+  "url": "https://www.thedivyashakti.com/ev-scooters/affair-lite",
+  "priceCurrency": "INR",
+  "price": "47999",
+  "availability": "https://schema.org/InStock"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "AggregateRating",
+"itemReviewed": {
+  "@type": "Product",
+  "name": "Affair Lite EV Scooter"
+},
+"ratingValue": "4.7",
+"reviewCount": "850"
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "AutoDealer",
+"name": "Divyashakti Enterprise",
+"url": "https://www.thedivyashakti.com",
+"telephone": "+919737561301",
+"address": {
+  "@type": "PostalAddress",
+  "addressLocality": "Gandhinagar",
+  "addressRegion": "Gujarat",
+  "addressCountry": "IN"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Event",
+"name": "EV Scooter Test Ride",
+"description": "Book a test ride for Affair Lite EV Scooter at Divyashakti Enterprise.",
+"eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+"eventStatus": "https://schema.org/EventScheduled",
+"location": {
+  "@type": "Place",
+  "name": "Divyashakti Enterprise",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Gandhinagar",
+    "addressRegion": "Gujarat",
+    "addressCountry": "IN"
+  }
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{
+  "@type": "Question",
+  "name": "What is the price of Affair Lite EV Scooter?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The starting price of Affair Lite EV Scooter is ₹47,999."
+  }
+},
+{
+  "@type": "Question",
+  "name": "What is the range of this scooter?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The scooter offers a range of up to 60 km per charge."
+  }
+},
+{
+  "@type": "Question",
+  "name": "How long does charging take?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Charging takes approximately 2-3 hours."
+  }
+}
+]
+}
+</script>
+@endpush
+
 @section('main-section')
     <!-- breadcrumb starts here -->
 
@@ -296,13 +429,15 @@
                 <div class="ride-grid">
 
                     <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder=" " onblur="validatecareerName()">
+                        <input type="text" id="name" name="name" placeholder=" "
+                            onblur="validatecareerName()">
                         <label>Full Name</label>
                         <span class="text-danger" id="name-error"></span>
                     </div>
 
                     <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder=" " onblur="validatecareerEmail()">
+                        <input type="email" id="email" name="email" placeholder=" "
+                            onblur="validatecareerEmail()">
                         <label>Email Address</label>
                         <span class="text-danger" id="email-error"></span>
                     </div>

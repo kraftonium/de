@@ -1,7 +1,108 @@
 @extends('partials.mainindex')
 
 @push('title')
-    <title>Profit Calculator | Divyashakti Enterprise | Drive The Future</title>
+    <title>EV Dealership Profit Calculator | ROI & Earnings | Divyashakti Enterprise | Drive The Future</title>
+@endpush
+
+@push('meta')
+    <meta name="description"
+        content="Calculate your EV dealership profit and ROI instantly. Estimate earnings from electric scooter business in Gujarat with our advanced profit calculator.">
+    <meta name="keywords"
+        content="ev dealership profit calculator, electric vehicle business profit india, ev business roi calculator, dealership income ev scooter, ev dealership gujarat">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.thedivyashakti.com/profit-calculator">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="EV Dealership Profit Calculator">
+    <meta property="og:description" content="Estimate your EV business profit and ROI with our advanced calculator.">
+    <meta property="og:url" content="https://www.thedivyashakti.com/profit-calculator">
+    <meta property="og:image" content="https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png">
+    <meta property="og:site_name" content="Divyashakti Enterprise">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="EV Profit Calculator India">
+    <meta name="twitter:description" content="Calculate your EV dealership earnings and ROI instantly.">
+    <meta name="twitter:image" content="https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png">
+@endpush
+
+@push('schema')
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "SoftwareApplication",
+"name": "EV Dealership Profit Calculator",
+"applicationCategory": "BusinessApplication",
+"operatingSystem": "Web",
+"description": "Online calculator to estimate EV dealership profit and ROI for electric vehicle business in India.",
+"url": "https://www.thedivyashakti.com/ev-dealership-calculator",
+"offers": {
+  "@type": "Offer",
+  "price": "0",
+  "priceCurrency": "INR"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Organization",
+"name": "Divyashakti Enterprise",
+"url": "https://www.thedivyashakti.com",
+"logo": "https://www.thedivyashakti.com/assets/images/logo/logo.png",
+"telephone": "+919737561301",
+"address": {
+  "@type": "PostalAddress",
+  "addressLocality": "Gandhinagar",
+  "addressRegion": "Gujarat",
+  "addressCountry": "IN"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "WebPage",
+"name": "EV Dealership Profit Calculator",
+"url": "https://www.thedivyashakti.com/ev-dealership-calculator",
+"description": "Calculate profit and ROI from electric vehicle dealership business.",
+"inLanguage": "en"
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{
+  "@type": "Question",
+  "name": "How much profit can I earn from EV dealership?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Profit depends on dealership level, number of vehicles sold, and commission percentage."
+  }
+},
+{
+  "@type": "Question",
+  "name": "Is EV dealership profitable in India?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes, EV dealership is a growing business with high demand and low operational cost."
+  }
+},
+{
+  "@type": "Question",
+  "name": "How does this calculator work?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Select dealer type, vehicle, battery, warranty and customers to calculate estimated profit."
+  }
+}
+]
+}
+</script>
 @endpush
 
 @section('main-section')

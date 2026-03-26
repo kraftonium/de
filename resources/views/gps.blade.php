@@ -1,7 +1,120 @@
 @extends('partials.mainindex')
 
 @push('title')
-    <title>GPS | Divyashakti Enterprise | Drive The Future</title>
+    <title>GPS Tracking Solutions in Gujarat | Vehicle Tracking | Divyashakti Enterprise | Drive The Future</title>
+@endpush
+
+@push('meta')
+    <meta name="description"
+        content="Advanced GPS tracking solutions in Gandhinagar and Ahmedabad. Real-time vehicle tracking, fleet management, fuel monitoring and security systems by Divyashakti Enterprise.">
+    <meta name="keywords"
+        content="gps tracking gujarat, vehicle tracking gandhinagar, gps device india, fleet management system, gps tracker for vehicles, real time tracking india">
+    <meta name="author" content="Divyashakti Enterprise">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.thedivyashakti.com/gps">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title"
+        content="GPS Tracking Solutions in Gujarat | Vehicle Tracking | Divyashakti Enterprise | Drive The Future">
+    <meta property="og:description"
+        content="Real-time GPS tracking, fuel monitoring and fleet management solutions for vehicles across Gujarat.">
+    <meta property="og:url" content="https://www.thedivyashakti.com/gps">
+    <meta property="og:image" content="https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png">
+    <meta property="og:site_name" content="Divyashakti Enterprise">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title"
+        content="GPS Tracking Solutions in Gujarat | Vehicle Tracking | Divyashakti Enterprise | Drive The Future">
+    <meta name="twitter:description"
+        content="Track vehicles in real-time with advanced GPS technology by Divyashakti Enterprise.">
+    <meta name="twitter:image" content="https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png">
+@endpush
+
+@push('schema')
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Organization",
+"name": "Divyashakti Enterprise",
+"url": "https://www.thedivyashakti.com/gps",
+"logo": "https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png",
+"description": "Provider of GPS tracking solutions, vehicle monitoring systems, and fleet management services in Gujarat.",
+"telephone": "+919737561301",
+"address": {
+  "@type": "PostalAddress",
+  "addressLocality": "Gandhinagar",
+  "addressRegion": "Gujarat",
+  "postalCode": "382421",
+  "addressCountry": "IN"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Service",
+"name": "GPS Tracking Solutions",
+"provider": {
+  "@type": "Organization",
+  "name": "Divyashakti Enterprise"
+},
+"description": "Real-time vehicle tracking, fuel monitoring, and fleet management solutions for businesses and individuals.",
+"areaServed": {
+  "@type": "Place",
+  "name": "Gujarat"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Product",
+"name": "GPS Tracking Device",
+"description": "Advanced GPS tracker for real-time vehicle tracking, fuel monitoring and movement history.",
+"brand": "Divyashakti Enterprise",
+"offers": {
+  "@type": "Offer",
+  "priceCurrency": "INR",
+  "price": "1999",
+  "availability": "https://schema.org/InStock"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{
+  "@type": "Question",
+  "name": "How does GPS tracking work?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "GPS tracking uses satellite signals to provide real-time location data of your vehicle."
+  }
+},
+{
+  "@type": "Question",
+  "name": "Can I track my vehicle in real-time?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes, our GPS devices allow real-time tracking through a secure mobile or web platform."
+  }
+},
+{
+  "@type": "Question",
+  "name": "Is GPS tracking useful for businesses?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes, businesses use GPS tracking for fleet management, safety, and operational efficiency."
+  }
+}
+]
+}
+</script>
 @endpush
 
 @section('main-section')
@@ -196,86 +309,6 @@
     <!-- gujarat coverage section ends here -->
 
     <!-- gps from starts here -->
-
-    {{-- <section class="gps-form-section">
-
-        <div class="gps-form-wrapper">
-
-            <h2>Get GPS Tracking Solution</h2>
-
-            <p>Fill the form and our team will contact you for GPS tracking
-                setup.</p>
-
-            <form id="gps_form">
-
-                <div class="form-row">
-
-                    <div class="form-group">
-                        <input type="text" id="name" placeholder="Full Name">
-                        <span id="name-error"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="email" id="email" placeholder="Email Address">
-                        <span id="email-error"></span>
-                    </div>
-
-                </div>
-
-                <div class="form-row">
-
-                    <div class="form-group full">
-                        <input type="text" id="phoneno" placeholder="Phone Number">
-                        <span id="phoneno-error"></span>
-                    </div>
-
-                </div>
-
-                <div class="form-row">
-
-                    <div class="form-group full">
-                        <input type="text" id="subject" placeholder="Subject">
-                        <span id="subject-error"></span>
-                    </div>
-
-                </div>
-
-                <div class="form-row">
-
-                    <div class="form-group">
-                        <input type="text" id="city" placeholder="City">
-                        <span id="city-error"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" id="state" placeholder="State">
-                        <span id="state-error"></span>
-                    </div>
-
-                </div>
-
-                <div class="form-row">
-
-                    <div class="form-group full">
-                        <textarea id="message" placeholder="Your Message"></textarea>
-                        <span id="message-error"></span>
-                    </div>
-
-                </div>
-
-                <button type="button" id="gpsbutton" class="submit-btn">
-                    Send Inquiry →
-                </button>
-
-                <div id="consuccess"></div>
-
-            </form>
-
-        </div>
-
-    </section> --}}
-
-
 
     <section class="solar-form-section">
 

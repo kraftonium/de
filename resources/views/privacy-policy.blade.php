@@ -4,6 +4,78 @@
     <title>Privacy Policy | Divyashakti Enterprise | Drive The Future</title>
 @endpush
 
+@push('meta')
+    <meta name="description"
+        content="Read the Privacy Policy of Divyashakti Enterprise. Learn how we collect, use, and protect your personal information across our EV, GPS, and solar services.">
+    <meta name="keywords"
+        content="privacy policy divyashakti enterprise, ev company privacy policy india, website privacy policy gujarat, data protection ev company">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.thedivyashakti.com/privacy-policy">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Privacy Policy | Divyashakti Enterprise">
+    <meta property="og:description"
+        content="Learn how Divyashakti Enterprise protects your data and ensures privacy across its services.">
+    <meta property="og:url" content="https://www.thedivyashakti.com/privacy-policy">
+    <meta property="og:image" content="https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png">
+    <meta property="og:site_name" content="Divyashakti Enterprise">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Privacy Policy | Divyashakti Enterprise">
+    <meta name="twitter:description"
+        content="Understand how your data is collected and protected at Divyashakti Enterprise.">
+    <meta name="twitter:image" content="https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png">
+@endpush
+
+@push('schema')
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Organization",
+"name": "Divyashakti Enterprise",
+"url": "https://www.thedivyashakti.com",
+"logo": "https://www.thedivyashakti.com/assets/images/logo/logo.png",
+"contactPoint": {
+  "@type": "ContactPoint",
+  "telephone": "+919737561301",
+  "contactType": "customer service",
+  "areaServed": "IN",
+  "availableLanguage": ["English", "Hindi", "Gujarati"]
+},
+"address": {
+  "@type": "PostalAddress",
+  "addressLocality": "Gandhinagar",
+  "addressRegion": "Gujarat",
+  "addressCountry": "IN"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "WebPage",
+"name": "Privacy Policy",
+"url": "https://www.thedivyashakti.com/privacy-policy",
+"description": "Privacy policy explaining how Divyashakti Enterprise collects and protects user data.",
+"inLanguage": "en"
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "CreativeWork",
+"name": "Privacy Policy - Divyashakti Enterprise",
+"about": "User data privacy, security and policies",
+"publisher": {
+  "@type": "Organization",
+  "name": "Divyashakti Enterprise"
+}
+}
+</script>
+@endpush
+
 @section('main-section')
     <section class="privacy-section">
 

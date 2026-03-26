@@ -1,7 +1,120 @@
 @extends('partials.mainindex')
 
 @push('title')
-    <title>Solar | Divyashakti Enterprise | Drive The Future</title>
+    <title>Solar Panel Installation in Gandhinagar | Rooftop Solar Gujarat | Divyashakti Enterprise | Drive The Future
+    </title>
+@endpush
+
+@push('meta')
+    <meta name="description"
+        content="Get residential solar panel installation in Gandhinagar and Ahmedabad. Affordable rooftop solar systems for homes with high efficiency and long-term savings by Divyashakti Enterprise.">
+    <meta name="keywords"
+        content="solar panel gandhinagar, rooftop solar gujarat, solar installation india, residential solar system, solar energy gujarat, solar panels ahmedabad">
+    <meta name="author" content="Divyashakti Enterprise">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.thedivyashakti.com/solar">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Solar Panel Installation in Gujarat | Divyashakti Enterprise">
+    <meta property="og:description"
+        content="Affordable rooftop solar systems for homes in Gandhinagar and Ahmedabad. Save electricity bills with solar energy.">
+    <meta property="og:url" content="https://www.thedivyashakti.com/solar">
+    <meta property="og:image" content="https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png">
+    <meta property="og:site_name" content="Divyashakti Enterprise">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title"
+        content="Solar Panel Installation in Gandhinagar | Rooftop Solar Gujarat | Divyashakti Enterprise | Drive The Future">
+    <meta name="twitter:description"
+        content="Install rooftop solar systems and reduce electricity bills with Divyashakti Enterprise.">
+    <meta name="twitter:image" content="https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png">
+@endpush
+
+@push('schema')
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Organization",
+"name": "Divyashakti Enterprise",
+"url": "https://www.thedivyashakti.com/solar",
+"logo": "https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png",
+"description": "Provider of residential solar panel installation and rooftop solar solutions in Gujarat.",
+"telephone": "+919737561301",
+"address": {
+  "@type": "PostalAddress",
+  "addressLocality": "Gandhinagar",
+  "addressRegion": "Gujarat",
+  "postalCode": "382421",
+  "addressCountry": "IN"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Service",
+"name": "Solar Panel Installation",
+"provider": {
+  "@type": "Organization",
+  "name": "Divyashakti Enterprise"
+},
+"description": "Residential rooftop solar panel installation services in Gandhinagar and Ahmedabad with high efficiency and long-term savings.",
+"areaServed": {
+  "@type": "Place",
+  "name": "Gujarat"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Product",
+"name": "Rooftop Solar System",
+"description": "High-efficiency solar panels with smart inverter technology for residential homes.",
+"brand": "Divyashakti Enterprise",
+"offers": {
+  "@type": "Offer",
+  "priceCurrency": "INR",
+  "price": "50000",
+  "availability": "https://schema.org/InStock"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{
+  "@type": "Question",
+  "name": "What is the cost of solar panel installation in Gujarat?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Solar panel cost depends on system size, but residential systems start from affordable pricing with subsidies."
+  }
+},
+{
+  "@type": "Question",
+  "name": "How much electricity can solar panels generate?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Solar panels can generate enough electricity to significantly reduce or eliminate your monthly electricity bill."
+  }
+},
+{
+  "@type": "Question",
+  "name": "Are there government subsidies for solar?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes, government subsidies are available for residential solar installations in India."
+  }
+}
+]
+}
+</script>
 @endpush
 
 @section('main-section')

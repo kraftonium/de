@@ -1,7 +1,121 @@
 @extends('partials.mainindex')
 
 @push('title')
-    <title>Contact Us | Divyashakti Enterprise | Drive The Future</title>
+    <title>Contact Us | EV, GPS & Solar Solutions Gujarat | Divyashakti Enterprise | Drive The Future</title>
+@endpush
+
+@push('meta')
+    <meta name="description"
+        content="Contact Divyashakti Enterprise in Gandhinagar for EV scooters, GPS tracking systems, solar panel installation, and dealership opportunities. Call or visit our showroom today.">
+    <meta name="keywords"
+        content="contact ev showroom gandhinagar, gps tracking contact gujarat, solar panel contact ahmedabad, ev dealership contact, divyashakti enterprise contact">
+    <meta name="author" content="Divyashakti Enterprise">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.thedivyashakti.com/contact-us">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact Divyashakti Enterprise">
+    <meta property="og:description" content="Get in touch for EV vehicles, GPS tracking and solar solutions in Gujarat.">
+    <meta property="og:url" content="https://www.thedivyashakti.com/contact-us">
+    <meta property="og:image" content="https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png">
+    <meta property="og:site_name" content="Divyashakti Enterprise">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Divyashakti Enterprise">
+    <meta name="twitter:description" content="Call or visit our showroom for EV, GPS and solar solutions.">
+    <meta name="twitter:image" content="https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png">
+@endpush
+
+@push('schema')
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "LocalBusiness",
+"name": "Divyashakti Enterprise",
+"url": "https://www.thedivyashakti.com/contact-us",
+"logo": "https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png",
+"image": "https://www.thedivyashakti.com/assets/images/vehicles/victory.png",
+"description": "EV showroom, GPS tracking provider and solar solution company in Gandhinagar, Gujarat.",
+"telephone": "+919737561301",
+"email": "ride@thedivyashakti.com",
+"address": {
+  "@type": "PostalAddress",
+  "streetAddress": "Sargasan, Gandhinagar",
+  "addressLocality": "Gandhinagar",
+  "addressRegion": "Gujarat",
+  "postalCode": "382421",
+  "addressCountry": "IN"
+},
+"geo": {
+  "@type": "GeoCoordinates",
+  "latitude": "23.2156",
+  "longitude": "72.6369"
+},
+"openingHours": "Mo-Sa 09:00-19:00",
+"sameAs": [
+  "https://www.facebook.com/",
+  "https://www.instagram.com/"
+]
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "ContactPage",
+"name": "Contact Divyashakti Enterprise",
+"description": "Contact us for EV scooters, GPS tracking systems, solar installation and dealership opportunities.",
+"url": "https://www.thedivyashakti.com/contact-us"
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Organization",
+"name": "Divyashakti Enterprise",
+"contactPoint": {
+  "@type": "ContactPoint",
+  "telephone": "+919737561301",
+  "contactType": "customer service",
+  "areaServed": "IN",
+  "availableLanguage": ["English", "Hindi", "Gujarati"]
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{
+  "@type": "Question",
+  "name": "How can I contact Divyashakti Enterprise?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "You can call +91 97375 61301 or fill the contact form on our website."
+  }
+},
+{
+  "@type": "Question",
+  "name": "Where is your showroom located?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Our showroom is located in Gandhinagar, Gujarat."
+  }
+},
+{
+  "@type": "Question",
+  "name": "What services do you provide?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "We provide EV scooters, GPS tracking systems, solar solutions, and dealership opportunities."
+  }
+}
+]
+}
+</script>
 @endpush
 
 @section('main-section')

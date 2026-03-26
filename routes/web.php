@@ -82,6 +82,14 @@ Route::get('/book-ride', function () {
     return view('book-ride');
 });
 
+Route::get('/blogs', function () {
+    return view('blogs');
+});
+
+Route::get('/blog-details', function () {
+    return view('blog-details');
+});
+
 Route::get('/breeze', function () {
     return view('product-details-breeze');
 });

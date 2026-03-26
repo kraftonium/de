@@ -4,6 +4,137 @@
     <title>Liberty EV Scooter | EV Scooters | Divyashakti Enterprise | Drive The Future</title>
 @endpush
 
+@push('meta')
+    <meta name="description"
+        content="Buy Liberty EV Scooter at ₹61,999 in Gujarat. 50km range, lithium battery, cruise control, anti-theft system and fast charging. Book your test ride today.">
+    <meta name="keywords"
+        content="liberty ev scooter price, electric scooter 50 km range, ev scooter under 65000 india, buy electric scooter gandhinagar, lithium battery scooter gujarat">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.thedivyashakti.com/ev-scooters/liberty">
+
+    <meta property="og:type" content="product">
+    <meta property="og:title" content="Liberty EV Scooter | Price ₹61,999">
+    <meta property="og:description"
+        content="Powerful electric scooter with 50km range, cruise control and advanced safety features.">
+    <meta property="og:url" content="https://www.thedivyashakti.com/ev-scooters/liberty">
+    <meta property="og:image" content="https://www.thedivyashakti.com/assets/images/vehicles/9.png">
+    <meta property="og:site_name" content="Divyashakti Enterprise">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Liberty EV Scooter Price in Gujarat">
+    <meta name="twitter:description"
+        content="Explore Liberty EV Scooter with 50km range, lithium battery and smart features.">
+    <meta name="twitter:image" content="https://www.thedivyashakti.com/assets/images/vehicles/9.png">
+@endpush
+
+@push('schema')
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Product",
+"name": "Liberty EV Scooter",
+"image": [
+"https://www.thedivyashakti.com/assets/images/vehicles/9.png",
+"https://www.thedivyashakti.com/assets/images/vehicles/8.png",
+"https://www.thedivyashakti.com/assets/images/vehicles/7.png"
+],
+"description": "Liberty EV Scooter with 50km range, lithium battery, cruise control, anti-theft alarm, reverse gear and fast charging.",
+"brand": {
+  "@type": "Brand",
+  "name": "Divyashakti Enterprise"
+},
+"offers": {
+  "@type": "Offer",
+  "url": "https://www.thedivyashakti.com/ev-scooters/liberty",
+  "priceCurrency": "INR",
+  "price": "61999",
+  "availability": "https://schema.org/InStock"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "AggregateRating",
+"itemReviewed": {
+  "@type": "Product",
+  "name": "Liberty EV Scooter"
+},
+"ratingValue": "4.8",
+"reviewCount": "950"
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "AutoDealer",
+"name": "Divyashakti Enterprise",
+"url": "https://www.thedivyashakti.com",
+"telephone": "+919737561301",
+"address": {
+  "@type": "PostalAddress",
+  "addressLocality": "Gandhinagar",
+  "addressRegion": "Gujarat",
+  "addressCountry": "IN"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Event",
+"name": "Liberty EV Scooter Test Ride",
+"description": "Book a test ride for Liberty EV Scooter at Divyashakti Enterprise.",
+"location": {
+  "@type": "Place",
+  "name": "Divyashakti Enterprise",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Gandhinagar",
+    "addressRegion": "Gujarat",
+    "addressCountry": "IN"
+  }
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{
+  "@type": "Question",
+  "name": "What is the price of Liberty EV Scooter?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The starting price of Liberty EV Scooter is ₹61,999."
+  }
+},
+{
+  "@type": "Question",
+  "name": "What is the range of Liberty scooter?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "It offers a range of up to 50 km per charge."
+  }
+},
+{
+  "@type": "Question",
+  "name": "Does Liberty EV Scooter have cruise control?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes, it comes with cruise control for smooth and comfortable riding."
+  }
+}
+]
+}
+</script>
+@endpush
+
 @section('main-section')
     <!-- breadcrumb starts here -->
 
@@ -296,13 +427,15 @@
                 <div class="ride-grid">
 
                     <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder=" " onblur="validatecareerName()">
+                        <input type="text" id="name" name="name" placeholder=" "
+                            onblur="validatecareerName()">
                         <label>Full Name</label>
                         <span class="text-danger" id="name-error"></span>
                     </div>
 
                     <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder=" " onblur="validatecareerEmail()">
+                        <input type="email" id="email" name="email" placeholder=" "
+                            onblur="validatecareerEmail()">
                         <label>Email Address</label>
                         <span class="text-danger" id="email-error"></span>
                     </div>
