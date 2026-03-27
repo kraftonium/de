@@ -1,7 +1,7 @@
 @extends('partials.mainindex')
 
 @push('title')
-    <title>Affair EV Scooter | EV Scooters | Divyashakti Enterprise | Drive The Future</title>
+    <title>Passenger Auto | Divyashakti Enterprise | Drive The Future</title>
 @endpush
 
 @section('main-section')
@@ -16,7 +16,7 @@
             <h1>Affair EV Scooter</h1>
 
             <p>
-                Explore our range of high-performance electric scooters
+                Explore our range of high-performance electric autorickshaws
                 designed
                 for smart, eco-friendly mobility.
             </p>
@@ -27,11 +27,11 @@
 
                 <span>›</span>
 
-                <a href="{{ url('/ev-scooters') }}">Scooters</a>
+                <a href="{{ url('/ev-scooters') }}">EV Scooters</a>
 
                 <span>›</span>
 
-                <span class="active">Affair EV Scooter</span>
+                <span class="active">Passenger Auto</span>
 
             </div>
 

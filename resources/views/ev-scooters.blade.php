@@ -137,7 +137,7 @@
             <h1>EV Scooters</h1>
 
             <p>
-                Explore our range of high-performance electric scooters
+                Explore our EV Scooters range of high-performance electric scooters
                 designed
                 for smart, eco-friendly mobility.
             </p>
@@ -287,7 +287,7 @@
             <!-- Scooter 1 -->
             <div class="scooter-card fade-up delay-1">
 
-                <img src="assets/images/vehicles/2.png"
+                <img src="assets/images/vehicles/New-Vehicles/Divine-24-Blue-Front.png"
                     alt="Divine 24 EV Scooter | Divyashakti Enterprise | Drive The Future">
 
                 <h3>Divine 24</h3>
@@ -307,7 +307,8 @@
             <!-- Scooter 2 -->
             <div class="scooter-card fade-up delay-2">
 
-                <img src="assets/images/vehicles/7.png" alt="Affair EV Scooter | Divyashakti Enterprise | Drive The Future">
+                <img src="assets/images/vehicles/New-Vehicles/Affair-White-Front.png"
+                    alt="Affair EV Scooter | Divyashakti Enterprise | Drive The Future">
 
                 <h3>Affair</h3>
 
@@ -326,7 +327,7 @@
             <!-- Scooter 3 -->
             <div class="scooter-card fade-up delay-3">
 
-                <img src="assets/images/vehicles/7.png"
+                <img src="assets/images/vehicles/New-Vehicles/Affair-Lite-Purple-Front.png"
                     alt="Affair Lite EV Scooter | Divyashakti Enterprise | Drive The Future">
 
                 <h3>Affair Lite</h3>
@@ -346,7 +347,7 @@
             <!-- Scooter 4 -->
             <div class="scooter-card fade-up delay-4">
 
-                <img src="assets/images/vehicles/9.png"
+                <img src="assets/images/vehicles/New-Vehicles/Liberty-Black-Front.png"
                     alt="Liberty EV Scooter | Divyashakti Enterprise | Drive The Future">
 
                 <h3>Liberty</h3>
@@ -366,8 +367,8 @@
             <!-- Scooter 1 -->
             <div class="scooter-card fade-up delay-1">
 
-                <img src="assets/images/vehicles/2.png"
-                    alt="Divine 24 EV Scooter | Divyashakti Enterprise | Drive The Future">
+                <img src="assets/images/vehicles/New-Vehicles/Liberty-Plus-Blue-Front.png"
+                    alt="Liberty Plus EV Scooter | Divyashakti Enterprise | Drive The Future">
 
                 <h3>Liberty Plus</h3>
 
@@ -379,7 +380,7 @@
                     <span>🛑 Disc Brake</span>
                 </div>
 
-                <a href="{{ url('/divine-24-ev-scooter') }}" class="scooter-btn">View Details</a>
+                <a href="{{ url('/liberty-plus-ev-scooter') }}" class="scooter-btn">View Details</a>
 
             </div>
 
@@ -405,7 +406,8 @@
             <!-- Scooter 4 -->
             <div class="scooter-card fade-up delay-4">
 
-                <img src="assets/images/vehicles/5.png" alt="Loader EV Scooter | Divyashakti Enterprise | Drive The Future">
+                <img src="assets/images/vehicles/New-Vehicles/Loader-Front.png"
+                    alt="Loader EV Scooter | Divyashakti Enterprise | Drive The Future">
 
                 <h3>Loader</h3>
 
@@ -423,7 +425,7 @@
 
             <div class="scooter-card fade-up delay-2">
 
-                <img src="assets/images/vehicles/3.png" alt="Breeze EV Scooter | Divyashakti Enterprise | Drive The Future">
+                <img src="assets/images/vehicles/New-Vehicles/Breeze-Red-Front.png" alt="Breeze EV Scooter | Divyashakti Enterprise | Drive The Future">
 
                 <h3>Breeze</h3>
 

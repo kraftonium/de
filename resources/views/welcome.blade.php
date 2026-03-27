@@ -110,8 +110,8 @@
                 </p>
 
                 <div class="hero-buttons">
-                    <a href="#" class="btn-primary">Explore Vehicles</a>
-                    <a href="#" class="btn-secondary">Book Test Ride</a>
+                    <a href="{{ url('/ev-scooters') }}" class="btn-primary">Explore EV Scooters</a>
+                    <a href="{{ url('/ev-scoters') }}" class="btn-secondary">Book Test Ride</a>
                 </div>
 
             </div>
@@ -228,13 +228,13 @@
 
             <div class="option fade-up">
 
-                <img src="assets/images/vehicles/victory.png" alt="EV Scooter">
+                <img src="assets/images/vehicles/victory.png" alt="Divyashakti Enterprise EV Scooter">
 
                 <div class="option-content">
                     <h3>BUY EV SCOOTER</h3>
                     <p>Explore high performance electric scooters built for
                         modern mobility.</p>
-                    <a href="#">Explore Vehicles →</a>
+                    <a href="{{ url('/ev-scooters') }}">Explore Vehicles →</a>
                 </div>
 
             </div>
@@ -301,49 +301,49 @@
 
             <div class="scooter-card fade-up delay-1">
 
-                <img src="assets/images/vehicles/victory.png" alt="Victory EV Scooter">
+                <img src="assets/images/vehicles/New-Vehicles/Breeze-Red-Front.png" alt="Breeze EV Scooter">
 
-                <h3>Victory</h3>
+                <h3>Breeze</h3>
 
-                <p class="price">Starting ₹65,000*</p>
+                <p class="price">Starting ₹39,999*</p>
 
-                <a href="#" class="scooter-btn">View Details</a>
+                <a href="{{ url('/breeze-ev-scooter') }}" class="scooter-btn">View Details</a>
 
             </div>
 
             <div class="scooter-card fade-up delay-2">
 
-                <img src="assets/images/vehicles/breeze-removebg-preview.png" alt="Breeze EV Scooter">
+                <img src="assets/images/vehicles/New-Vehicles/Affair-Lite-Grey-Front.png" alt="Affair Lite EV Scooter">
 
-                <h3>Breeze</h3>
+                <h3>Affair Lite</h3>
 
-                <p class="price">Starting ₹62,000*</p>
+                <p class="price">Starting ₹47,999*</p>
 
-                <a href="#" class="scooter-btn">View Details</a>
+                <a href="{{ url('/affair-lite-ev-scooter') }}" class="scooter-btn">View Details</a>
 
             </div>
 
             <div class="scooter-card fade-up delay-3">
 
-                <img src="assets/images/vehicles/classic.png" alt="Classic EV Scooter">
+                <img src="assets/images/vehicles/New-Vehicles/Liberty-Black-Front.png" alt="Liberty EV Scooter">
 
-                <h3>Classic</h3>
+                <h3>Liberty</h3>
 
-                <p class="price">Starting ₹60,000*</p>
+                <p class="price">Starting ₹61,999*</p>
 
-                <a href="#" class="scooter-btn">View Details</a>
+                <a href="{{ url('/liberty-ev-scooter') }}" class="scooter-btn">View Details</a>
 
             </div>
 
             <div class="scooter-card fade-up delay-4">
 
-                <img src="assets/images/vehicles/eternal.png" alt="Eternal EV Scooter">
+                <img src="assets/images/vehicles/New-Vehicles/Divine-24-Red-Front.png" alt="Divine 24 EV Scooter">
 
-                <h3>Eternal</h3>
+                <h3>Divine 24</h3>
 
-                <p class="price">Starting ₹68,000*</p>
+                <p class="price">Starting ₹44,999*</p>
 
-                <a href="#" class="scooter-btn">View Details</a>
+                <a href="{{ url('/divine-24-ev-scooter') }}" class="scooter-btn">View Details</a>
 
             </div>
 
@@ -375,7 +375,7 @@
                 <span>LOW PRICE</span>
             </div>
 
-            <a href="/vehicles" class="offer-btn">
+            <a href="{{ url('/ev-scooters') }}" class="offer-btn">
                 See More Details →
             </a>
 
@@ -447,7 +447,7 @@
                 <p>Real-time vehicle tracking, security alerts and smart
                     monitoring for your vehicles and fleet.</p>
 
-                <a href="#">Explore GPS →</a>
+                <a href="{{ url('/gps') }}">Explore GPS →</a>
 
             </div>
 
@@ -462,7 +462,7 @@
                 <p>Control lights, appliances and security systems with
                     smart automation for modern living.</p>
 
-                <a href="#">Explore Automation →</a>
+                <a href="{{ url('/solar') }}">Explore Automation →</a>
 
             </div>
 
@@ -477,7 +477,7 @@
                 <p>Eco-friendly solar solutions including solar lights and
                     systems for energy saving and sustainability.</p>
 
-                <a href="#">Explore Solar →</a>
+                <a href="{{ url('/solar') }}">Explore Solar →</a>
 
             </div>
 

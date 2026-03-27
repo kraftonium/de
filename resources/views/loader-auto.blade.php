@@ -1,140 +1,7 @@
 @extends('partials.mainindex')
 
 @push('title')
-    <title>Affair Lite EV Scooter | EV Scooters | Divyashakti Enterprise | Drive The Future</title>
-@endpush
-
-@push('meta')
-    <meta name="description"
-        content="Buy Affair Lite EV Scooter in Gujarat at best price. Get 60 km range, lithium battery, fast charging and smart features. Book test ride at Divyashakti Enterprise.">
-    <meta name="keywords"
-        content="affair ev scooter price, electric scooter under 50000 gujarat, buy ev scooter gandhinagar, lithium battery scooter india, affordable ev scooter">
-    <meta name="author" content="Divyashakti Enterprise">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.thedivyashakti.com/ev-scooters/affair-lite">
-
-    <meta property="og:type" content="product">
-    <meta property="og:title" content="Affair Lite EV Scooter | EV Scooters | Divyashakti Enterprise | Drive The Future">
-    <meta property="og:description"
-        content="Affordable electric scooter with 60 km range, lithium battery and smart features.">
-    <meta property="og:url" content="https://www.thedivyashakti.com/ev-scooters/affair-lite">
-    <meta property="og:image" content="https://www.thedivyashakti.com/assets/images/vehicles/7.png">
-    <meta property="og:site_name" content="Divyashakti Enterprise">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Affair Lite EV Scooter | EV Scooters | Divyashakti Enterprise | Drive The Future">
-    <meta name="twitter:description" content="Explore affordable EV scooter with smart features and long range.">
-    <meta name="twitter:image" content="https://www.thedivyashakti.com/assets/images/vehicles/7.png">
-@endpush
-
-@push('schema')
-    <script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "Product",
-"name": "Affair Lite EV Scooter",
-"image": [
-  "https://www.thedivyashakti.com/assets/images/vehicles/7.png",
-  "https://www.thedivyashakti.com/assets/images/vehicles/4.png",
-  "https://www.thedivyashakti.com/assets/images/vehicles/1.png"
-],
-"description": "Affordable electric scooter with lithium battery, 60 km range, fast charging and smart features like anti-theft alarm and reverse gear.",
-"brand": {
-  "@type": "Brand",
-  "name": "Divyashakti Enterprise"
-},
-"offers": {
-  "@type": "Offer",
-  "url": "https://www.thedivyashakti.com/ev-scooters/affair-lite",
-  "priceCurrency": "INR",
-  "price": "47999",
-  "availability": "https://schema.org/InStock"
-}
-}
-</script>
-
-    <script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "AggregateRating",
-"itemReviewed": {
-  "@type": "Product",
-  "name": "Affair Lite EV Scooter"
-},
-"ratingValue": "4.7",
-"reviewCount": "850"
-}
-</script>
-
-    <script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "AutoDealer",
-"name": "Divyashakti Enterprise",
-"url": "https://www.thedivyashakti.com",
-"telephone": "+919737561301",
-"address": {
-  "@type": "PostalAddress",
-  "addressLocality": "Gandhinagar",
-  "addressRegion": "Gujarat",
-  "addressCountry": "IN"
-}
-}
-</script>
-
-    <script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "Event",
-"name": "EV Scooter Test Ride",
-"description": "Book a test ride for Affair Lite EV Scooter at Divyashakti Enterprise.",
-"eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-"eventStatus": "https://schema.org/EventScheduled",
-"location": {
-  "@type": "Place",
-  "name": "Divyashakti Enterprise",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Gandhinagar",
-    "addressRegion": "Gujarat",
-    "addressCountry": "IN"
-  }
-}
-}
-</script>
-
-    <script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "FAQPage",
-"mainEntity": [
-{
-  "@type": "Question",
-  "name": "What is the price of Affair Lite EV Scooter?",
-  "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "The starting price of Affair Lite EV Scooter is ₹47,999."
-  }
-},
-{
-  "@type": "Question",
-  "name": "What is the range of this scooter?",
-  "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "The scooter offers a range of up to 60 km per charge."
-  }
-},
-{
-  "@type": "Question",
-  "name": "How long does charging take?",
-  "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Charging takes approximately 2-3 hours."
-  }
-}
-]
-}
-</script>
+    <title>Loader Auto | Divyashakti Enterprise | Drive The Future</title>
 @endpush
 
 @section('main-section')
@@ -146,10 +13,10 @@
 
         <div class="banner-content fade-up">
 
-            <h1>Affair Lite EV Scooter</h1>
+            <h1>Loader Auto</h1>
 
             <p>
-                Explore our EV Scooters range of high-performance electric scooters
+                Explore our range of high-performance electric autorickshaws
                 designed
                 for smart, eco-friendly mobility.
             </p>
@@ -160,11 +27,11 @@
 
                 <span>›</span>
 
-                <a href="{{ url('/ev-scooters') }}">Scooters</a>
+                <a href="{{ url('/ev-scooters') }}">EV Scooters</a>
 
                 <span>›</span>
 
-                <span class="active">Affair Lite EV Scooter</span>
+                <span class="active">Loader Auto</span>
 
             </div>
 
@@ -231,8 +98,7 @@
                     height: 25px;
                     border-radius: 50%;
                     cursor: pointer;
-                    /* border: 2px solid transparent; */
-                    border: 2px solid whitesmoke;
+                    border: 2px solid transparent;
                 }
 
                 .color.active {
@@ -244,54 +110,50 @@
 
                 <!-- MAIN IMAGE -->
                 <div class="main-image">
-                    <img id="mainImage" src="assets/images/vehicles/New-Vehicles/Affair-Lite-Purple-Front.png"
-                        alt="Affair Lite EV Scooter | Divyashakti Enterprise">
+                    <img id="mainImage" src="assets/images/vehicles/New-Vehicles/Loader-Front.png"
+                        alt="Loader EV Scooter | Divyashakti Enterprise">
                 </div>
 
                 <!-- WHITE CAROUSEL -->
                 <div class="thumbnail-carousel color-set active" id="white-set">
-                    <img src="assets/images/vehicles/New-Vehicles/Affair-Lite-Purple-Front.png" onclick="changeImage(this)"
-                        alt="Affair Lite EV Scooter | Divyashakti Enterprise">
-                    <img src="assets/images/vehicles/New-Vehicles/Affair-Lite-Purple-Left.png" onclick="changeImage(this)"
-                        alt="Affair Lite EV Scooter | Divyashakti Enterprise">
-                    <img src="assets/images/vehicles/New-Vehicles/Affair-Lite-Purple-Right.png" onclick="changeImage(this)"
-                        alt="Affair Lite EV Scooter | Divyashakti Enterprise">
-                    <img src="assets/images/vehicles/New-Vehicles/Affair-Lite-Purple-Back.png" onclick="changeImage(this)"
-                        alt="Affair Lite EV Scooter | Divyashakti Enterprise">
+                    <img src="assets/images/vehicles/New-Vehicles/Loader-Front.png" onclick="changeImage(this)"
+                        alt="Loader EV Scooter | Divyashakti Enterprise">
+                    <img src="assets/images/vehicles/New-Vehicles/Loader-Left.png" onclick="changeImage(this)"
+                        alt="Loader EV Scooter | Divyashakti Enterprise">
+                    <img src="assets/images/vehicles/New-Vehicles/Loader-Right.png" onclick="changeImage(this)"
+                        alt="Loader EV Scooter | Divyashakti Enterprise">
+                    <img src="assets/images/vehicles/New-Vehicles/Loader-Back.png" onclick="changeImage(this)"
+                        alt="Loader EV Scooter | Divyashakti Enterprise">
                 </div>
 
                 <!-- RED CAROUSEL -->
                 <div class="thumbnail-carousel color-set" id="red-set">
-                    <img src="assets/images/vehicles/New-Vehicles/Affair-Lite-Grey-Front.png" onclick="changeImage(this)"
-                        alt="Affair Lite EV Scooter | Divyashakti Enterprise">
-                    <img src="assets/images/vehicles/New-Vehicles/Affair-Lite-Grey-Left.png" onclick="changeImage(this)"
-                        alt="Affair Lite EV Scooter | Divyashakti Enterprise">
-                    <img src="assets/images/vehicles/New-Vehicles/Affair-Lite-Grey-Right.png" onclick="changeImage(this)"
-                        alt="Affair Lite EV Scooter | Divyashakti Enterprise">
-                    <img src="assets/images/vehicles/New-Vehicles/Affair-Lite-Grey-Back.png" onclick="changeImage(this)"
-                        alt="Affair Lite EV Scooter | Divyashakti Enterprise">
+                    <img src="assets/images/vehicles/4.png" onclick="changeImage(this)"
+                        alt="Affair EV Scooter | Divyashakti Enterprise">
+                    <img src="assets/images/vehicles/5.png" onclick="changeImage(this)"
+                        alt="Affair EV Scooter | Divyashakti Enterprise">
+                    <img src="assets/images/vehicles/6.png" onclick="changeImage(this)"
+                        alt="Affair EV Scooter | Divyashakti Enterprise">
                 </div>
 
                 <!-- BLACK CAROUSEL -->
                 <div class="thumbnail-carousel color-set" id="black-set">
-                    <img src="assets/images/vehicles/New-Vehicles/Affair-Lite-Black-Front.png" onclick="changeImage(this)"
-                        alt="Affair Lite EV Scooter | Divyashakti Enterprise">
-                    <img src="assets/images/vehicles/New-Vehicles/Affair-Lite-Black-Left.png" onclick="changeImage(this)"
-                        alt="Affair Lite EV Scooter | Divyashakti Enterprise">
-                    <img src="assets/images/vehicles/New-Vehicles/Affair-Lite-Black-Right.png" onclick="changeImage(this)"
-                        alt="Affair Lite EV Scooter | Divyashakti Enterprise">
-                    <img src="assets/images/vehicles/New-Vehicles/Affair-Lite-Black-Back.png" onclick="changeImage(this)"
-                        alt="Affair Lite EV Scooter | Divyashakti Enterprise">
+                    <img src="assets/images/vehicles/7.png" onclick="changeImage(this)"
+                        alt="Affair EV Scooter | Divyashakti Enterprise">
+                    <img src="assets/images/vehicles/8.png" onclick="changeImage(this)"
+                        alt="Affair EV Scooter | Divyashakti Enterprise">
+                    <img src="assets/images/vehicles/9.png" onclick="changeImage(this)"
+                        alt="Affair EV Scooter | Divyashakti Enterprise">
                 </div>
 
                 <!-- COLOR OPTIONS -->
                 <div class="color-options">
 
-                    <span class="color active" style="background:purple" onclick="switchColor('white', this)"></span>
+                    <span class="color active" style="background:black" onclick="switchColor('white', this)"></span>
 
-                    <span class="color" style="background:grey" onclick="switchColor('red', this)"></span>
+                    {{-- <span class="color" style="background:red" onclick="switchColor('red', this)"></span>
 
-                    <span class="color" style="background:black" onclick="switchColor('black', this)"></span>
+                    <span class="color" style="background:black" onclick="switchColor('black', this)"></span> --}}
 
                 </div>
 
@@ -336,7 +198,7 @@
 
                 <h1> Affair Lite EV Scooter</h1>
 
-                <p class="price">Starting ₹43,999*</p>
+                <p class="price">Starting ₹47,999*</p>
 
                 <p class="desc">
                     Experience smooth, eco-friendly rides with advanced
@@ -436,15 +298,13 @@
                 <div class="ride-grid">
 
                     <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder=" "
-                            onblur="validatecareerName()">
+                        <input type="text" id="name" name="name" placeholder=" " onblur="validatecareerName()">
                         <label>Full Name</label>
                         <span class="text-danger" id="name-error"></span>
                     </div>
 
                     <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder=" "
-                            onblur="validatecareerEmail()">
+                        <input type="email" id="email" name="email" placeholder=" " onblur="validatecareerEmail()">
                         <label>Email Address</label>
                         <span class="text-danger" id="email-error"></span>
                     </div>

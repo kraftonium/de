@@ -146,7 +146,7 @@
             <h1>Breeze EV Scooter</h1>
 
             <p>
-                Explore our range of high-performance electric scooters
+                Explore our EV Scooters range of high-performance electric scooters
                 designed
                 for smart, eco-friendly mobility.
             </p>
@@ -228,7 +228,8 @@
                     height: 25px;
                     border-radius: 50%;
                     cursor: pointer;
-                    border: 2px solid transparent;
+                    /* border: 2px solid transparent; */
+                    border: 2px solid whitesmoke;
                 }
 
                 .color.active {
@@ -240,21 +241,32 @@
 
                 <!-- MAIN IMAGE -->
                 <div class="main-image">
-                    <img id="mainImage" src="assets/images/vehicles/1.png">
+                    <img id="mainImage" src="assets/images/vehicles/New-Vehicles/Breeze-Red-Front.png"
+                        alt="Breeze EV Scooter">
                 </div>
 
                 <!-- WHITE CAROUSEL -->
                 <div class="thumbnail-carousel color-set active" id="white-set">
-                    <img src="assets/images/vehicles/1.png" onclick="changeImage(this)">
-                    <img src="assets/images/vehicles/2.png" onclick="changeImage(this)">
-                    <img src="assets/images/vehicles/3.png" onclick="changeImage(this)">
+                    <img src="assets/images/vehicles/New-Vehicles/Breeze-Red-Front.png" onclick="changeImage(this)"
+                        alt="Breeze EV Scooter">
+                    <img src="assets/images/vehicles/New-Vehicles/Breeze-Red-Left.png" onclick="changeImage(this)"
+                        alt="Breeze EV Scooter">
+                    <img src="assets/images/vehicles/New-Vehicles/Breeze-Red-Right.png" onclick="changeImage(this)"
+                        alt="Breeze EV Scooter">
+                    <img src="assets/images/vehicles/New-Vehicles/Breeze-Red-Back.png" onclick="changeImage(this)"
+                        alt="Breeze EV Scooter">
                 </div>
 
                 <!-- RED CAROUSEL -->
                 <div class="thumbnail-carousel color-set" id="red-set">
-                    <img src="assets/images/vehicles/red/1.png" onclick="changeImage(this)">
-                    <img src="assets/images/vehicles/red/2.png" onclick="changeImage(this)">
-                    <img src="assets/images/vehicles/red/3.png" onclick="changeImage(this)">
+                    <img src="assets/images/vehicles/New-Vehicles/Breeze-Grey-Front.png" onclick="changeImage(this)"
+                        alt="Breeze EV Scooter">
+                    <img src="assets/images/vehicles/New-Vehicles/Breeze-Grey-Left.png" onclick="changeImage(this)"
+                        alt="Breeze EV Scooter">
+                    <img src="assets/images/vehicles/New-Vehicles/Breeze-Grey-Right.png" onclick="changeImage(this)"
+                        alt="Breeze EV Scooter">
+                    <img src="assets/images/vehicles/New-Vehicles/Breeze-Grey-Back.png" onclick="changeImage(this)"
+                        alt="Breeze EV Scooter">
                 </div>
 
                 <!-- BLACK CAROUSEL -->
@@ -267,11 +279,11 @@
                 <!-- COLOR OPTIONS -->
                 <div class="color-options">
 
-                    <span class="color active" style="background:#fff" onclick="switchColor('white', this)"></span>
+                    <span class="color active" style="background:red" onclick="switchColor('white', this)"></span>
 
-                    <span class="color" style="background:red" onclick="switchColor('red', this)"></span>
+                    <span class="color" style="background:grey" onclick="switchColor('red', this)"></span>
 
-                    <span class="color" style="background:black" onclick="switchColor('black', this)"></span>
+                    {{-- <span class="color" style="background:black" onclick="switchColor('black', this)"></span> --}}
 
                 </div>
 
@@ -341,7 +353,7 @@
 
                     <div class="spec">
                         <span>⏱ Charging</span>
-                        <h4>2-3 Hours</h4>
+                        <h4>6-7 Hours</h4>
                     </div>
 
                     <div class="spec">

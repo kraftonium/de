@@ -13,10 +13,10 @@
 
         <div class="banner-content fade-up">
 
-            <h1>Affair EV Scooter</h1>
+            <h1>Selfi EV Scooter</h1>
 
             <p>
-                Explore our range of high-performance electric scooters
+                Explore our EV Scooters range of high-performance electric scooters
                 designed
                 for smart, eco-friendly mobility.
             </p>
@@ -31,7 +31,7 @@
 
                 <span>›</span>
 
-                <span class="active">Affair EV Scooter</span>
+                <span class="active">Selfi EV Scooter</span>
 
             </div>
 
@@ -98,7 +98,8 @@
                     height: 25px;
                     border-radius: 50%;
                     cursor: pointer;
-                    border: 2px solid transparent;
+                    /* border: 2px solid transparent; */
+                    border: 2px solid whitesmoke;
                 }
 
                 .color.active {

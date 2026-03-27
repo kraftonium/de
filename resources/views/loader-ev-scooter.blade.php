@@ -229,7 +229,8 @@
                     height: 25px;
                     border-radius: 50%;
                     cursor: pointer;
-                    border: 2px solid transparent;
+                    /* border: 2px solid transparent; */
+                    border: 2px solid whitesmoke;
                 }
 
                 .color.active {
@@ -241,16 +242,19 @@
 
                 <!-- MAIN IMAGE -->
                 <div class="main-image">
-                    <img id="mainImage" src="assets/images/vehicles/5.png" alt="Loader EV Scooter | Divyashakti Enterprise">
+                    <img id="mainImage" src="assets/images/vehicles/New-Vehicles/Loader-Front.png"
+                        alt="Loader EV Scooter | Divyashakti Enterprise">
                 </div>
 
                 <!-- WHITE CAROUSEL -->
                 <div class="thumbnail-carousel color-set active" id="white-set">
-                    <img src="assets/images/vehicles/1.png" onclick="changeImage(this)"
+                    <img src="assets/images/vehicles/New-Vehicles/Loader-Front.png" onclick="changeImage(this)"
                         alt="Loader EV Scooter | Divyashakti Enterprise">
-                    <img src="assets/images/vehicles/2.png" onclick="changeImage(this)"
+                    <img src="assets/images/vehicles/New-Vehicles/Loader-Left.png" onclick="changeImage(this)"
                         alt="Loader EV Scooter | Divyashakti Enterprise">
-                    <img src="assets/images/vehicles/3.png" onclick="changeImage(this)"
+                    <img src="assets/images/vehicles/New-Vehicles/Loader-Right.png" onclick="changeImage(this)"
+                        alt="Loader EV Scooter | Divyashakti Enterprise">
+                    <img src="assets/images/vehicles/New-Vehicles/Loader-Back.png" onclick="changeImage(this)"
                         alt="Loader EV Scooter | Divyashakti Enterprise">
                 </div>
 
@@ -277,11 +281,11 @@
                 <!-- COLOR OPTIONS -->
                 <div class="color-options">
 
-                    <span class="color active" style="background:#fff" onclick="switchColor('white', this)"></span>
-
+                    <span class="color active" style="background:black" onclick="switchColor('white', this)"></span>
+                    {{-- 
                     <span class="color" style="background:red" onclick="switchColor('red', this)"></span>
 
-                    <span class="color" style="background:black" onclick="switchColor('black', this)"></span>
+                    <span class="color" style="background:black" onclick="switchColor('black', this)"></span> --}}
 
                 </div>
 
@@ -351,7 +355,7 @@
 
                     <div class="spec">
                         <span>⏱ Charging</span>
-                        <h4>2-3 Hours</h4>
+                        <h4>6-7 Hours</h4>
                     </div>
 
                     <div class="spec">

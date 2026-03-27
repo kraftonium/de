@@ -62,6 +62,10 @@ Route::get('/liberty-ev-scooter', function () {
     return view('liberty-ev-scooter');
 });
 
+Route::get('/liberty-plus-ev-scooter', function () {
+    return view('liberty-plus-ev-scooter');
+});
+
 Route::get('/loader-ev-scooter', function () {
     return view('loader-ev-scooter');
 });

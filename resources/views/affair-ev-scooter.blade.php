@@ -145,7 +145,7 @@
             <h1>Affair EV Scooter</h1>
 
             <p>
-                Explore our range of high-performance electric scooters
+                Explore our EV Scooters range of high-performance electric scooters
                 designed
                 for smart, eco-friendly mobility.
             </p>
@@ -227,7 +227,8 @@
                     height: 25px;
                     border-radius: 50%;
                     cursor: pointer;
-                    border: 2px solid transparent;
+                    /* border: 2px solid transparent; */
+                    border: 2px solid whitesmoke;
                 }
 
                 .color.active {
@@ -239,16 +240,19 @@
 
                 <!-- MAIN IMAGE -->
                 <div class="main-image">
-                    <img id="mainImage" src="assets/images/vehicles/7.png" alt="Affair EV Scooter | Divyashakti Enterprise">
+                    <img id="mainImage" src="assets/images/vehicles/New-Vehicles/Affair-White-Front.png"
+                        alt="Affair EV Scooter | Divyashakti Enterprise">
                 </div>
 
                 <!-- WHITE CAROUSEL -->
                 <div class="thumbnail-carousel color-set active" id="white-set">
-                    <img src="assets/images/vehicles/1.png" onclick="changeImage(this)"
+                    <img src="assets/images/vehicles/New-Vehicles/Affair-White-Front.png" onclick="changeImage(this)"
                         alt="Affair EV Scooter | Divyashakti Enterprise">
-                    <img src="assets/images/vehicles/2.png" onclick="changeImage(this)"
+                    <img src="assets/images/vehicles/New-Vehicles/Affair-White-Left.png" onclick="changeImage(this)"
                         alt="Affair EV Scooter | Divyashakti Enterprise">
-                    <img src="assets/images/vehicles/3.png" onclick="changeImage(this)"
+                    <img src="assets/images/vehicles/New-Vehicles/Affair-White-Right.png" onclick="changeImage(this)"
+                        alt="Affair EV Scooter | Divyashakti Enterprise">
+                    <img src="assets/images/vehicles/New-Vehicles/Affair-White-Back.png" onclick="changeImage(this)"
                         alt="Affair EV Scooter | Divyashakti Enterprise">
                 </div>
 
@@ -276,10 +280,10 @@
                 <div class="color-options">
 
                     <span class="color active" style="background:#fff" onclick="switchColor('white', this)"></span>
-
+                    {{-- 
                     <span class="color" style="background:red" onclick="switchColor('red', this)"></span>
 
-                    <span class="color" style="background:black" onclick="switchColor('black', this)"></span>
+                    <span class="color" style="background:black" onclick="switchColor('black', this)"></span> --}}
 
                 </div>
 
@@ -349,7 +353,7 @@
 
                     <div class="spec">
                         <span>⏱ Charging</span>
-                        <h4>2-3 Hours</h4>
+                        <h4>6-7 Hours</h4>
                     </div>
 
                     <div class="spec">

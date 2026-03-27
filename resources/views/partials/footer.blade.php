@@ -97,6 +97,38 @@
 
  <!-- floating whatsapp icon starts here -->
 
+ <style>
+     .calculator-float {
+         position: fixed;
+         bottom: 90px;
+         /* above whatsapp */
+         right: 20px;
+         background: #0D0A41;
+         color: #fff;
+         font-size: 22px;
+         width: 55px;
+         height: 55px;
+         border-radius: 50%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+         z-index: 999;
+         transition: 0.3s;
+     }
+
+     .calculator-float:hover {
+         background: #FC8F00;
+         transform: scale(1.1);
+     }
+ </style>
+
+ <a href="{{ url('/profit-calculator') }}" class="calculator-float" style="text-decoration: none;">
+
+     🧮
+
+ </a>
+
  <a href="https://wa.me/919737561301?text=Hello%20Divyashakti%20Enterprise%2C%20I%20am%20interested%20in%20your%20EV%20vehicles"
      class="whatsapp-float" target="_blank" style="text-decoration: none;">
 
