@@ -343,12 +343,12 @@
 
                     <div class="spec">
                         <span>⚡ Top Speed</span>
-                        <h4>45 km/h</h4>
+                        <h4>25 km/h</h4>
                     </div>
 
                     <div class="spec">
                         <span>🔋 Battery</span>
-                        <h4>Lithium-ion</h4>
+                        <h4>Leadgel Battery</h4>
                     </div>
 
                     <div class="spec">

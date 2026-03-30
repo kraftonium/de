@@ -385,7 +385,7 @@
             </div>
 
             <!-- Scooter 2 -->
-            <div class="scooter-card fade-up delay-2">
+            {{-- <div class="scooter-card fade-up delay-2">
 
                 <img src="assets/images/vehicles/7.png" alt="Affair EV Scooter | Divyashakti Enterprise | Drive The Future">
 
@@ -399,9 +399,9 @@
                     <span>💡 LED Lights</span>
                 </div>
 
-                <a href="{{ url('/affair-ev-scooter') }}" class="scooter-btn">View Details</a>
+                <a href="{{ url('/selfi-ev-scooter') }}" class="scooter-btn">View Details</a>
 
-            </div>
+            </div> --}}
 
             <!-- Scooter 4 -->
             <div class="scooter-card fade-up delay-4">
@@ -425,7 +425,8 @@
 
             <div class="scooter-card fade-up delay-2">
 
-                <img src="assets/images/vehicles/New-Vehicles/Breeze-Red-Front.png" alt="Breeze EV Scooter | Divyashakti Enterprise | Drive The Future">
+                <img src="assets/images/vehicles/New-Vehicles/Breeze-Red-Front.png"
+                    alt="Breeze EV Scooter | Divyashakti Enterprise | Drive The Future">
 
                 <h3>Breeze</h3>
 
@@ -438,6 +439,44 @@
                 </div>
 
                 <a href="{{ url('/breeze-ev-scooter') }}" class="scooter-btn">View Details</a>
+
+            </div>
+
+            <div class="scooter-card fade-up delay-4">
+
+                <img src="assets/images/vehicles/New-Vehicles/Passenger-Auto.png"
+                    alt="Passenger Auto | Divyashakti Enterprise | Drive The Future">
+
+                <h3>Passenger Auto</h3>
+
+                <p class="price">Starting ₹2,38,500*</p>
+
+                <div class="scooter-features">
+                    <span>⚡ 25 km/h</span>
+                    <span>🔋 High Capacity</span>
+                    <span>🔐 Anti Theft</span>
+                </div>
+
+                <a href="{{ url('/passenger-auto') }}" class="scooter-btn">View Details</a>
+
+            </div>
+
+            <div class="scooter-card fade-up delay-2">
+
+                <img src="assets/images/vehicles/New-Vehicles/Loader-Auto.png"
+                    alt="Loader Auto | Divyashakti Enterprise | Drive The Future">
+
+                <h3>Loader Auto</h3>
+
+                <p class="price">Starting ₹2,42,500*</p>
+
+                <div class="scooter-features">
+                    <span>⚡ 25 km/h</span>
+                    <span>🔋 Portable Battery</span>
+                    <span>💡 LED Lights</span>
+                </div>
+
+                <a href="{{ url('/loader-auto') }}" class="scooter-btn">View Details</a>
 
             </div>
 

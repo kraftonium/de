@@ -70,6 +70,10 @@ Route::get('/loader-ev-scooter', function () {
     return view('loader-ev-scooter');
 });
 
+Route::get('/selfi-ev-scooter', function () {
+    return view('selfi-ev-scooter');
+});
+
 Route::get('/gps', function () {
     return view('gps');
 });
@@ -114,17 +118,12 @@ Route::get('/divine-24', function () {
     return view('product-details-divine-24');
 });
 
-Route::get('/loader-with-roof', function () {
-    return view('product-details-loader-with-roof');
-});
-
-
-Route::get('/loader-without-roof', function () {
-    return view('product-details-loader-without-roof');
-});
-
 Route::get('/passenger-auto', function () {
-    return view('product-details-passenger');
+    return view('passenger-auto');
+});
+
+Route::get('/loader-auto', function () {
+    return view('loader-auto');
 });
 
 Route::get('/careers', function () {

@@ -4,6 +4,134 @@
     <title>Loader Auto | Divyashakti Enterprise | Drive The Future</title>
 @endpush
 
+@push('meta')
+    <meta name="description"
+        content="Buy Loader Electric Auto in Gujarat at ₹2,42,500. 100km range, lithium battery, heavy-duty performance and low running cost. Perfect for cargo and commercial transport.">
+    <meta name="keywords"
+        content="loader electric auto price gujarat, cargo ev auto india, electric loader vehicle price, commercial ev transport india, battery cargo auto rickshaw">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.thedivyashakti.com/loader-auto">
+
+    <meta property="og:type" content="product">
+    <meta property="og:title" content="Loader Electric Auto | Price ₹2,42,500">
+    <meta property="og:description"
+        content="Heavy-duty electric loader auto with 100km range and commercial cargo performance.">
+    <meta property="og:url" content="https://www.thedivyashakti.com/loader-auto">
+    <meta property="og:image" content="https://www.thedivyashakti.com/assets/images/vehicles/New-Vehicles/Loader-Auto.png">
+    <meta property="og:site_name" content="Divyashakti Enterprise">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Loader EV Auto Price in Gujarat">
+    <meta name="twitter:description" content="Explore cargo electric auto with 100km range and high load capacity.">
+    <meta name="twitter:image" content="https://www.thedivyashakti.com/assets/images/vehicles/New-Vehicles/Loader-Auto.png">
+@endpush
+
+@push('schema')
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Product",
+"name": "Loader Electric Auto",
+"image": [
+"https://www.thedivyashakti.com/assets/images/vehicles/New-Vehicles/Loader-Auto.png"
+],
+"description": "Loader Electric Auto with 100km range, lithium battery, heavy-duty build, fast charging and ideal for cargo and commercial transport.",
+"brand": {
+  "@type": "Brand",
+  "name": "Divyashakti Enterprise"
+},
+"offers": {
+  "@type": "Offer",
+  "url": "https://www.thedivyashakti.com/loader-auto",
+  "priceCurrency": "INR",
+  "price": "242500",
+  "availability": "https://schema.org/InStock"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "AggregateRating",
+"itemReviewed": {
+  "@type": "Product",
+  "name": "Loader Electric Auto"
+},
+"ratingValue": "4.7",
+"reviewCount": "720"
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "AutoDealer",
+"name": "Divyashakti Enterprise",
+"url": "https://www.thedivyashakti.com",
+"telephone": "+919737561301",
+"address": {
+  "@type": "PostalAddress",
+  "addressLocality": "Gandhinagar",
+  "addressRegion": "Gujarat",
+  "addressCountry": "IN"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Event",
+"name": "Loader Auto Test Ride",
+"description": "Book a test ride for Loader Electric Auto at Divyashakti Enterprise.",
+"location": {
+  "@type": "Place",
+  "name": "Divyashakti Enterprise",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Gandhinagar",
+    "addressRegion": "Gujarat",
+    "addressCountry": "IN"
+  }
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{
+  "@type": "Question",
+  "name": "What is the price of Loader Electric Auto?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The starting price of Loader Electric Auto is ₹2,42,500."
+  }
+},
+{
+  "@type": "Question",
+  "name": "What is the range of Loader Auto?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "It offers a range of up to 100 km per charge."
+  }
+},
+{
+  "@type": "Question",
+  "name": "Is Loader Auto suitable for cargo business?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes, it is designed for heavy-duty cargo transport with low running cost and high efficiency."
+  }
+}
+]
+}
+</script>
+@endpush
+
 @section('main-section')
     <!-- breadcrumb starts here -->
 
@@ -110,12 +238,12 @@
 
                 <!-- MAIN IMAGE -->
                 <div class="main-image">
-                    <img id="mainImage" src="assets/images/vehicles/New-Vehicles/Loader-Front.png"
-                        alt="Loader EV Scooter | Divyashakti Enterprise">
+                    <img id="mainImage" src="assets/images/vehicles/New-Vehicles/Loader-Auto.png"
+                        alt="Loader Auto Scooter | Divyashakti Enterprise">
                 </div>
 
                 <!-- WHITE CAROUSEL -->
-                <div class="thumbnail-carousel color-set active" id="white-set">
+                {{-- <div class="thumbnail-carousel color-set active" id="white-set">
                     <img src="assets/images/vehicles/New-Vehicles/Loader-Front.png" onclick="changeImage(this)"
                         alt="Loader EV Scooter | Divyashakti Enterprise">
                     <img src="assets/images/vehicles/New-Vehicles/Loader-Left.png" onclick="changeImage(this)"
@@ -124,38 +252,38 @@
                         alt="Loader EV Scooter | Divyashakti Enterprise">
                     <img src="assets/images/vehicles/New-Vehicles/Loader-Back.png" onclick="changeImage(this)"
                         alt="Loader EV Scooter | Divyashakti Enterprise">
-                </div>
+                </div> --}}
 
                 <!-- RED CAROUSEL -->
-                <div class="thumbnail-carousel color-set" id="red-set">
+                {{-- <div class="thumbnail-carousel color-set" id="red-set">
                     <img src="assets/images/vehicles/4.png" onclick="changeImage(this)"
                         alt="Affair EV Scooter | Divyashakti Enterprise">
                     <img src="assets/images/vehicles/5.png" onclick="changeImage(this)"
                         alt="Affair EV Scooter | Divyashakti Enterprise">
                     <img src="assets/images/vehicles/6.png" onclick="changeImage(this)"
                         alt="Affair EV Scooter | Divyashakti Enterprise">
-                </div>
+                </div> --}}
 
                 <!-- BLACK CAROUSEL -->
-                <div class="thumbnail-carousel color-set" id="black-set">
+                {{-- <div class="thumbnail-carousel color-set" id="black-set">
                     <img src="assets/images/vehicles/7.png" onclick="changeImage(this)"
                         alt="Affair EV Scooter | Divyashakti Enterprise">
                     <img src="assets/images/vehicles/8.png" onclick="changeImage(this)"
                         alt="Affair EV Scooter | Divyashakti Enterprise">
                     <img src="assets/images/vehicles/9.png" onclick="changeImage(this)"
                         alt="Affair EV Scooter | Divyashakti Enterprise">
-                </div>
+                </div> --}}
 
                 <!-- COLOR OPTIONS -->
-                <div class="color-options">
+                {{-- <div class="color-options">
 
                     <span class="color active" style="background:black" onclick="switchColor('white', this)"></span>
 
-                    {{-- <span class="color" style="background:red" onclick="switchColor('red', this)"></span>
+                    <span class="color" style="background:red" onclick="switchColor('red', this)"></span>
 
-                    <span class="color" style="background:black" onclick="switchColor('black', this)"></span> --}}
+                    <span class="color" style="background:black" onclick="switchColor('black', this)"></span>
 
-                </div>
+                </div> --}}
 
             </div>
 
@@ -196,9 +324,9 @@
 
             <div class="details-content fade-right">
 
-                <h1> Affair Lite EV Scooter</h1>
+                <h1> Loader Auto</h1>
 
-                <p class="price">Starting ₹47,999*</p>
+                <p class="price">Starting ₹2,42,500*</p>
 
                 <p class="desc">
                     Experience smooth, eco-friendly rides with advanced
@@ -213,12 +341,12 @@
 
                     <div class="spec">
                         <span>⚡ Top Speed</span>
-                        <h4>45 km/h</h4>
+                        <h4>25 km/h</h4>
                     </div>
 
                     <div class="spec">
                         <span>🔋 Battery</span>
-                        <h4>Lithium-ion</h4>
+                        <h4>Lithium Battery</h4>
                     </div>
 
                     <div class="spec">
@@ -228,7 +356,7 @@
 
                     <div class="spec">
                         <span>📍 Range</span>
-                        <h4>60 km</h4>
+                        <h4>100 km</h4>
                     </div>
 
                     <!-- NEW FEATURES -->
@@ -310,8 +438,7 @@
                     </div>
 
                     <div class="form-group full">
-                        <input type="text" id="phone" name="phone" placeholder=" "
-                            onblur="validatecareerPhone()">
+                        <input type="text" id="phone" name="phone" placeholder=" " onblur="validatecareerPhone()">
                         <label>Phone Number</label>
                         <span class="text-danger" id="phone-error"></span>
                     </div>

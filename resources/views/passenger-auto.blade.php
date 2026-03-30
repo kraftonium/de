@@ -4,6 +4,138 @@
     <title>Passenger Auto | Divyashakti Enterprise | Drive The Future</title>
 @endpush
 
+@push('meta')
+    <meta name="description"
+        content="Buy Passenger Electric Auto Rickshaw in Gujarat at ₹2,38,500. 100km range, lithium battery, low running cost and eco-friendly commercial vehicle. Book your test ride today.">
+    <meta name="keywords"
+        content="electric auto rickshaw price gujarat, passenger ev auto india, electric rickshaw 100 km range, commercial ev vehicle gujarat, battery auto rickshaw price">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.thedivyashakti.com/passenger-auto">
+
+    <meta property="og:type" content="product">
+    <meta property="og:title"
+        content="Passenger Electric Auto | Price ₹2,38,500 | Divyashakti Enterprise | Drive The Future">
+    <meta property="og:description"
+        content="Eco-friendly electric auto with 100km range, lithium battery and commercial performance.">
+    <meta property="og:url" content="https://www.thedivyashakti.com/passenger-auto">
+    <meta property="og:image"
+        content="https://www.thedivyashakti.com/assets/images/vehicles/New-Vehicles/Passenger-Auto.png">
+    <meta property="og:site_name" content="Divyashakti Enterprise">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Passenger EV Auto Price in Gujarat">
+    <meta name="twitter:description"
+        content="Explore electric passenger auto with 100km range and commercial use benefits.">
+    <meta name="twitter:image"
+        content="https://www.thedivyashakti.com/assets/images/vehicles/New-Vehicles/Passenger-Auto.png">
+@endpush
+
+@push('schema')
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Product",
+"name": "Passenger Electric Auto Rickshaw",
+"image": [
+"https://www.thedivyashakti.com/assets/images/vehicles/New-Vehicles/Passenger-Auto.png"
+],
+"description": "Passenger Electric Auto with 100km range, lithium battery, fast charging, low maintenance and ideal for commercial use.",
+"brand": {
+  "@type": "Brand",
+  "name": "Divyashakti Enterprise"
+},
+"offers": {
+  "@type": "Offer",
+  "url": "https://www.thedivyashakti.com/passenger-auto",
+  "priceCurrency": "INR",
+  "price": "238500",
+  "availability": "https://schema.org/InStock"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "AggregateRating",
+"itemReviewed": {
+  "@type": "Product",
+  "name": "Passenger Electric Auto Rickshaw"
+},
+"ratingValue": "4.7",
+"reviewCount": "650"
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "AutoDealer",
+"name": "Divyashakti Enterprise",
+"url": "https://www.thedivyashakti.com",
+"telephone": "+919737561301",
+"address": {
+  "@type": "PostalAddress",
+  "addressLocality": "Gandhinagar",
+  "addressRegion": "Gujarat",
+  "addressCountry": "IN"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Event",
+"name": "Passenger Auto Test Ride",
+"description": "Book a test ride for Passenger Electric Auto at Divyashakti Enterprise.",
+"location": {
+  "@type": "Place",
+  "name": "Divyashakti Enterprise",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Gandhinagar",
+    "addressRegion": "Gujarat",
+    "addressCountry": "IN"
+  }
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{
+  "@type": "Question",
+  "name": "What is the price of Passenger Electric Auto?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The starting price of Passenger Electric Auto is ₹2,38,500."
+  }
+},
+{
+  "@type": "Question",
+  "name": "What is the range of electric auto?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "It offers a range of up to 100 km per charge."
+  }
+},
+{
+  "@type": "Question",
+  "name": "Is this auto good for commercial use?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes, it is designed for passenger transport and commercial operations with low running cost."
+  }
+}
+]
+}
+</script>
+@endpush
+
 @section('main-section')
     <!-- breadcrumb starts here -->
 
@@ -13,7 +145,7 @@
 
         <div class="banner-content fade-up">
 
-            <h1>Affair EV Scooter</h1>
+            <h1>Passenger Auto</h1>
 
             <p>
                 Explore our range of high-performance electric autorickshaws
@@ -110,41 +242,42 @@
 
                 <!-- MAIN IMAGE -->
                 <div class="main-image">
-                    <img id="mainImage" src="assets/images/vehicles/7.png" alt="Affair EV Scooter | Divyashakti Enterprise">
+                    <img id="mainImage" src="assets/images/vehicles/New-Vehicles/Passenger-Auto.png"
+                        alt="Passenger Auto | Divyashakti Enterprise">
                 </div>
 
                 <!-- WHITE CAROUSEL -->
-                <div class="thumbnail-carousel color-set active" id="white-set">
+                {{-- <div class="thumbnail-carousel color-set active" id="white-set">
                     <img src="assets/images/vehicles/1.png" onclick="changeImage(this)"
                         alt="Affair EV Scooter | Divyashakti Enterprise">
                     <img src="assets/images/vehicles/2.png" onclick="changeImage(this)"
                         alt="Affair EV Scooter | Divyashakti Enterprise">
                     <img src="assets/images/vehicles/3.png" onclick="changeImage(this)"
                         alt="Affair EV Scooter | Divyashakti Enterprise">
-                </div>
+                </div> --}}
 
                 <!-- RED CAROUSEL -->
-                <div class="thumbnail-carousel color-set" id="red-set">
+                {{-- <div class="thumbnail-carousel color-set" id="red-set">
                     <img src="assets/images/vehicles/4.png" onclick="changeImage(this)"
                         alt="Affair EV Scooter | Divyashakti Enterprise">
                     <img src="assets/images/vehicles/5.png" onclick="changeImage(this)"
                         alt="Affair EV Scooter | Divyashakti Enterprise">
                     <img src="assets/images/vehicles/6.png" onclick="changeImage(this)"
                         alt="Affair EV Scooter | Divyashakti Enterprise">
-                </div>
+                </div> --}}
 
                 <!-- BLACK CAROUSEL -->
-                <div class="thumbnail-carousel color-set" id="black-set">
+                {{-- <div class="thumbnail-carousel color-set" id="black-set">
                     <img src="assets/images/vehicles/7.png" onclick="changeImage(this)"
                         alt="Affair EV Scooter | Divyashakti Enterprise">
                     <img src="assets/images/vehicles/8.png" onclick="changeImage(this)"
                         alt="Affair EV Scooter | Divyashakti Enterprise">
                     <img src="assets/images/vehicles/9.png" onclick="changeImage(this)"
                         alt="Affair EV Scooter | Divyashakti Enterprise">
-                </div>
+                </div> --}}
 
                 <!-- COLOR OPTIONS -->
-                <div class="color-options">
+                {{-- <div class="color-options">
 
                     <span class="color active" style="background:#fff" onclick="switchColor('white', this)"></span>
 
@@ -152,7 +285,7 @@
 
                     <span class="color" style="background:black" onclick="switchColor('black', this)"></span>
 
-                </div>
+                </div> --}}
 
             </div>
 
@@ -193,9 +326,9 @@
 
             <div class="details-content fade-right">
 
-                <h1> Affair Lite EV Scooter</h1>
+                <h1> Passenger Auto</h1>
 
-                <p class="price">Starting ₹47,999*</p>
+                <p class="price">Starting ₹2,38,500*</p>
 
                 <p class="desc">
                     Experience smooth, eco-friendly rides with advanced
@@ -210,22 +343,22 @@
 
                     <div class="spec">
                         <span>⚡ Top Speed</span>
-                        <h4>45 km/h</h4>
+                        <h4>25 km/h</h4>
                     </div>
 
                     <div class="spec">
                         <span>🔋 Battery</span>
-                        <h4>Lithium-ion</h4>
+                        <h4>Lithium Battery</h4>
                     </div>
 
                     <div class="spec">
                         <span>⏱ Charging</span>
-                        <h4>2-3 Hours</h4>
+                        <h4>6-7 Hours</h4>
                     </div>
 
                     <div class="spec">
                         <span>📍 Range</span>
-                        <h4>60 km</h4>
+                        <h4>100 km</h4>
                     </div>
 
                     <!-- NEW FEATURES -->
@@ -307,8 +440,7 @@
                     </div>
 
                     <div class="form-group full">
-                        <input type="text" id="phone" name="phone" placeholder=" "
-                            onblur="validatecareerPhone()">
+                        <input type="text" id="phone" name="phone" placeholder=" " onblur="validatecareerPhone()">
                         <label>Phone Number</label>
                         <span class="text-danger" id="phone-error"></span>
                     </div>

@@ -80,6 +80,42 @@
 @endpush
 
 @section('main-section')
+    <!-- breadcrumb starts here -->
+
+    <section class="page-banner">
+
+        <div class="banner-bg"></div>
+
+        <div class="banner-content fade-up">
+
+            <h1>About Us</h1>
+
+            <p>
+                Explore our EV Scooters range of high-performance electric scooters
+                designed
+                for smart, eco-friendly mobility.
+            </p>
+
+            <div class="breadcrumb">
+
+                <a href="{{ url('/') }}">Home</a>
+
+                {{-- <span>›</span>
+
+                <a href="{{ url('/ev-scooters') }}">Scooters</a> --}}
+
+                <span>›</span>
+
+                <span class="active">About Us</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- breadcrumb ends here -->
+
     <!-- about hero section starts here -->
 
     <section class="about-hero">

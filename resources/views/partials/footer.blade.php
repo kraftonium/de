@@ -10,7 +10,7 @@
 
              <div class="footer-logo">
 
-                 <img src="assets/images/logo/logo-only-1.png" alt="Divyashakti Enterprise Logo">
+                 <img src="{{ asset('assets/images/logo/logo-only-1.png') }}" alt="Divyashakti Enterprise Logo">
 
                  <h2>Divyashakti Enterprise</h2>
 
@@ -37,6 +37,8 @@
                  <li><a href="{{ url('/ev-scooters') }}">EV Scooters</a></li>
                  <li><a href="{{ url('/dealership') }}">Dealership</a></li>
                  <li><a href="{{ url('/contact-us') }}">Contact Us</a></li>
+                 <li><a href="{{ url('/privacy-policy') }}">Privacy Policy</a></li>
+                 <li><a href="{{ url('/terms-and-conditions') }}">Terms & Conditions</a></li>
              </ul>
 
          </div>
@@ -71,11 +73,15 @@
 
              <div class="footer-social">
 
-                 <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                 <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                 <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                 <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                 <a href="https://www.facebook.com/profile.php?id=61561142282586" target="_blank"><i
+                         class="fa-brands fa-facebook-f"></i></a>
+                 <a href="https://www.instagram.com/thedivyashakti/" target="_blank"><i
+                         class="fa-brands fa-instagram"></i></a>
+                 {{-- <a href="#"><i class="fa-brands fa-youtube"></i></a> --}}
+                 <a href="https://api.whatsapp.com/send/?phone=919737561301&text=Hello+Divyashakti+Enterprise%2C+I+am+interested+in+your+EV+vehicles&type=phone_number&app_absent=0"
+                     target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                 <a href="https://www.linkedin.com/company/divyashakti-enterprise/" target="_blank"><i
+                         class="fa-brands fa-linkedin-in"></i></a>
 
              </div>
 
@@ -138,7 +144,7 @@
 
  <!-- floating whatsapp icon ends here -->
 
- <script src="assets/script/script.js"></script>
+ <script src="{{ asset('assets/script/script.js') }}"></script>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
  </script>
