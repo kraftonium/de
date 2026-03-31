@@ -66,7 +66,7 @@
             </div>
 
             <div>
-                📞 9737561301
+                📞 9664861237
                 <a href="mailto:ride@thedivyashakti.com">📧 ride@thedivyashakti.com</a>
             </div>
 

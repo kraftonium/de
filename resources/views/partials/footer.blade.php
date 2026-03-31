@@ -65,7 +65,7 @@
 
              <h3>Contact Us</h3>
 
-             <p>📞 +91 97375 61301</p>
+             <p>📞 +91 96648 61237</p>
 
              <p>📧 ride@thedivyashakti.com</p>
 
@@ -78,7 +78,7 @@
                  <a href="https://www.instagram.com/thedivyashakti/" target="_blank"><i
                          class="fa-brands fa-instagram"></i></a>
                  {{-- <a href="#"><i class="fa-brands fa-youtube"></i></a> --}}
-                 <a href="https://api.whatsapp.com/send/?phone=919737561301&text=Hello+Divyashakti+Enterprise%2C+I+am+interested+in+your+EV+vehicles&type=phone_number&app_absent=0"
+                 <a href="https://api.whatsapp.com/send/?phone=919664861237&text=Hello+Divyashakti+Enterprise%2C+I+am+interested+in+your+EV+vehicles&type=phone_number&app_absent=0"
                      target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
                  <a href="https://www.linkedin.com/company/divyashakti-enterprise/" target="_blank"><i
                          class="fa-brands fa-linkedin-in"></i></a>
@@ -135,7 +135,7 @@
 
  </a>
 
- <a href="https://wa.me/919737561301?text=Hello%20Divyashakti%20Enterprise%2C%20I%20am%20interested%20in%20your%20EV%20vehicles"
+ <a href="https://wa.me/919664861237?text=Hello%20Divyashakti%20Enterprise%2C%20I%20am%20interested%20in%20your%20EV%20vehicles"
      class="whatsapp-float" target="_blank" style="text-decoration: none;">
 
      <i class="fa-brands fa-whatsapp"></i>

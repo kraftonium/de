@@ -17,16 +17,13 @@ hamburger.addEventListener("click", () => {
 // hero section starts here
 
 const vehicles = [
-
     "assets/images/vehicles/1.png",
     "assets/images/vehicles/2.png",
     "assets/images/vehicles/3.png",
     "assets/images/vehicles/4.png",
     "assets/images/vehicles/5.png",
-    // "assets/images/vehicles/loader-without-roof.png",
-    "assets/images/vehicles/New-Vehicles/loader-auto.png",
-    "assets/images/vehicles/New-Vehicles/passenger-auto.png"
-
+    "assets/images/vehicles/6.png",
+    "assets/images/vehicles/7.png"
 ];
 
 // let index = 0;

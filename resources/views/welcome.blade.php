@@ -170,7 +170,7 @@
 
                 <h2>
                     DIVYASHAKTI ENTERPRISE <br>
-                    <span>GANDHINAGAR'S LARGEST EV VEHICLES SHOWROOM</span>
+                    <span>Best Electric Vehicle Showroom In Gandhinagar</span>
                 </h2>
 
                 <p>
@@ -260,7 +260,7 @@
                     <h3>GET DEALERSHIP</h3>
                     <p>Partner with Divyashakti Enterprise and grow your EV
                         business.</p>
-                    <a href="#">Apply Now →</a>
+                    <a href="{{ url('/dealership') }}">Apply Now →</a>
                 </div>
 
             </div>
@@ -273,7 +273,7 @@
                     <h3>BUY GPS TRACKER</h3>
                     <p>Smart GPS solutions for vehicle safety and fleet
                         management.</p>
-                    <a href="#">Buy Now →</a>
+                    <a href="{{ url('/gps') }}">Buy Now →</a>
                 </div>
 
             </div>
