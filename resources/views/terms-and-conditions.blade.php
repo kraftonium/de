@@ -36,7 +36,7 @@
 "logo": "https://www.thedivyashakti.com/assets/images/logo/logo.png",
 "contactPoint": {
   "@type": "ContactPoint",
-  "telephone": "+919737561301",
+  "telephone": "+919664861237",
   "contactType": "customer service",
   "areaServed": "IN"
 },
@@ -176,7 +176,7 @@
 
                 <p>
                     📍 Gandhinagar, Gujarat <br>
-                    📞 +91 97375 61301 <br>
+                    📞 +91 96648 61237 <br>
                     📧 ride@thedivyashakti.com
                 </p>
             </div>

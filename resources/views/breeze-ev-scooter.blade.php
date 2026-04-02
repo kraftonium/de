@@ -71,7 +71,7 @@
 "@type": "AutoDealer",
 "name": "Divyashakti Enterprise",
 "url": "https://www.thedivyashakti.com",
-"telephone": "+919737561301",
+"telephone": "+919664861237",
 "address": {
   "@type": "PostalAddress",
   "addressLocality": "Gandhinagar",
@@ -396,7 +396,7 @@
 
                     <a href="#book_ride_form" class="btn-primary">Book Test Ride</a>
 
-                    <a href="https://wa.me/919737561301" class="btn-secondary">
+                    <a href="https://wa.me/919664861237" class="btn-secondary">
                         WhatsApp Inquiry
                     </a>
 

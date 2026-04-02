@@ -36,7 +36,7 @@
 "logo": "https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png",
 "image": "https://www.thedivyashakti.com/assets/images/vehicles/victory.png",
 "description": "EV showroom, GPS tracking provider and solar solution company in Gandhinagar, Gujarat.",
-"telephone": "+919737561301",
+"telephone": "+919664861237",
 "email": "ride@thedivyashakti.com",
 "address": {
   "@type": "PostalAddress",
@@ -76,7 +76,7 @@
 "name": "Divyashakti Enterprise",
 "contactPoint": {
   "@type": "ContactPoint",
-  "telephone": "+919737561301",
+  "telephone": "+919664861237",
   "contactType": "customer service",
   "areaServed": "IN",
   "availableLanguage": ["English", "Hindi", "Gujarati"]
@@ -94,7 +94,7 @@
   "name": "How can I contact Divyashakti Enterprise?",
   "acceptedAnswer": {
     "@type": "Answer",
-    "text": "You can call +91 97375 61301 or fill the contact form on our website."
+    "text": "You can call +91 96648 61237 or fill the contact form on our website."
   }
 },
 {
@@ -137,7 +137,7 @@
 
             <div class="breadcrumb">
 
-                <a href="index.html">Home</a>
+                <a href="{{ url('/') }}">Home</a>
 
                 <span>›</span>
 
@@ -180,7 +180,7 @@
             </div>
 
             <div class="contact-box">
-                📞 +91 97375 61301
+                📞 +91 96648 61237
             </div>
 
             <div class="contact-box">
@@ -222,7 +222,7 @@
 
             <div class="card fade-up delay-1">
                 <h3>Call Us</h3>
-                <p>+91 97375 61301</p>
+                <p>+91 96648 61237</p>
             </div>
 
             <div class="card fade-up delay-2">

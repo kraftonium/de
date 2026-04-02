@@ -37,7 +37,7 @@
 "url": "https://www.thedivyashakti.com",
 "logo": "https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png",
 "description": "Divyashakti Enterprise is a trusted EV showroom in Gandhinagar offering electric scooters, EV autos, GPS tracking and solar solutions.",
-"telephone": "+919737561301",
+"telephone": "+919664861237",
 "address": {
   "@type": "PostalAddress",
   "streetAddress": "Swagat Flamingo, Sargasan",

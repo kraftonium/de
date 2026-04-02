@@ -40,7 +40,7 @@
 "url": "https://www.thedivyashakti.com",
 "logo": "https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png",
 "description": "Electric scooter showroom in Gandhinagar offering EV scooters, EV autos, GPS tracking and solar solutions.",
-"telephone": "+919737561301",
+"telephone": "+919664861237",
 "address": {
   "@type": "PostalAddress",
   "streetAddress": "Swagat Flamingo, Sargasan",
@@ -186,8 +186,8 @@
 
                     <h4>HAVE ANY QUESTION?</h4>
 
-                    <a href="tel:+919737561301" class="about-phone">
-                        +91 97375 61301
+                    <a href="tel:+919664861237" class="about-phone">
+                        +91 96648 61237
                     </a>
 
                 </div>
@@ -247,7 +247,7 @@
                     <h3>BUY EV AUTO</h3>
                     <p>Reliable electric auto rickshaws for passenger and
                         commercial use.</p>
-                    <a href="#">Explore EV Auto →</a>
+                    <a href="{{ url('/ev-scooters') }}">Explore EV Auto →</a>
                 </div>
 
             </div>

@@ -37,7 +37,7 @@
 "url": "https://www.thedivyashakti.com/dealership",
 "logo": "https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png",
 "description": "Become an EV dealer with Divyashakti Enterprise in Gujarat. We offer electric scooter dealership opportunities with high growth potential.",
-"telephone": "+919737561301",
+"telephone": "+919664861237",
 "address": {
   "@type": "PostalAddress",
   "addressLocality": "Gandhinagar",
@@ -128,7 +128,7 @@
 
             <div class="breadcrumb">
 
-                <a href="index.html">Home</a>
+                <a href="{{ url('/') }}">Home</a>
 
                 <span>›</span>
 
@@ -170,7 +170,7 @@
                     <a href="#dealership-form-section" class="deal-btn-primary">Apply for
                         Dealership</a>
 
-                    <a href="tel:+919737561301" class="deal-btn-secondary">
+                    <a href="tel:+919664861237" class="deal-btn-secondary">
                         Call Now
                     </a>
 

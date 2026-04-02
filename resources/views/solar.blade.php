@@ -39,7 +39,7 @@
 "url": "https://www.thedivyashakti.com/solar",
 "logo": "https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png",
 "description": "Provider of residential solar panel installation and rooftop solar solutions in Gujarat.",
-"telephone": "+919737561301",
+"telephone": "+919664861237",
 "address": {
   "@type": "PostalAddress",
   "addressLocality": "Gandhinagar",
@@ -136,7 +136,7 @@
 
             <div class="breadcrumb">
 
-                <a href="index.html">Home</a>
+                <a href="{{ url('/') }}">Home</a>
 
                 <span>›</span>
 

@@ -23,7 +23,7 @@
 
             <div class="breadcrumb">
 
-                <a href="index.html">Home</a>
+                <a href="{{ url('/') }}">Home</a>
 
                 <span>›</span>
 

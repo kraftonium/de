@@ -4,6 +4,138 @@
     <title>Liberty Plus EV Scooter | EV Scooters | Divyashakti Enterprise | Drive The Future</title>
 @endpush
 
+@push('meta')
+    <meta name="description"
+        content="Buy Liberty Plus EV Scooter in Gujarat starting ₹62,500. 60km range, low speed, lead battery, low maintenance and ideal for daily commuting. Book test ride today.">
+
+    <meta name="keywords"
+        content="liberty plus ev scooter price, electric scooter under 70000 india, ev scooter gujarat price, low speed electric scooter india, budget ev scooter">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://www.thedivyashakti.com/liberty-plus-ev-scooter">
+
+    <meta property="og:type" content="product">
+    <meta property="og:title" content="Liberty Plus EV Scooter | Price ₹62,500">
+    <meta property="og:description" content="Affordable EV scooter with 60km range, low running cost and smart features.">
+    <meta property="og:url" content="https://www.thedivyashakti.com/liberty-plus-ev-scooter">
+    <meta property="og:image"
+        content="https://www.thedivyashakti.com/assets/images/vehicles/New-Vehicles/Liberty-Plus-Blue-Front.png">
+    <meta property="og:site_name" content="Divyashakti Enterprise">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Liberty Plus EV Scooter Price in Gujarat">
+    <meta name="twitter:description" content="Explore budget electric scooter with 60km range and smart features.">
+    <meta name="twitter:image"
+        content="https://www.thedivyashakti.com/assets/images/vehicles/New-Vehicles/Liberty-Plus-Blue-Front.png">
+@endpush
+
+@push('schema')
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Product",
+"name": "Liberty Plus EV Scooter",
+"image": [
+"https://www.thedivyashakti.com/assets/images/vehicles/New-Vehicles/Liberty-Plus-Blue-Front.png"
+],
+"description": "Liberty Plus EV Scooter with 60km range, 25 km/h speed, lead battery, low maintenance and ideal for daily commuting.",
+"brand": {
+  "@type": "Brand",
+  "name": "Divyashakti Enterprise"
+},
+"offers": {
+  "@type": "Offer",
+  "url": "https://www.thedivyashakti.com/liberty-plus-ev-scooter",
+  "priceCurrency": "INR",
+  "price": "62500",
+  "availability": "https://schema.org/InStock"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "AggregateRating",
+"itemReviewed": {
+  "@type": "Product",
+  "name": "Liberty Plus EV Scooter"
+},
+"ratingValue": "4.6",
+"reviewCount": "520"
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "AutoDealer",
+"name": "Divyashakti Enterprise",
+"url": "https://www.thedivyashakti.com",
+"telephone": "+919664861237",
+"address": {
+  "@type": "PostalAddress",
+  "addressLocality": "Gandhinagar",
+  "addressRegion": "Gujarat",
+  "addressCountry": "IN"
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Event",
+"name": "Liberty Plus EV Scooter Test Ride",
+"description": "Book a test ride for Liberty Plus EV Scooter at Divyashakti Enterprise.",
+"location": {
+  "@type": "Place",
+  "name": "Divyashakti Enterprise",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Gandhinagar",
+    "addressRegion": "Gujarat",
+    "addressCountry": "IN"
+  }
+}
+}
+</script>
+
+    <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{
+  "@type": "Question",
+  "name": "What is the price of Liberty Plus EV Scooter?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The starting price of Liberty Plus EV Scooter is ₹62,500."
+  }
+},
+{
+  "@type": "Question",
+  "name": "What is the range of Liberty Plus scooter?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "It offers a range of up to 60 km per charge."
+  }
+},
+{
+  "@type": "Question",
+  "name": "Is Liberty Plus good for daily use?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes, it is perfect for daily commuting with low running cost and easy handling."
+  }
+}
+]
+}
+</script>
+@endpush
+
 @section('main-section')
     <!-- breadcrumb starts here -->
 
@@ -284,7 +416,7 @@
 
                     <a href="#book_ride_form" class="btn-primary">Book Test Ride</a>
 
-                    <a href="https://wa.me/919737561301" class="btn-secondary">
+                    <a href="https://wa.me/919664861237" class="btn-secondary">
                         WhatsApp Inquiry
                     </a>
 

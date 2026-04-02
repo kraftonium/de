@@ -94,6 +94,18 @@ Route::get('/blogs', function () {
     return view('blogs');
 });
 
+Route::get('/blogs/electric-scooters-vs-petrol-scooters', function () {
+    return view('blog-1');
+});
+
+Route::get('/blogs/things-to-check-before-buying-an-electric-scooter', function () {
+    return view('blog-2');
+});
+
+Route::get('/blogs/before-you-buy-an-electric-scooter-check-these-8-things', function () {
+    return view('blog-3');
+});
+
 Route::get('/blog-details', function () {
     return view('blog-details');
 });

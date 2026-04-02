@@ -28,7 +28,7 @@
         <div class="error-box">
             <h1 style="color: #FD8901;">404</h1>
             <h3 class=" mb-3"><i class="fa fa-warning"></i> Oops! Page not found!</h3>
-            <a href="/index.html"> <button class="btn auth-btn w-50" type="submit">Back To Home</button></a>
+            <a href="/{{ url('/') }}"> <button class="btn auth-btn w-50" type="submit">Back To Home</button></a>
         </div>
     </div>
 

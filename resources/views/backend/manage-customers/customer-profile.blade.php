@@ -46,10 +46,10 @@
         <div class="header">
 
             <div class="header-left">
-                <a href="/index.html" class="logo">
+                <a href="/{{ url('/') }}" class="logo">
                     <img src="/backend-assets/img/logo/logo-divyashakti.png" alt="Logo">
                 </a>
-                <a href="/index.html" class="logo logo-small">
+                <a href="/{{ url('/') }}" class="logo logo-small">
                     <img src="/backend-assets/img/logo/logo-divyashakti.png" alt="Logo" height="50">
                 </a>
             </div>
@@ -118,7 +118,7 @@
                         <div class="col">
                             <h3 class="page-title">Customer Profile</h3>
                             <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                                <li class="breadcrumb-item"><a href="{{ url('/') }}">Dashboard</a></li>
                                 <li class="breadcrumb-item active">Customer Profile</li>
                             </ul>
                         </div>

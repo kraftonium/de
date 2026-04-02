@@ -37,7 +37,7 @@
 "url": "https://www.thedivyashakti.com/ev-scooters",
 "logo": "https://www.thedivyashakti.com/assets/images/logo/logo-only-1.png",
 "description": "Electric scooter dealer in Gandhinagar offering affordable EV scooters with lithium battery and long range.",
-"telephone": "+919737561301",
+"telephone": "+919664861237",
 "address": {
   "@type": "PostalAddress",
   "addressLocality": "Gandhinagar",
@@ -144,7 +144,7 @@
 
             <div class="breadcrumb">
 
-                <a href="index.html">Home</a>
+                <a href="{{ url('/') }}">Home</a>
 
                 <span>›</span>
 

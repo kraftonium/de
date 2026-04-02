@@ -50,7 +50,7 @@
 "name": "Divyashakti Enterprise",
 "url": "https://www.thedivyashakti.com",
 "logo": "https://www.thedivyashakti.com/assets/images/logo/logo.png",
-"telephone": "+919737561301",
+"telephone": "+919664861237",
 "address": {
   "@type": "PostalAddress",
   "addressLocality": "Gandhinagar",
