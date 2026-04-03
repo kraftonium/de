@@ -255,7 +255,7 @@
                         alt="Liberty Plus EV Scooter | Divyashakti Enterprise">
                     <img src="assets/images/vehicles/New-Vehicles/Liberty-Plus-White-Right.png" onclick="changeImage(this)"
                         alt="Liberty Plus EV Scooter | Divyashakti Enterprise">
-                    <img src="assets/images/vehicles/New-Vehicles/Liberty-Plus-White-Back.png" onclick="changeImage(this)"
+                    <img src="assets/images/vehicles/New-Vehicles/Liberty-Plus-White-Back-2.png" onclick="changeImage(this)"
                         alt="Liberty Plus EV Scooter | Divyashakti Enterprise">
                 </div>
 
@@ -267,7 +267,7 @@
                         alt="Liberty Plus EV Scooter | Divyashakti Enterprise">
                     <img src="assets/images/vehicles/New-Vehicles/Liberty-Plus-Red-Right.png" onclick="changeImage(this)"
                         alt="Liberty Plus EV Scooter | Divyashakti Enterprise">
-                    <img src="assets/images/vehicles/New-Vehicles/Liberty-Plus-Red-Back.png" onclick="changeImage(this)"
+                    <img src="assets/images/vehicles/New-Vehicles/Liberty-Plus-Red-Back-2.png" onclick="changeImage(this)"
                         alt="Liberty Plus EV Scooter | Divyashakti Enterprise">
                 </div>
 
@@ -279,7 +279,7 @@
                         alt="Liberty Plus EV Scooter | Divyashakti Enterprise">
                     <img src="assets/images/vehicles/New-Vehicles/Liberty-Plus-Blue-Right.png" onclick="changeImage(this)"
                         alt="Liberty Plus EV Scooter | Divyashakti Enterprise">
-                    <img src="assets/images/vehicles/New-Vehicles/Liberty-Plus-Blue-Back.png" onclick="changeImage(this)"
+                    <img src="assets/images/vehicles/New-Vehicles/Liberty-Plus-Blue-Back-2.png" onclick="changeImage(this)"
                         alt="Liberty Plus EV Scooter | Divyashakti Enterprise">
                 </div>
 
@@ -291,7 +291,7 @@
                         onclick="changeImage(this)" alt="Liberty Plus EV Scooter | Divyashakti Enterprise">
                     <img src="assets/images/vehicles/New-Vehicles/Liberty-Plus-Navy-Blue-Right.png"
                         onclick="changeImage(this)" alt="Liberty Plus EV Scooter | Divyashakti Enterprise">
-                    <img src="assets/images/vehicles/New-Vehicles/Liberty-Plus-Navy-Blue-Back.png"
+                    <img src="assets/images/vehicles/New-Vehicles/Liberty-Plus-Navy-Blue-Back-2.png"
                         onclick="changeImage(this)" alt="Liberty Plus EV Scooter | Divyashakti Enterprise">
                 </div>
 

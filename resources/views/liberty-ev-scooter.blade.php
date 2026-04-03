@@ -254,7 +254,7 @@
                         alt="Liberty EV Scooter | Divyashakti Enterprise">
                     <img src="assets/images/vehicles/New-Vehicles/Liberty-Black-Right.png" onclick="changeImage(this)"
                         alt="Liberty EV Scooter | Divyashakti Enterprise">
-                    <img src="assets/images/vehicles/New-Vehicles/Liberty-Black-Back.png" onclick="changeImage(this)"
+                    <img src="assets/images/vehicles/New-Vehicles/Liberty-Black-Back-2.png" onclick="changeImage(this)"
                         alt="Liberty EV Scooter | Divyashakti Enterprise">
                 </div>
 
@@ -264,9 +264,9 @@
                         alt="Liberty EV Scooter | Divyashakti Enterprise">
                     <img src="assets/images/vehicles/New-Vehicles/Liberty-Skyblue-Left.png" onclick="changeImage(this)"
                         alt="Liberty EV Scooter | Divyashakti Enterprise">
-                    <img src="assets/images/vehicles/New-Vehicles/Liberty-Black-Right.png" onclick="changeImage(this)"
+                    <img src="assets/images/vehicles/New-Vehicles/Liberty-Skyblue-Right.png" onclick="changeImage(this)"
                         alt="Liberty EV Scooter | Divyashakti Enterprise">
-                    <img src="assets/images/vehicles/New-Vehicles/Liberty-Black-Back.png" onclick="changeImage(this)"
+                    <img src="assets/images/vehicles/New-Vehicles/Liberty-Skyblue-Back-2.png" onclick="changeImage(this)"
                         alt="Liberty EV Scooter | Divyashakti Enterprise">
                 </div>
 

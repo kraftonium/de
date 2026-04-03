@@ -48,6 +48,24 @@
         $pagename = 'gps';
     } elseif (strpos($_SERVER['REQUEST_URI'], 'blogs') !== false) {
         $pagename = 'blogs';
+    } elseif (strpos($_SERVER['REQUEST_URI'], 'divine-24-ev-scooter') !== false) {
+        $pagename = 'ev-scooters';
+    } elseif (strpos($_SERVER['REQUEST_URI'], 'affair-ev-scooter') !== false) {
+        $pagename = 'ev-scooters';
+    } elseif (strpos($_SERVER['REQUEST_URI'], 'affair-lite-ev-scooter') !== false) {
+        $pagename = 'ev-scooters';
+    } elseif (strpos($_SERVER['REQUEST_URI'], 'liberty-ev-scooter') !== false) {
+        $pagename = 'ev-scooters';
+    } elseif (strpos($_SERVER['REQUEST_URI'], 'liberty-plus-ev-scooter') !== false) {
+        $pagename = 'ev-scooters';
+    } elseif (strpos($_SERVER['REQUEST_URI'], 'loader-ev-scooter') !== false) {
+        $pagename = 'ev-scooters';
+    } elseif (strpos($_SERVER['REQUEST_URI'], 'breeze-ev-scooter') !== false) {
+        $pagename = 'ev-scooters';
+    } elseif (strpos($_SERVER['REQUEST_URI'], 'passenger-auto') !== false) {
+        $pagename = 'ev-scooters';
+    } elseif (strpos($_SERVER['REQUEST_URI'], 'loader-auto') !== false) {
+        $pagename = 'ev-scooters';
     }
 @endphp
 
@@ -126,7 +144,7 @@
 
                 <div class="mobile-contact">
 
-                    📞 9664861237
+                    📞 9737561301
 
                     <a href="mailto:ride@thedivyashakti.com">
                         📧 ride@thedivyashakti.com

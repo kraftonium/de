@@ -179,7 +179,7 @@
             <!-- BLOG CARD -->
             <div class="blog-card">
 
-                <img src="assets/images/blogs/blog-3.jpg" alt="Electric Scooter Benefits">
+                <img src="assets/images/blogs/blog-3.png" alt="Electric Scooter Benefits">
 
                 <div class="blog-content">
 
@@ -200,7 +200,7 @@
             <!-- BLOG CARD -->
             <div class="blog-card">
 
-                <img src="assets/images/blogs/blog-2.jpg" alt="EV Battery Technology">
+                <img src="assets/images/blogs/blog-2.png" alt="EV Battery Technology">
 
                 <div class="blog-content">
 
@@ -222,7 +222,7 @@
             <!-- BLOG CARD -->
             <div class="blog-card">
 
-                <img src="assets/images/blogs/blog-1.jpg" alt="EV Cost Saving">
+                <img src="assets/images/blogs/blog-1.png" alt="EV Cost Saving">
 
                 <div class="blog-content">
 

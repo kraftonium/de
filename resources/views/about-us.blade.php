@@ -142,7 +142,7 @@
 
             <div class="about-image fade-up">
 
-                <img src="assets/images/about-us/about-hero.jpg" alt="Divyashakti Enterprise Showroom">
+                <img src="assets/images/vehicles/1.png" alt="Divyashakti Enterprise Showroom">
 
             </div>
 
@@ -302,8 +302,7 @@
 
             <div class="why-right fade-up">
 
-                <img src="assets/images/about-us/about-choose.jpg" alt="Divyashakti Enterprise"
-                    style="height: 100%;width: 100%;">
+                <img src="assets/images/vehicles/2.png" alt="Divyashakti Enterprise" style="height: 100%;width: 100%;">
 
             </div>
 

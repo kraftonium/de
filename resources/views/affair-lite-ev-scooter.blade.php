@@ -256,7 +256,7 @@
                         alt="Affair Lite EV Scooter | Divyashakti Enterprise">
                     <img src="assets/images/vehicles/New-Vehicles/Affair-Lite-Purple-Right.png" onclick="changeImage(this)"
                         alt="Affair Lite EV Scooter | Divyashakti Enterprise">
-                    <img src="assets/images/vehicles/New-Vehicles/Affair-Lite-Purple-Back.png" onclick="changeImage(this)"
+                    <img src="assets/images/vehicles/New-Vehicles/Affair-Lite-Purple-Back-2.png" onclick="changeImage(this)"
                         alt="Affair Lite EV Scooter | Divyashakti Enterprise">
                 </div>
 
@@ -268,7 +268,7 @@
                         alt="Affair Lite EV Scooter | Divyashakti Enterprise">
                     <img src="assets/images/vehicles/New-Vehicles/Affair-Lite-Grey-Right.png" onclick="changeImage(this)"
                         alt="Affair Lite EV Scooter | Divyashakti Enterprise">
-                    <img src="assets/images/vehicles/New-Vehicles/Affair-Lite-Grey-Back.png" onclick="changeImage(this)"
+                    <img src="assets/images/vehicles/New-Vehicles/Affair-Lite-Grey-Back-2.png" onclick="changeImage(this)"
                         alt="Affair Lite EV Scooter | Divyashakti Enterprise">
                 </div>
 

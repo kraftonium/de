@@ -253,7 +253,7 @@
                         alt="Divine 24 | Divyashakti Enterprise | Drive The Future">
                     <img src="assets/images/vehicles/New-Vehicles/Divine-24-Blue-Right.png" onclick="changeImage(this)"
                         alt="Divine 24 | Divyashakti Enterprise | Drive The Future">
-                    <img src="assets/images/vehicles/New-Vehicles/Divine-24-Blue-Back.png" onclick="changeImage(this)"
+                    <img src="assets/images/vehicles/New-Vehicles/Divine-24-Blue-Back-2.png" onclick="changeImage(this)"
                         alt="Divine 24 | Divyashakti Enterprise | Drive The Future">
                 </div>
 
